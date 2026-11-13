@@ -12,8 +12,12 @@ Groups, strongest first (an image gets the first that applies):
 Evidence (background.py, after shift_null.py showed that sparse images - one bright ship on dark sea - pass the
 speckle-reduced and shift rules with *other* train images): a leak is 'confirmed' when the background, with the bright
 targets masked, also repeats at full resolution (bg r >= 0.5; 13 of 9,607 queries reach this against a shuffled train
-pool). Otherwise it is 'uncertain'. 'same target (labels)' is always uncertain: the null passed it more often than
-the real search did.
+pool). Otherwise it is 'uncertain'. 'same target (labels)' is uncertain unless the ship check below confirms it.
+
+Ship pixels (ship.py): sparse chips have too little background to judge, so an uncertain match is also confirmed
+when the target's own pixels (the brightest 2%, grown by 4 px) repeat at full resolution: fg_r >= SHIP. Different
+ships lined up by the search (the shuffled-pool control, real copies left out) reach that in 0.3% of pairs; true
+copies in 83%. 'confirmed_by' says which check confirmed an image.
 """
 import csv
 from pathlib import Path
@@ -21,6 +25,7 @@ from pathlib import Path
 D = Path(__file__).resolve().parent / 'results'
 ORDER = ['exact copy', 're-processed copy', 'wrapped copy', 'overlapping tile', 'same target (labels)', 'clean']
 BG = 0.5
+SHIP = 0.95
 
 
 def _f(r, k):
@@ -65,6 +70,9 @@ def load(split):
     first = {r['query']: r for r in csv.DictReader(vp.open())}
     sp = sb if sb.exists() else D / f'shifts_{split}.csv'
     sh = {r['query']: r for r in csv.DictReader(sp.open())} if sp.exists() else {}
+    shp = D / f'ship_{split}.csv'
+    ship = {r['query']: float(r['fg_r']) for r in csv.DictReader(shp.open())
+            if r['set'] == 'uncertain' and r['fg_r'] not in ('', 'nan')} if shp.exists() else {}
     out = {}
     for q, r in first.items():
         s = sh.get(q)
@@ -72,7 +80,10 @@ def load(split):
         conf = [g for g in (confirmed_first(r), confirmed_shift(s) if s else None) if g]
         group = min(cands, key=ORDER.index) if cands else 'clean'
         cg = min(conf, key=ORDER.index) if conf else None
-        out[q] = {'group': group, 'confirmed_group': cg,
+        by = 'background' if cg else None
+        if not cg and group != 'clean' and ship.get(q, 0) >= SHIP:
+            cg, by = group, 'ship pixels'
+        out[q] = {'group': group, 'confirmed_group': cg, 'confirmed_by': by,
                   'evidence': 'clean' if group == 'clean' else 'confirmed' if cg else 'uncertain',
                   'source': r['source'], 'first': r, 'shift': s}
     return out

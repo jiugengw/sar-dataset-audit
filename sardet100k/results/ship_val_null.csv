@@ -1,0 +1,1585 @@
+set,query,ref,source,group,mode,fg_r,fg_n,unshuffled_full,unshuffled_bg
+null,0014034.jpg,0020842.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7356,9039,0.7465,-0.0004
+null,0014042.jpg,0110126.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.4945,2586,0.5318,0.0197
+null,0014071.jpg,0045773.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5237,17568,0.4481,-0.0038
+null,0015796.jpg,0048542.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6724,4448,0.6961,0.0070
+null,0015873.jpg,0082747.jpg,SSDD,same target (labels),overlap,0.6251,3372,,
+null,0015020.jpg,0002877.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4653,9511,0.3259,-0.0125
+null,0015024.jpg,0087259.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5395,8222,0.3531,0.0027
+null,0014322.jpg,0050759.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6608,7485,0.6766,0.0070
+null,0014328.jpg,0109246.jpg,SSDD,same target (labels),overlap,0.7036,3635,,
+null,0014334.jpg,0073220.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7505,8359,0.7601,0.0098
+null,0016288.jpg,0041947.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7554,18929,0.7559,-0.0163
+null,0016380.jpg,0001364.jpg,SSDD,same target (labels),overlap,0.5772,2619,,
+null,0016382.jpg,0047042.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9433,8267,0.9630,0.6093
+null,0016044.jpg,0087673.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5092,1644,0.5699,0.0095
+null,0015494.jpg,0095615.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6917,10829,0.7094,0.0213
+null,0016497.jpg,0039070.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4368,5270,0.4878,0.0078
+null,0008598.jpg,0014335.jpg,SSDD,same target (labels),overlap,0.7010,2447,,
+null,0009244.jpg,0040451.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7136,6890,0.7266,0.0141
+null,0009691.jpg,0049453.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4907,2198,0.4378,0.0083
+null,0007335.jpg,0114032.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9263,3854,0.9290,nan
+null,0007340.jpg,0002001.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6361,18781,0.6412,0.0123
+null,0008215.jpg,0015131.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7454,9126,0.7592,0.0102
+null,0008219.jpg,0065945.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5499,7091,0.5798,0.0105
+null,0008273.jpg,0014931.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5277,2458,0.5791,0.0053
+null,0009820.jpg,0056900.jpg,HRSID,wrapped copy,wrap,0.7266,43386,,
+null,0009844.jpg,0046350.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6212,3745,0.6453,-0.0316
+null,0009858.jpg,0113941.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8022,4891,0.8339,0.0382
+null,0009868.jpg,0080633.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4949,5778,0.5590,0.0787
+null,0009903.jpg,0074573.jpg,HRSID,same target (labels),overlap,0.7733,11944,,
+null,0009950.jpg,0104346.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5105,28422,0.4561,0.0066
+null,0009976.jpg,0066505.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6896,13106,0.6931,-0.0069
+null,0009977.jpg,0028770.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4059,11984,0.2910,0.0047
+null,0010673.jpg,0067021.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7777,22241,0.7754,0.0093
+null,0010984.jpg,0030454.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5660,12952,0.4877,nan
+null,0011035.jpg,0011043.jpg,HRSID,wrapped copy,wrap,0.7508,42525,,
+null,0011056.jpg,0031089.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7737,9155,0.7837,-0.0015
+null,0011059.jpg,0043311.jpg,HRSID,overlapping tile,overlap,0.7322,25582,,
+null,0011119.jpg,0001867.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5419,6427,0.4994,-0.0034
+null,0011142.jpg,0021757.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7412,25823,0.7229,0.0083
+null,0011169.jpg,0051427.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7503,7261,0.7566,0.0066
+null,0010799.jpg,0014185.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7494,6882,0.7687,0.0034
+null,0010835.jpg,0109277.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7266,5171,0.7395,nan
+null,0010846.jpg,0045576.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6481,3828,0.7168,0.0622
+null,0011177.jpg,0092599.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7204,20922,0.7214,0.0089
+null,0011249.jpg,0089701.jpg,HRSID,wrapped copy,wrap,0.6014,31189,,
+null,0012235.jpg,0008657.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9994,7161,0.9987,0.1939
+null,0012286.jpg,0045199.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5351,15195,0.5390,-0.0091
+null,0012348.jpg,0027040.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4021,4435,0.3808,0.0003
+null,0012657.jpg,0060098.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9202,21043,0.8828,0.3670
+null,0013520.jpg,0049707.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6181,20962,0.6181,-0.0003
+null,0014123.jpg,0096223.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7278,3801,0.7500,nan
+null,0014125.jpg,0038529.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7709,7615,0.7889,0.0117
+null,0014152.jpg,0065945.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5155,3358,0.5554,0.0128
+null,0014267.jpg,0026473.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9998,6073,0.9994,0.1242
+null,0014919.jpg,0033075.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7510,12229,0.7577,-0.0043
+null,0014447.jpg,0110647.jpg,HRSID,same target (labels),overlap,0.6155,6576,,
+null,0014575.jpg,0095878.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7986,31665,0.7114,0.1888
+null,0015527.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3480,2077,0.5113,-0.0049
+null,0015528.jpg,0035118.jpg,HRSID,same target (labels),overlap,0.6628,5010,,
+null,0015549.jpg,0112184.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7308,15141,0.7352,0.0005
+null,0015668.jpg,0077023.jpg,HRSID,wrapped copy,wrap,0.8616,11677,,
+null,0015692.jpg,0016321.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6053,3981,0.6378,0.0219
+null,0013990.jpg,0090526.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5967,4500,0.6137,0.0205
+null,0014023.jpg,0056900.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6499,9739,0.6534,0.0057
+null,0006787.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5018,2368,0.4057,0.0066
+null,0006444.jpg,0106120.jpg,HRSID,wrapped copy,wrap,0.7050,45506,,
+null,0006590.jpg,0015713.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.8300,13718,0.8244,0.4732
+null,0006610.jpg,0029207.jpg,HRSID,same target (labels),overlap,0.7469,11346,,
+null,0006315.jpg,0003787.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5615,2691,0.6044,-0.0375
+null,0006340.jpg,0049473.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6757,5126,0.6636,0.0126
+null,0006967.jpg,0040611.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5795,3501,0.5910,0.0016
+null,0006994.jpg,0057203.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7558,5836,0.7817,0.0033
+null,0006996.jpg,0110558.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3628,3648,0.1676,0.0152
+null,0007009.jpg,0094143.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5520,1992,0.4609,0.0146
+null,0007053.jpg,0110647.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4656,7858,0.3335,0.0041
+null,0004617.jpg,0060401.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3894,11119,0.1920,0.0090
+null,0004640.jpg,0092330.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4366,23027,0.3595,-0.0019
+null,0004670.jpg,0017799.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7578,12924,0.7650,-0.0007
+null,0004776.jpg,0016445.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9643,16489,0.9645,0.5228
+null,0004838.jpg,0019200.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7249,2908,0.7486,nan
+null,0008426.jpg,0064242.jpg,HRSID,overlapping tile,overlap,0.7356,13478,,
+null,0008783.jpg,0006725.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6541,2899,0.6915,-0.0053
+null,0008835.jpg,0055261.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.8045,3192,0.6996,-0.0015
+null,0008891.jpg,0109079.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7952,4167,0.8289,0.0486
+null,0008055.jpg,0033094.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6182,8532,0.4273,-0.0160
+null,0008061.jpg,0057500.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7186,2826,0.7482,nan
+null,0009165.jpg,0052283.jpg,SSDD,same target (labels),overlap,0.7671,19266,,
+null,0009190.jpg,0031754.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4853,1932,0.3880,-0.0003
+null,0009218.jpg,0075703.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6772,4931,0.6909,-0.0012
+null,0008625.jpg,0090583.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7102,9623,0.4985,0.0019
+null,0008658.jpg,0106928.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7555,6995,0.7648,-0.0038
+null,0008703.jpg,0012215.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7909,5882,0.8234,0.0372
+null,0008749.jpg,0077266.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6124,2531,0.6184,-0.0078
+null,0009502.jpg,0061207.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6852,4874,0.7297,0.0429
+null,0008504.jpg,0063781.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5814,7359,0.5982,-0.0030
+null,0008507.jpg,0033834.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6924,25438,0.6775,0.0028
+null,0006827.jpg,0011790.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7231,5584,0.7337,-0.0071
+null,0006845.jpg,0114730.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.2678,2449,0.4245,0.0176
+null,0006867.jpg,0085406.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5321,8059,0.5534,0.0036
+null,0005136.jpg,0092021.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5849,3475,0.6270,-0.0047
+null,0005266.jpg,0057302.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5696,3540,0.5955,0.0072
+null,0007189.jpg,0045076.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7140,8483,0.7262,0.0164
+null,0007224.jpg,0075687.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6271,11548,0.5138,-0.0117
+null,0007262.jpg,0088119.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4316,6458,0.3450,0.0009
+null,0007269.jpg,0087160.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5686,9731,0.3976,nan
+null,0007272.jpg,0001516.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9782,8003,0.9708,0.6149
+null,0007468.jpg,0079213.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6750,19301,0.6557,0.0115
+null,0007628.jpg,0051728.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6969,7050,0.7125,-0.0032
+null,0007778.jpg,0110352.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6690,2055,0.7059,nan
+null,0008302.jpg,0008235.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7357,17792,0.7379,0.0107
+null,0008356.jpg,0090456.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7220,9387,0.7635,0.0229
+null,0008423.jpg,0034448.jpg,SSDD,same target (labels),overlap,0.6386,3569,,
+null,0020101.jpg,0007696.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9996,5935,0.9991,0.2578
+null,0019124.jpg,0080227.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7241,3864,0.5861,nan
+null,0019182.jpg,0058867.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6151,30098,0.5924,0.0106
+null,0020247.jpg,0101251.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5424,10281,0.5553,-0.0047
+null,0020451.jpg,0028123.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7784,26838,0.7192,nan
+null,0020475.jpg,0066387.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5309,3551,0.3698,0.0008
+null,0020794.jpg,0045869.jpg,HRSID,overlapping tile,overlap,0.6616,28114,,
+null,0020831.jpg,0060053.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5840,3245,0.5773,0.0064
+null,0020490.jpg,0000412.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6193,3623,0.6346,nan
+null,0020546.jpg,0007333.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7826,8707,0.7954,0.0074
+null,0020564.jpg,0064213.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6238,9581,0.4859,0.0092
+null,0020611.jpg,0029184.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8136,6099,0.8347,0.0298
+null,0020985.jpg,0039140.jpg,SSDD,wrapped copy,wrap,0.6427,30612,,
+null,0021080.jpg,0012232.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4807,3489,0.3367,0.0112
+null,0021101.jpg,0067741.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6085,3561,0.6356,0.0082
+null,0021850.jpg,0037004.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5151,11827,0.4472,-0.0097
+null,0001835.jpg,0083182.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6695,6323,0.5969,0.0047
+null,0001857.jpg,0073243.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9985,4629,0.9992,1.0000
+null,0000004.jpg,0093754.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7907,5806,0.8077,0.0229
+null,0000020.jpg,0090168.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6145,2410,0.5801,0.0028
+null,0000083.jpg,0013315.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7476,10461,0.7519,-0.0003
+null,0002161.jpg,0058785.jpg,HRSID,same target (labels),wrap,0.5971,40611,,
+null,0002179.jpg,0024590.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6462,9767,0.6536,0.0211
+null,0002269.jpg,0022083.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3713,35575,0.3117,0.0013
+null,0002370.jpg,0064494.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4844,2794,0.5336,0.0075
+null,0002533.jpg,0096763.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4019,32384,0.3392,-0.0070
+null,0002572.jpg,0070086.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6055,9223,0.4828,0.0063
+null,0002580.jpg,0046758.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5813,6147,0.6116,-0.0009
+null,0002581.jpg,0017609.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7135,28331,0.7060,0.0178
+null,0002733.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5449,4422,0.3085,0.0057
+null,0003438.jpg,0103549.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5157,4608,0.5341,0.0032
+null,0003541.jpg,0020407.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7689,4587,0.7971,0.0582
+null,0017621.jpg,0076789.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4894,14666,0.3173,nan
+null,0017705.jpg,0044805.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5462,3097,0.5649,0.0164
+null,0018234.jpg,0008065.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5298,8408,0.4105,-0.0032
+null,0018257.jpg,0097704.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7450,7765,0.6695,0.0049
+null,0018022.jpg,0016906.jpg,HRSID,same target (labels),overlap,0.7525,11882,,
+null,0018131.jpg,0058881.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5769,11562,0.4025,-0.0149
+null,0017385.jpg,0000991.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5249,4646,0.5441,nan
+null,0017393.jpg,0067502.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6531,6936,0.6800,0.0045
+null,0017484.jpg,0043163.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6540,7412,0.6705,0.0352
+null,0017503.jpg,0067271.jpg,HRSID,overlapping tile,overlap,0.7326,29463,,
+null,0018409.jpg,0096838.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5928,15230,0.5022,-0.0074
+null,0018444.jpg,0111246.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5586,6790,0.6250,-0.0034
+null,0018479.jpg,0093142.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6428,3025,0.6503,0.0591
+null,0018571.jpg,0045083.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3517,2593,0.5437,-0.0062
+null,0017874.jpg,0027351.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6459,5217,0.6892,-0.0002
+null,0017991.jpg,0008905.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.8759,9575,0.7891,0.1061
+null,0003699.jpg,0006210.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,1.0000,3482,0.9991,0.5227
+null,0004280.jpg,0033438.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7576,7975,0.7731,0.0030
+null,0004302.jpg,0005194.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3568,1894,0.3902,0.0017
+null,0004396.jpg,0078387.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7055,43516,0.7142,0.3343
+null,0004443.jpg,0072295.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6282,1961,0.4014,nan
+null,0004483.jpg,0112542.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5950,2387,0.6536,0.0062
+null,0004519.jpg,0043311.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7370,25116,0.7363,0.0044
+null,0004523.jpg,0001801.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6751,5425,0.6933,-0.0003
+null,0004555.jpg,0089665.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4153,3976,0.2911,0.0091
+null,0004586.jpg,0101235.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7151,6619,0.7366,-0.0030
+null,0004611.jpg,0073670.jpg,HRSID,overlapping tile,overlap,0.7174,21311,,
+null,0005405.jpg,0019744.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6083,9269,0.6160,0.0104
+null,0006056.jpg,0070086.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8231,5440,0.8453,0.0449
+null,0005672.jpg,0009497.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4630,3718,0.5005,nan
+null,0005734.jpg,0054939.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7644,17730,0.7664,0.0016
+null,0003834.jpg,0098617.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6716,3492,0.6962,0.0081
+null,0008955.jpg,0101465.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6667,10483,0.4906,-0.0086
+null,0008975.jpg,0056369.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5910,5146,0.6116,0.0818
+null,0008980.jpg,0064213.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6553,3772,0.6843,0.0259
+null,0009035.jpg,0102593.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4791,14225,0.3013,0.0296
+null,0009054.jpg,0084941.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5785,5795,0.4684,0.0146
+null,0010110.jpg,0036229.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6047,6055,0.4057,nan
+null,0010144.jpg,0020019.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6082,6619,0.6128,0.0108
+null,0010178.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5992,8312,0.5710,0.0073
+null,0010184.jpg,0026493.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5835,4911,0.6000,-0.0116
+null,0010219.jpg,0039178.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3983,3573,0.4660,-0.0033
+null,0010328.jpg,0046046.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8099,6608,0.8261,0.0098
+null,0010363.jpg,0097739.jpg,SSDD,overlapping tile,overlap,0.6243,10825,,
+null,0010388.jpg,0005532.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5491,8193,0.3536,0.0010
+null,0010477.jpg,0078586.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6195,4493,0.5747,-0.0041
+null,0010514.jpg,0092089.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6905,20874,0.6597,0.0087
+null,0010527.jpg,0096047.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7146,6115,0.7404,0.0181
+null,0012411.jpg,0061772.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4552,6688,0.5237,0.0954
+null,0012433.jpg,0047673.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9707,7460,0.9951,0.6279
+null,0012451.jpg,0087906.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6880,13131,0.6962,0.0029
+null,0013098.jpg,0063005.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8153,22735,0.7622,nan
+null,0013113.jpg,0079213.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9963,20774,0.9966,0.5342
+null,0013135.jpg,0023062.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5334,3614,0.5580,0.0050
+null,0013137.jpg,0105437.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7500,14546,0.7068,0.0057
+null,0011342.jpg,0109079.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5450,4160,0.5730,0.0207
+null,0011596.jpg,0018751.jpg,HRSID,overlapping tile,overlap,0.8124,22715,,
+null,0013151.jpg,0039178.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6601,3733,0.7484,0.0842
+null,0013154.jpg,0013185.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7901,9797,0.7998,0.0377
+null,0013179.jpg,0071024.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9998,6822,0.9994,0.2829
+null,0013252.jpg,0096602.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6622,5475,0.6794,-0.0110
+null,0013261.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4694,6149,0.3956,0.0026
+null,0013311.jpg,0038006.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6587,17403,0.6455,nan
+null,0012984.jpg,0014652.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6770,4553,0.6123,0.0111
+null,0016548.jpg,0095865.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7663,13761,0.7678,0.0164
+null,0016583.jpg,0092666.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5742,5754,0.5959,0.0106
+null,0016672.jpg,0059987.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6472,14605,0.6476,-0.0023
+null,0016815.jpg,0074747.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9765,3243,0.9774,0.1997
+null,0017195.jpg,0023885.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6624,12969,0.6732,0.0195
+null,0016861.jpg,0099930.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5620,5294,0.2933,0.0111
+null,0016872.jpg,0098401.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.9972,3269,0.7653,0.4916
+null,0016874.jpg,0110295.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7374,2585,0.5721,nan
+null,0016888.jpg,0060866.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7453,6411,0.7553,-0.0055
+null,0016996.jpg,0038644.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7210,6880,0.7309,-0.0065
+null,0017036.jpg,0076798.jpg,HRSID,same target (labels),overlap,0.6876,6403,,
+null,0017348.jpg,0015756.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5704,5728,0.5943,-0.0031
+null,0017359.jpg,0114021.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8331,7482,0.8437,0.0284
+null,0017571.jpg,0071193.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9581,6089,0.9708,0.2747
+null,0017574.jpg,0000449.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7671,5755,0.8077,0.0567
+null,0017606.jpg,0001901.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5662,10586,0.3898,-0.0002
+null,0018862.jpg,0009670.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5746,7782,0.5817,0.0293
+null,0018901.jpg,0112586.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7568,12508,0.7607,0.0109
+null,0018902.jpg,0099681.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6134,4188,0.6353,0.0154
+null,0018919.jpg,0025776.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3018,5226,0.2351,0.0190
+null,0018652.jpg,0054028.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5202,30591,0.4602,-0.0002
+null,0018752.jpg,0050716.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,1.0000,2815,0.9985,0.1881
+null,0018779.jpg,0013499.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9693,6495,0.9522,0.1093
+null,0019304.jpg,0112276.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6945,12052,0.6998,-0.0074
+null,0019322.jpg,0029423.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5036,16757,0.3488,nan
+null,0019442.jpg,0070142.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6086,2445,0.5807,nan
+null,0019528.jpg,0104998.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7447,9384,0.7574,0.0046
+null,0019890.jpg,0028738.jpg,HRSID,overlapping tile,overlap,0.7344,5526,,
+null,0019563.jpg,0032613.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7615,9627,0.7652,0.0062
+null,0019590.jpg,0048105.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7231,7508,0.7368,0.0011
+null,0019649.jpg,0099895.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7346,15568,0.7458,0.0092
+null,0020054.jpg,0058168.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6605,11595,0.6105,-0.0046
+null,0002906.jpg,0022457.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7766,6659,0.7936,-0.0000
+null,0002925.jpg,0038529.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7768,2531,0.6815,0.0174
+null,0002943.jpg,0105545.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4747,9800,0.4536,nan
+null,0002958.jpg,0104811.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3656,7107,0.3308,-0.0204
+null,0003026.jpg,0027040.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3783,4699,0.4161,0.0031
+null,0003183.jpg,0029166.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7815,5083,0.7991,0.0215
+null,0003238.jpg,0024458.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4076,3591,0.5242,0.0063
+null,0000247.jpg,0067515.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5391,5132,0.5655,-0.0137
+null,0000327.jpg,0067741.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5262,4839,0.5465,0.0049
+null,0000334.jpg,0001667.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5184,13822,0.4295,0.0040
+null,0000341.jpg,0043311.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6795,15926,0.5233,0.0069
+null,0000764.jpg,0108373.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7382,2766,0.7683,nan
+null,0001542.jpg,0054132.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7320,34974,0.7193,0.0029
+null,0000548.jpg,0033075.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5799,12852,0.5870,-0.0131
+null,0003631.jpg,0089933.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9704,23159,0.9759,0.1818
+null,0003694.jpg,0110355.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7627,5387,0.7880,0.0233
+null,0000621.jpg,0052806.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5348,1794,0.4592,-0.0089
+null,0000727.jpg,0096398.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6093,3326,0.6276,0.0021
+null,0000734.jpg,0043583.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3563,16822,0.2334,-0.0063
+null,0000134.jpg,0080524.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6808,26497,0.6757,0.0166
+null,0000143.jpg,0080520.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9828,14765,0.9871,-0.0005
+null,0000154.jpg,0048108.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8072,5335,0.8295,0.0961
+null,0000238.jpg,0082376.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5777,30329,0.5464,-0.0078
+null,0001201.jpg,0091361.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9992,5682,0.9981,0.4968
+null,0001293.jpg,0080181.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7242,14528,0.7277,-0.0003
+null,0001097.jpg,0081493.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7782,1313,0.5776,nan
+null,0001436.jpg,0006655.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4460,3409,0.4981,0.0188
+null,0002023.jpg,0020842.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7637,5736,0.7813,nan
+null,0002030.jpg,0016737.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5613,3045,0.6369,0.0153
+null,0002129.jpg,0064494.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5355,3569,0.5724,0.0362
+null,0002155.jpg,0039178.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4446,11619,0.2652,-0.0138
+null,0001795.jpg,0096181.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5142,3154,0.4900,0.0078
+null,0003922.jpg,0082618.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7097,6284,0.7375,0.0249
+null,0003988.jpg,0116515.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7471,5628,0.7789,0.0646
+null,0004030.jpg,0031704.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8162,4793,0.8416,0.0281
+null,0005454.jpg,0055261.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4287,3460,0.3579,0.0102
+null,0005475.jpg,0001791.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6056,5453,0.6320,0.0251
+null,0005508.jpg,0011636.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3975,7419,0.2544,0.0001
+null,0005604.jpg,0103930.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7962,1885,0.8152,nan
+null,0004093.jpg,0095149.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5645,3931,0.5209,0.0047
+null,0005858.jpg,0092357.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5542,13156,0.5376,0.0117
+null,0004861.jpg,0039070.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4108,3150,0.4603,-0.0035
+null,0004887.jpg,0098643.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.8087,3165,0.7560,-0.0000
+null,0004891.jpg,0019474.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5971,6361,0.6128,0.0162
+null,0004992.jpg,0048475.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6349,26450,0.6317,-0.0037
+null,0006742.jpg,0061207.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6759,5332,0.7246,0.0364
+null,0006743.jpg,0091141.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7147,11742,0.7188,0.0157
+null,0006744.jpg,0031263.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5916,9136,0.5960,0.0074
+null,0023412.jpg,0073163.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6702,6174,0.6979,0.0170
+null,0023433.jpg,0082454.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4569,5808,0.3404,-0.0034
+null,0023486.jpg,0043890.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5657,29997,0.4922,nan
+null,0023492.jpg,0064396.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7426,2303,0.7718,nan
+null,0023212.jpg,0112491.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7431,7460,0.7539,-0.0014
+null,0023279.jpg,0101766.jpg,HRSID,overlapping tile,overlap,0.6814,6754,,
+null,0023311.jpg,0098878.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4653,7677,0.4988,0.0022
+null,0022263.jpg,0086317.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7459,5475,0.7730,0.0257
+null,0022383.jpg,0075058.jpg,HRSID,overlapping tile,overlap,0.7801,24803,,
+null,0023870.jpg,0026982.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4353,17649,0.3630,0.0023
+null,0024051.jpg,0066933.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6187,15284,0.3112,0.0044
+null,0024152.jpg,0048655.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9988,9150,0.9989,0.5650
+null,0024171.jpg,0083835.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5828,2568,0.6535,0.0065
+null,0024573.jpg,0068161.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8394,5897,0.8541,0.0133
+null,0024187.jpg,0053241.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6144,12204,0.6216,-0.0115
+null,0024284.jpg,0082676.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6739,3453,0.6396,0.0153
+null,0022168.jpg,0010193.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7001,5070,0.5807,0.0063
+null,0021391.jpg,0066210.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7390,7568,0.7418,0.0191
+null,0022438.jpg,0099430.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6015,2743,0.4041,0.0138
+null,0022441.jpg,0053477.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4504,2697,0.3518,0.0147
+null,0022862.jpg,0000649.jpg,HRSID,overlapping tile,overlap,0.6227,30774,,
+null,0022915.jpg,0083462.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3640,32561,0.3156,-0.0044
+null,0022954.jpg,0023213.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7920,6469,0.8078,0.0460
+null,0023053.jpg,0039867.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8283,4744,0.8478,-0.0009
+null,0023067.jpg,0112139.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4895,4302,0.6111,0.0464
+null,0023082.jpg,0024120.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7721,11310,0.7751,nan
+null,0023083.jpg,0066450.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4878,8721,0.3674,nan
+null,0023118.jpg,0036951.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8310,9228,0.8375,0.0148
+null,0023159.jpg,0095865.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7485,6908,0.7607,nan
+null,0023562.jpg,0066290.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7879,9656,0.7919,0.0101
+null,0023614.jpg,0112002.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7588,4802,0.7888,-0.0005
+null,0023328.jpg,0046672.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4859,6446,0.5273,0.0470
+null,0030412.jpg,0083262.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6448,4059,0.6522,-0.0150
+null,0029214.jpg,0051752.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9999,3111,0.9986,0.4885
+null,0029230.jpg,0050731.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6907,6791,0.7136,0.0159
+null,0029337.jpg,0024905.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5840,3812,0.6082,0.0290
+null,0029339.jpg,0044570.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5860,19469,0.5831,0.0082
+null,0029443.jpg,0060849.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5992,3970,0.4263,0.0021
+null,0030030.jpg,0107076.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6927,8225,0.7288,0.0026
+null,0030647.jpg,0058349.jpg,HRSID,wrapped copy,wrap,0.7494,41204,,
+null,0030717.jpg,0014471.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6988,10012,0.6336,0.0015
+null,0030740.jpg,0069181.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8166,7436,0.8260,0.0047
+null,0030751.jpg,0014471.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6753,2484,0.6332,0.0009
+null,0030817.jpg,0115266.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7011,4320,0.7215,-0.0110
+null,0030840.jpg,0048108.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7946,5242,0.8175,0.0484
+null,0030963.jpg,0064225.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6573,1717,0.6868,0.0181
+null,0030487.jpg,0017762.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9979,2841,1.0000,nan
+null,0030508.jpg,0067772.jpg,HRSID,same target (labels),wrap,0.6352,40833,,
+null,0021860.jpg,0045638.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4832,10428,0.3059,-0.0074
+null,0021864.jpg,0023994.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7350,7774,0.7451,0.0358
+null,0021978.jpg,0043311.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7776,9787,0.5449,-0.0111
+null,0021606.jpg,0106449.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6486,4610,0.6315,nan
+null,0021607.jpg,0105879.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6256,10426,0.4046,nan
+null,0021725.jpg,0083182.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6874,4734,0.5215,-0.0060
+null,0021399.jpg,0092298.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9984,10203,0.9961,0.5100
+null,0021462.jpg,0078985.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5286,28722,0.4770,0.0127
+null,0021143.jpg,0017431.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7033,5516,0.7173,0.0009
+null,0021177.jpg,0003246.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7243,25814,0.7050,0.0037
+null,0021259.jpg,0013723.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4692,13342,0.3545,0.0042
+null,0021984.jpg,0016826.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9996,4731,0.9995,0.4971
+null,0021992.jpg,0063618.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.8193,32972,0.8102,0.2780
+null,0022074.jpg,0081935.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4389,2659,0.4989,nan
+null,0022152.jpg,0035505.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5874,41670,0.5646,-0.0064
+null,0022159.jpg,0002765.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6455,15449,0.4425,nan
+null,0031809.jpg,0080581.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6602,5079,0.5099,0.0048
+null,0031867.jpg,0067390.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4442,3480,0.3497,nan
+null,0031941.jpg,0028685.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9166,6094,0.8609,0.1289
+null,0031984.jpg,0095149.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6537,6910,0.5753,0.0208
+null,0032402.jpg,0057842.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9761,6771,0.9980,0.3225
+null,0032210.jpg,0073383.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5661,7913,0.5773,0.0089
+null,0032277.jpg,0014325.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6790,4796,0.7188,-0.0005
+null,0032368.jpg,0111438.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8297,6914,0.8403,0.0219
+null,0033155.jpg,0076125.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6177,9276,0.5484,-0.0030
+null,0033188.jpg,0100800.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6716,4779,0.7005,0.0276
+null,0033192.jpg,0045810.jpg,HRSID,same target (labels),overlap,0.6115,7482,,
+null,0033267.jpg,0109079.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7258,4093,0.7548,0.0195
+null,0032569.jpg,0067174.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6115,1860,0.7602,0.0607
+null,0032719.jpg,0045219.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4165,18900,0.3197,-0.0131
+null,0033632.jpg,0032100.jpg,HRSID,same target (labels),overlap,0.6799,3714,,
+null,0033664.jpg,0030856.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5440,3847,0.5467,0.0004
+null,0027007.jpg,0001856.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7576,2092,0.7791,nan
+null,0027172.jpg,0041944.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7845,4659,0.8008,0.0215
+null,0027175.jpg,0043629.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7175,5752,0.7286,-0.0085
+null,0027256.jpg,0063446.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4896,2561,0.4684,nan
+null,0027264.jpg,0039178.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5097,2134,0.5730,0.0264
+null,0027311.jpg,0040154.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9999,4561,0.9985,0.2101
+null,0027464.jpg,0098643.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7232,4614,0.7464,nan
+null,0027617.jpg,0108159.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6371,26204,0.6033,-0.0132
+null,0027641.jpg,0081078.jpg,SSDD,same target (labels),wrap,0.6132,14684,,
+null,0027685.jpg,0081924.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7334,5324,0.7629,0.0653
+null,0027688.jpg,0106041.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9998,3360,0.9994,0.4621
+null,0027880.jpg,0077645.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6488,23966,0.6132,-0.0007
+null,0027934.jpg,0111863.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6863,6305,0.7003,0.0219
+null,0028001.jpg,0110148.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6759,3950,0.6996,nan
+null,0028698.jpg,0096181.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6692,11667,0.6494,0.0205
+null,0028727.jpg,0068779.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7753,11663,0.7812,0.0191
+null,0025830.jpg,0105100.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6914,10261,0.6965,-0.0086
+null,0026218.jpg,0007411.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6114,3266,0.6410,0.0545
+null,0026234.jpg,0032144.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6377,5283,0.6525,nan
+null,0026247.jpg,0008673.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7085,8496,0.5583,0.0059
+null,0026320.jpg,0031754.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6627,4169,0.6914,0.0137
+null,0026088.jpg,0075748.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6292,5709,0.6526,0.0204
+null,0026138.jpg,0033079.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6362,3497,0.7147,0.0102
+null,0026147.jpg,0065067.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.9734,4874,0.8589,0.0744
+null,0026164.jpg,0025572.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5812,5158,0.6026,0.0317
+null,0026917.jpg,0044643.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6248,1787,0.6678,nan
+null,0026546.jpg,0073259.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7640,10899,0.7688,0.0081
+null,0026587.jpg,0037144.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.9881,1302,0.8514,0.3547
+null,0026330.jpg,0001721.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6250,8601,0.6349,0.0027
+null,0026358.jpg,0015090.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6143,7087,0.6246,-0.0102
+null,0026374.jpg,0080227.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7195,11374,0.7229,nan
+null,0026467.jpg,0053830.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5819,3309,0.4583,0.0139
+null,0028805.jpg,0027550.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7880,5409,0.8023,-0.0001
+null,0028864.jpg,0108603.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7168,11724,0.7222,nan
+null,0028439.jpg,0086317.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4060,1995,0.4573,0.0025
+null,0028471.jpg,0046395.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9959,10344,0.9994,0.2438
+null,0028161.jpg,0040844.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7952,12658,0.8025,-0.0020
+null,0028175.jpg,0052311.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6052,21464,0.6007,0.0137
+null,0028504.jpg,0000348.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3319,33238,0.2901,0.0083
+null,0028547.jpg,0012963.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7598,5639,0.7901,0.0755
+null,0029467.jpg,0064458.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7132,6817,0.7222,0.0135
+null,0029469.jpg,0057927.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6883,6727,0.7141,0.0048
+null,0029634.jpg,0008855.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6075,2874,0.6344,0.0121
+null,0029670.jpg,0093446.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7079,13044,0.7161,nan
+null,0029000.jpg,0089665.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5676,7494,0.5863,0.0037
+null,0029138.jpg,0081650.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5485,5136,0.5344,0.0063
+null,0029857.jpg,0026753.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7443,2066,0.6245,0.0110
+null,0029927.jpg,0017560.jpg,SSDD,same target (labels),overlap,0.6377,7125,,
+null,0024870.jpg,0080227.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5152,38936,0.4637,-0.0115
+null,0024876.jpg,0016268.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6757,4130,0.6978,-0.0004
+null,0024911.jpg,0016303.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5429,4908,0.5729,0.0373
+null,0025064.jpg,0047937.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7395,28753,0.7240,0.0066
+null,0025215.jpg,0070472.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5180,9672,0.5353,0.0211
+null,0025216.jpg,0072308.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7437,5059,0.7685,0.0280
+null,0025290.jpg,0106655.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6263,7935,0.7028,0.0345
+null,0024656.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5366,2411,0.4563,0.0150
+null,0024770.jpg,0031697.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4874,24168,0.4371,0.0186
+null,0025554.jpg,0093611.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9672,3225,0.9695,0.4917
+null,0025854.jpg,0100887.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7123,4033,0.7448,0.0277
+null,0025900.jpg,0045219.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5272,2310,0.5525,0.0112
+null,0025951.jpg,0063488.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5303,4110,0.4990,0.0047
+null,0025954.jpg,0082350.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6591,5192,0.6301,0.0073
+null,0026007.jpg,0045360.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9765,12323,0.9491,0.2230
+null,0025730.jpg,0026406.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7581,7871,0.7663,-0.0092
+null,0036438.jpg,0039846.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4333,10075,0.2595,0.0056
+null,0036511.jpg,0031491.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7557,8489,0.7731,0.0215
+null,0036601.jpg,0095496.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4261,17772,0.2853,-0.0030
+null,0036624.jpg,0111217.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6658,5513,0.6826,0.0159
+null,0036677.jpg,0053567.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9771,3080,0.9989,0.4713
+null,0036711.jpg,0109855.jpg,HRSID,same target (labels),overlap,0.5435,1746,,
+null,0036712.jpg,0028273.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6937,6183,0.7274,0.0213
+null,0036736.jpg,0062929.jpg,HRSID,same target (labels),wrap,0.6261,10500,,
+null,0037306.jpg,0019474.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7070,5498,0.7229,0.0288
+null,0037318.jpg,0013185.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7424,8380,0.6510,-0.0041
+null,0037362.jpg,0068286.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7829,5954,0.7989,0.0150
+null,0037369.jpg,0084545.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6673,2579,0.5874,-0.0207
+null,0035470.jpg,0085265.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6719,5910,0.7034,0.0331
+null,0037547.jpg,0080825.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9227,10992,0.9245,0.4711
+null,0037607.jpg,0065473.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5726,7262,0.5042,0.0058
+null,0037759.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6833,5033,0.7723,0.0851
+null,0040425.jpg,0044450.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5857,5969,0.6033,0.0303
+null,0039966.jpg,0067471.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9840,29338,0.9864,0.5592
+null,0039987.jpg,0090709.jpg,SSDD,same target (labels),wrap,0.6828,14451,,
+null,0039314.jpg,0025675.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7387,14113,0.7464,-0.0012
+null,0040117.jpg,0073093.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4978,8521,0.3227,0.0097
+null,0040295.jpg,0001403.jpg,SSDD,same target (labels),overlap,0.7425,9646,,
+null,0040312.jpg,0099065.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7132,7905,0.7262,0.0148
+null,0040714.jpg,0057007.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8746,32681,0.9135,0.7304
+null,0040802.jpg,0016049.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6032,4421,0.3594,-0.0004
+null,0040842.jpg,0053220.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9870,3571,0.9875,nan
+null,0040875.jpg,0094227.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6354,16296,0.6412,0.0028
+null,0040890.jpg,0080520.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5635,12943,0.4822,-0.0236
+null,0041247.jpg,0116515.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7741,5364,0.8004,0.0323
+null,0041256.jpg,0056374.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3680,7716,0.2312,-0.0063
+null,0041271.jpg,0022565.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8259,9718,0.8325,0.0055
+null,0041384.jpg,0058026.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9998,4860,0.9992,0.5031
+null,0035936.jpg,0011636.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3978,9626,0.2492,-0.0159
+null,0035958.jpg,0091753.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5010,2509,0.2760,0.0069
+null,0035990.jpg,0062747.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7180,23497,0.7137,0.0172
+null,0036069.jpg,0077394.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7775,4644,0.8154,0.1264
+null,0036151.jpg,0030421.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6230,4879,0.6461,-0.0021
+null,0035598.jpg,0041376.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6007,18544,0.5107,-0.0101
+null,0035638.jpg,0042650.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5367,7522,0.5527,0.0058
+null,0035665.jpg,0095651.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6264,3550,0.6535,0.0362
+null,0035694.jpg,0064242.jpg,HRSID,overlapping tile,overlap,0.7204,16599,,
+null,0036237.jpg,0049193.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5767,15653,0.5422,-0.0053
+null,0036249.jpg,0000465.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7966,4509,0.8209,0.0193
+null,0036304.jpg,0046748.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7689,7491,0.8019,0.4406
+null,0036312.jpg,0069736.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7332,21521,0.7031,0.0000
+null,0036352.jpg,0038532.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7674,4824,0.7828,-0.0030
+null,0036386.jpg,0087242.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6548,17235,0.6192,0.0123
+null,0036432.jpg,0025103.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4541,13851,0.4576,0.0126
+null,0034461.jpg,0067515.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7712,4475,0.7988,0.0215
+null,0034481.jpg,0085406.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5575,5641,0.5832,0.0037
+null,0034702.jpg,0046672.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5951,2512,0.3542,-0.0066
+null,0034731.jpg,0099668.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9673,6928,0.9757,0.3926
+null,0034755.jpg,0036105.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7339,17054,0.7319,nan
+null,0035036.jpg,0078790.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7489,8997,0.7551,nan
+null,0035054.jpg,0001421.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4312,4126,0.5394,0.0229
+null,0035089.jpg,0023885.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4979,1979,0.4921,-0.0080
+null,0035188.jpg,0106543.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6704,5784,0.7029,0.0130
+null,0035240.jpg,0071230.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5807,26030,0.5250,-0.0004
+null,0035249.jpg,0036961.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5405,3884,0.5896,0.0049
+null,0035297.jpg,0063005.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7393,18291,0.7396,nan
+null,0035302.jpg,0024832.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8353,16185,0.8369,-0.0131
+null,0035394.jpg,0069419.jpg,HRSID,overlapping tile,overlap,0.7816,24438,,
+null,0035880.jpg,0042857.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6707,13077,0.6794,-0.0050
+null,0035928.jpg,0000898.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9830,7234,0.9843,0.4915
+null,0031112.jpg,0053359.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5864,13714,0.5254,-0.0057
+null,0031242.jpg,0013427.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5651,4318,0.4868,0.0089
+null,0031249.jpg,0038040.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6604,13298,0.6670,-0.0016
+null,0031258.jpg,0063751.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6580,5218,0.7104,0.0291
+null,0031285.jpg,0033866.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4655,19894,0.2760,0.0046
+null,0031343.jpg,0038866.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9767,13085,0.9924,0.5020
+null,0031559.jpg,0096426.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9725,8662,0.9935,0.4432
+null,0031584.jpg,0039875.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4337,5643,0.5117,0.0170
+null,0031619.jpg,0026965.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7245,18857,0.7246,-0.0011
+null,0031719.jpg,0076789.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4322,2731,0.2224,nan
+null,0032067.jpg,0069658.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6722,13968,0.6789,nan
+null,0032073.jpg,0056360.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5768,13401,0.5846,0.0035
+null,0032078.jpg,0074742.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6944,6425,0.7152,0.0024
+null,0032129.jpg,0029143.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5751,33610,0.5156,-0.0115
+null,0032175.jpg,0088069.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4847,39523,0.4422,0.0145
+null,0031780.jpg,0089665.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4390,2401,0.6354,0.0193
+null,0037822.jpg,0055699.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6160,2757,0.6390,nan
+null,0037439.jpg,0044323.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6336,3010,0.5236,nan
+null,0037164.jpg,0002245.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4924,5795,0.3339,0.0039
+null,0038115.jpg,0048594.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.4760,2422,0.6390,0.0087
+null,0038145.jpg,0039846.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5767,14237,0.4944,0.0095
+null,0038271.jpg,0001403.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6591,25148,0.6547,nan
+null,0038357.jpg,0106847.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6465,2785,0.3803,-0.0140
+null,0038369.jpg,0040975.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6829,15141,0.6825,-0.0040
+null,0038439.jpg,0022094.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7242,5584,0.7523,0.0101
+null,0038473.jpg,0003456.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6369,6476,0.3721,-0.0012
+null,0038557.jpg,0044875.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6884,10387,0.6985,nan
+null,0038592.jpg,0113036.jpg,SSDD,same target (labels),overlap,0.8047,5009,,
+null,0038612.jpg,0096323.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9581,6807,0.9979,0.5072
+null,0039042.jpg,0002117.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7097,2702,0.7436,nan
+null,0039081.jpg,0032962.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.4960,2048,0.5508,0.0084
+null,0039084.jpg,0014185.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8039,6999,0.8255,0.0206
+null,0033386.jpg,0028069.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7693,2018,0.6172,0.0797
+null,0032751.jpg,0057733.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4804,6488,0.4754,0.0081
+null,0032753.jpg,0084941.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3156,1922,0.3645,0.0077
+null,0032819.jpg,0112139.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4064,3517,0.3577,0.0140
+null,0033914.jpg,0092549.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6983,23739,0.6804,0.0003
+null,0033920.jpg,0020407.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7405,5775,0.7638,0.0198
+null,0033035.jpg,0084941.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5411,3716,0.4149,0.0161
+null,0033054.jpg,0110127.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6382,5628,0.6797,0.0285
+null,0033124.jpg,0092568.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7899,4539,0.8150,0.0427
+null,0033999.jpg,0091906.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7314,5892,0.6740,-0.0038
+null,0034051.jpg,0092276.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7545,27349,0.7119,-0.0037
+null,0034242.jpg,0005540.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9490,18251,0.9497,0.5269
+null,0034276.jpg,0000160.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3209,11263,0.1775,0.0074
+null,0034284.jpg,0104300.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7150,11202,0.7209,0.0029
+null,0034366.jpg,0103423.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4833,12576,0.3035,-0.0057
+null,0034451.jpg,0027187.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6266,4753,0.4458,0.0038
+null,0039085.jpg,0046930.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5788,4799,0.6050,-0.0075
+null,0039090.jpg,0051661.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5837,5781,0.6046,0.0277
+null,0038669.jpg,0101470.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4254,3056,0.2099,-0.0057
+null,0038673.jpg,0019402.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4746,6952,0.3378,0.0166
+null,0038690.jpg,0040207.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.8336,12942,0.7160,nan
+null,0038738.jpg,0022820.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6676,2995,0.6114,0.0169
+null,0039147.jpg,0047678.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8217,17229,0.8219,0.0124
+null,0039573.jpg,0115612.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6956,9472,0.6213,nan
+null,0039624.jpg,0036961.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9481,22834,0.9495,0.6531
+null,0039647.jpg,0043642.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6591,6417,0.7109,0.1378
+null,0039684.jpg,0051581.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4536,10318,0.2518,0.0089
+null,0039768.jpg,0038138.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5317,1918,0.2168,0.0127
+null,0040589.jpg,0091913.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7180,8239,0.7242,0.0332
+null,0040605.jpg,0046404.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7370,5592,0.7814,0.0276
+null,0040639.jpg,0028915.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7884,11074,0.7922,0.0046
+null,0040347.jpg,0067271.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7368,10089,0.6643,-0.0072
+null,0041009.jpg,0095891.jpg,SAR-AIRcraft,same target (labels),overlap,0.7701,13158,0.9118,0.8210
+null,0041020.jpg,0114559.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7491,15953,0.7370,nan
+null,0041064.jpg,0001421.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4408,5487,0.4403,0.0240
+null,0041139.jpg,0030169.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7369,10262,0.5251,nan
+null,0041439.jpg,0101878.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6693,5869,0.6840,0.0067
+null,0041462.jpg,0052294.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4185,2497,0.2608,0.0023
+null,0041489.jpg,0093619.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7110,14881,0.7140,-0.0143
+null,0041536.jpg,0031754.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6344,3607,0.6789,0.0340
+null,0041544.jpg,0002805.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6864,6511,0.7011,-0.0073
+null,0041664.jpg,0110148.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6760,4191,0.6984,nan
+null,0041674.jpg,0042115.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7824,4280,0.8372,0.1703
+null,0041728.jpg,0060668.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6749,3848,0.5700,0.0059
+null,0042109.jpg,0025644.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6648,6871,0.6852,0.0120
+null,0042196.jpg,0029184.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7882,5307,0.8139,0.0223
+null,0041932.jpg,0095717.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7516,2778,0.7642,nan
+null,0041863.jpg,0088069.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5027,22678,0.4367,0.0031
+null,0054648.jpg,0105090.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7411,7175,0.7573,0.0088
+null,0054685.jpg,0018925.jpg,HRSID,wrapped copy,wrap,0.7202,50537,,
+null,0054378.jpg,0111373.jpg,HRSID,wrapped copy,wrap,0.7687,39592,,
+null,0054468.jpg,0022141.jpg,HRSID,overlapping tile,overlap,0.7476,12003,,
+null,0053997.jpg,0076789.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3017,25733,0.2255,nan
+null,0054065.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5455,3996,0.5317,0.0259
+null,0054075.jpg,0082343.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4168,11834,0.2395,-0.0048
+null,0055340.jpg,0005164.jpg,HRSID,overlapping tile,overlap,0.5834,22967,,
+null,0055736.jpg,0097588.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7620,2916,0.7879,nan
+null,0055026.jpg,0040449.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7390,23862,0.7035,-0.0085
+null,0055032.jpg,0011449.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7999,8233,0.8133,0.0138
+null,0055059.jpg,0069419.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7752,3076,0.7802,nan
+null,0055066.jpg,0110010.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6314,31042,0.6268,0.0082
+null,0055178.jpg,0087221.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6938,4507,0.7255,nan
+null,0055470.jpg,0101384.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5972,4324,0.6240,0.0087
+null,0055501.jpg,0115376.jpg,HRSID,overlapping tile,overlap,0.7271,11644,,
+null,0042838.jpg,0058604.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7460,4996,0.5587,nan
+null,0042922.jpg,0116515.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7515,3465,0.7377,0.0293
+null,0043093.jpg,0001241.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6426,3533,0.6673,0.0115
+null,0043393.jpg,0027701.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5290,3023,0.4134,0.0014
+null,0044089.jpg,0057754.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7853,5961,0.8052,-0.0003
+null,0044178.jpg,0106877.jpg,HRSID,wrapped copy,wrap,0.7637,26623,,
+null,0044265.jpg,0021161.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4705,3511,0.5216,0.0119
+null,0042409.jpg,0078674.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5023,15711,0.3346,-0.0061
+null,0043547.jpg,0028770.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7078,5399,0.7378,0.0066
+null,0043584.jpg,0079737.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3840,4938,0.2048,-0.0072
+null,0043694.jpg,0029481.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7288,10438,0.7435,0.0138
+null,0043750.jpg,0003704.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7753,6362,0.8125,0.1164
+null,0044290.jpg,0112801.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4686,6491,0.2239,-0.0003
+null,0044571.jpg,0069181.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8013,12571,0.8046,-0.0003
+null,0044661.jpg,0101401.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9846,5080,0.9839,0.2829
+null,0042621.jpg,0105792.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7189,8099,0.7497,0.0100
+null,0048148.jpg,0027852.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7512,8522,0.7654,-0.0063
+null,0048154.jpg,0065608.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7792,28628,0.7559,0.0155
+null,0048558.jpg,0062187.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8436,5249,0.8592,0.0309
+null,0048559.jpg,0068407.jpg,HRSID,overlapping tile,overlap,0.7021,27013,,
+null,0048571.jpg,0009306.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7220,9297,0.7283,nan
+null,0048606.jpg,0005673.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6978,24509,0.6853,nan
+null,0048920.jpg,0064242.jpg,HRSID,overlapping tile,overlap,0.7302,9342,,
+null,0049367.jpg,0050342.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6250,4973,0.6697,0.0092
+null,0049431.jpg,0087538.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6703,20527,0.6351,0.0046
+null,0049434.jpg,0027721.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4841,9664,0.3541,0.0084
+null,0049444.jpg,0102750.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6354,5937,0.6062,nan
+null,0049477.jpg,0045638.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7215,3145,0.6872,0.0051
+null,0049277.jpg,0110951.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.8572,8024,0.8731,0.5397
+null,0049294.jpg,0063161.jpg,HRSID,same target (labels),overlap,0.6218,21192,,
+null,0049325.jpg,0098953.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5225,2749,0.6273,0.0062
+null,0048937.jpg,0030677.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7883,13058,0.7918,0.0052
+null,0042664.jpg,0050106.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7265,5098,0.7601,0.0327
+null,0042699.jpg,0073122.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9969,3394,0.9998,0.5028
+null,0044879.jpg,0077066.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5563,4660,0.5804,0.0134
+null,0044897.jpg,0109079.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5968,4167,0.6342,0.0163
+null,0044935.jpg,0015083.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7802,12029,0.7815,-0.0000
+null,0044953.jpg,0093023.jpg,HRSID,overlapping tile,overlap,0.7400,12238,,
+null,0044954.jpg,0110804.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7207,5398,0.7445,0.0076
+null,0044957.jpg,0041158.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7560,10123,0.7620,0.0106
+null,0044959.jpg,0069467.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8517,10049,0.8553,0.0154
+null,0044985.jpg,0057274.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7913,9980,0.7985,0.0139
+null,0044768.jpg,0028069.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7975,4126,0.8306,0.1167
+null,0044828.jpg,0110325.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9979,9045,0.9941,0.2264
+null,0043833.jpg,0019287.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4929,9267,0.4468,nan
+null,0043914.jpg,0059681.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3450,4104,0.2290,0.0088
+null,0045045.jpg,0063938.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5052,7682,0.5194,0.0134
+null,0045122.jpg,0010062.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5677,3942,0.5962,-0.0018
+null,0045139.jpg,0095850.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6042,8126,0.6166,0.0046
+null,0045450.jpg,0053588.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7107,2638,0.7130,0.0058
+null,0045501.jpg,0027040.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6047,3392,0.7197,0.1069
+null,0045565.jpg,0070273.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6092,4790,0.6488,-0.0016
+null,0045628.jpg,0041615.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6463,6370,0.6537,0.0006
+null,0045639.jpg,0102335.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5752,5756,0.5216,0.0084
+null,0046100.jpg,0081310.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6846,10457,0.6925,0.0041
+null,0046119.jpg,0061572.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5333,8933,0.2807,0.0075
+null,0046157.jpg,0096444.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7077,6394,0.7253,-0.0058
+null,0046199.jpg,0041099.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7026,2098,0.7354,0.0095
+null,0045939.jpg,0038253.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5717,18768,0.4489,-0.0028
+null,0046030.jpg,0012478.jpg,SSDD,same target (labels),wrap,0.5216,29917,,
+null,0045646.jpg,0089898.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5916,10952,0.5988,-0.0084
+null,0046308.jpg,0027771.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5568,6651,0.5780,0.0100
+null,0046433.jpg,0065971.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5200,7954,0.5316,0.0225
+null,0046792.jpg,0110397.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6864,7846,0.6733,-0.0116
+null,0050886.jpg,0077645.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6663,34246,0.6462,-0.0076
+null,0050887.jpg,0052970.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7654,4217,0.7813,0.0129
+null,0051430.jpg,0042665.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6352,7127,0.6449,0.3567
+null,0051519.jpg,0050360.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7408,6109,0.7626,0.0218
+null,0051104.jpg,0095143.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4411,8567,0.2929,-0.0041
+null,0051129.jpg,0056750.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5974,6082,0.6854,0.0088
+null,0051185.jpg,0054661.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7940,4869,0.8181,0.0059
+null,0050393.jpg,0002480.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6692,5194,0.7233,0.0243
+null,0050426.jpg,0068511.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7031,5012,0.7388,0.0249
+null,0050440.jpg,0110682.jpg,HRSID,wrapped copy,wrap,0.7549,45668,,
+null,0050457.jpg,0047475.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7001,2863,0.7241,-0.0229
+null,0050460.jpg,0075058.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6069,16789,0.4213,nan
+null,0051790.jpg,0104998.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7816,4589,0.8100,0.0421
+null,0051550.jpg,0070965.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9922,8255,0.9924,0.4804
+null,0051667.jpg,0069419.jpg,HRSID,overlapping tile,overlap,0.8130,11978,,
+null,0051932.jpg,0047947.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5515,5763,0.5724,-0.0104
+null,0058247.jpg,0002765.jpg,HRSID,overlapping tile,overlap,0.7425,7273,,
+null,0058251.jpg,0101830.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4686,3310,0.3095,0.0088
+null,0058342.jpg,0027381.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8833,27795,0.8188,0.1639
+null,0058645.jpg,0068801.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7793,15403,0.7763,nan
+null,0058686.jpg,0095967.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.4351,5987,0.6600,-0.0125
+null,0058717.jpg,0041901.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6953,2190,0.7259,nan
+null,0058484.jpg,0108373.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7405,2528,0.7689,nan
+null,0058486.jpg,0080337.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6897,18970,0.6910,-0.0083
+null,0058521.jpg,0030624.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6963,7740,0.7102,nan
+null,0058564.jpg,0103720.jpg,HRSID,overlapping tile,overlap,0.7409,16755,,
+null,0059169.jpg,0028149.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6491,8398,0.6231,0.0186
+null,0058812.jpg,0096223.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5418,5251,0.5656,0.0046
+null,0058970.jpg,0080472.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5335,13915,0.4559,-0.0034
+null,0059201.jpg,0025446.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5642,3735,0.5816,-0.0109
+null,0059224.jpg,0099082.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4799,2287,0.5307,-0.0224
+null,0059324.jpg,0074564.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7544,5153,0.7807,0.0315
+null,0055983.jpg,0011474.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5991,6517,0.5609,-0.0030
+null,0056130.jpg,0080282.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7578,29126,0.6675,0.2977
+null,0056175.jpg,0008843.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7236,3944,0.7367,nan
+null,0056218.jpg,0105248.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5044,2151,0.6053,0.0002
+null,0056301.jpg,0060059.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6048,10113,0.6124,0.0007
+null,0056324.jpg,0102036.jpg,HRSID,wrapped copy,wrap,0.7719,45978,,
+null,0056339.jpg,0018062.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7931,6749,0.8083,0.0135
+null,0056356.jpg,0087634.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6305,9845,0.6416,-0.0043
+null,0056704.jpg,0022592.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7822,3723,0.8122,-0.0002
+null,0056761.jpg,0005998.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5866,5545,0.5528,nan
+null,0056782.jpg,0087906.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5967,5662,0.6237,-0.0119
+null,0055833.jpg,0091607.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4973,9261,0.2711,0.0032
+null,0055876.jpg,0043583.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3606,31817,0.2914,0.0021
+null,0055936.jpg,0043311.jpg,HRSID,overlapping tile,overlap,0.7316,20658,,
+null,0055979.jpg,0010193.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6638,4299,0.6933,-0.0134
+null,0056405.jpg,0044886.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6998,11238,0.7073,-0.0006
+null,0046873.jpg,0071031.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7355,6403,0.7457,0.0031
+null,0046875.jpg,0016926.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6916,3842,0.7177,0.0067
+null,0046890.jpg,0036501.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7872,10943,0.7908,0.0195
+null,0047213.jpg,0071125.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5199,4352,0.5575,0.0033
+null,0047264.jpg,0101004.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8071,11783,0.8119,0.0153
+null,0047270.jpg,0069736.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6416,6209,0.6570,0.0130
+null,0047902.jpg,0045408.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5790,28783,0.5708,0.0098
+null,0047908.jpg,0071093.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6246,8556,0.5235,0.0026
+null,0047924.jpg,0059990.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9839,7918,0.9996,0.6573
+null,0047953.jpg,0100915.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7322,9692,0.7438,-0.0015
+null,0048000.jpg,0002863.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7257,8342,0.7338,0.0066
+null,0048012.jpg,0040725.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5186,10390,0.5467,0.0222
+null,0047754.jpg,0038841.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7437,9461,0.7519,-0.0300
+null,0047864.jpg,0062938.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7269,5236,0.7822,0.0797
+null,0048225.jpg,0058115.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6653,4459,0.6278,0.0187
+null,0048254.jpg,0080758.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5204,5273,0.6150,0.0169
+null,0053299.jpg,0060327.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9212,25714,0.9020,0.3774
+null,0053328.jpg,0017531.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6907,11998,0.7049,-0.0004
+null,0053532.jpg,0111512.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7909,8433,0.8071,0.0016
+null,0053601.jpg,0067260.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6130,7980,0.6288,-0.0012
+null,0053662.jpg,0095390.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7085,4315,0.7309,nan
+null,0053690.jpg,0091565.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7951,6548,0.8101,-0.0035
+null,0053716.jpg,0051149.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6021,3880,0.5316,-0.0017
+null,0053800.jpg,0112465.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7548,4890,0.7778,0.0126
+null,0053814.jpg,0055284.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6646,3168,0.6866,0.1889
+null,0053866.jpg,0075096.jpg,HRSID,wrapped copy,wrap,0.7605,30927,,
+null,0054906.jpg,0052409.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6548,8390,0.6677,0.0168
+null,0054914.jpg,0022411.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5620,4506,0.5916,0.0290
+null,0054951.jpg,0104811.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5884,5275,0.6176,-0.0190
+null,0054152.jpg,0038310.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6915,13709,0.6927,-0.0065
+null,0054539.jpg,0045658.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5744,6965,0.4278,0.0133
+null,0054569.jpg,0008170.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4866,18418,0.3529,-0.0058
+null,0048954.jpg,0053406.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7491,4033,0.7890,nan
+null,0049046.jpg,0035546.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7405,13709,0.7443,-0.0016
+null,0049832.jpg,0018636.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7757,5459,0.8055,0.0775
+null,0049918.jpg,0014355.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5323,5015,0.5651,0.0081
+null,0049999.jpg,0094227.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4870,7880,0.3015,0.0232
+null,0050105.jpg,0022705.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6928,2493,0.7288,nan
+null,0050181.jpg,0004460.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7919,4186,0.8061,-0.0060
+null,0050242.jpg,0007411.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6599,2942,0.6839,0.0086
+null,0050275.jpg,0029445.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7968,4507,0.8112,nan
+null,0050903.jpg,0069467.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8160,10212,0.8213,0.0231
+null,0051009.jpg,0038949.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5763,8095,0.5722,-0.0070
+null,0051073.jpg,0063723.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6768,1132,0.5047,nan
+null,0050720.jpg,0042665.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5263,8798,0.5226,0.0121
+null,0050777.jpg,0053241.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6450,24583,0.6362,-0.0062
+null,0050788.jpg,0005808.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5666,9851,0.4233,-0.0132
+null,0050802.jpg,0094020.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7091,5667,0.7576,0.0622
+null,0046808.jpg,0008588.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,nan,0,0.3002,0.3002
+null,0046556.jpg,0078335.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5176,1825,0.5380,-0.0014
+null,0046639.jpg,0095891.jpg,SAR-AIRcraft,same target (labels),overlap,0.7984,8733,0.9071,0.8489
+null,0047035.jpg,0035766.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4977,7800,0.5155,0.0417
+null,0047056.jpg,0071539.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7768,8852,0.7920,0.0154
+null,0047086.jpg,0051845.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6802,11035,0.6875,0.0030
+null,0047179.jpg,0005424.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7378,7350,0.7465,0.0021
+null,0047532.jpg,0030454.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6944,19102,0.6897,nan
+null,0047578.jpg,0003930.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4710,3236,0.3606,0.0334
+null,0047618.jpg,0067032.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7252,10236,0.7401,0.0138
+null,0047624.jpg,0106861.jpg,HRSID,overlapping tile,overlap,0.7790,6478,,
+null,0047686.jpg,0045836.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6424,2961,0.6810,nan
+null,0047724.jpg,0109251.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6679,25637,0.6300,-0.0094
+null,0047363.jpg,0100329.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3524,3412,0.2811,-0.0007
+null,0047488.jpg,0006690.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5795,4712,0.6005,-0.0053
+null,0047493.jpg,0021161.jpg,SSDD,same target (labels),wrap,0.5482,8826,,
+null,0051951.jpg,0046456.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5328,5918,0.5842,-0.0072
+null,0051964.jpg,0066290.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7670,12534,0.7700,-0.0078
+null,0052358.jpg,0081650.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6631,2700,0.6704,0.0043
+null,0052370.jpg,0004431.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5954,2062,0.2962,0.0098
+null,0052613.jpg,0095823.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5243,12511,0.3849,0.0154
+null,0052634.jpg,0073401.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6511,6485,0.5950,-0.0107
+null,0052684.jpg,0093868.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8342,8093,0.8436,0.0271
+null,0052767.jpg,0030563.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.8302,4293,0.8460,nan
+null,0052867.jpg,0040670.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7433,4353,0.7591,0.0096
+null,0052887.jpg,0115523.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.8372,12945,0.9211,0.6106
+null,0052935.jpg,0089220.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4970,3365,0.4898,0.0010
+null,0053057.jpg,0059961.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3192,4438,0.3024,0.0005
+null,0053086.jpg,0034656.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5294,13608,0.3559,-0.0109
+null,0053111.jpg,0076589.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7160,25274,0.6666,-0.0031
+null,0053131.jpg,0046404.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4793,6864,0.4649,-0.0054
+null,0053235.jpg,0015598.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9811,18593,0.9805,0.4839
+null,0059384.jpg,0079166.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6305,14477,0.4005,-0.0020
+null,0059494.jpg,0061701.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6467,10595,0.6611,0.0028
+null,0059516.jpg,0065473.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7225,2326,0.5476,0.0052
+null,0059963.jpg,0025823.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6949,4724,0.7427,0.0140
+null,0059996.jpg,0042581.jpg,HRSID,overlapping tile,overlap,0.7729,25827,,
+null,0060001.jpg,0105800.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9363,5827,0.9408,0.4810
+null,0060028.jpg,0051845.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7157,11046,0.7220,-0.0155
+null,0060131.jpg,0089665.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4369,2915,0.5301,0.0098
+null,0060158.jpg,0051902.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6541,1768,0.5141,-0.0029
+null,0060353.jpg,0090137.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5421,27648,0.5373,-0.0028
+null,0060486.jpg,0067515.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7706,4394,0.7988,0.0123
+null,0060511.jpg,0083835.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7285,6774,0.7469,0.0042
+null,0060574.jpg,0026564.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5877,15341,0.5337,0.0082
+null,0060596.jpg,0008576.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8116,9455,0.8196,0.0061
+null,0060719.jpg,0022638.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4666,3604,0.7239,0.0785
+null,0060768.jpg,0105701.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9767,6777,0.9820,0.5244
+null,0059789.jpg,0094501.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7206,5773,0.7344,-0.0130
+null,0059909.jpg,0091913.jpg,HRSID,same target (labels),overlap,0.5973,4745,,
+null,0059923.jpg,0016508.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7715,4171,0.8112,0.0505
+null,0061150.jpg,0018921.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4988,4102,0.4306,-0.0030
+null,0061331.jpg,0045638.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5996,8110,0.4496,-0.0010
+null,0061440.jpg,0063446.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6472,2545,0.6824,nan
+null,0061446.jpg,0040207.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8020,2200,0.8113,nan
+null,0061483.jpg,0068511.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7027,5437,0.7231,0.0090
+null,0061488.jpg,0042051.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5923,4634,0.6376,0.0124
+null,0061021.jpg,0005296.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6326,6439,0.5700,0.0074
+null,0061101.jpg,0021423.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6996,12354,0.7045,0.0023
+null,0061626.jpg,0080633.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6388,9398,0.6481,0.0403
+null,0061649.jpg,0075058.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7379,15569,0.5889,nan
+null,0060891.jpg,0090359.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6040,6694,0.6122,0.0069
+null,0061832.jpg,0087390.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3804,2696,0.2275,0.0097
+null,0061954.jpg,0008910.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5669,21773,0.4917,nan
+null,0056452.jpg,0029143.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4722,37156,0.4481,-0.0029
+null,0057289.jpg,0020842.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6526,27746,0.6408,-0.0015
+null,0057384.jpg,0088825.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8286,8237,0.8400,0.0232
+null,0056824.jpg,0067260.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7527,11559,0.7614,-0.0034
+null,0056861.jpg,0114340.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6627,4429,0.4850,0.0063
+null,0056932.jpg,0074703.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4640,3988,0.4921,0.0082
+null,0057611.jpg,0092480.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6334,2856,0.4681,0.0009
+null,0057735.jpg,0040611.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5715,5075,0.6230,0.0181
+null,0057847.jpg,0058634.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5452,18683,0.5207,-0.0074
+null,0057959.jpg,0013185.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7106,5426,0.7393,0.0159
+null,0058020.jpg,0027566.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6250,12261,0.6285,-0.0114
+null,0058042.jpg,0036407.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6479,3493,0.6783,0.0500
+null,0058061.jpg,0050912.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.4524,5051,0.4763,0.0442
+null,0058117.jpg,0100759.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7148,12042,0.7188,-0.0196
+null,0058134.jpg,0036527.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7968,4491,0.8209,0.0242
+null,0058221.jpg,0091565.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7490,9786,0.7576,-0.0082
+null,0062034.jpg,0039846.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5406,2045,0.4066,0.0183
+null,0062484.jpg,0023282.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6751,3781,0.7172,nan
+null,0062544.jpg,0039409.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3955,3104,0.4979,0.0016
+null,0062596.jpg,0003962.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4173,2232,0.3446,0.0116
+null,0062365.jpg,0062938.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5802,5844,0.5899,0.0137
+null,0062368.jpg,0071031.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7488,8025,0.7559,0.0068
+null,0062377.jpg,0054902.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7065,4127,0.7356,-0.0035
+null,0062428.jpg,0104346.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6872,2242,0.6158,0.0275
+null,0062254.jpg,0040844.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7310,10239,0.7083,0.0029
+null,0062362.jpg,0090114.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5597,31023,0.5470,-0.0060
+null,0062775.jpg,0040224.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6603,30250,0.6263,-0.0029
+null,0062830.jpg,0087259.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5206,3842,0.4432,-0.0006
+null,0062900.jpg,0014297.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5354,1633,0.4079,0.0063
+null,0063474.jpg,0044805.jpg,HRSID,overlapping tile,overlap,0.8017,15115,,
+null,0063235.jpg,0005194.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9650,5964,0.9576,0.2416
+null,0063245.jpg,0066347.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6872,8316,0.6914,0.0007
+null,0063265.jpg,0004926.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6989,24966,0.6937,0.0086
+null,0063528.jpg,0104788.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7983,6470,0.8270,0.1099
+null,0063628.jpg,0069419.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7563,24538,0.7468,nan
+null,0063855.jpg,0050003.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5599,1616,0.6036,-0.0132
+null,0064686.jpg,0114339.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.8809,24535,0.8446,0.2513
+null,0065418.jpg,0023293.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7217,5155,0.7358,-0.0182
+null,0064415.jpg,0056374.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4411,2026,0.5198,0.0093
+null,0064457.jpg,0096871.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7244,5990,0.7322,0.0140
+null,0064126.jpg,0104083.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7246,9673,0.7160,0.0055
+null,0064237.jpg,0103720.jpg,HRSID,overlapping tile,overlap,0.7127,12933,,
+null,0065122.jpg,0057913.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6009,6497,0.6173,0.0073
+null,0064530.jpg,0015710.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6928,9885,0.7023,0.0038
+null,0064533.jpg,0051444.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7837,4055,0.8166,0.0334
+null,0064585.jpg,0090760.jpg,HRSID,overlapping tile,overlap,0.6123,17170,,
+null,0064621.jpg,0060849.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4401,19573,0.2952,-0.0076
+null,0065644.jpg,0085733.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3807,36307,0.3280,-0.0053
+null,0065649.jpg,0010449.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4208,11435,0.2575,nan
+null,0065725.jpg,0044963.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6980,1883,0.7187,nan
+null,0066284.jpg,0090848.jpg,SSDD,same target (labels),overlap,0.6336,2385,,
+null,0066458.jpg,0001965.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6148,3042,0.6366,-0.0038
+null,0065803.jpg,0076107.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6678,18382,0.6691,-0.0121
+null,0065838.jpg,0090240.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4788,2147,0.5426,-0.0037
+null,0065839.jpg,0074564.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8016,5030,0.8212,0.0056
+null,0065883.jpg,0041368.jpg,HRSID,overlapping tile,overlap,0.6681,27152,,
+null,0066080.jpg,0014534.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7388,13878,0.7434,-0.0006
+null,0066095.jpg,0076050.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5982,5130,0.4572,nan
+null,0066117.jpg,0114167.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6067,6243,0.6232,0.0026
+null,0066120.jpg,0036496.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6801,4769,0.7019,nan
+null,0066845.jpg,0078091.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3992,16064,0.2805,nan
+null,0066965.jpg,0063570.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6378,4052,0.6538,-0.0184
+null,0067096.jpg,0024675.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5617,12405,0.4452,0.0001
+null,0067231.jpg,0110647.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7169,4758,0.6501,-0.0017
+null,0068917.jpg,0075620.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4913,2251,0.5612,0.0038
+null,0069176.jpg,0110804.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6994,4489,0.7228,0.0091
+null,0069567.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3998,7839,0.3679,0.0125
+null,0069603.jpg,0104346.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4726,12322,0.3225,0.0083
+null,0069624.jpg,0083182.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5843,4430,0.6073,0.0216
+null,0069642.jpg,0022036.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.4912,2902,0.5353,-0.0054
+null,0068975.jpg,0098673.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6984,3518,0.6095,0.0067
+null,0068982.jpg,0111770.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5318,2007,0.4390,0.0031
+null,0068984.jpg,0083501.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4862,3231,0.4501,-0.0075
+null,0069013.jpg,0047799.jpg,HRSID,wrapped copy,wrap,0.7522,48144,,
+null,0069026.jpg,0033094.jpg,512 other (AIR_SARShip-1/MSAR),overlapping tile,overlap,0.6872,6236,,
+null,0069055.jpg,0026798.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7938,7462,0.8305,0.0487
+null,0069759.jpg,0108705.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7357,2799,0.7602,nan
+null,0069817.jpg,0022592.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8233,5674,0.8377,0.0037
+null,0069858.jpg,0093023.jpg,HRSID,overlapping tile,overlap,0.7021,9504,,
+null,0069862.jpg,0073885.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9967,12242,0.9965,0.2418
+null,0067245.jpg,0115137.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7831,4737,0.7981,0.0189
+null,0067315.jpg,0043143.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7936,2681,0.8102,nan
+null,0067383.jpg,0096530.jpg,HRSID,overlapping tile,overlap,0.7450,7033,,
+null,0067508.jpg,0104346.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6393,3991,0.3820,-0.0045
+null,0066478.jpg,0003704.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7402,5964,0.7853,0.1901
+null,0066531.jpg,0099426.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6175,5845,0.6316,0.0085
+null,0066594.jpg,0096412.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9900,15756,0.9966,0.4923
+null,0066607.jpg,0115990.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7488,12156,0.7569,-0.0095
+null,0066613.jpg,0067404.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7795,5915,0.7918,0.0039
+null,0066692.jpg,0045638.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7203,5119,0.7390,nan
+null,0067848.jpg,0077645.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7009,32311,0.6811,0.0076
+null,0067849.jpg,0101401.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5111,3785,0.5464,-0.0100
+null,0067925.jpg,0039789.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8094,12450,0.8152,-0.0109
+null,0067945.jpg,0084941.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5326,3174,0.3810,0.0163
+null,0067962.jpg,0010103.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5028,3369,0.2624,0.0087
+null,0067700.jpg,0087641.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8938,38547,0.9191,0.5796
+null,0068224.jpg,0015700.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7160,6569,0.7283,0.0054
+null,0068279.jpg,0110355.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7240,8491,0.7393,0.0128
+null,0068289.jpg,0115182.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7405,17259,0.7425,0.0058
+null,0068307.jpg,0058604.jpg,512 other (AIR_SARShip-1/MSAR),same target (labels),overlap,0.6996,9663,,
+null,0068029.jpg,0047648.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3084,23532,0.2109,0.0015
+null,0068166.jpg,0053614.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8128,8405,0.8219,0.0092
+null,0068189.jpg,0048464.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6888,7012,0.7060,0.0148
+null,0068343.jpg,0033358.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8165,11161,0.8221,-0.0001
+null,0068464.jpg,0087293.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7716,5111,0.7979,-0.0018
+null,0068548.jpg,0106009.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,1.0000,2838,0.9999,0.4756
+null,0068635.jpg,0052306.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7753,7192,0.7882,0.0073
+null,0068658.jpg,0091351.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8698,8664,0.8753,0.0134
+null,0068669.jpg,0108703.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6730,6263,0.7005,0.0005
+null,0068680.jpg,0107306.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5049,6889,0.4382,0.0043
+null,0068795.jpg,0095766.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7378,28429,0.7306,0.0006
+null,0068821.jpg,0019262.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7771,10766,0.7841,0.0213
+null,0069475.jpg,0077354.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4571,3709,0.4947,0.0272
+null,0069972.jpg,0009684.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7398,8690,0.7538,-0.0136
+null,0070243.jpg,0095070.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9441,7013,0.9985,0.7396
+null,0070341.jpg,0053355.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7617,5905,0.7852,0.0154
+null,0070350.jpg,0053766.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6046,4009,0.6082,0.0217
+null,0070417.jpg,0100759.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5862,10208,0.5928,-0.0113
+null,0070429.jpg,0086665.jpg,HRSID,overlapping tile,overlap,0.6914,31153,,
+null,0070451.jpg,0073259.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7576,11704,0.7619,-0.0034
+null,0070514.jpg,0023199.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6618,8414,0.6720,-0.0152
+null,0070529.jpg,0005946.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6424,10033,0.5081,nan
+null,0070711.jpg,0072598.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4280,4053,0.3578,0.0042
+null,0070722.jpg,0086317.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7597,8879,0.7727,0.0153
+null,0071084.jpg,0054484.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7205,6618,0.7309,-0.0021
+null,0071097.jpg,0051444.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5994,4337,0.6323,0.0346
+null,0071124.jpg,0113426.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6748,19648,0.6115,0.0036
+null,0071396.jpg,0083523.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7454,9274,0.7581,0.0097
+null,0074712.jpg,0016475.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5665,1677,0.6252,nan
+null,0075355.jpg,0081108.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5502,3901,0.5845,0.0058
+null,0075374.jpg,0022748.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6660,3894,0.6940,0.0157
+null,0075501.jpg,0013005.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6900,2619,0.6750,nan
+null,0075695.jpg,0073869.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5129,10581,0.3661,0.0144
+null,0075721.jpg,0080887.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5430,10458,0.3893,0.0045
+null,0075724.jpg,0061848.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7519,18652,0.7522,0.0076
+null,0075754.jpg,0082048.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7678,9019,0.7716,-0.0033
+null,0075780.jpg,0012565.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6061,2567,0.6241,0.0029
+null,0075827.jpg,0008670.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6618,3644,0.6817,-0.0091
+null,0075829.jpg,0016137.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9999,3493,0.9987,0.2442
+null,0075848.jpg,0067515.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6951,4846,0.7301,0.0070
+null,0075861.jpg,0106120.jpg,HRSID,overlapping tile,overlap,0.7721,16398,,
+null,0075926.jpg,0074564.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7979,5084,0.8191,0.0171
+null,0076114.jpg,0072613.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5110,21301,0.3999,0.0034
+null,0076165.jpg,0012424.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7436,9466,0.7534,0.0347
+null,0076272.jpg,0024675.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4371,20004,0.3440,-0.0016
+null,0076295.jpg,0062759.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6591,5982,0.6885,nan
+null,0076309.jpg,0064309.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6721,4698,0.6916,-0.0027
+null,0076327.jpg,0067086.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6296,1356,0.4679,nan
+null,0076487.jpg,0070717.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3911,2664,0.4038,-0.0042
+null,0076512.jpg,0025437.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5077,3287,0.5475,0.0289
+null,0076559.jpg,0086038.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6058,5158,0.6161,-0.0118
+null,0076634.jpg,0098548.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6756,17175,0.6760,0.0045
+null,0076636.jpg,0110740.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5739,22191,0.5252,-0.0012
+null,0076667.jpg,0059863.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6739,28663,0.6720,0.0081
+null,0077038.jpg,0012478.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5554,4726,0.5778,0.0475
+null,0077147.jpg,0110398.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3947,26341,0.3593,nan
+null,0076939.jpg,0096305.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6615,26145,0.6332,0.0094
+null,0077201.jpg,0069269.jpg,HRSID,overlapping tile,overlap,0.7325,13378,,
+null,0077206.jpg,0089665.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4662,3422,0.5585,-0.0012
+null,0077270.jpg,0014614.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4590,3107,0.4979,0.0401
+null,0071428.jpg,0017515.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9593,5929,0.9244,0.2224
+null,0071558.jpg,0080377.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7867,7411,0.8170,0.0264
+null,0071620.jpg,0001901.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8026,8634,0.8105,0.0117
+null,0070931.jpg,0014712.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6088,14846,0.5259,0.0106
+null,0071722.jpg,0002736.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7908,8935,0.8004,-0.0037
+null,0071810.jpg,0045889.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7293,2329,0.7545,nan
+null,0072000.jpg,0019747.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5788,2329,0.6348,-0.0248
+null,0072062.jpg,0104998.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6035,4497,0.4501,-0.0021
+null,0072070.jpg,0004918.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.4818,4715,0.5084,0.0116
+null,0072092.jpg,0102678.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8800,34181,0.9226,0.6856
+null,0072192.jpg,0097704.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7054,33881,0.6862,-0.0053
+null,0071835.jpg,0072616.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7401,2620,0.7679,nan
+null,0071840.jpg,0008566.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7463,6997,0.7662,-0.0153
+null,0071897.jpg,0059145.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5173,23570,0.3660,-0.0083
+null,0072222.jpg,0094110.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5951,27284,0.5448,0.0004
+null,0072250.jpg,0068221.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5646,5060,0.6024,0.0033
+null,0078897.jpg,0006690.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9998,5792,0.9995,0.4608
+null,0078546.jpg,0101636.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6753,6739,0.6822,0.0027
+null,0078610.jpg,0036782.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4255,11641,0.2970,nan
+null,0078382.jpg,0102874.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5709,3361,0.6032,nan
+null,0078474.jpg,0052172.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9904,8101,0.9899,0.5054
+null,0078501.jpg,0028770.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7828,6793,0.7979,0.0052
+null,0077889.jpg,0106554.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5238,2194,0.5951,0.0019
+null,0077968.jpg,0071225.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4994,28600,0.4462,0.0011
+null,0077986.jpg,0091753.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4611,3807,0.5136,0.0109
+null,0078002.jpg,0079981.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5606,6051,0.5023,0.0028
+null,0078904.jpg,0058826.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6927,6182,0.7027,nan
+null,0078982.jpg,0023206.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7803,18475,0.7474,-0.0045
+null,0078676.jpg,0043060.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8949,25526,0.7965,0.1403
+null,0078701.jpg,0038627.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5775,8622,0.5943,0.0010
+null,0078716.jpg,0068221.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5720,3046,0.5962,0.0037
+null,0078744.jpg,0090583.jpg,HRSID,overlapping tile,overlap,0.7833,8484,,
+null,0077285.jpg,0026253.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4337,6226,0.3423,-0.0033
+null,0077298.jpg,0058349.jpg,HRSID,overlapping tile,overlap,0.7481,9270,,
+null,0078036.jpg,0078171.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6075,4446,0.6658,nan
+null,0078041.jpg,0105437.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7728,5032,0.5909,0.0037
+null,0077587.jpg,0061207.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6484,10232,0.6641,0.0001
+null,0077673.jpg,0107076.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6987,23444,0.6894,-0.0037
+null,0077677.jpg,0084034.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7319,16374,0.7344,-0.0172
+null,0077702.jpg,0001581.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6726,5176,0.6995,-0.0022
+null,0077729.jpg,0058826.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6936,19899,0.6921,-0.0022
+null,0077780.jpg,0067304.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9787,12864,0.9644,0.6352
+null,0078177.jpg,0023256.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9887,14603,0.9889,0.2096
+null,0078287.jpg,0097704.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6252,14287,0.5387,0.0081
+null,0077360.jpg,0110397.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6652,4592,0.6330,0.0078
+null,0077420.jpg,0034566.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3761,3507,0.4616,-0.0155
+null,0077426.jpg,0034437.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7195,6487,0.7294,nan
+null,0077568.jpg,0031671.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4673,6670,0.3832,0.0080
+null,0084729.jpg,0051819.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5356,6469,0.5592,-0.0086
+null,0084782.jpg,0038532.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7144,25100,0.7087,0.0052
+null,0084819.jpg,0110803.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6713,3590,0.4091,0.0134
+null,0085174.jpg,0072613.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6550,29027,0.6333,-0.0067
+null,0085191.jpg,0020842.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6895,6534,0.7113,-0.0005
+null,0084903.jpg,0099963.jpg,SSDD,overlapping tile,overlap,0.9423,4884,,
+null,0084971.jpg,0044424.jpg,HRSID,same target (labels),wrap,0.7171,31684,,
+null,0085043.jpg,0011915.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7688,5142,0.8022,0.0570
+null,0085222.jpg,0051834.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6507,12094,0.6587,0.0093
+null,0085335.jpg,0020842.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5333,31086,0.4797,0.0007
+null,0085424.jpg,0021570.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7114,7919,0.5667,0.0049
+null,0085867.jpg,0036229.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6939,6577,0.7065,nan
+null,0085918.jpg,0037763.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7347,8083,0.7504,0.0205
+null,0085922.jpg,0032722.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6749,5853,0.6874,nan
+null,0085988.jpg,0099668.jpg,HRSID,same target (labels),overlap,0.6364,4309,,
+null,0085993.jpg,0074727.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4903,1752,0.5918,-0.0045
+null,0073804.jpg,0098864.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7323,3716,0.5127,0.0026
+null,0073833.jpg,0100926.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5024,11944,0.3065,-0.0046
+null,0074193.jpg,0002871.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5586,5193,0.4944,-0.0024
+null,0073123.jpg,0060053.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6659,4061,0.6080,-0.0297
+null,0073132.jpg,0026416.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5268,34477,0.4669,0.0001
+null,0073160.jpg,0105797.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9802,5795,0.9997,0.5874
+null,0073171.jpg,0064833.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7973,6644,0.8198,0.0664
+null,0074460.jpg,0084924.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6152,11678,0.4571,0.0064
+null,0074509.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5894,5450,0.3371,0.0043
+null,0073918.jpg,0044424.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6069,6684,0.5935,nan
+null,0074993.jpg,0080900.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6622,4547,0.6800,0.0040
+null,0075032.jpg,0023199.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6299,6300,0.6463,-0.0106
+null,0075109.jpg,0099536.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4426,3214,0.3663,-0.0132
+null,0075115.jpg,0066978.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7487,3543,0.7764,nan
+null,0074615.jpg,0031949.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5177,12446,0.3587,-0.0123
+null,0074647.jpg,0024833.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5069,3591,0.5456,-0.0124
+null,0072270.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3605,32887,0.3105,-0.0057
+null,0072517.jpg,0079909.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3977,37493,0.3494,-0.0022
+null,0072558.jpg,0052970.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5703,6059,0.5069,0.0199
+null,0072661.jpg,0046164.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7424,6291,0.7532,0.0029
+null,0072859.jpg,0085908.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7528,4516,0.6442,0.0136
+null,0072888.jpg,0038006.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6734,17473,0.6541,nan
+null,0072892.jpg,0045486.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4800,6284,0.3124,nan
+null,0072950.jpg,0084684.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7223,18853,0.7232,nan
+null,0072974.jpg,0106640.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7276,31977,0.7040,-0.0002
+null,0073303.jpg,0044469.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5670,4388,0.5995,0.0510
+null,0073351.jpg,0004327.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7015,10043,0.7150,-0.0070
+null,0073384.jpg,0097128.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7099,7347,0.7149,nan
+null,0073490.jpg,0100044.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7381,14331,0.7420,0.0168
+null,0073580.jpg,0068426.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5297,2165,0.6388,0.0118
+null,0073645.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5550,8525,0.5646,0.0072
+null,0073651.jpg,0070993.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6411,19242,0.6444,0.0146
+null,0080772.jpg,0085543.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7043,21089,0.6884,0.0183
+null,0080356.jpg,0034910.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9889,2427,1.0000,nan
+null,0080481.jpg,0058881.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7462,8871,0.7547,nan
+null,0080506.jpg,0069181.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8077,7248,0.8170,0.0107
+null,0080507.jpg,0001273.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7230,3372,0.4956,0.0213
+null,0080959.jpg,0080227.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7861,10074,0.7886,nan
+null,0081096.jpg,0050707.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7244,5789,0.7377,nan
+null,0081253.jpg,0084924.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7675,6139,0.8128,0.0353
+null,0081477.jpg,0094707.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7297,8525,0.6946,0.0085
+null,0081557.jpg,0008855.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6949,4159,0.7433,0.0587
+null,0082032.jpg,0063605.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6886,19672,0.5736,-0.0023
+null,0082148.jpg,0058385.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7393,8898,0.7534,0.0068
+null,0081769.jpg,0070738.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9999,3143,0.9993,0.4720
+null,0082291.jpg,0076589.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6299,9750,0.6413,-0.0055
+null,0082298.jpg,0060015.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7607,7124,0.7778,0.0129
+null,0082327.jpg,0104998.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7195,5513,0.7478,0.0162
+null,0082159.jpg,0092611.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5048,28198,0.4499,-0.0155
+null,0082193.jpg,0017560.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.3906,30273,0.3353,-0.0174
+null,0082194.jpg,0109827.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9458,7600,0.9492,0.4698
+null,0082212.jpg,0085909.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6284,3656,0.6494,0.0279
+null,0082232.jpg,0110804.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7249,4883,0.7493,-0.0022
+null,0082900.jpg,0056241.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6131,29297,0.6084,0.0105
+null,0082630.jpg,0087483.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6475,3945,0.6660,nan
+null,0082746.jpg,0065475.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6328,3764,0.6453,0.0046
+null,0082537.jpg,0040224.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8179,12755,0.8200,0.0121
+null,0083227.jpg,0079899.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7322,25799,0.7283,-0.0007
+null,0083070.jpg,0105701.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6903,14375,0.6979,-0.0152
+null,0083326.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4121,19501,0.3234,0.0019
+null,0083346.jpg,0061207.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7276,5065,0.7626,0.0526
+null,0083488.jpg,0077357.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6371,9888,0.6462,-0.0369
+null,0083576.jpg,0090557.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8029,6227,0.8190,0.0469
+null,0083580.jpg,0084614.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7265,14858,0.7324,0.0216
+null,0083793.jpg,0098582.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6137,8231,0.5467,0.0058
+null,0083889.jpg,0015663.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7646,2379,0.6072,0.0239
+null,0083929.jpg,0114243.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.2452,3571,0.6241,0.1969
+null,0083971.jpg,0097587.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4248,8231,0.4270,0.0026
+null,0083975.jpg,0024757.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6811,9215,0.6971,0.0075
+null,0084305.jpg,0089488.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8467,4120,0.8617,nan
+null,0084318.jpg,0110127.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5673,5907,0.6173,0.0301
+null,0084417.jpg,0033186.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6064,11042,0.6120,0.0113
+null,0084450.jpg,0081977.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7573,26148,0.7568,-0.0071
+null,0084520.jpg,0014176.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7364,13257,0.6836,0.0008
+null,0084539.jpg,0045773.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6089,8596,0.5904,-0.0112
+null,0084592.jpg,0057652.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5561,10596,0.5654,0.0054
+null,0084087.jpg,0033866.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4084,38185,0.3691,-0.0021
+null,0084233.jpg,0072295.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7321,6477,0.7406,0.0231
+null,0084269.jpg,0043366.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9995,16239,0.9993,0.3156
+null,0084602.jpg,0044783.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7014,3025,0.7322,nan
+null,0085997.jpg,0014226.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6977,13068,0.7023,0.0080
+null,0085675.jpg,0052615.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7506,6152,0.7719,0.0186
+null,0085710.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3499,3403,0.4103,0.0016
+null,0086058.jpg,0057907.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7912,4665,0.8225,0.0526
+null,0086152.jpg,0007844.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7500,13153,0.7643,-0.0075
+null,0086163.jpg,0019787.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5705,2429,0.5639,0.0137
+null,0086180.jpg,0018636.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7903,4928,0.8221,0.0835
+null,0086189.jpg,0036118.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8330,15551,0.8327,0.0200
+null,0086420.jpg,0019221.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9979,10110,0.9978,0.2114
+null,0086435.jpg,0073869.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7424,3222,0.8234,0.3865
+null,0086454.jpg,0030315.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.8352,24597,0.9078,0.6370
+null,0086290.jpg,0023314.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4837,14036,0.3478,0.0014
+null,0086331.jpg,0048427.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6936,3603,0.6726,0.0004
+null,0086611.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4988,3744,0.2842,0.0001
+null,0086633.jpg,0018850.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5247,3202,0.5726,-0.0150
+null,0086742.jpg,0022094.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7337,6202,0.7606,0.0026
+null,0078748.jpg,0040207.jpg,SSDD,overlapping tile,overlap,0.7995,12443,,
+null,0078758.jpg,0015663.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8164,4501,0.8397,0.0392
+null,0079476.jpg,0066022.jpg,HRSID,same target (labels),wrap,0.5142,41698,,
+null,0079528.jpg,0052241.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6923,5104,0.7446,0.0069
+null,0079595.jpg,0075058.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6726,1556,0.4693,nan
+null,0079142.jpg,0007105.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6190,2708,0.6454,0.0015
+null,0079199.jpg,0054550.jpg,SSDD,same target (labels),overlap,0.6687,3189,,
+null,0079237.jpg,0045286.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7568,20025,0.7554,0.0026
+null,0079340.jpg,0067372.jpg,HRSID,same target (labels),wrap,0.3523,531681,0.6392,0.7100
+null,0079342.jpg,0106861.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7335,9946,0.6628,nan
+null,0079439.jpg,0074976.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5184,10099,0.4748,0.0104
+null,0080013.jpg,0114032.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8134,5033,0.8354,0.0464
+null,0079675.jpg,0095520.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5829,5002,0.6102,-0.0008
+null,0079783.jpg,0034437.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6187,30983,0.5627,-0.0092
+null,0079793.jpg,0093128.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9988,18350,0.9986,0.5346
+null,0080530.jpg,0025265.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7254,3630,0.7543,0.0275
+null,0086790.jpg,0103035.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7928,5999,0.8096,0.0159
+null,0086829.jpg,0044467.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6707,9796,0.6756,nan
+null,0086830.jpg,0087573.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7335,2159,0.7661,nan
+null,0086879.jpg,0057857.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4018,4264,0.2019,0.0037
+null,0086915.jpg,0087259.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6945,2285,0.2722,-0.0113
+null,0086985.jpg,0082618.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5481,3254,0.5881,0.0118
+null,0087061.jpg,0108046.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9592,2497,0.9619,0.6503
+null,0087097.jpg,0007001.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5948,10755,0.4758,-0.0022
+null,0087153.jpg,0073243.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5963,9365,0.5135,-0.0005
+null,0087230.jpg,0104346.jpg,SSDD,same target (labels),overlap,0.7270,2428,,
+null,0087247.jpg,0050759.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7896,6268,0.8224,0.0695
+null,0087289.jpg,0018612.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7195,10389,0.7289,0.0070
+null,0088019.jpg,0106092.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7695,17222,0.7693,-0.0091
+null,0087478.jpg,0115499.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3953,10276,0.2553,-0.0061
+null,0088521.jpg,0087877.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4015,5004,0.3552,0.0133
+null,0088524.jpg,0050731.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7622,6702,0.7803,0.0115
+null,0088578.jpg,0043480.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7811,10460,0.7874,-0.0032
+null,0088599.jpg,0053588.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6062,4017,0.4132,0.0088
+null,0088607.jpg,0056558.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7660,5358,0.7933,0.0716
+null,0087597.jpg,0038529.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6370,11558,0.5205,0.0037
+null,0087618.jpg,0070778.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6504,26404,0.5806,-0.0240
+null,0087708.jpg,0102721.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7350,6932,0.7509,0.0222
+null,0088280.jpg,0045576.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5210,15248,0.4793,0.0006
+null,0088302.jpg,0070371.jpg,HRSID,overlapping tile,overlap,0.7662,25456,,
+null,0088334.jpg,0114543.jpg,HRSID,wrapped copy,wrap,0.7863,41724,,
+null,0088413.jpg,0050759.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4941,4181,0.6013,0.0602
+null,0088424.jpg,0116322.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5351,5209,0.5622,-0.0114
+null,0088120.jpg,0027701.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6180,12834,0.5385,0.0170
+null,0088170.jpg,0041831.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8113,5949,0.8246,0.0084
+null,0088188.jpg,0105717.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7250,5133,0.7359,0.0020
+null,0087791.jpg,0096560.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7885,11313,0.8951,0.6291
+null,0087810.jpg,0001791.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6135,5285,0.6361,0.0082
+null,0089631.jpg,0097704.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5402,5934,0.4978,0.0038
+null,0089677.jpg,0111313.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5748,9570,0.4460,-0.0066
+null,0089829.jpg,0047678.jpg,HRSID,wrapped copy,wrap,0.8106,39398,,
+null,0089876.jpg,0087142.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7520,13511,0.7535,nan
+null,0089926.jpg,0030954.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4609,4249,0.3838,-0.0107
+null,0089927.jpg,0016520.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7034,4201,0.7538,0.0415
+null,0089989.jpg,0002693.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6118,5569,0.6364,nan
+null,0090001.jpg,0013611.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7018,5504,0.7366,0.0224
+null,0090020.jpg,0100252.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5216,3343,0.5506,0.0306
+null,0090023.jpg,0061701.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6089,4669,0.6446,0.0063
+null,0089697.jpg,0073607.jpg,HRSID,overlapping tile,overlap,0.6757,30830,,
+null,0090299.jpg,0051586.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7795,12755,0.7849,-0.0019
+null,0090324.jpg,0066505.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7068,9677,0.7138,-0.0085
+null,0090438.jpg,0096609.jpg,HRSID,same target (labels),overlap,0.5829,15480,,
+null,0090459.jpg,0037304.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6589,33330,0.6292,-0.0046
+null,0090461.jpg,0020590.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5160,7506,0.5337,0.0029
+null,0090635.jpg,0003551.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9333,11737,0.9422,0.4923
+null,0090803.jpg,0114360.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5893,7168,0.4437,0.0043
+null,0090807.jpg,0051876.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6567,5280,0.6859,0.0347
+null,0090546.jpg,0038374.jpg,HRSID,overlapping tile,overlap,0.7989,8721,,
+null,0090613.jpg,0100847.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7566,3602,0.7824,nan
+null,0090813.jpg,0095865.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8028,7842,0.8121,-0.0025
+null,0090944.jpg,0016508.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5738,17712,0.5054,-0.0045
+null,0091142.jpg,0096289.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8072,5318,0.8276,0.0361
+null,0091327.jpg,0029184.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7981,5367,0.8220,0.0288
+null,0091339.jpg,0042606.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5971,5300,0.6180,-0.0079
+null,0090948.jpg,0061572.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5792,7900,0.4485,0.0033
+null,0090974.jpg,0100915.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7608,6693,0.7782,0.0032
+null,0091519.jpg,0097261.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3343,2952,0.4192,0.0055
+null,0091602.jpg,0002690.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6481,11243,0.6548,0.0023
+null,0091656.jpg,0048240.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8568,1465,0.8742,nan
+null,0091664.jpg,0067094.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5785,9633,0.5866,0.0212
+null,0092271.jpg,0006494.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8315,5750,0.8451,0.0029
+null,0092364.jpg,0000994.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6002,2547,0.6371,0.0199
+null,0093592.jpg,0077781.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7683,7879,0.7754,-0.0159
+null,0093631.jpg,0017799.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6853,19782,0.6689,0.0160
+null,0092742.jpg,0079981.jpg,SSDD,same target (labels),wrap,0.5942,19773,,
+null,0092754.jpg,0063723.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6409,3516,0.4811,nan
+null,0092845.jpg,0004867.jpg,HRSID,overlapping tile,overlap,0.7995,7866,,
+null,0092928.jpg,0109972.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5362,3564,0.5803,-0.0144
+null,0092995.jpg,0092000.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5715,7765,0.4141,-0.0025
+null,0093194.jpg,0011577.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3924,6370,0.4136,0.0141
+null,0093195.jpg,0083647.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5860,2512,0.6359,0.0026
+null,0092503.jpg,0096770.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5988,8087,0.4182,-0.0022
+null,0092519.jpg,0055081.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4020,2936,0.3603,0.0091
+null,0093684.jpg,0057972.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7706,8621,0.7787,0.0087
+null,0093861.jpg,0067423.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9960,2595,1.0000,nan
+null,0093865.jpg,0099967.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6288,16087,0.4477,0.0032
+null,0097831.jpg,0076616.jpg,SSDD,overlapping tile,overlap,0.7978,3603,,
+null,0097846.jpg,0092456.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6426,2478,0.7099,-0.0002
+null,0097991.jpg,0069426.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6144,6155,0.3578,nan
+null,0099505.jpg,0083961.jpg,HRSID,wrapped copy,wrap,0.6236,42636,,
+null,0099551.jpg,0040291.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6988,16374,0.6770,0.0113
+null,0099585.jpg,0004511.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6640,16911,0.6662,0.0027
+null,0099706.jpg,0100835.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6163,2609,0.6489,nan
+null,0099775.jpg,0051444.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5537,4604,0.3501,-0.0030
+null,0099959.jpg,0040291.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6096,7075,0.4688,0.0027
+null,0099989.jpg,0031666.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7541,3913,0.7775,nan
+null,0099993.jpg,0029207.jpg,HRSID,same target (labels),overlap,0.7494,3022,,
+null,0100004.jpg,0105717.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5443,2113,0.5974,0.0085
+null,0100071.jpg,0095823.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6696,26186,0.5449,0.0009
+null,0100561.jpg,0105248.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8019,5183,0.8212,0.0128
+null,0100633.jpg,0011716.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8242,6948,0.8359,0.0074
+null,0100711.jpg,0067593.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7517,9155,0.7738,0.0228
+null,0095634.jpg,0008280.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3999,10348,0.2410,-0.0044
+null,0095714.jpg,0062938.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7500,6551,0.7704,0.0060
+null,0095754.jpg,0092759.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6679,7510,0.7052,0.0066
+null,0095914.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4139,4666,0.3548,0.0050
+null,0095937.jpg,0109432.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4346,9391,0.3020,0.0140
+null,0096013.jpg,0115228.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7861,19061,0.7842,0.0131
+null,0096053.jpg,0099090.jpg,HRSID,overlapping tile,overlap,0.7567,27846,,
+null,0096113.jpg,0056836.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6351,10318,0.6472,nan
+null,0096125.jpg,0028023.jpg,HRSID,wrapped copy,wrap,0.7529,41087,,
+null,0096186.jpg,0071093.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7049,3131,0.7713,0.0450
+null,0096227.jpg,0043087.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8133,4901,0.8426,-0.0007
+null,0096364.jpg,0032887.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5694,20333,0.5532,0.0060
+null,0096491.jpg,0104346.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5111,10521,0.3528,-0.0067
+null,0096645.jpg,0085908.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7343,5682,0.7486,nan
+null,0096897.jpg,0007844.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7580,7505,0.7114,0.0064
+null,0096995.jpg,0017081.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7170,3442,0.7437,0.0286
+null,0091740.jpg,0089317.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7807,21332,0.7801,0.0079
+null,0091743.jpg,0044108.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4225,35218,0.3752,0.0044
+null,0091778.jpg,0020019.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6343,2031,0.5655,0.0045
+null,0091782.jpg,0107076.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5276,18510,0.4018,0.0017
+null,0091831.jpg,0036496.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6715,5338,0.6911,0.0015
+null,0091918.jpg,0040611.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4498,1978,0.3081,0.0115
+null,0091921.jpg,0037290.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9305,13161,0.8713,0.4871
+null,0091937.jpg,0068550.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8488,14433,0.8507,0.0016
+null,0092534.jpg,0067174.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7290,5834,0.7668,0.0371
+null,0092571.jpg,0059782.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7617,5978,0.7954,0.1311
+null,0092578.jpg,0101237.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6246,6260,0.6407,-0.0021
+null,0092623.jpg,0037763.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6943,19427,0.6888,0.0040
+null,0092652.jpg,0080825.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7540,3674,0.6067,0.0000
+null,0093263.jpg,0111634.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5926,5990,0.6130,0.0021
+null,0092192.jpg,0028386.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7671,5705,0.7915,0.0131
+null,0092237.jpg,0088973.jpg,HRSID,overlapping tile,overlap,0.6800,29795,,
+null,0094591.jpg,0046672.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6598,4984,0.7353,0.0450
+null,0095144.jpg,0013400.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7157,2543,0.7410,0.2141
+null,0095221.jpg,0008259.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5399,2559,0.5111,0.0006
+null,0094046.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4958,24688,0.4246,0.0042
+null,0094092.jpg,0095143.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7450,7813,0.7727,0.0070
+null,0094961.jpg,0037139.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5979,14731,0.5844,0.0151
+null,0094973.jpg,0112363.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6846,29372,0.6683,0.0017
+null,0094803.jpg,0048594.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.4906,2343,0.6604,0.0098
+null,0094806.jpg,0000766.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5822,3070,0.6388,0.0307
+null,0094873.jpg,0014355.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4990,14335,0.3841,-0.0377
+null,0094908.jpg,0054550.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4443,4354,0.4763,-0.0002
+null,0094914.jpg,0061551.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4501,4347,0.5042,-0.0046
+null,0094935.jpg,0037588.jpg,HRSID,overlapping tile,overlap,0.6121,22200,,
+null,0095501.jpg,0087221.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6938,4507,0.7255,nan
+null,0095565.jpg,0008910.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6449,5899,0.6666,nan
+null,0095609.jpg,0060849.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4944,16817,0.3595,-0.0047
+null,0100919.jpg,0068878.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8133,11598,0.8170,-0.0171
+null,0100934.jpg,0007257.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4465,7042,0.4243,0.0036
+null,0100977.jpg,0080320.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9822,11975,0.9967,0.4922
+null,0101051.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4999,2398,0.4126,0.0183
+null,0101072.jpg,0023994.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6978,5698,0.7105,0.0133
+null,0101075.jpg,0052241.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7393,4884,0.7946,0.0375
+null,0101082.jpg,0038503.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7276,6524,0.7545,0.0169
+null,0100428.jpg,0004515.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9844,4665,0.9986,0.5548
+null,0100506.jpg,0030454.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6563,13764,0.6280,nan
+null,0100110.jpg,0036057.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,1.0000,1847,1.0000,0.7746
+null,0100133.jpg,0069419.jpg,HRSID,overlapping tile,overlap,0.8156,19564,,
+null,0100141.jpg,0065608.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7373,23945,0.7315,0.0029
+null,0100255.jpg,0013554.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5818,6041,0.5946,0.0174
+null,0101102.jpg,0024897.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6628,8011,0.6687,0.0023
+null,0101145.jpg,0019214.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8094,5447,0.8263,0.0179
+null,0101177.jpg,0058604.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5728,7211,0.4097,nan
+null,0098014.jpg,0026885.jpg,HRSID,overlapping tile,overlap,0.7809,15754,,
+null,0098030.jpg,0001403.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6368,10818,0.4574,nan
+null,0098106.jpg,0111625.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7002,7676,0.7089,-0.0070
+null,0098204.jpg,0001801.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7118,5846,0.7301,0.0202
+null,0098216.jpg,0049656.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4041,19477,0.3171,0.0036
+null,0098300.jpg,0049193.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6272,3383,0.5677,0.0044
+null,0098326.jpg,0001310.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6953,22752,0.6730,-0.0094
+null,0098975.jpg,0067271.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6838,23052,0.6816,-0.0099
+null,0099116.jpg,0013564.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7695,13610,0.7752,0.0019
+null,0099131.jpg,0108565.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7821,4624,0.6870,0.0039
+null,0099156.jpg,0004656.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8126,4338,0.8364,0.0271
+null,0099310.jpg,0033866.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6074,3325,0.5973,0.0050
+null,0099348.jpg,0061337.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8161,5453,0.8336,0.0165
+null,0099417.jpg,0039813.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7142,8330,0.7232,nan
+null,0098957.jpg,0033079.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6825,3520,0.7488,0.0336
+null,0097829.jpg,0100381.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7725,6305,0.8167,0.1834
+null,0087824.jpg,0115923.jpg,SIVED,same target (labels),overlap,0.5624,16274,0.4378,0.0519
+null,0087890.jpg,0001533.jpg,HRSID,overlapping tile,overlap,0.7054,1472,,
+null,0088924.jpg,0077202.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7577,8256,0.7720,0.0286
+null,0089012.jpg,0007001.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7733,6252,0.7949,-0.0001
+null,0089047.jpg,0100847.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7674,3123,0.7941,nan
+null,0089150.jpg,0033438.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7699,7559,0.7905,0.0061
+null,0088676.jpg,0076019.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7966,22098,0.7632,0.0158
+null,0088807.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.2579,2633,0.4626,0.0013
+null,0089388.jpg,0079899.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5551,6865,0.3855,0.0037
+null,0089481.jpg,0090656.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4142,3875,0.2157,0.0018
+null,0089573.jpg,0108950.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6843,26321,0.6392,nan
+null,0089216.jpg,0000048.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5267,4508,0.5515,-0.0103
+null,0089227.jpg,0108792.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6511,12841,0.6549,0.0233
+null,0089228.jpg,0023213.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8105,6782,0.8234,0.0180
+null,0089590.jpg,0048881.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7956,2083,0.8151,nan
+null,0089608.jpg,0057203.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7716,5871,0.7956,0.0190
+null,0101295.jpg,0101401.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5623,5163,0.5833,0.0097
+null,0100792.jpg,0072084.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7381,7412,0.7424,0.0057
+null,0101406.jpg,0029207.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6537,8213,0.6562,nan
+null,0101423.jpg,0043311.jpg,HRSID,overlapping tile,overlap,0.7582,24884,,
+null,0101650.jpg,0021760.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5777,1968,0.5736,0.0006
+null,0101703.jpg,0107429.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6504,8498,0.6564,-0.0033
+null,0101859.jpg,0081650.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4690,21514,0.3614,0.0072
+null,0102101.jpg,0033209.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6895,5394,0.7069,-0.0000
+null,0102375.jpg,0045111.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7488,3686,0.7619,0.0205
+null,0102458.jpg,0016362.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9951,14914,0.9985,0.6212
+null,0101601.jpg,0000465.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6642,4473,0.6920,0.0213
+null,0102775.jpg,0007396.jpg,HRSID,overlapping tile,overlap,0.6916,23736,,
+null,0102778.jpg,0056374.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3359,1405,0.1695,0.0142
+null,0102803.jpg,0109329.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7443,5236,0.7823,0.1459
+null,0102857.jpg,0045486.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4641,9036,0.2356,nan
+null,0102691.jpg,0100083.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6801,11894,0.6932,0.0034
+null,0097013.jpg,0051146.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7666,2520,0.6680,0.0003
+null,0096665.jpg,0059065.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5292,9791,0.4231,nan
+null,0096736.jpg,0052447.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4952,11524,0.3878,-0.0026
+null,0096788.jpg,0080227.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7861,10074,0.7886,nan
+null,0096793.jpg,0000817.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6308,21487,0.6310,-0.0049
+null,0096831.jpg,0104337.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6973,19460,0.7013,0.0042
+null,0097148.jpg,0040047.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7067,4425,0.7220,-0.0080
+null,0097153.jpg,0098302.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5311,13085,0.3964,0.0018
+null,0097171.jpg,0067837.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7650,2433,0.7888,nan
+null,0097192.jpg,0003583.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7413,15137,0.7442,-0.0056
+null,0097219.jpg,0092936.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7456,4881,0.7538,nan
+null,0097454.jpg,0052779.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7457,15310,0.7492,0.0179
+null,0097566.jpg,0061701.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6846,10984,0.6915,0.0083
+null,0097737.jpg,0099536.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5839,6364,0.6299,0.0172
+null,0098396.jpg,0033466.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9238,4066,0.9269,nan
+null,0098408.jpg,0098480.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7536,10969,0.7575,0.0132
+null,0104688.jpg,0067768.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.7272,21433,0.6622,0.0071
+null,0105069.jpg,0045156.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7775,24008,0.7766,0.0056
+null,0105102.jpg,0098521.jpg,SSDD,same target (labels),overlap,0.7840,5095,,
+null,0105138.jpg,0077645.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6222,2839,0.4743,-0.0048
+null,0104840.jpg,0018418.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6745,2817,0.6928,-0.0141
+null,0105013.jpg,0013427.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4224,10944,0.2473,0.0012
+null,0105210.jpg,0015006.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6497,5630,0.5868,0.0047
+null,0105254.jpg,0060227.jpg,HRSID,same target (labels),wrap,0.6428,28415,,
+null,0105352.jpg,0056374.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3987,7653,0.3462,0.0042
+null,0105908.jpg,0037388.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4181,7064,0.3460,-0.0176
+null,0105419.jpg,0042407.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5332,3522,0.4546,-0.0039
+null,0105423.jpg,0098152.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7012,5928,0.6372,nan
+null,0105466.jpg,0027040.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6189,15521,0.5501,0.0193
+null,0105484.jpg,0069234.jpg,HRSID,same target (labels),overlap,0.6185,7386,,
+null,0105561.jpg,0065731.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6792,7969,0.7215,0.0136
+null,0105622.jpg,0025195.jpg,SSDD,same target (labels),overlap,0.6097,5251,,
+null,0103670.jpg,0068038.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6272,3861,0.6108,-0.0001
+null,0103673.jpg,0058626.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6695,5895,0.4841,0.0023
+null,0103680.jpg,0031127.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7361,8927,0.7436,0.0238
+null,0103695.jpg,0064824.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5980,6054,0.4673,0.0041
+null,0103790.jpg,0100835.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6878,16949,0.6427,nan
+null,0103842.jpg,0051876.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6374,17138,0.6427,0.0187
+null,0104233.jpg,0073722.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4992,6342,0.3532,-0.0070
+null,0104245.jpg,0103720.jpg,HRSID,overlapping tile,overlap,0.7285,10230,,
+null,0104319.jpg,0077781.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7747,3752,0.7907,0.0012
+null,0104327.jpg,0106237.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5290,6115,0.5445,0.0287
+null,0104427.jpg,0060054.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7760,5172,0.7995,0.0145
+null,0104448.jpg,0042700.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9998,4252,0.9992,0.4993
+null,0104484.jpg,0089898.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5793,5378,0.5936,0.0256
+null,0103971.jpg,0092480.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6993,18011,0.6677,-0.0060
+null,0104092.jpg,0010394.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4853,6872,0.4196,0.0100
+null,0104622.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4934,8235,0.3892,-0.0002
+null,0102878.jpg,0078335.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6107,3851,0.4937,-0.0033
+null,0102966.jpg,0076200.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7677,12149,0.7773,0.0161
+null,0103017.jpg,0092698.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5616,20568,0.5632,0.0098
+null,0103085.jpg,0067894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5413,5995,0.3858,nan
+null,0103147.jpg,0076629.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6336,7212,0.6463,-0.0229
+null,0103162.jpg,0069416.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8329,5533,0.8486,0.0308
+null,0101959.jpg,0093895.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7235,17647,0.6657,0.0055
+null,0101988.jpg,0093754.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5340,2033,0.5857,-0.0012
+null,0103400.jpg,0002480.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9353,4687,0.9642,0.6202
+null,0103461.jpg,0033029.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9993,9106,0.9995,0.5063
+null,0103507.jpg,0022094.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7290,6385,0.7586,0.0082
+null,0103530.jpg,0075134.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6895,3010,0.7209,nan
+null,0103230.jpg,0030619.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7028,3149,0.7386,0.0077
+null,0103316.jpg,0013546.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3372,2162,0.4205,-0.0094
+null,0103332.jpg,0031949.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6987,8636,0.4924,0.0023
+null,0103610.jpg,0073607.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6784,24715,0.6745,0.0127
+null,0105679.jpg,0064208.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6283,39277,0.5970,0.0066
+null,0106150.jpg,0080227.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7030,15322,0.6341,0.0128
+null,0106182.jpg,0105636.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5572,5209,0.2911,-0.0131
+null,0106263.jpg,0050610.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5989,11553,0.6025,-0.0075
+null,0106276.jpg,0045693.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5862,11914,0.5928,-0.0077
+null,0106338.jpg,0008792.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9908,11212,0.9976,0.4988
+null,0106005.jpg,0109432.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6436,8745,0.5207,0.0075
+null,0106061.jpg,0010193.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7666,20535,0.7342,0.0055
+null,0106073.jpg,0088715.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7405,25064,0.7380,0.0070
+null,0106085.jpg,0049765.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7402,8565,0.7386,-0.0083
+null,0106138.jpg,0074698.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5410,6857,0.5563,-0.0066
+null,0106404.jpg,0103307.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9562,10976,0.9970,0.4839
+null,0106480.jpg,0092330.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5410,8236,0.5278,0.0089
+null,0106506.jpg,0054484.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6694,4969,0.6880,-0.0077
+null,0106520.jpg,0056146.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6411,2990,0.6705,nan
+null,0106753.jpg,0087538.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8012,4917,0.8212,0.0150
+null,0109272.jpg,0058026.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5704,3445,0.5797,-0.0264
+null,0109279.jpg,0081958.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.2574,3238,0.3944,0.0141
+null,0109364.jpg,0108173.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6785,13700,0.6883,-0.0065
+null,0109512.jpg,0001856.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7073,4631,0.7184,nan
+null,0109677.jpg,0058881.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6295,9194,0.6363,-0.0104
+null,0109709.jpg,0014622.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4672,2414,0.3846,-0.0045
+null,0109735.jpg,0100678.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7657,5025,0.7931,0.0475
+null,0109850.jpg,0046160.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5976,10277,0.5077,-0.0056
+null,0108355.jpg,0060490.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4526,12728,0.3977,0.0003
+null,0108430.jpg,0072969.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7263,9172,0.5972,nan
+null,0108450.jpg,0037860.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7026,6530,0.5901,0.0028
+null,0108479.jpg,0083262.jpg,HRSID,overlapping tile,overlap,0.6758,21138,,
+null,0108490.jpg,0020232.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5586,4226,0.4467,-0.0073
+null,0109856.jpg,0002098.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4499,4681,0.2456,0.0039
+null,0109893.jpg,0014960.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9842,3806,0.9989,0.4896
+null,0110123.jpg,0047629.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7155,19418,0.7053,0.0005
+null,0106832.jpg,0029184.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7870,5525,0.8122,0.0105
+null,0106839.jpg,0040611.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9783,3463,0.9852,0.8989
+null,0106981.jpg,0052806.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6028,27417,0.5718,0.0044
+null,0107058.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5199,19176,0.4738,0.0033
+null,0107082.jpg,0032933.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4939,3078,0.4616,-0.0110
+null,0107105.jpg,0101906.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.8568,15578,0.7920,0.5473
+null,0107315.jpg,0019262.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7676,6566,0.7917,0.0294
+null,0107157.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3094,3792,0.4219,0.0092
+null,0107196.jpg,0030273.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7857,17702,0.7851,-0.0067
+null,0107204.jpg,0032269.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9492,4825,0.9993,0.4587
+null,0107554.jpg,0021524.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6088,4014,0.6223,0.0273
+null,0107629.jpg,0046672.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4138,2445,0.5454,0.0075
+null,0107674.jpg,0086317.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5754,6733,0.4264,-0.0093
+null,0107769.jpg,0107680.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6747,26440,0.6660,0.0002
+null,0107773.jpg,0005532.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5511,5753,0.3434,-0.0057
+null,0107774.jpg,0015710.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6683,6578,0.6871,0.0009
+null,0107849.jpg,0100759.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7150,12422,0.7187,0.0015
+null,0107872.jpg,0110295.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6590,2636,0.6852,nan
+null,0107896.jpg,0013315.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7486,10002,0.7583,-0.0097
+null,0107947.jpg,0015475.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7862,2057,0.8057,nan
+null,0107949.jpg,0013315.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7808,13025,0.7846,-0.0018
+null,0107984.jpg,0016049.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5315,9922,0.5015,-0.0082
+null,0108180.jpg,0050360.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6740,10833,0.6932,0.0022
+null,0108550.jpg,0040084.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9539,4997,0.9982,0.2713
+null,0108602.jpg,0060276.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8625,14038,0.8446,0.0071
+null,0108691.jpg,0022592.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8193,4623,0.8380,0.0175
+null,0108788.jpg,0040713.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4339,9861,0.2407,-0.0105
+null,0108797.jpg,0094707.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5597,7271,0.4022,0.0113
+null,0108827.jpg,0043311.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5377,9910,0.5409,0.0037
+null,0109103.jpg,0010749.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4925,2760,0.3909,0.0012
+null,0109191.jpg,0012478.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6943,8214,0.7023,0.0121
+null,0109257.jpg,0024369.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5473,28478,0.4743,nan
+null,0110253.jpg,0008455.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5625,6516,0.5850,0.0103
+null,0110284.jpg,0014519.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6079,8063,0.4577,0.0156
+null,0110463.jpg,0072421.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5663,13626,0.4997,0.0201
+null,0110470.jpg,0019522.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6192,16251,0.6221,0.0091
+null,0110507.jpg,0011405.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7322,2601,0.6547,0.1135
+null,0110542.jpg,0028123.jpg,HRSID,overlapping tile,overlap,0.7977,14266,,
+null,0110590.jpg,0004860.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7202,15917,0.7237,0.0027
+null,0110615.jpg,0092330.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3745,3501,0.4559,0.0032
+null,0110628.jpg,0024432.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7706,12499,0.7737,0.0009
+null,0110699.jpg,0082618.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6906,7765,0.7149,-0.0115
+null,0110711.jpg,0082938.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7644,6434,0.7807,0.0154
+null,0110818.jpg,0089394.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7799,7850,0.7964,0.0372
+null,0110838.jpg,0039178.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5404,15118,0.4804,0.0137
+null,0110840.jpg,0005445.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6885,6637,0.7094,0.0188
+null,0110861.jpg,0063178.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6057,23145,0.5841,-0.0031
+null,0110878.jpg,0054992.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4578,3985,0.5273,0.0083
+null,0111999.jpg,0094143.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8074,4539,0.8327,-0.0001
+null,0112598.jpg,0056862.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8138,9323,0.8204,0.0251
+null,0112667.jpg,0063781.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6176,7142,0.6308,0.0095
+null,0112674.jpg,0111933.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5239,2930,0.4623,0.0091
+null,0112796.jpg,0017560.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5726,9561,0.4260,-0.0004
+null,0113093.jpg,0040894.jpg,HRSID,wrapped copy,wrap,0.8087,43522,,
+null,0113118.jpg,0055960.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6523,3896,0.6663,nan
+null,0113146.jpg,0030448.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.4733,4368,0.4996,0.0111
+null,0113149.jpg,0076823.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7157,8952,0.7210,nan
+null,0113250.jpg,0027631.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6860,9668,0.6916,0.0024
+null,0113573.jpg,0084941.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5512,3453,0.5156,0.0401
+null,0113596.jpg,0053832.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.4980,2237,0.5319,0.0244
+null,0113607.jpg,0073926.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5523,9659,0.4312,0.0106
+null,0113637.jpg,0040224.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6921,11904,0.6966,0.0069
+null,0113718.jpg,0025888.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5503,3475,0.5887,0.0075
+null,0113720.jpg,0005557.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7132,3158,0.7382,0.0379
+null,0113465.jpg,0085238.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6307,4093,0.6450,0.0075
+null,0113553.jpg,0103423.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4640,16719,0.3176,0.0022
+null,0113867.jpg,0058826.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7812,7653,0.7871,0.0227
+null,0113883.jpg,0072063.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6451,20150,0.6265,0.0020
+null,0113406.jpg,0096305.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6734,32596,0.6596,0.0103
+null,0113945.jpg,0080633.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6834,8765,0.7061,0.0389
+null,0114180.jpg,0032909.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6976,3633,0.7317,-0.0103
+null,0114597.jpg,0027466.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.7283,5259,0.5507,nan
+null,0114388.jpg,0042603.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5382,2589,0.3179,-0.0050
+null,0114460.jpg,0091894.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7167,13373,0.7127,0.0064
+null,0114504.jpg,0054237.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6267,23519,0.6276,0.0035
+null,0114186.jpg,0069419.jpg,HRSID,overlapping tile,overlap,0.8593,12349,,
+null,0114214.jpg,0011474.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7036,5920,0.7352,0.0087
+null,0114260.jpg,0062597.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.5926,11827,0.5856,-0.0050
+null,0114294.jpg,0053614.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8256,7236,0.8364,0.0056
+null,0114361.jpg,0093128.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7018,12860,0.7042,0.0031
+null,0111503.jpg,0100487.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6034,4134,0.6317,0.0004
+null,0111049.jpg,0043163.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6240,2280,0.6454,0.0251
+null,0111092.jpg,0080674.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.5556,5843,0.5816,-0.0011
+null,0111121.jpg,0086038.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5122,19294,0.3780,0.0056
+null,0111660.jpg,0110717.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6312,3243,0.5215,0.0001
+null,0111747.jpg,0021757.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8311,4675,0.8486,0.0463
+null,0111190.jpg,0082676.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8172,18063,0.8231,-0.0022
+null,0111330.jpg,0051586.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8469,7344,0.8550,0.0063
+null,0111362.jpg,0039846.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5905,18952,0.5024,0.0084
+null,0112431.jpg,0009544.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6541,7056,0.7243,0.1079
+null,0112541.jpg,0039209.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9645,3910,0.9902,nan
+null,0112225.jpg,0078674.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5632,4870,0.3284,-0.0012
+null,0111896.jpg,0057020.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4799,7783,0.3043,0.0079
+null,0111910.jpg,0091565.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7617,5602,0.7832,0.0033
+null,0111920.jpg,0079308.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7638,6357,0.7809,0.0059
+null,0111998.jpg,0011577.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4573,3424,0.3591,0.0036
+null,0114890.jpg,0084941.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3679,19387,0.2575,0.0022
+null,0114908.jpg,0016985.jpg,HRSID,overlapping tile,overlap,0.7421,7987,,
+null,0114939.jpg,0072528.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.7304,18494,0.6664,0.0110
+null,0114955.jpg,0102307.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4455,3498,0.2719,-0.0078
+null,0114982.jpg,0052209.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.3481,8801,0.2142,0.0078
+null,0114724.jpg,0086214.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6730,6126,0.7019,0.0164
+null,0115407.jpg,0104914.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6189,12940,0.4641,0.0158
+null,0115409.jpg,0049442.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7913,6633,0.7987,0.0249
+null,0115428.jpg,0014306.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5501,3620,0.5191,0.0066
+null,0115454.jpg,0043476.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9163,36856,0.9453,0.5937
+null,0115274.jpg,0036756.jpg,256 ship (ShipDataset/MSAR),same target (labels),wrap,0.6080,15336,0.6273,-0.0056
+null,0115276.jpg,0104998.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7653,4696,0.7973,-0.0012
+null,0115009.jpg,0088101.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.8022,24114,0.7964,-0.0097
+null,0115044.jpg,0054163.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5829,4101,0.6619,0.0412
+null,0115055.jpg,0089665.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4392,2700,0.3561,0.0072
+null,0115071.jpg,0081955.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7238,5186,0.7381,0.0079
+null,0115157.jpg,0036335.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6357,38919,0.6142,0.0103
+null,0115879.jpg,0005269.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.5148,3019,0.5678,0.0037
+null,0116050.jpg,0103423.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5973,4549,0.4088,-0.0146
+null,0116182.jpg,0053211.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9741,34017,0.9702,0.2517
+null,0116186.jpg,0047824.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.6575,8697,0.6363,0.0050
+null,0116197.jpg,0112002.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7558,4614,0.7869,-0.0004
+null,0116208.jpg,0091880.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.5950,8723,0.4358,nan
+null,0115946.jpg,0042449.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7185,5777,0.7433,0.0059
+null,0115965.jpg,0039000.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9264,11372,0.9988,0.5044
+null,0116029.jpg,0043881.jpg,256 ship (ShipDataset/MSAR),same target (labels),overlap,0.4996,3836,0.5564,-0.0054
+null,0115598.jpg,0043006.jpg,256 ship (ShipDataset/MSAR),overlapping tile,overlap,0.6204,1463,0.5767,nan
+null,0116215.jpg,0077354.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.6260,3868,0.6498,0.0067
+null,0116272.jpg,0055372.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7823,7624,0.7909,-0.0176
+null,0116291.jpg,0022141.jpg,HRSID,overlapping tile,overlap,0.7436,1585,,
+null,0116330.jpg,0062951.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.7463,5962,0.7540,-0.0001
+null,0116386.jpg,0102284.jpg,256 ship (ShipDataset/MSAR),wrapped copy,wrap,0.9685,5088,0.9997,0.4557
