@@ -1,12 +1,12 @@
-"""COCO mAP on val, split by leak group and source (groups.py).
+"""COCO mAP on val or test, split by leak group and source (groups.py).
 
-    ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py copy
-        no-learning baseline: every val image gets the boxes of its best train match, moved the matched way
+    ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py copy [val|test]
+        no-learning baseline: every image gets the boxes of its best train match, moved the matched way
         (flip / turn / shift / resize), scored by how well the images match. No model involved.
-    ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py model results/val_predictions.json
-        a trained detector's val predictions (cluster/job_a.py output).
-Writes results/scores_<name>.json: mAP (0.5:0.95) and AP50 for all val, clean, leaked, each group, and each source
-split into clean / leaked.
+    ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py model results/val_predictions.json [val|test]
+        a trained detector's predictions (cluster/job_a.py output).
+Writes results/scores_<name>.json (val) or scores_<name>_test.json: mAP (0.5:0.95) and AP50 for all images, clean,
+leaked, each group, and each source split into clean / leaked.
 """
 import contextlib, io, json, sys
 from collections import defaultdict
@@ -58,10 +58,11 @@ def evaluate(gt, dt, img_ids):
     return {'images': len(img_ids), 'mAP': round(100 * e.stats[0], 2), 'AP50': round(100 * e.stats[1], 2)}
 
 
-def main(name, pred=None):
+def main(name, pred=None, split='val'):
+    p = V.ROOT / 'Annotations' / f'{split}.json'
     with contextlib.redirect_stdout(io.StringIO()):
-        gt = COCO(str(V.ROOT / 'Annotations' / 'val.json'))
-    grp = G.load('val'); ids = {im['file_name']: im['id'] for im in gt.dataset['images']}
+        gt = COCO(str(p if p.exists() else V.ROOT / f'{split}.json'))
+    grp = G.load(split); ids = {im['file_name']: im['id'] for im in gt.dataset['images']}
     res = copy_predictions(gt, grp) if name == 'copy' else model_predictions(gt, pred)
     with contextlib.redirect_stdout(io.StringIO()):
         dt = gt.loadRes(res)
@@ -71,10 +72,14 @@ def main(name, pred=None):
         sets['leaked' if leak else 'clean'].add(i); sets['group: ' + g['group']].add(i)
         sets[f"source: {g['source']} | {'leaked' if leak else 'clean'}"].add(i)
     out = {k: evaluate(gt, dt, v) for k, v in sorted(sets.items())}
-    (G.D / f'scores_{name}.json').write_text(json.dumps(out, indent=1))
+    (G.D / f"scores_{name}{'' if split == 'val' else '_' + split}.json").write_text(json.dumps(out, indent=1))
     for k, v in out.items():
         print(f"{k:70s} {v['images']:6d} img  mAP {v['mAP']:6.2f}  AP50 {v['AP50']:6.2f}")
 
 
 if __name__ == '__main__':
-    main(*sys.argv[1:3])
+    a = sys.argv[1:]
+    if a[0] == 'copy':
+        main('copy', None, *a[1:2])
+    else:
+        main(*a[:3])

@@ -1,0 +1,130 @@
+{
+ "val": {
+  "all": {
+   "random_pairs": 31476,
+   "mean_recall": 0.0037,
+   "recall_at_least_half": 0.0035,
+   "real_best_match_recall_at_least_half": 0.518
+  },
+  "per_source": {
+   "AIR": {
+    "random_pairs": 114,
+    "mean_recall": 0.0024,
+    "recall_at_least_half": 0.0,
+    "real_best_match_recall_at_least_half": 0.0
+   },
+   "HRSID": {
+    "random_pairs": 2943,
+    "mean_recall": 0.0004,
+    "recall_at_least_half": 0.0003,
+    "real_best_match_recall_at_least_half": 0.051
+   },
+   "MSAR": {
+    "random_pairs": 4437,
+    "mean_recall": 0.0017,
+    "recall_at_least_half": 0.0016,
+    "real_best_match_recall_at_least_half": 0.3577
+   },
+   "OGSOD": {
+    "random_pairs": 5502,
+    "mean_recall": 0.0008,
+    "recall_at_least_half": 0.0007,
+    "real_best_match_recall_at_least_half": 0.8724
+   },
+   "SADD": {
+    "random_pairs": 132,
+    "mean_recall": 0.0313,
+    "recall_at_least_half": 0.0227,
+    "real_best_match_recall_at_least_half": 1.0
+   },
+   "SAR-AIRcraft": {
+    "random_pairs": 5769,
+    "mean_recall": 0.0093,
+    "recall_at_least_half": 0.0088,
+    "real_best_match_recall_at_least_half": 0.1638
+   },
+   "SIVED": {
+    "random_pairs": 312,
+    "mean_recall": 0.0998,
+    "recall_at_least_half": 0.0994,
+    "real_best_match_recall_at_least_half": 0.2212
+   },
+   "SSDD": {
+    "random_pairs": 348,
+    "mean_recall": 0.0,
+    "recall_at_least_half": 0.0,
+    "real_best_match_recall_at_least_half": 0.2328
+   },
+   "Shipdataset": {
+    "random_pairs": 11919,
+    "mean_recall": 0.0011,
+    "recall_at_least_half": 0.0012,
+    "real_best_match_recall_at_least_half": 0.7166
+   }
+  }
+ },
+ "test": {
+  "all": {
+   "random_pairs": 34836,
+   "mean_recall": 0.0043,
+   "recall_at_least_half": 0.0044,
+   "real_best_match_recall_at_least_half": 0.4452
+  },
+  "per_source": {
+   "AIR": {
+    "random_pairs": 165,
+    "mean_recall": 0.0006,
+    "recall_at_least_half": 0.0,
+    "real_best_match_recall_at_least_half": 0.0727
+   },
+   "HRSID": {
+    "random_pairs": 2940,
+    "mean_recall": 0.0,
+    "recall_at_least_half": 0.0,
+    "real_best_match_recall_at_least_half": 0.0408
+   },
+   "MSAR": {
+    "random_pairs": 4560,
+    "mean_recall": 0.001,
+    "recall_at_least_half": 0.0009,
+    "real_best_match_recall_at_least_half": 0.3309
+   },
+   "OGSOD": {
+    "random_pairs": 5499,
+    "mean_recall": 0.0006,
+    "recall_at_least_half": 0.0005,
+    "real_best_match_recall_at_least_half": 0.8816
+   },
+   "SADD": {
+    "random_pairs": 132,
+    "mean_recall": 0.0167,
+    "recall_at_least_half": 0.0152,
+    "real_best_match_recall_at_least_half": 1.0
+   },
+   "SAR-AIRcraft": {
+    "random_pairs": 8967,
+    "mean_recall": 0.0098,
+    "recall_at_least_half": 0.0101,
+    "real_best_match_recall_at_least_half": 0.0288
+   },
+   "SIVED": {
+    "random_pairs": 309,
+    "mean_recall": 0.0941,
+    "recall_at_least_half": 0.0971,
+    "real_best_match_recall_at_least_half": 0.233
+   },
+   "SSDD": {
+    "random_pairs": 348,
+    "mean_recall": 0.0,
+    "recall_at_least_half": 0.0,
+    "real_best_match_recall_at_least_half": 0.3017
+   },
+   "Shipdataset": {
+    "random_pairs": 11916,
+    "mean_recall": 0.0018,
+    "recall_at_least_half": 0.0018,
+    "real_best_match_recall_at_least_half": 0.7095
+   }
+  }
+ }
+}

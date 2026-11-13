@@ -9,17 +9,25 @@ file name and tile position). These sit at the top level of the dataset folder, 
 
 | | val | test |
 |---|---|---|
-| Images that repeat train content | **7,535 of 10,492 (71.8%)** | **6,376 of 11,613 (54.9%)** |
+| Images that repeat train content | **7,535 of 10,492 (71.8%)** | **7,277 of 11,613 (62.7%)** |
 | ... exact copies (often flipped or turned) | 1,531 | 1,321 |
 | ... re-processed copies (same image, small pixel changes) | 1,921 | 1,915 |
 | ... wrapped copies (train chip slid round, edges wrapping) | 1,293 | 1,338 |
 | ... overlapping tiles (share at least 25% of the image) | 1,950 | 1,802 |
-| ... same target, other look (needs labels) | 840 | n/a |
-| Using pixel rules only (comparable across splits) | 63.8% | 54.9% |
+| ... same target, other look (needs labels) | 840 | 901 |
+| Using pixel rules only | 63.8% | 54.9% |
 | Copies inside the same split (redundant images) | 20.3% | 15.4% |
 
-- **Copying labels, with no model, scores 36.2 mAP on val** (AP50 58.5): each val image gets the boxes of its best
-  train match, moved the matched way. Leaked images score 46.2 mAP; clean images score 4.1 (luck level).
+- **Copying labels, with no model, scores 36.2 mAP on val and 34.0 on test** (AP50 58.5 / 55.1). Each image gets
+  the boxes of its best train match, moved the matched way.
+
+  | Copy-the-labels mAP (AP50) | val | test |
+  |---|---|---|
+  | All images | 36.2 (58.5) | 34.0 (55.1) |
+  | Leaked | 46.2 (72.1) | 45.7 (72.3) |
+  | Clean (luck level) | 4.1 (9.6) | 2.9 (7.1) |
+
+  Per group and source: `results/scores_copy.json` (val) and `results/scores_copy_test.json` (test).
 - **Some copies are byte-identical files** saved under different names: 3,419 groups inside train, 348 inside val,
   738 inside test, and 128 groups shared by train and val.
 - **Copies carry disagreeing labels.**
@@ -53,8 +61,9 @@ file name and tile position). These sit at the top level of the dataset folder, 
 | 3 | `shifts.py` | Shift-proof search (\|FFT\| of thumbnails), exact shift by FFT cross-correlation, wrap-round and overlap scores, label transfer after the shift |
 | 4 | `groups.py` | One group per image, strongest first: exact, re-processed, wrapped, overlapping tile, same target (labels), clean |
 | 5 | `score_groups.py` | COCO mAP per group and source: the copy-the-labels baseline, and a trained detector's val predictions |
-| 6 | `provenance.py` | Original file and tile position of each image (from `mapping.json`); checks whether any original spans splits, and where each leak's match comes from |
-| 7 | `summary.py` | Writes `results/summary.json` |
+| 6 | `label_controls.py` | Chance level of the label rule: boxes from random same-source train images |
+| 7 | `provenance.py` | Original file and tile position of each image (from `mapping.json`); checks whether any original spans splits, and where each leak's match comes from |
+| 8 | `summary.py` | Writes `results/summary.json` |
 
 The source of each image was first inferred from its size, format and classes, because the annotations have no
 source field. `mapping.json` confirmed every assignment. The two ambiguous groups resolve as follows: the 256 px ship
@@ -71,8 +80,10 @@ chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and A
   - A first version used half-rolled images instead. It "matched" 860 val images pixel for pixel, which is how the
     wrapped copies were found (kept as `negative_roll_half` in `results/controls.json`).
 - **Shift rules** (`shift_controls.py`). 0 of 400 random same-source pairs pass, even with the best shift chosen.
-- **Label transfer from a random same-source train image** recovers 0.00-0.01 of the val boxes in every source
-  except SIVED (0.19).
+- **Label rule against random pairs** (`label_controls.py`). Boxes from a random train image of the same source
+  (true source from `mapping.json`), moved the same way as the real match, reach the rule's box recall of 0.5 for
+  0.35% of val and 0.44% of test images, against 52% / 45% for the real best matches. SIVED (vehicles) is
+  highest by chance, at 10%; every other source is at 2% or less.
 - **Visual checks:** `results/sheets/`.
 
 ## Still to do
@@ -84,8 +95,6 @@ chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and A
   - `mapping.json` gives the original files, but the leaks run *between* originals. So groups still have to be
     rebuilt by linking files that share ground (train against train too), then following the links.
   - Then split whole groups and measure the gap.
-- **Test labels.** `test.json` is in the Kaggle copy, so the label-based checks (same target, copy-the-labels mAP)
-  can now run on test too.
 
 ## Reproduce
 
@@ -97,8 +106,8 @@ $P sardet100k/candidates.py thumbs
 for q in val test; do $P sardet100k/candidates.py search $q train; $P sardet100k/candidates.py search $q $q; done
 for q in val test; do $P sardet100k/verify.py $q; $P sardet100k/verify.py $q $q; $P sardet100k/shifts.py $q; done
 $P sardet100k/controls.py; $P sardet100k/shift_controls.py
-~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py copy   # needs pycocotools (the sar-yolo env)
-$P sardet100k/provenance.py
+for q in val test; do ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py copy $q; done   # needs pycocotools (sar-yolo env)
+$P sardet100k/provenance.py; $P sardet100k/label_controls.py
 $P sardet100k/summary.py
 ```
 

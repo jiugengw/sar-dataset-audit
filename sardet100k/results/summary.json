@@ -1,5 +1,5 @@
 {
- "splits": "official (Annotations/train.json, val.json, JPEGImages/test); nothing re-split",
+ "splits": "official (Annotations/train.json, val.json, test.json); nothing re-split",
  "group_rules": "One leak group per image, from all checks (verify_*.csv and shifts_*.csv). Used by score_groups.py and summary.py.\n\nGroups, strongest first (an image gets the first that applies):\n  exact copy             full-resolution r >= 0.95 (same position, possibly flipped / turned)\n  re-processed copy      speckle-reduced r >= 0.95\n  wrapped copy           shifted with wrap-round, r >= 0.95 (full or speckle-reduced)\n  overlapping tile       shifted without wrap, shared region >= 25% of the image, r >= 0.95 there\n  same target (labels)   val only: speckle-reduced r >= 0.8 and >= 50% of the val boxes recovered by the\n                         moved train boxes (same position, or after the shift)\n  clean                  none of the above",
  "val": {
   "images": 10492,
@@ -102,33 +102,34 @@
  },
  "test": {
   "images": 11613,
-  "leaked": 6376,
-  "leaked_share": 0.549,
+  "leaked": 7277,
+  "leaked_share": 0.6266,
   "leaked_image_rules_only": 6376,
   "groups": {
    "exact copy": 1321,
    "re-processed copy": 1915,
    "wrapped copy": 1338,
    "overlapping tile": 1802,
-   "same target (labels)": 0,
-   "clean": 5237
+   "same target (labels)": 901,
+   "clean": 4336
   },
   "per_source": {
    "256 ship (ShipDataset/MSAR)": {
     "exact copy": 75,
-    "re-processed copy": 1276,
-    "wrapped copy": 1071,
-    "clean": 1977,
-    "overlapping tile": 981,
-    "images": 5380
+    "re-processed copy": 1272,
+    "wrapped copy": 1069,
+    "same target (labels)": 820,
+    "overlapping tile": 903,
+    "clean": 1118,
+    "images": 5257
    },
-   "512 other (AIR_SARShip-1/MSAR/SIVED/SAR-AIRcraft)": {
-    "exact copy": 9,
-    "clean": 2317,
+   "512 other (AIR_SARShip-1/MSAR)": {
     "re-processed copy": 1,
-    "overlapping tile": 706,
-    "wrapped copy": 211,
-    "images": 3244
+    "overlapping tile": 72,
+    "same target (labels)": 4,
+    "wrapped copy": 9,
+    "clean": 66,
+    "images": 152
    },
    "AIR_SARShip-2": {
     "clean": 14,
@@ -139,26 +140,51 @@
     "re-processed copy": 5,
     "overlapping tile": 96,
     "wrapped copy": 37,
-    "clean": 843,
+    "same target (labels)": 23,
+    "clean": 820,
     "images": 981
+   },
+   "MSAR": {
+    "re-processed copy": 4,
+    "same target (labels)": 6,
+    "overlapping tile": 78,
+    "wrapped copy": 2,
+    "clean": 33,
+    "images": 123
    },
    "OGSOD": {
     "exact copy": 1233,
     "re-processed copy": 590,
     "overlapping tile": 2,
-    "clean": 8,
+    "same target (labels)": 1,
+    "clean": 7,
     "images": 1833
    },
    "SADD": {
     "re-processed copy": 43,
-    "clean": 1,
+    "same target (labels)": 1,
     "images": 44
+   },
+   "SAR-AIRcraft": {
+    "exact copy": 9,
+    "clean": 2139,
+    "overlapping tile": 629,
+    "wrapped copy": 202,
+    "same target (labels)": 10,
+    "images": 2989
+   },
+   "SIVED": {
+    "same target (labels)": 15,
+    "clean": 83,
+    "overlapping tile": 5,
+    "images": 103
    },
    "SSDD": {
     "exact copy": 4,
     "wrapped copy": 19,
     "overlapping tile": 16,
-    "clean": 77,
+    "clean": 56,
+    "same target (labels)": 21,
     "images": 116
    }
   },
@@ -324,6 +350,136 @@
    "overlapping tile": 2126
   },
   "val_images": 10492
+ },
+ "label_controls": {
+  "val": {
+   "all": {
+    "random_pairs": 31476,
+    "mean_recall": 0.0037,
+    "recall_at_least_half": 0.0035,
+    "real_best_match_recall_at_least_half": 0.518
+   },
+   "per_source": {
+    "AIR": {
+     "random_pairs": 114,
+     "mean_recall": 0.0024,
+     "recall_at_least_half": 0.0,
+     "real_best_match_recall_at_least_half": 0.0
+    },
+    "HRSID": {
+     "random_pairs": 2943,
+     "mean_recall": 0.0004,
+     "recall_at_least_half": 0.0003,
+     "real_best_match_recall_at_least_half": 0.051
+    },
+    "MSAR": {
+     "random_pairs": 4437,
+     "mean_recall": 0.0017,
+     "recall_at_least_half": 0.0016,
+     "real_best_match_recall_at_least_half": 0.3577
+    },
+    "OGSOD": {
+     "random_pairs": 5502,
+     "mean_recall": 0.0008,
+     "recall_at_least_half": 0.0007,
+     "real_best_match_recall_at_least_half": 0.8724
+    },
+    "SADD": {
+     "random_pairs": 132,
+     "mean_recall": 0.0313,
+     "recall_at_least_half": 0.0227,
+     "real_best_match_recall_at_least_half": 1.0
+    },
+    "SAR-AIRcraft": {
+     "random_pairs": 5769,
+     "mean_recall": 0.0093,
+     "recall_at_least_half": 0.0088,
+     "real_best_match_recall_at_least_half": 0.1638
+    },
+    "SIVED": {
+     "random_pairs": 312,
+     "mean_recall": 0.0998,
+     "recall_at_least_half": 0.0994,
+     "real_best_match_recall_at_least_half": 0.2212
+    },
+    "SSDD": {
+     "random_pairs": 348,
+     "mean_recall": 0.0,
+     "recall_at_least_half": 0.0,
+     "real_best_match_recall_at_least_half": 0.2328
+    },
+    "Shipdataset": {
+     "random_pairs": 11919,
+     "mean_recall": 0.0011,
+     "recall_at_least_half": 0.0012,
+     "real_best_match_recall_at_least_half": 0.7166
+    }
+   }
+  },
+  "test": {
+   "all": {
+    "random_pairs": 34836,
+    "mean_recall": 0.0043,
+    "recall_at_least_half": 0.0044,
+    "real_best_match_recall_at_least_half": 0.4452
+   },
+   "per_source": {
+    "AIR": {
+     "random_pairs": 165,
+     "mean_recall": 0.0006,
+     "recall_at_least_half": 0.0,
+     "real_best_match_recall_at_least_half": 0.0727
+    },
+    "HRSID": {
+     "random_pairs": 2940,
+     "mean_recall": 0.0,
+     "recall_at_least_half": 0.0,
+     "real_best_match_recall_at_least_half": 0.0408
+    },
+    "MSAR": {
+     "random_pairs": 4560,
+     "mean_recall": 0.001,
+     "recall_at_least_half": 0.0009,
+     "real_best_match_recall_at_least_half": 0.3309
+    },
+    "OGSOD": {
+     "random_pairs": 5499,
+     "mean_recall": 0.0006,
+     "recall_at_least_half": 0.0005,
+     "real_best_match_recall_at_least_half": 0.8816
+    },
+    "SADD": {
+     "random_pairs": 132,
+     "mean_recall": 0.0167,
+     "recall_at_least_half": 0.0152,
+     "real_best_match_recall_at_least_half": 1.0
+    },
+    "SAR-AIRcraft": {
+     "random_pairs": 8967,
+     "mean_recall": 0.0098,
+     "recall_at_least_half": 0.0101,
+     "real_best_match_recall_at_least_half": 0.0288
+    },
+    "SIVED": {
+     "random_pairs": 309,
+     "mean_recall": 0.0941,
+     "recall_at_least_half": 0.0971,
+     "real_best_match_recall_at_least_half": 0.233
+    },
+    "SSDD": {
+     "random_pairs": 348,
+     "mean_recall": 0.0,
+     "recall_at_least_half": 0.0,
+     "real_best_match_recall_at_least_half": 0.3017
+    },
+    "Shipdataset": {
+     "random_pairs": 11916,
+     "mean_recall": 0.0018,
+     "recall_at_least_half": 0.0018,
+     "real_best_match_recall_at_least_half": 0.7095
+    }
+   }
+  }
  },
  "provenance": {
   "images_in_mapping": 116598,
@@ -551,6 +707,148 @@
    "images": 62,
    "mAP": 54.03,
    "AP50": 87.64
+  }
+ },
+ "scores_copy_test": {
+  "all": {
+   "images": 11613,
+   "mAP": 34.01,
+   "AP50": 55.08
+  },
+  "clean": {
+   "images": 4336,
+   "mAP": 2.91,
+   "AP50": 7.08
+  },
+  "group: clean": {
+   "images": 4336,
+   "mAP": 2.91,
+   "AP50": 7.08
+  },
+  "group: exact copy": {
+   "images": 1321,
+   "mAP": 50.34,
+   "AP50": 78.21
+  },
+  "group: overlapping tile": {
+   "images": 1802,
+   "mAP": 45.49,
+   "AP50": 53.43
+  },
+  "group: re-processed copy": {
+   "images": 1915,
+   "mAP": 54.31,
+   "AP50": 81.19
+  },
+  "group: same target (labels)": {
+   "images": 901,
+   "mAP": 31.78,
+   "AP50": 65.57
+  },
+  "group: wrapped copy": {
+   "images": 1338,
+   "mAP": 65.95,
+   "AP50": 87.34
+  },
+  "leaked": {
+   "images": 7277,
+   "mAP": 45.68,
+   "AP50": 72.26
+  },
+  "source: 256 ship (ShipDataset/MSAR) | clean": {
+   "images": 1118,
+   "mAP": 3.52,
+   "AP50": 7.61
+  },
+  "source: 256 ship (ShipDataset/MSAR) | leaked": {
+   "images": 4139,
+   "mAP": 54.31,
+   "AP50": 76.45
+  },
+  "source: 512 other (AIR_SARShip-1/MSAR) | clean": {
+   "images": 66,
+   "mAP": 0.28,
+   "AP50": 0.78
+  },
+  "source: 512 other (AIR_SARShip-1/MSAR) | leaked": {
+   "images": 86,
+   "mAP": 56.47,
+   "AP50": 65.26
+  },
+  "source: AIR_SARShip-2 | clean": {
+   "images": 14,
+   "mAP": 0.13,
+   "AP50": 0.88
+  },
+  "source: AIR_SARShip-2 | leaked": {
+   "images": 1,
+   "mAP": 20.2,
+   "AP50": 50.5
+  },
+  "source: HRSID | clean": {
+   "images": 820,
+   "mAP": 0.25,
+   "AP50": 0.77
+  },
+  "source: HRSID | leaked": {
+   "images": 161,
+   "mAP": 34.99,
+   "AP50": 45.01
+  },
+  "source: MSAR | clean": {
+   "images": 33,
+   "mAP": 2.96,
+   "AP50": 5.63
+  },
+  "source: MSAR | leaked": {
+   "images": 90,
+   "mAP": 32.1,
+   "AP50": 41.98
+  },
+  "source: OGSOD | clean": {
+   "images": 7,
+   "mAP": 0.0,
+   "AP50": 0.0
+  },
+  "source: OGSOD | leaked": {
+   "images": 1826,
+   "mAP": 42.98,
+   "AP50": 78.02
+  },
+  "source: SADD | leaked": {
+   "images": 44,
+   "mAP": 62.9,
+   "AP50": 82.14
+  },
+  "source: SAR-AIRcraft | clean": {
+   "images": 2139,
+   "mAP": 0.69,
+   "AP50": 0.99
+  },
+  "source: SAR-AIRcraft | leaked": {
+   "images": 850,
+   "mAP": 36.1,
+   "AP50": 54.34
+  },
+  "source: SIVED | clean": {
+   "images": 83,
+   "mAP": 9.26,
+   "AP50": 24.23
+  },
+  "source: SIVED | leaked": {
+   "images": 20,
+   "mAP": 44.09,
+   "AP50": 77.63
+  },
+  "source: SSDD | clean": {
+   "images": 56,
+   "mAP": 0.84,
+   "AP50": 3.95
+  },
+  "source: SSDD | leaked": {
+   "images": 60,
+   "mAP": 43.7,
+   "AP50": 80.24
   }
  }
 }

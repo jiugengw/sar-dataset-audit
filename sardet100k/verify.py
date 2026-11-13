@@ -31,6 +31,7 @@ INV = {'id': 'id', 'rot90': 'rot270', 'rot270': 'rot90', 'rot180': 'rot180', 'lr
 
 def coco(split):
     p = ROOT / 'Annotations' / f'{split}.json'
+    p = p if p.exists() else ROOT / f'{split}.json'  # the test labels sit at the dataset's top level
     if not p.exists():
         return {}, {}
     d = json.loads(p.read_text()); cat = {c['id']: c['name'] for c in d['categories']}

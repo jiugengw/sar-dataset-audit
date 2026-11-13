@@ -35,7 +35,7 @@ def within_split(split):
 
 
 def main():
-    out = {'splits': 'official (Annotations/train.json, val.json, JPEGImages/test); nothing re-split',
+    out = {'splits': 'official (Annotations/train.json, val.json, test.json); nothing re-split',
            'group_rules': G.__doc__.strip()}
     for s in ('val', 'test'):
         g = G.load(s); c = Counter(v['group'] for v in g.values()); n = len(g)
@@ -47,7 +47,8 @@ def main():
                   'groups': {k: c[k] for k in G.ORDER},
                   'per_source': {k: {**dict(v), 'images': sum(v.values())} for k, v in sorted(per.items())},
                   'duplicates_inside_split': within_split(s)}
-    for name in ('controls.json', 'shift_controls.json', 'provenance.json', 'scores_copy.json', 'scores_model.json'):
+    for name in ('controls.json', 'shift_controls.json', 'label_controls.json', 'provenance.json', 'scores_copy.json',
+                 'scores_copy_test.json', 'scores_model.json'):
         p = D / name
         if p.exists():
             out[name.removesuffix('.json')] = json.loads(p.read_text())
