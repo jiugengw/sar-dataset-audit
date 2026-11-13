@@ -28,7 +28,7 @@ rm -f $L/labels/*.cache
 printf 'path: %s\ntrain: images/train\nval: images/val\nnames:\n  0: ship\n  1: aircraft\n  2: car\n  3: tank\n  4: bridge\n  5: harbor\n' $L > $L/data.yaml
 echo "unpacked $(date '+%H:%M'): $(ls $L/images/train | wc -l) train, $(ls $L/images/val | wc -l) val"
 yolo detect train data=$L/data.yaml model=pretrained/yolo11s.pt imgsz=512 epochs=$EPOCHS batch=32 workers=4 \
-    val=False plots=False device=0 project=$OUT name=train exist_ok=True
+    val=False plots=False device=0 project=$PWD/$OUT name=train exist_ok=True  # absolute: a relative project lands under runs/detect/
 python -u ~/sbatch-staging/job_a.py $OUT/train/weights/last.pt $L/images/val $OUT/val_predictions.json
 ls -la $OUT/train/weights $OUT/val_predictions.json
 echo "done $(date '+%m-%d %H:%M')"
