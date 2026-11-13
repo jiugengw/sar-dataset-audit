@@ -11,7 +11,7 @@ labelled images.
 
 | Dataset | Folder | Status |
 |---|---|---|
-| SARDet-100K (NeurIPS 2024) | [sardet100k/](sardet100k/) | **71.8% of val and 62.7% of test repeat train content**; copying train labels scores 36.2 mAP on val and 34.0 on test |
+| SARDet-100K (NeurIPS 2024) | [sardet100k/](sardet100k/) | **48.6% of val and 41.5% of test confirmed as repeats of train content** (up to 71.8% / 62.7% counting uncertain matches); within a source, a trained detector scores 8-16 mAP higher on leaked images |
 | RSAR (rotated boxes on SARDet-100K images) | `rsar/` (to do) | Not started. The authors say they deduplicated (GitHub issue zhasion/RSAR#28), which this audit can test |
 | M4-SAR (CVPR 2025, optical and SAR pairs) | `m4sar/` (to do) | Not started. Plan: match on the optical images (no speckle) |
 

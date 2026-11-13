@@ -8,12 +8,19 @@ Groups, strongest first (an image gets the first that applies):
   same target (labels)   val only: speckle-reduced r >= 0.8 and >= 50% of the val boxes recovered by the
                          moved train boxes (same position, or after the shift)
   clean                  none of the above
+
+Evidence (background.py, after shift_null.py showed that sparse images - one bright ship on dark sea - pass the
+speckle-reduced and shift rules with *other* train images): a leak is 'confirmed' when the background, with the bright
+targets masked, also repeats at full resolution (bg r >= 0.5; 13 of 9,607 queries reach this against a shuffled train
+pool). Otherwise it is 'uncertain'. 'same target (labels)' is always uncertain: the null passed it more often than
+the real search did.
 """
 import csv
 from pathlib import Path
 
 D = Path(__file__).resolve().parent / 'results'
 ORDER = ['exact copy', 're-processed copy', 'wrapped copy', 'overlapping tile', 'same target (labels)', 'clean']
+BG = 0.5
 
 
 def _f(r, k):
@@ -38,14 +45,34 @@ def shifted(r):
     return None
 
 
+def confirmed_first(r):
+    g = first_pass(r)
+    return g if g in ('exact copy', 're-processed copy') and (_f(r, 'bg_r') or 0) >= BG else None
+
+
+def confirmed_shift(r):
+    g = shifted(r)
+    if g == 'wrapped copy' and (_f(r, 'bg_wrap') or 0) >= BG: return g
+    if g == 'overlapping tile' and (_f(r, 'bg_ovl') or 0) >= BG: return g
+    return None
+
+
 def load(split):
-    """{file_name: {'group', 'source', 'first': verify row, 'shift': shifts row or None}} for every image of split."""
-    first = {r['query']: r for r in csv.DictReader((D / f'verify_{split}.csv').open())}
-    sp = D / f'shifts_{split}.csv'
+    """{file_name: {'group', 'evidence', 'confirmed_group', 'source', 'first': verify row, 'shift': shifts row or None}}
+    for every image of split. 'group' is the strongest rule passed; 'confirmed_group' the strongest confirmed one."""
+    vb, sb = D / f'verify_{split}_bg.csv', D / f'shifts_{split}_bg.csv'
+    vp = vb if vb.exists() else D / f'verify_{split}.csv'
+    first = {r['query']: r for r in csv.DictReader(vp.open())}
+    sp = sb if sb.exists() else D / f'shifts_{split}.csv'
     sh = {r['query']: r for r in csv.DictReader(sp.open())} if sp.exists() else {}
     out = {}
     for q, r in first.items():
-        cands = [g for g in (first_pass(r), shifted(sh[q]) if q in sh else None) if g]
-        out[q] = {'group': min(cands, key=ORDER.index) if cands else 'clean', 'source': r['source'],
-                  'first': r, 'shift': sh.get(q)}
+        s = sh.get(q)
+        cands = [g for g in (first_pass(r), shifted(s) if s else None) if g]
+        conf = [g for g in (confirmed_first(r), confirmed_shift(s) if s else None) if g]
+        group = min(cands, key=ORDER.index) if cands else 'clean'
+        cg = min(conf, key=ORDER.index) if conf else None
+        out[q] = {'group': group, 'confirmed_group': cg,
+                  'evidence': 'clean' if group == 'clean' else 'confirmed' if cg else 'uncertain',
+                  'source': r['source'], 'first': r, 'shift': s}
     return out

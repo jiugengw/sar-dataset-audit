@@ -9,25 +9,53 @@ file name and tile position). These sit at the top level of the dataset folder, 
 
 | | val | test |
 |---|---|---|
-| Images that repeat train content | **7,535 of 10,492 (71.8%)** | **7,277 of 11,613 (62.7%)** |
+| **Confirmed leaks** (the background repeats too) | **5,101 of 10,492 (48.6%)** | **4,816 of 11,613 (41.5%)** |
 | ... exact copies (often flipped or turned) | 1,531 | 1,321 |
-| ... re-processed copies (same image, small pixel changes) | 1,921 | 1,915 |
-| ... wrapped copies (train chip slid round, edges wrapping) | 1,293 | 1,338 |
-| ... overlapping tiles (share at least 25% of the image) | 1,950 | 1,802 |
-| ... same target, other look (needs labels) | 840 | 901 |
-| Using pixel rules only | 63.8% | 54.9% |
-| Copies inside the same split (redundant images) | 20.3% | 15.4% |
+| ... re-processed copies (same image, small pixel changes) | 644 | 662 |
+| ... wrapped copies (train chip slid round, edges wrapping) | 1,082 | 1,163 |
+| ... overlapping tiles (share at least 25% of the image) | 1,844 | 1,670 |
+| Uncertain (a rule matched, but chance matches are common here) | 2,434 (23.2%) | 2,461 (21.2%) |
+| All rules (upper bound) | 71.8% | 62.7% |
+| Confirmed copies inside the same split (redundant images) | 10.3% | 14.8% |
 
+- **Why two levels.**
+  - A control against a shuffled train pool (`shift_null.py`) showed the problem. In sparse images (one bright ship
+    on dark sea), the search across 94k train images often finds a *different* ship that lines up. That match
+    passes the speckle-reduced and shift rules.
+  - A leak counts as confirmed only when the background, with the bright targets masked, also matches at full
+    resolution (`background.py`). Against the shuffled pool, 13 of 9,607 images reach that.
+  - Uncertain matches are almost all 256 px ShipDataset/MSAR chips (about 2,200 per split), HRSID (about 140) and
+    SSDD (about 50).
+  - Some uncertain matches are real copies whose background was re-processed (`results/sheets/val_reprocessed_background.png`).
+    So the true share lies between the two rows.
+  - The earlier 71.8% / 62.7% headline counted all of them and was too high.
+- **A detector trained on train (YOLO11s, 24 epochs) scores higher on leaked val images than on clean images from
+  the same source** (`score_groups.py model`, `results/scores_model.json`):
+
+  | val mAP | confirmed leak | uncertain | clean |
+  |---|---|---|---|
+  | SAR-AIRcraft | **64.8** (1,054) | - | 49.1 (865) |
+  | ShipDataset/MSAR 256 px chips | **62.3** (2,013) | 62.8 (2,192) | 53.9 (1,054) |
+  | HRSID | 46.3 (15) | 68.4 (141) | 59.4 (825) |
+  | OGSOD | 22.8 (1,815) | 27.0 (13) | 24.8 (6) |
+  | All val | 47.3 | 59.9 | 56.2 |
+
+  - Within a source, leaked images score 9-16 mAP higher (SAR-AIRcraft +15.7, ship chips +8.4).
+  - Over all of val, leaked images score lower, because most of them are OGSOD, which every image of scores about 23.
+  - Uncertain chips score like confirmed ones. That suggests many of them are real repeats, but the model score
+    alone cannot tell a copy from an easy image.
 - **Copying labels, with no model, scores 36.2 mAP on val and 34.0 on test** (AP50 58.5 / 55.1). Each image gets
   the boxes of its best train match, moved the matched way.
 
   | Copy-the-labels mAP (AP50) | val | test |
   |---|---|---|
   | All images | 36.2 (58.5) | 34.0 (55.1) |
-  | Leaked | 46.2 (72.1) | 45.7 (72.3) |
+  | Confirmed leaks | 49.1 (70.2) | 49.1 (69.3) |
   | Clean (luck level) | 4.1 (9.6) | 2.9 (7.1) |
 
-  Per group and source: `results/scores_copy.json` (val) and `results/scores_copy_test.json` (test).
+  - Uncertain matches also score well (54.4 / 43.7). But that says nothing about whether they are copies: the boxes
+    were lined up by the same ship that made the match.
+  - Per group and source: `results/scores_copy.json` (val) and `results/scores_copy_test.json` (test).
 - **Some copies are byte-identical files** saved under different names: 3,419 groups inside train, 348 inside val,
   738 inside test, and 128 groups shared by train and val.
 - **Copies carry disagreeing labels.**
@@ -39,18 +67,18 @@ file name and tile position). These sit at the top level of the dataset folder, 
 - **The leaks come from the source datasets, not from SARDet-100K's tiling** (`provenance.py`, using
   `mapping.json`).
   - No original image has tiles in more than one split: SARDet-100K split per original file.
-  - But every leaked val image matches a *different* original file: 7,300 (97%) another original of the same
-    source, 235 another source dataset.
+  - But every confirmed leak in val matches a *different* original file of the same source dataset.
+    - Only 16 cross sources, all between ShipDataset and MSAR.
+    - The 235 other cross-source matches (mostly HRSID with ShipDataset) fail the background check.
+      `results/sheets/val_cross_source.png` shows them: different ships lined up.
   - So OGSOD, MSAR, ShipDataset, SAR-AIRcraft and SADD each contain copies, flipped copies, wrapped copies or
     overlapping crops under different file names, and a per-file split cannot keep them apart.
   - SAR-AIRcraft example: its 4,368 originals (all of SAR-AIRcraft-1.0) overlap each other. Val tiles overlap train
     tiles at small offsets (12, 24, 112 px ...), never at SARDet's own tile step (312 px).
-- **By source:**
-  - Nearly all of OGSOD and SADD val repeats train.
-  - The 256 px ship chips (ShipDataset/MSAR) and SAR-AIRcraft are heavily affected through wrapped copies and
-    overlapping tiles.
-  - HRSID is least affected.
-  - Per-source counts are in `results/summary.json`.
+- **By source (val, confirmed):**
+  - OGSOD 99%, SADD 93%, MSAR 72%, SAR-AIRcraft 55%, ShipDataset/MSAR chips 38% (+42% uncertain).
+  - HRSID 2% (+14% uncertain).
+  - Per-source counts are in `results/summary.json` (`per_source_evidence`).
 
 ## Method
 
@@ -59,6 +87,8 @@ file name and tile position). These sit at the top level of the dataset folder, 
 | 1 | `candidates.py` | 32 px area-averaged thumbnails (averaging removes most speckle), FAISS search under all 8 flips and 90-degree turns |
 | 2 | `verify.py` | Full-resolution and speckle-reduced correlation; train boxes moved onto the val image (label transfer) |
 | 3 | `shifts.py` | Shift-proof search (\|FFT\| of thumbnails), exact shift by FFT cross-correlation, wrap-round and overlap scores, label transfer after the shift |
+| 3b | `shift_null.py` | Control: the whole shift search against a block-shuffled train pool (no real scene can match) |
+| 3c | `background.py` | Full-resolution r with the bright targets masked, for every matched pair; >= 0.5 confirms a leak |
 | 4 | `groups.py` | One group per image, strongest first: exact, re-processed, wrapped, overlapping tile, same target (labels), clean |
 | 5 | `score_groups.py` | COCO mAP per group and source: the copy-the-labels baseline, and a trained detector's val predictions |
 | 6 | `label_controls.py` | Chance level of the label rule: boxes from random same-source train images |
@@ -79,7 +109,17 @@ chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and A
   and shuffled: 79 / 225 pairs reach the exact / re-processed rules, against 1,531 / 1,921 real ones.
   - A first version used half-rolled images instead. It "matched" 860 val images pixel for pixel, which is how the
     wrapped copies were found (kept as `negative_roll_half` in `results/controls.json`).
-- **Shift rules** (`shift_controls.py`). 0 of 400 random same-source pairs pass, even with the best shift chosen.
+- **Shift rules against random pairs** (`shift_controls.py`). 0 of 400 random same-source pairs pass, even with the
+  best shift chosen. This turned out too weak: the real search keeps the best of 94k train images, not a random one.
+- **Shift rules against a shuffled pool** (`shift_null.py`, `results/shift_null.json`). This is the full search,
+  with every train image (and its boxes) cut into 4 x 4 blocks and shuffled. Ships survive inside a block; scenes do
+  not.
+  - Val images that still pass: 1,694 wrapped, 252 overlapping and 640 same target, against 2,420 / 2,126 / 403 on
+    the real pool.
+  - Nearly all of them are 256 px ship chips, HRSID and SSDD.
+  - With the background check, 13 pass. So the background check is what confirms a leak.
+  - The whole-image negative control above shuffles blocks too. But a centred ship is split across four blocks
+    there, so it could not show this.
 - **Label rule against random pairs** (`label_controls.py`). Boxes from a random train image of the same source
   (true source from `mapping.json`), moved the same way as the real match, reach the rule's box recall of 0.5 for
   0.35% of val and 0.44% of test images, against 52% / 45% for the real best matches. SIVED (vehicles) is
@@ -88,13 +128,15 @@ chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and A
 
 ## Still to do
 
-- **Score a trained detector on leaked vs clean val.** YOLO11s is training on the SMU cluster (`cluster/job_a.sbatch`;
-  the data goes in as one tar unpacked on the node's local disk, because of the 100k-file scratch quota). Then run
-  `score_groups.py model results/val_predictions.json`.
 - **Leak-free re-split.**
   - `mapping.json` gives the original files, but the leaks run *between* originals. So groups still have to be
     rebuilt by linking files that share ground (train against train too), then following the links.
   - Then split whole groups and measure the gap.
+  - Train against train is done for whole images (`nn_train_vs_train.csv`, `verify_train_vs_train.csv`). Still
+    needed: the shift search and the background check for train, using confirmed links only, so that chance matches
+    between sparse chips do not chain into giant groups.
+- **Sparse chips.** A better test for the uncertain ShipDataset/MSAR/HRSID matches, for example by comparing the
+  ship's own pixels at full resolution.
 
 ## Reproduce
 
@@ -105,6 +147,8 @@ P=~/.venvs/sar-audit/bin/python
 $P sardet100k/candidates.py thumbs
 for q in val test; do $P sardet100k/candidates.py search $q train; $P sardet100k/candidates.py search $q $q; done
 for q in val test; do $P sardet100k/verify.py $q; $P sardet100k/verify.py $q $q; $P sardet100k/shifts.py $q; done
+for f in shifts_val shifts_test verify_val verify_test verify_val_vs_val verify_test_vs_test; do $P sardet100k/background.py $f.csv; done
+$P sardet100k/shift_null.py val; $P sardet100k/background.py shifts_val_null.csv --null
 $P sardet100k/controls.py; $P sardet100k/shift_controls.py
 for q in val test; do ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py copy $q; done   # needs pycocotools (sar-yolo env)
 $P sardet100k/provenance.py; $P sardet100k/label_controls.py

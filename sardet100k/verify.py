@@ -102,7 +102,7 @@ def main(qsplit, rsplit='train'):
     todo = [(qsplit, r['query'], rsplit, r['ref'], r['transform'], float(r['r'])) for r in rows if float(r['r']) >= MIN_THUMB_R]
     with Pool() as p:
         res = {q: rest for q, *rest in p.imap_unordered(check, todo, chunksize=32)}
-    out = OUT / (f'verify_{qsplit}.csv' if rsplit == 'train' else f'verify_{qsplit}_vs_{rsplit}.csv')
+    out = OUT / (f'verify_{qsplit}.csv' if rsplit == 'train' != qsplit else f'verify_{qsplit}_vs_{rsplit}.csv')
     with out.open('w', newline='') as fh:
         w = csv.writer(fh)
         w.writerow(['query', 'ref', 'transform', 'thumb_r', 'full_r', 'low_r', 'source', 'ref_source',

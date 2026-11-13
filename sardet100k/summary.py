@@ -22,9 +22,9 @@ def within_split(split):
             x = par[x]
         return x
     kinds = Counter()
-    rows = list(csv.DictReader((D / f'verify_{split}_vs_{split}.csv').open()))
+    rows = list(csv.DictReader((D / f'verify_{split}_vs_{split}_bg.csv').open()))
     for r in rows:
-        g = G.first_pass(r)
+        g = G.confirmed_first(r)  # only background-confirmed copies (see groups.py)
         if g:
             kinds[g] += 1; par[find(r['query'])] = find(r['ref'])
     members = set(par) | {find(x) for x in par}; groups = len({find(x) for x in members})
@@ -45,17 +45,23 @@ def main():
         out[s] = {'images': n, 'leaked': n - c['clean'], 'leaked_share': round((n - c['clean']) / n, 4),
                   'leaked_image_rules_only': n - c['clean'] - c['same target (labels)'],
                   'groups': {k: c[k] for k in G.ORDER},
+                  'evidence': dict(Counter(v['evidence'] for v in g.values())),
+                  'confirmed_share': round(sum(v['evidence'] == 'confirmed' for v in g.values()) / n, 4),
+                  'confirmed_groups': dict(Counter(v['confirmed_group'] for v in g.values() if v['confirmed_group'])),
+                  'per_source_evidence': {k: dict(Counter(v['evidence'] for v in g.values() if v['source'] == k))
+                                          for k in sorted({v['source'] for v in g.values()})},
                   'per_source': {k: {**dict(v), 'images': sum(v.values())} for k, v in sorted(per.items())},
                   'duplicates_inside_split': within_split(s)}
     for name in ('controls.json', 'shift_controls.json', 'label_controls.json', 'provenance.json', 'scores_copy.json',
-                 'scores_copy_test.json', 'scores_model.json'):
+                 'scores_copy_test.json', 'scores_model.json',
+                 'shift_null.json'):
         p = D / name
         if p.exists():
             out[name.removesuffix('.json')] = json.loads(p.read_text())
     (D / 'summary.json').write_text(json.dumps(out, indent=1))
     for s in ('val', 'test'):
         o = out[s]; d = o['duplicates_inside_split']
-        print(f"{s}: {o['leaked']} of {o['images']} leaked ({100 * o['leaked_share']:.1f}%), {o['groups']}; "
+        print(f"{s}: confirmed {100 * o['confirmed_share']:.1f}%, all rules {100 * o['leaked_share']:.1f}%, {o['groups']}; "
               f"inside {s}: {100 * d['redundant_share']:.1f}% redundant")
     print('->', D / 'summary.json')
 

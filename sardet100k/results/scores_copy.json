@@ -9,6 +9,21 @@
   "mAP": 4.05,
   "AP50": 9.62
  },
+ "evidence: clean": {
+  "images": 2957,
+  "mAP": 4.05,
+  "AP50": 9.62
+ },
+ "evidence: confirmed": {
+  "images": 5101,
+  "mAP": 49.13,
+  "AP50": 70.19
+ },
+ "evidence: uncertain": {
+  "images": 2434,
+  "mAP": 54.36,
+  "AP50": 77.13
+ },
  "group: clean": {
   "images": 2957,
   "mAP": 4.05,
@@ -43,6 +58,141 @@
   "images": 7535,
   "mAP": 46.15,
   "AP50": 72.08
+ },
+ "source x evidence: 256 ship (ShipDataset/MSAR) | clean": {
+  "images": 1054,
+  "mAP": 2.89,
+  "AP50": 7.27
+ },
+ "source x evidence: 256 ship (ShipDataset/MSAR) | confirmed": {
+  "images": 2013,
+  "mAP": 57.44,
+  "AP50": 73.62
+ },
+ "source x evidence: 256 ship (ShipDataset/MSAR) | uncertain": {
+  "images": 2192,
+  "mAP": 51.14,
+  "AP50": 79.27
+ },
+ "source x evidence: 512 other (AIR_SARShip-1/MSAR) | clean": {
+  "images": 31,
+  "mAP": 7.34,
+  "AP50": 30.0
+ },
+ "source x evidence: 512 other (AIR_SARShip-1/MSAR) | confirmed": {
+  "images": 57,
+  "mAP": 59.55,
+  "AP50": 62.65
+ },
+ "source x evidence: 512 other (AIR_SARShip-1/MSAR) | uncertain": {
+  "images": 5,
+  "mAP": 56.53,
+  "AP50": 83.5
+ },
+ "source x evidence: AIR_SARShip-2 | clean": {
+  "images": 15,
+  "mAP": 0.09,
+  "AP50": 0.58
+ },
+ "source x evidence: HRSID | clean": {
+  "images": 825,
+  "mAP": 0.51,
+  "AP50": 1.62
+ },
+ "source x evidence: HRSID | confirmed": {
+  "images": 15,
+  "mAP": 70.77,
+  "AP50": 79.09
+ },
+ "source x evidence: HRSID | uncertain": {
+  "images": 141,
+  "mAP": 3.6,
+  "AP50": 15.42
+ },
+ "source x evidence: MSAR | clean": {
+  "images": 27,
+  "mAP": 4.77,
+  "AP50": 7.43
+ },
+ "source x evidence: MSAR | confirmed": {
+  "images": 89,
+  "mAP": 41.93,
+  "AP50": 55.11
+ },
+ "source x evidence: MSAR | uncertain": {
+  "images": 7,
+  "mAP": 43.96,
+  "AP50": 69.64
+ },
+ "source x evidence: OGSOD | clean": {
+  "images": 6,
+  "mAP": 0.0,
+  "AP50": 0.0
+ },
+ "source x evidence: OGSOD | confirmed": {
+  "images": 1815,
+  "mAP": 42.53,
+  "AP50": 79.62
+ },
+ "source x evidence: OGSOD | uncertain": {
+  "images": 13,
+  "mAP": 98.19,
+  "AP50": 100.0
+ },
+ "source x evidence: SADD | confirmed": {
+  "images": 41,
+  "mAP": 49.92,
+  "AP50": 70.35
+ },
+ "source x evidence: SADD | uncertain": {
+  "images": 3,
+  "mAP": 58.42,
+  "AP50": 69.06
+ },
+ "source x evidence: SAR-AIRcraft | clean": {
+  "images": 865,
+  "mAP": 0.33,
+  "AP50": 0.62
+ },
+ "source x evidence: SAR-AIRcraft | confirmed": {
+  "images": 1054,
+  "mAP": 41.63,
+  "AP50": 64.05
+ },
+ "source x evidence: SAR-AIRcraft | uncertain": {
+  "images": 4,
+  "mAP": 18.52,
+  "AP50": 45.3
+ },
+ "source x evidence: SIVED | clean": {
+  "images": 80,
+  "mAP": 9.86,
+  "AP50": 30.01
+ },
+ "source x evidence: SIVED | confirmed": {
+  "images": 5,
+  "mAP": 53.55,
+  "AP50": 53.82
+ },
+ "source x evidence: SIVED | uncertain": {
+  "images": 19,
+  "mAP": 35.11,
+  "AP50": 71.85
+ },
+ "source x evidence: SSDD | clean": {
+  "images": 54,
+  "mAP": 0.11,
+  "AP50": 0.39
+ },
+ "source x evidence: SSDD | confirmed": {
+  "images": 12,
+  "mAP": 76.63,
+  "AP50": 100.0
+ },
+ "source x evidence: SSDD | uncertain": {
+  "images": 50,
+  "mAP": 42.7,
+  "AP50": 82.06
  },
  "source: 256 ship (ShipDataset/MSAR) | clean": {
   "images": 1054,

@@ -16,6 +16,7 @@ without the wrap. Both keep the strength of each spatial frequency (|FFT|), so t
 
     ~/.venvs/sar-audit/bin/python sardet100k/shifts.py val    # -> results/shifts_val.csv
     ~/.venvs/sar-audit/bin/python sardet100k/shifts.py test
+    ~/.venvs/sar-audit/bin/python sardet100k/shifts.py train  # train vs train (for groups.py's re-split)
 """
 import csv, sys
 from multiprocessing import Pool
@@ -96,11 +97,12 @@ def main(qsplit):
     _, ts = C.descr(tx); R = fdesc(tx); R[ts < C.MIN_STD] = 0
     index = faiss.IndexFlatIP(R.shape[1]); index.add(R)
     _, qs = C.descr(qx)
-    cand = [dict() for _ in qn]
+    cand = [dict() for _ in qn]; same = qsplit == 'train'  # train vs train: skip each image's match with itself
     for t, f in C.TRANSFORMS.items():
-        s, i = index.search(fdesc(np.ascontiguousarray(f(qx))), K)
+        s, i = index.search(fdesc(np.ascontiguousarray(f(qx))), K + same)
         for k in range(len(qn)):
             for sc, j in zip(s[k], i[k]):
+                if same and j == k: continue
                 if sc > cand[k].get(j, (-2,))[0]:
                     cand[k][j] = (sc, t)
         print('searched', t, flush=True)

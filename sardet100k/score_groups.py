@@ -71,6 +71,8 @@ def main(name, pred=None, split='val'):
         i = ids[q]; sets['all'].add(i); leak = g['group'] != 'clean'
         sets['leaked' if leak else 'clean'].add(i); sets['group: ' + g['group']].add(i)
         sets[f"source: {g['source']} | {'leaked' if leak else 'clean'}"].add(i)
+        sets['evidence: ' + g['evidence']].add(i)
+        sets[f"source x evidence: {g['source']} | {g['evidence']}"].add(i)
     out = {k: evaluate(gt, dt, v) for k, v in sorted(sets.items())}
     (G.D / f"scores_{name}{'' if split == 'val' else '_' + split}.json").write_text(json.dumps(out, indent=1))
     for k, v in out.items():

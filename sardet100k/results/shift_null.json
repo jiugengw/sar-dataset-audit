@@ -1,0 +1,56 @@
+{
+ "real": {
+  "by_rule": {
+   "wrapped copy": 2420,
+   "same target (labels)": 403,
+   "overlapping tile": 2126
+  },
+  "per_source": {
+   "256 ship (ShipDataset/MSAR) | overlapping tile": 1075,
+   "256 ship (ShipDataset/MSAR) | same target (labels)": 330,
+   "256 ship (ShipDataset/MSAR) | wrapped copy": 2171,
+   "512 other (AIR_SARShip-1/MSAR) | overlapping tile": 54,
+   "512 other (AIR_SARShip-1/MSAR) | wrapped copy": 4,
+   "HRSID | overlapping tile": 69,
+   "HRSID | same target (labels)": 32,
+   "HRSID | wrapped copy": 48,
+   "MSAR | overlapping tile": 89,
+   "OGSOD | overlapping tile": 37,
+   "OGSOD | same target (labels)": 2,
+   "OGSOD | wrapped copy": 1,
+   "SADD | overlapping tile": 12,
+   "SADD | wrapped copy": 1,
+   "SAR-AIRcraft | overlapping tile": 766,
+   "SAR-AIRcraft | same target (labels)": 4,
+   "SAR-AIRcraft | wrapped copy": 177,
+   "SIVED | overlapping tile": 6,
+   "SIVED | same target (labels)": 16,
+   "SSDD | overlapping tile": 18,
+   "SSDD | same target (labels)": 19,
+   "SSDD | wrapped copy": 18
+  }
+ },
+ "null": {
+  "by_rule": {
+   "wrapped copy": 1694,
+   "same target (labels)": 640,
+   "overlapping tile": 252
+  },
+  "per_source": {
+   "256 ship (ShipDataset/MSAR) | overlapping tile": 182,
+   "256 ship (ShipDataset/MSAR) | same target (labels)": 587,
+   "256 ship (ShipDataset/MSAR) | wrapped copy": 1649,
+   "512 other (AIR_SARShip-1/MSAR) | overlapping tile": 1,
+   "512 other (AIR_SARShip-1/MSAR) | same target (labels)": 1,
+   "HRSID | overlapping tile": 65,
+   "HRSID | same target (labels)": 27,
+   "HRSID | wrapped copy": 43,
+   "SAR-AIRcraft | same target (labels)": 3,
+   "SIVED | same target (labels)": 2,
+   "SSDD | overlapping tile": 4,
+   "SSDD | same target (labels)": 20,
+   "SSDD | wrapped copy": 2
+  }
+ },
+ "queries": 9607
+}
