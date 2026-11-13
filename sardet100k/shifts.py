@@ -16,7 +16,8 @@ without the wrap. Both keep the strength of each spatial frequency (|FFT|), so t
 
     ~/.venvs/sar-audit/bin/python sardet100k/shifts.py val    # -> results/shifts_val.csv
     ~/.venvs/sar-audit/bin/python sardet100k/shifts.py test
-    ~/.venvs/sar-audit/bin/python sardet100k/shifts.py train  # train vs train (for groups.py's re-split)
+    ~/.venvs/sar-audit/bin/python sardet100k/shifts.py train  # train vs train (for resplit.py)
+    ~/.venvs/sar-audit/bin/python sardet100k/shifts.py val test  # val vs test -> results/shifts_val_vs_test.csv
 """
 import csv, sys
 from multiprocessing import Pool
@@ -67,10 +68,10 @@ def overlap(a, b, sy, sx):
 
 
 def check(job):
-    qsplit, q, cands = job
+    qsplit, q, cands, rsplit = (*job, 'train') if len(job) == 3 else job
     a0 = V.grey(qsplit, q); best = None
     for ref, t in cands:
-        b = V.grey('train', ref)
+        b = V.grey(rsplit, ref)
         a = np.ascontiguousarray(V.F[t](a0))
         if a.shape != b.shape:
             a = np.asarray(Image.fromarray(a).resize(b.shape[::-1], Image.BILINEAR), dtype=np.float32)
@@ -91,13 +92,13 @@ def move(box, sy, sx, t, rw, rh, qw, qh):
     return V.move_box(((x - sx) % rw, (y - sy) % rh, w, h), t, rw, rh, qw, qh)
 
 
-def main(qsplit):
+def main(qsplit, rsplit='train'):
     import faiss
-    tn, tx, _ = C.load('train'); qn, qx, _ = C.load(qsplit)
+    tn, tx, _ = C.load(rsplit); qn, qx, _ = C.load(qsplit)
     _, ts = C.descr(tx); R = fdesc(tx); R[ts < C.MIN_STD] = 0
     index = faiss.IndexFlatIP(R.shape[1]); index.add(R)
     _, qs = C.descr(qx)
-    cand = [dict() for _ in qn]; same = qsplit == 'train'  # train vs train: skip each image's match with itself
+    cand = [dict() for _ in qn]; same = qsplit == rsplit  # same split: skip each image's match with itself
     for t, f in C.TRANSFORMS.items():
         s, i = index.search(fdesc(np.ascontiguousarray(f(qx))), K + same)
         for k in range(len(qn)):
@@ -106,13 +107,13 @@ def main(qsplit):
                 if sc > cand[k].get(j, (-2,))[0]:
                     cand[k][j] = (sc, t)
         print('searched', t, flush=True)
-    jobs = [(qsplit, qn[k], [(tn[j], t) for j, (sc, t) in sorted(cand[k].items(), key=lambda kv: -kv[1][0])[:K]])
+    jobs = [(qsplit, qn[k], [(tn[j], t) for j, (sc, t) in sorted(cand[k].items(), key=lambda kv: -kv[1][0])[:K]], rsplit)
             for k in range(len(qn)) if qs[k] >= C.MIN_STD]
     with Pool() as p:
         res = dict(p.imap_unordered(check, jobs, chunksize=16))
-    qims, qboxes = V.coco(qsplit); tims, tboxes = V.coco('train')
+    qims, qboxes = V.coco(qsplit); tims, tboxes = V.coco(rsplit)
     wh = {n: (im['width'], im['height']) for n, im in tims.items()}
-    out = C.OUT / f'shifts_{qsplit}.csv'
+    out = C.OUT / (f'shifts_{qsplit}.csv' if rsplit == 'train' else f'shifts_{qsplit}_vs_{rsplit}.csv')
     with out.open('w', newline='') as fh:
         w = csv.writer(fh)
         w.writerow(['query', 'ref', 'transform', 'shift_y', 'shift_x', 'wrap_full', 'wrap_low', 'ovl_full', 'ovl_low',
@@ -136,4 +137,4 @@ def main(qsplit):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(*sys.argv[1:3])

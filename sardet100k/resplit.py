@@ -14,6 +14,8 @@ every source, groups are shuffled (fixed seed) and handed to val and test until 
 source's images as the official split; groups larger than MAX_GROUP stay in train. The rest is train.
 
     ~/.venvs/sar-audit/bin/python sardet100k/resplit.py      # -> results/resplit.json, results/resplit_split.csv
+    ~/.venvs/sar-audit/bin/python sardet100k/resplit.py check    # confirmed links that cross the saved split
+                                                                 # (e.g. after a new check) -> resplit_check.json
 """
 import csv, json, sys
 from collections import Counter, defaultdict
@@ -60,8 +62,33 @@ LINKS = [  # file, query split, ref split, kind
     ('verify_test_bg.csv', 'test', 'train', 'first'), ('shifts_test_bg.csv', 'test', 'train', 'shift'),
     ('verify_train_vs_train_bg.csv', 'train', 'train', 'first'), ('shifts_train_bg.csv', 'train', 'train', 'shift'),
     ('verify_val_vs_val_bg.csv', 'val', 'val', 'first'), ('verify_test_vs_test_bg.csv', 'test', 'test', 'first'),
-    ('verify_val_vs_test_bg.csv', 'val', 'test', 'first'),
+    ('verify_val_vs_test_bg.csv', 'val', 'test', 'first'), ('shifts_val_vs_test_bg.csv', 'val', 'test', 'shift'),
 ]
+
+
+def links():
+    """(file, a, b, confirmed?) for every link that passes a rule; files not made yet are skipped."""
+    for name, qs, rs, kind in LINKS:
+        if not (D / name).exists():
+            print('missing', name); continue
+        for r in csv.DictReader((D / name).open()):
+            if not r['ref']: continue
+            g = G.first_pass(r) if kind == 'first' else G.shifted(r)
+            c = G.confirmed_first(r) if kind == 'first' else G.confirmed_shift(r)
+            if g or c: yield name, (qs, r['query']), (rs, r['ref']), bool(c)
+
+
+def check():
+    """Confirmed links whose two images sit in different splits of the saved re-split."""
+    new = {(r['official_split'], r['file_name']): r['new_split']
+           for r in csv.DictReader((D / 'resplit_split.csv').open())}
+    cross = Counter(); imgs = defaultdict(set)
+    for name, a, b, c in links():
+        if c and new[a] != new[b]:
+            pair = '-'.join(sorted((new[a], new[b]))); cross[(name, pair)] += 1; imgs[pair] |= {a, b}
+    out = {'links': {f'{n} | {p}': k for (n, p), k in sorted(cross.items())},
+           'images': {p: {s: sum(1 for k in v if new[k] == s) for s in ('train', 'val', 'test')} for p, v in imgs.items()}}
+    (D / 'resplit_check.json').write_text(json.dumps(out, indent=1)); print(json.dumps(out, indent=1))
 
 
 def main():
@@ -69,16 +96,11 @@ def main():
     src = {k: src_of.get(k[1], '?') for k in ims}
     conf, unc = UF(), UF()
     stats = {}
-    for name, qs, rs, kind in LINKS:
-        n = Counter()
-        for r in csv.DictReader((D / name).open()):
-            if not r['ref']: continue
-            a, b = (qs, r['query']), (rs, r['ref'])
-            g = G.first_pass(r) if kind == 'first' else G.shifted(r)
-            c = G.confirmed_first(r) if kind == 'first' else G.confirmed_shift(r)
-            if c: conf.union(a, b); unc.union(a, b); n['confirmed'] += 1
-            elif g: unc.union(a, b); n['uncertain'] += 1
-        stats[name] = dict(n)
+    for name, a, b, c in links():
+        stats.setdefault(name, Counter())['confirmed' if c else 'uncertain'] += 1
+        unc.union(a, b)
+        if c: conf.union(a, b)
+    stats = {k: dict(v) for k, v in stats.items()}
     comp = defaultdict(list)
     for k in ims: comp[conf.find(k)].append(k)
     ucomp = Counter(unc.find(k) for k in ims)
@@ -144,4 +166,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    check() if sys.argv[1:2] == ['check'] else main()

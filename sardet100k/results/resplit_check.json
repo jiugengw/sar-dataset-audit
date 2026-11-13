@@ -1,0 +1,24 @@
+{
+ "links": {
+  "shifts_val_vs_test_bg.csv | test-train": 247,
+  "shifts_val_vs_test_bg.csv | test-val": 38,
+  "shifts_val_vs_test_bg.csv | train-val": 174
+ },
+ "images": {
+  "test-train": {
+   "train": 203,
+   "val": 0,
+   "test": 200
+  },
+  "train-val": {
+   "train": 148,
+   "val": 159,
+   "test": 0
+  },
+  "test-val": {
+   "train": 0,
+   "val": 36,
+   "test": 31
+  }
+ }
+}
