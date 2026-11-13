@@ -1,0 +1,137 @@
+{
+ "all": {
+  "images": 10492,
+  "mAP": 36.21,
+  "AP50": 58.54
+ },
+ "clean": {
+  "images": 2957,
+  "mAP": 4.05,
+  "AP50": 9.62
+ },
+ "group: clean": {
+  "images": 2957,
+  "mAP": 4.05,
+  "AP50": 9.62
+ },
+ "group: exact copy": {
+  "images": 1531,
+  "mAP": 45.52,
+  "AP50": 78.69
+ },
+ "group: overlapping tile": {
+  "images": 1950,
+  "mAP": 45.36,
+  "AP50": 55.69
+ },
+ "group: re-processed copy": {
+  "images": 1921,
+  "mAP": 53.58,
+  "AP50": 82.46
+ },
+ "group: same target (labels)": {
+  "images": 840,
+  "mAP": 42.0,
+  "AP50": 69.89
+ },
+ "group: wrapped copy": {
+  "images": 1293,
+  "mAP": 76.37,
+  "AP50": 90.65
+ },
+ "leaked": {
+  "images": 7535,
+  "mAP": 46.15,
+  "AP50": 72.08
+ },
+ "source: 256 ship (ShipDataset/MSAR) | clean": {
+  "images": 1054,
+  "mAP": 2.89,
+  "AP50": 7.27
+ },
+ "source: 256 ship (ShipDataset/MSAR) | leaked": {
+  "images": 4205,
+  "mAP": 54.12,
+  "AP50": 75.47
+ },
+ "source: 512 other (AIR_SARShip-1/MSAR) | clean": {
+  "images": 31,
+  "mAP": 7.34,
+  "AP50": 30.0
+ },
+ "source: 512 other (AIR_SARShip-1/MSAR) | leaked": {
+  "images": 62,
+  "mAP": 58.26,
+  "AP50": 62.34
+ },
+ "source: AIR_SARShip-2 | clean": {
+  "images": 15,
+  "mAP": 0.09,
+  "AP50": 0.58
+ },
+ "source: HRSID | clean": {
+  "images": 825,
+  "mAP": 0.51,
+  "AP50": 1.62
+ },
+ "source: HRSID | leaked": {
+  "images": 156,
+  "mAP": 32.56,
+  "AP50": 44.35
+ },
+ "source: MSAR | clean": {
+  "images": 27,
+  "mAP": 4.77,
+  "AP50": 7.43
+ },
+ "source: MSAR | leaked": {
+  "images": 96,
+  "mAP": 41.88,
+  "AP50": 55.6
+ },
+ "source: OGSOD | clean": {
+  "images": 6,
+  "mAP": 0.0,
+  "AP50": 0.0
+ },
+ "source: OGSOD | leaked": {
+  "images": 1828,
+  "mAP": 42.81,
+  "AP50": 79.62
+ },
+ "source: SADD | leaked": {
+  "images": 44,
+  "mAP": 49.94,
+  "AP50": 70.33
+ },
+ "source: SAR-AIRcraft | clean": {
+  "images": 865,
+  "mAP": 0.33,
+  "AP50": 0.62
+ },
+ "source: SAR-AIRcraft | leaked": {
+  "images": 1058,
+  "mAP": 41.5,
+  "AP50": 64.05
+ },
+ "source: SIVED | clean": {
+  "images": 80,
+  "mAP": 9.86,
+  "AP50": 30.01
+ },
+ "source: SIVED | leaked": {
+  "images": 24,
+  "mAP": 40.59,
+  "AP50": 66.3
+ },
+ "source: SSDD | clean": {
+  "images": 54,
+  "mAP": 0.11,
+  "AP50": 0.39
+ },
+ "source: SSDD | leaked": {
+  "images": 62,
+  "mAP": 54.03,
+  "AP50": 87.64
+ }
+}

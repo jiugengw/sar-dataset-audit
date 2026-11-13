@@ -1,0 +1,4 @@
+# Downloaded datasets, caches, local training runs (e.g. ~117k files for SARDet-100K)
+*/data/
+__pycache__/
+.DS_Store

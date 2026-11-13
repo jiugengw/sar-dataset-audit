@@ -1,0 +1,465 @@
+{
+ "splits": "official (Annotations/train.json, val.json, JPEGImages/test); nothing re-split",
+ "group_rules": "One leak group per image, from all checks (verify_*.csv and shifts_*.csv). Used by score_groups.py and summary.py.\n\nGroups, strongest first (an image gets the first that applies):\n  exact copy             full-resolution r >= 0.95 (same position, possibly flipped / turned)\n  re-processed copy      speckle-reduced r >= 0.95\n  wrapped copy           shifted with wrap-round, r >= 0.95 (full or speckle-reduced)\n  overlapping tile       shifted without wrap, shared region >= 25% of the image, r >= 0.95 there\n  same target (labels)   val only: speckle-reduced r >= 0.8 and >= 50% of the val boxes recovered by the\n                         moved train boxes (same position, or after the shift)\n  clean                  none of the above",
+ "val": {
+  "images": 10492,
+  "leaked": 7535,
+  "leaked_share": 0.7182,
+  "leaked_image_rules_only": 6695,
+  "groups": {
+   "exact copy": 1531,
+   "re-processed copy": 1921,
+   "wrapped copy": 1293,
+   "overlapping tile": 1950,
+   "same target (labels)": 840,
+   "clean": 2957
+  },
+  "per_source": {
+   "256 ship (ShipDataset/MSAR)": {
+    "exact copy": 77,
+    "re-processed copy": 1297,
+    "wrapped copy": 1089,
+    "same target (labels)": 750,
+    "overlapping tile": 992,
+    "clean": 1054,
+    "images": 5259
+   },
+   "512 other (AIR_SARShip-1/MSAR)": {
+    "re-processed copy": 4,
+    "same target (labels)": 4,
+    "overlapping tile": 52,
+    "wrapped copy": 2,
+    "clean": 31,
+    "images": 93
+   },
+   "AIR_SARShip-2": {
+    "clean": 15,
+    "images": 15
+   },
+   "HRSID": {
+    "exact copy": 1,
+    "re-processed copy": 4,
+    "wrapped copy": 45,
+    "clean": 825,
+    "same target (labels)": 38,
+    "overlapping tile": 68,
+    "images": 981
+   },
+   "MSAR": {
+    "re-processed copy": 2,
+    "overlapping tile": 88,
+    "same target (labels)": 6,
+    "clean": 27,
+    "images": 123
+   },
+   "OGSOD": {
+    "exact copy": 1254,
+    "re-processed copy": 570,
+    "overlapping tile": 4,
+    "clean": 6,
+    "images": 1834
+   },
+   "SADD": {
+    "re-processed copy": 44,
+    "images": 44
+   },
+   "SAR-AIRcraft": {
+    "exact copy": 193,
+    "overlapping tile": 722,
+    "clean": 865,
+    "wrapped copy": 139,
+    "same target (labels)": 4,
+    "images": 1923
+   },
+   "SIVED": {
+    "same target (labels)": 18,
+    "clean": 80,
+    "overlapping tile": 6,
+    "images": 104
+   },
+   "SSDD": {
+    "exact copy": 6,
+    "wrapped copy": 18,
+    "same target (labels)": 20,
+    "clean": 54,
+    "overlapping tile": 18,
+    "images": 116
+   }
+  },
+  "duplicates_inside_split": {
+   "images": 10492,
+   "images_with_a_copy_in_split": 3428,
+   "by_kind": {
+    "exact copy": 1596,
+    "re-processed copy": 457,
+    "same target (labels)": 1375
+   },
+   "images_in_duplicate_groups": 3544,
+   "duplicate_groups": 1416,
+   "distinct_images": 8364,
+   "redundant_share": 0.2028
+  }
+ },
+ "test": {
+  "images": 11613,
+  "leaked": 6376,
+  "leaked_share": 0.549,
+  "leaked_image_rules_only": 6376,
+  "groups": {
+   "exact copy": 1321,
+   "re-processed copy": 1915,
+   "wrapped copy": 1338,
+   "overlapping tile": 1802,
+   "same target (labels)": 0,
+   "clean": 5237
+  },
+  "per_source": {
+   "256 ship (ShipDataset/MSAR)": {
+    "exact copy": 75,
+    "re-processed copy": 1276,
+    "wrapped copy": 1071,
+    "clean": 1977,
+    "overlapping tile": 981,
+    "images": 5380
+   },
+   "512 other (AIR_SARShip-1/MSAR/SIVED/SAR-AIRcraft)": {
+    "exact copy": 9,
+    "clean": 2317,
+    "re-processed copy": 1,
+    "overlapping tile": 706,
+    "wrapped copy": 211,
+    "images": 3244
+   },
+   "AIR_SARShip-2": {
+    "clean": 14,
+    "overlapping tile": 1,
+    "images": 15
+   },
+   "HRSID": {
+    "re-processed copy": 5,
+    "overlapping tile": 96,
+    "wrapped copy": 37,
+    "clean": 843,
+    "images": 981
+   },
+   "OGSOD": {
+    "exact copy": 1233,
+    "re-processed copy": 590,
+    "overlapping tile": 2,
+    "clean": 8,
+    "images": 1833
+   },
+   "SADD": {
+    "re-processed copy": 43,
+    "clean": 1,
+    "images": 44
+   },
+   "SSDD": {
+    "exact copy": 4,
+    "wrapped copy": 19,
+    "overlapping tile": 16,
+    "clean": 77,
+    "images": 116
+   }
+  },
+  "duplicates_inside_split": {
+   "images": 11613,
+   "images_with_a_copy_in_split": 3109,
+   "by_kind": {
+    "exact copy": 2660,
+    "re-processed copy": 449
+   },
+   "images_in_duplicate_groups": 3109,
+   "duplicate_groups": 1323,
+   "distinct_images": 9827,
+   "redundant_share": 0.1538
+  }
+ },
+ "controls": {
+  "positive": {
+   "speckle 4 looks": {
+    "found_as_best": 838,
+    "of": 1000,
+    "median_thumb_r": 0.9915790557861328,
+    "bands_of_found": {
+     "B": 720,
+     "C (low_r 0.8-0.95)": 109,
+     "below": 9
+    }
+   },
+   "speckle 1 look": {
+    "found_as_best": 813,
+    "of": 1000,
+    "median_thumb_r": 0.9665838479995728,
+    "bands_of_found": {
+     "B": 463,
+     "below": 96,
+     "C (low_r 0.8-0.95)": 254
+    }
+   },
+   "gain x0.6": {
+    "found_as_best": 760,
+    "of": 1000,
+    "median_thumb_r": 0.9998497366905212,
+    "bands_of_found": {
+     "A": 760
+    }
+   },
+   "jpeg q40": {
+    "found_as_best": 867,
+    "of": 1000,
+    "median_thumb_r": 0.9992548227310181,
+    "bands_of_found": {
+     "A": 471,
+     "B": 396
+    }
+   },
+   "shift 4": {
+    "found_as_best": 487,
+    "of": 1000,
+    "median_thumb_r": 0.8482787013053894,
+    "bands_of_found": {
+     "C (low_r 0.8-0.95)": 233,
+     "below": 245,
+     "B": 9
+    }
+   },
+   "shift 16": {
+    "found_as_best": 58,
+    "of": 1000,
+    "median_thumb_r": 0.6568418741226196,
+    "bands_of_found": {
+     "below": 56,
+     "B": 1,
+     "C (low_r 0.8-0.95)": 1
+    }
+   },
+   "speckle 4 looks + flip": {
+    "found_as_best": 834,
+    "of": 1000,
+    "median_thumb_r": 0.992000937461853,
+    "bands_of_found": {
+     "B": 715,
+     "C (low_r 0.8-0.95)": 111,
+     "below": 8
+    }
+   }
+  },
+  "negative_roll_half": {
+   "thumb_r_at_least": {
+    "0.99": {
+     "real": 2104,
+     "null": 769
+    },
+    "0.97": {
+     "real": 2647,
+     "null": 956
+    },
+    "0.95": {
+     "real": 3462,
+     "null": 1153
+    },
+    "0.9": {
+     "real": 4646,
+     "null": 1751
+    },
+    "0.8": {
+     "real": 5828,
+     "null": 2635
+    },
+    "0.7": {
+     "real": 6711,
+     "null": 3541
+    }
+   },
+   "null_pairs_checked": 3541,
+   "null_bands": {
+    "C (low_r 0.8-0.95)": 1439,
+    "B": 296,
+    "A": 860,
+    "below": 946
+   }
+  },
+  "negative": {
+   "thumb_r_at_least": {
+    "0.99": {
+     "real": 2104,
+     "null": 69
+    },
+    "0.97": {
+     "real": 2647,
+     "null": 132
+    },
+    "0.95": {
+     "real": 3462,
+     "null": 304
+    },
+    "0.9": {
+     "real": 4646,
+     "null": 1025
+    },
+    "0.8": {
+     "real": 5828,
+     "null": 2206
+    },
+    "0.7": {
+     "real": 6711,
+     "null": 3195
+    }
+   },
+   "null_pairs_checked": 3195,
+   "null_bands": {
+    "C (low_r 0.8-0.95)": 1867,
+    "below": 1024,
+    "B": 225,
+    "A": 79
+   }
+  }
+ },
+ "shift_controls": {
+  "random_pairs": 400,
+  "passed_rules_by_chance": {},
+  "real_val_matches": {
+   "wrapped copy": 2420,
+   "overlapping tile": 2126
+  },
+  "val_images": 10492
+ },
+ "scores_copy": {
+  "all": {
+   "images": 10492,
+   "mAP": 36.21,
+   "AP50": 58.54
+  },
+  "clean": {
+   "images": 2957,
+   "mAP": 4.05,
+   "AP50": 9.62
+  },
+  "group: clean": {
+   "images": 2957,
+   "mAP": 4.05,
+   "AP50": 9.62
+  },
+  "group: exact copy": {
+   "images": 1531,
+   "mAP": 45.52,
+   "AP50": 78.69
+  },
+  "group: overlapping tile": {
+   "images": 1950,
+   "mAP": 45.36,
+   "AP50": 55.69
+  },
+  "group: re-processed copy": {
+   "images": 1921,
+   "mAP": 53.58,
+   "AP50": 82.46
+  },
+  "group: same target (labels)": {
+   "images": 840,
+   "mAP": 42.0,
+   "AP50": 69.89
+  },
+  "group: wrapped copy": {
+   "images": 1293,
+   "mAP": 76.37,
+   "AP50": 90.65
+  },
+  "leaked": {
+   "images": 7535,
+   "mAP": 46.15,
+   "AP50": 72.08
+  },
+  "source: 256 ship (ShipDataset/MSAR) | clean": {
+   "images": 1054,
+   "mAP": 2.89,
+   "AP50": 7.27
+  },
+  "source: 256 ship (ShipDataset/MSAR) | leaked": {
+   "images": 4205,
+   "mAP": 54.12,
+   "AP50": 75.47
+  },
+  "source: 512 other (AIR_SARShip-1/MSAR) | clean": {
+   "images": 31,
+   "mAP": 7.34,
+   "AP50": 30.0
+  },
+  "source: 512 other (AIR_SARShip-1/MSAR) | leaked": {
+   "images": 62,
+   "mAP": 58.26,
+   "AP50": 62.34
+  },
+  "source: AIR_SARShip-2 | clean": {
+   "images": 15,
+   "mAP": 0.09,
+   "AP50": 0.58
+  },
+  "source: HRSID | clean": {
+   "images": 825,
+   "mAP": 0.51,
+   "AP50": 1.62
+  },
+  "source: HRSID | leaked": {
+   "images": 156,
+   "mAP": 32.56,
+   "AP50": 44.35
+  },
+  "source: MSAR | clean": {
+   "images": 27,
+   "mAP": 4.77,
+   "AP50": 7.43
+  },
+  "source: MSAR | leaked": {
+   "images": 96,
+   "mAP": 41.88,
+   "AP50": 55.6
+  },
+  "source: OGSOD | clean": {
+   "images": 6,
+   "mAP": 0.0,
+   "AP50": 0.0
+  },
+  "source: OGSOD | leaked": {
+   "images": 1828,
+   "mAP": 42.81,
+   "AP50": 79.62
+  },
+  "source: SADD | leaked": {
+   "images": 44,
+   "mAP": 49.94,
+   "AP50": 70.33
+  },
+  "source: SAR-AIRcraft | clean": {
+   "images": 865,
+   "mAP": 0.33,
+   "AP50": 0.62
+  },
+  "source: SAR-AIRcraft | leaked": {
+   "images": 1058,
+   "mAP": 41.5,
+   "AP50": 64.05
+  },
+  "source: SIVED | clean": {
+   "images": 80,
+   "mAP": 9.86,
+   "AP50": 30.01
+  },
+  "source: SIVED | leaked": {
+   "images": 24,
+   "mAP": 40.59,
+   "AP50": 66.3
+  },
+  "source: SSDD | clean": {
+   "images": 54,
+   "mAP": 0.11,
+   "AP50": 0.39
+  },
+  "source: SSDD | leaked": {
+   "images": 62,
+   "mAP": 54.03,
+   "AP50": 87.64
+  }
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "random_pairs": 400,
+ "passed_rules_by_chance": {},
+ "real_val_matches": {
+  "wrapped copy": 2420,
+  "overlapping tile": 2126
+ },
+ "val_images": 10492
+}

@@ -1,0 +1,141 @@
+{
+ "positive": {
+  "speckle 4 looks": {
+   "found_as_best": 838,
+   "of": 1000,
+   "median_thumb_r": 0.9915790557861328,
+   "bands_of_found": {
+    "B": 720,
+    "C (low_r 0.8-0.95)": 109,
+    "below": 9
+   }
+  },
+  "speckle 1 look": {
+   "found_as_best": 813,
+   "of": 1000,
+   "median_thumb_r": 0.9665838479995728,
+   "bands_of_found": {
+    "B": 463,
+    "below": 96,
+    "C (low_r 0.8-0.95)": 254
+   }
+  },
+  "gain x0.6": {
+   "found_as_best": 760,
+   "of": 1000,
+   "median_thumb_r": 0.9998497366905212,
+   "bands_of_found": {
+    "A": 760
+   }
+  },
+  "jpeg q40": {
+   "found_as_best": 867,
+   "of": 1000,
+   "median_thumb_r": 0.9992548227310181,
+   "bands_of_found": {
+    "A": 471,
+    "B": 396
+   }
+  },
+  "shift 4": {
+   "found_as_best": 487,
+   "of": 1000,
+   "median_thumb_r": 0.8482787013053894,
+   "bands_of_found": {
+    "C (low_r 0.8-0.95)": 233,
+    "below": 245,
+    "B": 9
+   }
+  },
+  "shift 16": {
+   "found_as_best": 58,
+   "of": 1000,
+   "median_thumb_r": 0.6568418741226196,
+   "bands_of_found": {
+    "below": 56,
+    "B": 1,
+    "C (low_r 0.8-0.95)": 1
+   }
+  },
+  "speckle 4 looks + flip": {
+   "found_as_best": 834,
+   "of": 1000,
+   "median_thumb_r": 0.992000937461853,
+   "bands_of_found": {
+    "B": 715,
+    "C (low_r 0.8-0.95)": 111,
+    "below": 8
+   }
+  }
+ },
+ "negative_roll_half": {
+  "thumb_r_at_least": {
+   "0.99": {
+    "real": 2104,
+    "null": 769
+   },
+   "0.97": {
+    "real": 2647,
+    "null": 956
+   },
+   "0.95": {
+    "real": 3462,
+    "null": 1153
+   },
+   "0.9": {
+    "real": 4646,
+    "null": 1751
+   },
+   "0.8": {
+    "real": 5828,
+    "null": 2635
+   },
+   "0.7": {
+    "real": 6711,
+    "null": 3541
+   }
+  },
+  "null_pairs_checked": 3541,
+  "null_bands": {
+   "C (low_r 0.8-0.95)": 1439,
+   "B": 296,
+   "A": 860,
+   "below": 946
+  }
+ },
+ "negative": {
+  "thumb_r_at_least": {
+   "0.99": {
+    "real": 2104,
+    "null": 69
+   },
+   "0.97": {
+    "real": 2647,
+    "null": 132
+   },
+   "0.95": {
+    "real": 3462,
+    "null": 304
+   },
+   "0.9": {
+    "real": 4646,
+    "null": 1025
+   },
+   "0.8": {
+    "real": 5828,
+    "null": 2206
+   },
+   "0.7": {
+    "real": 6711,
+    "null": 3195
+   }
+  },
+  "null_pairs_checked": 3195,
+  "null_bands": {
+   "C (low_r 0.8-0.95)": 1867,
+   "below": 1024,
+   "B": 225,
+   "A": 79
+  }
+ }
+}
