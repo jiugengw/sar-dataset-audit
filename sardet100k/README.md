@@ -83,7 +83,7 @@ chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and A
 - **Label rule against random pairs** (`label_controls.py`). Boxes from a random train image of the same source
   (true source from `mapping.json`), moved the same way as the real match, reach the rule's box recall of 0.5 for
   0.35% of val and 0.44% of test images, against 52% / 45% for the real best matches. SIVED (vehicles) is
-  highest by chance, at 10%; every other source is at 2% or less.
+  highest by chance, at 10%; every other source is at 2.3% or less.
 - **Visual checks:** `results/sheets/`.
 
 ## Still to do
