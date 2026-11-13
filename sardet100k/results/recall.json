@@ -1,0 +1,458 @@
+{
+ "by_kind": {
+  "flip + jpeg90": {
+   "planted": 1080,
+   "found": 0.914,
+   "found (the original itself)": 0.914
+  },
+  "gain + jpeg60": {
+   "planted": 1080,
+   "found": 0.842,
+   "found (the original itself)": 0.842
+  },
+  "overlap 30": {
+   "planted": 966,
+   "found": 0.003,
+   "found (the original itself)": 0.002
+  },
+  "overlap 50": {
+   "planted": 961,
+   "found": 0.058,
+   "found (the original itself)": 0.042
+  },
+  "overlap 75": {
+   "planted": 964,
+   "found": 0.449,
+   "found (the original itself)": 0.398
+  },
+  "speckle + flip": {
+   "planted": 1080,
+   "found": 0.678,
+   "found (the original itself)": 0.678
+  },
+  "wrap": {
+   "planted": 1080,
+   "found": 0.725,
+   "found (the original itself)": 0.644
+  },
+  "wrap + speckle": {
+   "planted": 1080,
+   "found": 0.525,
+   "found (the original itself)": 0.468
+  }
+ },
+ "by_source": {
+  "AIR-SARShip": {
+   "planted": 960,
+   "found": 0.504,
+   "found (the original itself)": 0.502
+  },
+  "HRSID": {
+   "planted": 960,
+   "found": 0.199,
+   "found (the original itself)": 0.199
+  },
+  "MSAR": {
+   "planted": 957,
+   "found": 0.522,
+   "found (the original itself)": 0.511
+  },
+  "OGSOD": {
+   "planted": 960,
+   "found": 0.66,
+   "found (the original itself)": 0.57
+  },
+  "SADD": {
+   "planted": 960,
+   "found": 0.498,
+   "found (the original itself)": 0.465
+  },
+  "SAR-AIRcraft": {
+   "planted": 960,
+   "found": 0.582,
+   "found (the original itself)": 0.524
+  },
+  "SIVED": {
+   "planted": 960,
+   "found": 0.64,
+   "found (the original itself)": 0.639
+  },
+  "SSDD": {
+   "planted": 614,
+   "found": 0.764,
+   "found (the original itself)": 0.761
+  },
+  "Shipdataset": {
+   "planted": 960,
+   "found": 0.564,
+   "found (the original itself)": 0.537
+  }
+ },
+ "by_kind_and_source": {
+  "flip + jpeg90 | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.958,
+   "found (the original itself)": 0.958
+  },
+  "flip + jpeg90 | HRSID": {
+   "planted": 120,
+   "found": 0.433,
+   "found (the original itself)": 0.433
+  },
+  "flip + jpeg90 | MSAR": {
+   "planted": 120,
+   "found": 0.975,
+   "found (the original itself)": 0.975
+  },
+  "flip + jpeg90 | OGSOD": {
+   "planted": 120,
+   "found": 1.0,
+   "found (the original itself)": 1.0
+  },
+  "flip + jpeg90 | SADD": {
+   "planted": 120,
+   "found": 1.0,
+   "found (the original itself)": 1.0
+  },
+  "flip + jpeg90 | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.917,
+   "found (the original itself)": 0.917
+  },
+  "flip + jpeg90 | SIVED": {
+   "planted": 120,
+   "found": 1.0,
+   "found (the original itself)": 1.0
+  },
+  "flip + jpeg90 | SSDD": {
+   "planted": 120,
+   "found": 0.975,
+   "found (the original itself)": 0.975
+  },
+  "flip + jpeg90 | Shipdataset": {
+   "planted": 120,
+   "found": 0.967,
+   "found (the original itself)": 0.967
+  },
+  "gain + jpeg60 | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.742,
+   "found (the original itself)": 0.742
+  },
+  "gain + jpeg60 | HRSID": {
+   "planted": 120,
+   "found": 0.225,
+   "found (the original itself)": 0.225
+  },
+  "gain + jpeg60 | MSAR": {
+   "planted": 120,
+   "found": 0.95,
+   "found (the original itself)": 0.95
+  },
+  "gain + jpeg60 | OGSOD": {
+   "planted": 120,
+   "found": 1.0,
+   "found (the original itself)": 1.0
+  },
+  "gain + jpeg60 | SADD": {
+   "planted": 120,
+   "found": 1.0,
+   "found (the original itself)": 1.0
+  },
+  "gain + jpeg60 | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.858,
+   "found (the original itself)": 0.858
+  },
+  "gain + jpeg60 | SIVED": {
+   "planted": 120,
+   "found": 1.0,
+   "found (the original itself)": 1.0
+  },
+  "gain + jpeg60 | SSDD": {
+   "planted": 120,
+   "found": 0.933,
+   "found (the original itself)": 0.933
+  },
+  "gain + jpeg60 | Shipdataset": {
+   "planted": 120,
+   "found": 0.867,
+   "found (the original itself)": 0.867
+  },
+  "overlap 30 | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.008,
+   "found (the original itself)": 0.0
+  },
+  "overlap 30 | HRSID": {
+   "planted": 120,
+   "found": 0.0,
+   "found (the original itself)": 0.0
+  },
+  "overlap 30 | MSAR": {
+   "planted": 120,
+   "found": 0.008,
+   "found (the original itself)": 0.008
+  },
+  "overlap 30 | OGSOD": {
+   "planted": 120,
+   "found": 0.0,
+   "found (the original itself)": 0.0
+  },
+  "overlap 30 | SADD": {
+   "planted": 120,
+   "found": 0.0,
+   "found (the original itself)": 0.0
+  },
+  "overlap 30 | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.0,
+   "found (the original itself)": 0.0
+  },
+  "overlap 30 | SIVED": {
+   "planted": 120,
+   "found": 0.0,
+   "found (the original itself)": 0.0
+  },
+  "overlap 30 | SSDD": {
+   "planted": 6,
+   "found": 0.0,
+   "found (the original itself)": 0.0
+  },
+  "overlap 30 | Shipdataset": {
+   "planted": 120,
+   "found": 0.008,
+   "found (the original itself)": 0.008
+  },
+  "overlap 50 | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.058,
+   "found (the original itself)": 0.05
+  },
+  "overlap 50 | HRSID": {
+   "planted": 120,
+   "found": 0.008,
+   "found (the original itself)": 0.008
+  },
+  "overlap 50 | MSAR": {
+   "planted": 119,
+   "found": 0.05,
+   "found (the original itself)": 0.05
+  },
+  "overlap 50 | OGSOD": {
+   "planted": 120,
+   "found": 0.017,
+   "found (the original itself)": 0.008
+  },
+  "overlap 50 | SADD": {
+   "planted": 120,
+   "found": 0.092,
+   "found (the original itself)": 0.075
+  },
+  "overlap 50 | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.108,
+   "found (the original itself)": 0.042
+  },
+  "overlap 50 | SIVED": {
+   "planted": 120,
+   "found": 0.042,
+   "found (the original itself)": 0.042
+  },
+  "overlap 50 | SSDD": {
+   "planted": 2,
+   "found": 0.0,
+   "found (the original itself)": 0.0
+  },
+  "overlap 50 | Shipdataset": {
+   "planted": 120,
+   "found": 0.092,
+   "found (the original itself)": 0.058
+  },
+  "overlap 75 | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.342,
+   "found (the original itself)": 0.342
+  },
+  "overlap 75 | HRSID": {
+   "planted": 120,
+   "found": 0.167,
+   "found (the original itself)": 0.167
+  },
+  "overlap 75 | MSAR": {
+   "planted": 118,
+   "found": 0.432,
+   "found (the original itself)": 0.398
+  },
+  "overlap 75 | OGSOD": {
+   "planted": 120,
+   "found": 0.675,
+   "found (the original itself)": 0.5
+  },
+  "overlap 75 | SADD": {
+   "planted": 120,
+   "found": 0.55,
+   "found (the original itself)": 0.483
+  },
+  "overlap 75 | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.425,
+   "found (the original itself)": 0.317
+  },
+  "overlap 75 | SIVED": {
+   "planted": 120,
+   "found": 0.608,
+   "found (the original itself)": 0.6
+  },
+  "overlap 75 | SSDD": {
+   "planted": 6,
+   "found": 0.5,
+   "found (the original itself)": 0.5
+  },
+  "overlap 75 | Shipdataset": {
+   "planted": 120,
+   "found": 0.392,
+   "found (the original itself)": 0.375
+  },
+  "speckle + flip | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.708,
+   "found (the original itself)": 0.708
+  },
+  "speckle + flip | HRSID": {
+   "planted": 120,
+   "found": 0.283,
+   "found (the original itself)": 0.283
+  },
+  "speckle + flip | MSAR": {
+   "planted": 120,
+   "found": 0.633,
+   "found (the original itself)": 0.633
+  },
+  "speckle + flip | OGSOD": {
+   "planted": 120,
+   "found": 0.842,
+   "found (the original itself)": 0.842
+  },
+  "speckle + flip | SADD": {
+   "planted": 120,
+   "found": 0.25,
+   "found (the original itself)": 0.25
+  },
+  "speckle + flip | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.842,
+   "found (the original itself)": 0.842
+  },
+  "speckle + flip | SIVED": {
+   "planted": 120,
+   "found": 0.992,
+   "found (the original itself)": 0.992
+  },
+  "speckle + flip | SSDD": {
+   "planted": 120,
+   "found": 0.767,
+   "found (the original itself)": 0.767
+  },
+  "speckle + flip | Shipdataset": {
+   "planted": 120,
+   "found": 0.783,
+   "found (the original itself)": 0.783
+  },
+  "wrap + speckle | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.558,
+   "found (the original itself)": 0.558
+  },
+  "wrap + speckle | HRSID": {
+   "planted": 120,
+   "found": 0.183,
+   "found (the original itself)": 0.183
+  },
+  "wrap + speckle | MSAR": {
+   "planted": 120,
+   "found": 0.417,
+   "found (the original itself)": 0.408
+  },
+  "wrap + speckle | OGSOD": {
+   "planted": 120,
+   "found": 0.8,
+   "found (the original itself)": 0.483
+  },
+  "wrap + speckle | SADD": {
+   "planted": 120,
+   "found": 0.208,
+   "found (the original itself)": 0.167
+  },
+  "wrap + speckle | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.708,
+   "found (the original itself)": 0.592
+  },
+  "wrap + speckle | SIVED": {
+   "planted": 120,
+   "found": 0.75,
+   "found (the original itself)": 0.75
+  },
+  "wrap + speckle | SSDD": {
+   "planted": 120,
+   "found": 0.525,
+   "found (the original itself)": 0.517
+  },
+  "wrap + speckle | Shipdataset": {
+   "planted": 120,
+   "found": 0.575,
+   "found (the original itself)": 0.55
+  },
+  "wrap | AIR-SARShip": {
+   "planted": 120,
+   "found": 0.658,
+   "found (the original itself)": 0.658
+  },
+  "wrap | HRSID": {
+   "planted": 120,
+   "found": 0.292,
+   "found (the original itself)": 0.292
+  },
+  "wrap | MSAR": {
+   "planted": 120,
+   "found": 0.708,
+   "found (the original itself)": 0.658
+  },
+  "wrap | OGSOD": {
+   "planted": 120,
+   "found": 0.95,
+   "found (the original itself)": 0.725
+  },
+  "wrap | SADD": {
+   "planted": 120,
+   "found": 0.883,
+   "found (the original itself)": 0.742
+  },
+  "wrap | SAR-AIRcraft": {
+   "planted": 120,
+   "found": 0.8,
+   "found (the original itself)": 0.625
+  },
+  "wrap | SIVED": {
+   "planted": 120,
+   "found": 0.725,
+   "found (the original itself)": 0.725
+  },
+  "wrap | SSDD": {
+   "planted": 120,
+   "found": 0.683,
+   "found (the original itself)": 0.675
+  },
+  "wrap | Shipdataset": {
+   "planted": 120,
+   "found": 0.825,
+   "found (the original itself)": 0.692
+  }
+ },
+ "all": {
+  "planted": 8291,
+  "found": 0.539,
+  "found (the original itself)": 0.513
+ }
+}

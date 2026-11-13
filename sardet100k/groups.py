@@ -26,6 +26,9 @@ D = Path(__file__).resolve().parent / 'results'
 ORDER = ['exact copy', 're-processed copy', 'wrapped copy', 'overlapping tile', 'same target (labels)', 'clean']
 BG = 0.5
 SHIP = 0.95
+OVL_FULL = 0.9  # a confirmed overlapping tile also needs full-resolution r >= 0.9 over the shared region: searching
+                # every offset (gpupairs.py) finds ~30% overlaps of smooth sea at r 0.7-0.8 with the background
+                # passing; 98% of the overlaps confirmed by the old search reach 0.9, planted ones 1.0
 
 
 def _f(r, k):
@@ -58,7 +61,7 @@ def confirmed_first(r):
 def confirmed_shift(r):
     g = shifted(r)
     if g == 'wrapped copy' and (_f(r, 'bg_wrap') or 0) >= BG: return g
-    if g == 'overlapping tile' and (_f(r, 'bg_ovl') or 0) >= BG: return g
+    if g == 'overlapping tile' and (_f(r, 'bg_ovl') or 0) >= BG and (_f(r, 'ovl_full') or 0) >= OVL_FULL: return g
     return None
 
 
