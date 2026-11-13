@@ -1,7 +1,8 @@
 # SARDet-100K leakage audit
 
 **SARDet-100K** (NeurIPS 2024) merges 10 SAR detection datasets into 116,598 images. This audit uses the official
-split: train 94,493, val 10,492 and test 11,613 images. Nothing was re-split. The Kaggle copy also contains
+split: train 94,493, val 10,492 and test 11,613 images, and builds a leak-free re-split of the same sizes
+([below](#leak-free-re-split)). The Kaggle copy also contains
 `SARDet_100K/test.json` (test labels, 24,203 boxes) and `SARDet_100K/mapping.json` (each image's original source
 file name and tile position). These sit at the top level of the dataset folder, not under `Annotations/`.
 
@@ -17,6 +18,7 @@ file name and tile position). These sit at the top level of the dataset folder, 
 | Uncertain (a rule matched, but chance matches are common here) | 2,434 (23.2%) | 2,461 (21.2%) |
 | All rules (upper bound) | 71.8% | 62.7% |
 | Confirmed copies inside the same split (redundant images) | 10.3% | 14.8% |
+| Confirmed copy in the other split (val against test) | 755 val images (7.2%) | 607 test images (5.2%) |
 
 - **Why two levels.**
   - A control against a shuffled train pool (`shift_null.py`) showed the problem. In sparse images (one bright ship
@@ -94,6 +96,8 @@ file name and tile position). These sit at the top level of the dataset folder, 
 | 6 | `label_controls.py` | Chance level of the label rule: boxes from random same-source train images |
 | 7 | `provenance.py` | Original file and tile position of each image (from `mapping.json`); checks whether any original spans splits, and where each leak's match comes from |
 | 8 | `summary.py` | Writes `results/summary.json` |
+| 9 | `resplit.py` | Groups from confirmed links only (union-find over all checks), then a per-source re-split of whole groups |
+| 10 | `yolo_resplit.py`, `cluster/job_c.sbatch`, `score_resplit.py` | The same YOLO11s run on the re-split, scored per source next to the official split |
 
 The source of each image was first inferred from its size, format and classes, because the annotations have no
 source field. `mapping.json` confirmed every assignment. The two ambiguous groups resolve as follows: the 256 px ship
@@ -126,15 +130,33 @@ chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and A
   highest by chance, at 10%; every other source is at 2.3% or less.
 - **Visual checks:** `results/sheets/`.
 
+## Leak-free re-split
+
+`mapping.json` gives the original files, but the leaks run *between* originals, so a per-file split cannot remove
+them. `resplit.py` links every image to its confirmed copies and splits whole groups instead.
+
+- **Links.** Every check's best match per image: val and test against train, train against train (whole image and
+  shift search), within val, within test, and val against test. Only confirmed links (the background repeats too)
+  join images.
+  - Uncertain links are left out on purpose. With them, chance matches between sparse ship chips chain **31,202
+    images into one group**. With confirmed links only, the largest group has 64 images.
+- **Train is as redundant as val and test.** 56,558 train images (60%) have a confirmed copy elsewhere in train.
+- **Groups.** 116,598 images form 62,989 groups: 40,004 single images, 11,403 pairs, 9,301 of 3-5 images, 2,281 of
+  6-64.
+  - Under the official split, 5,214 val images (49.7%) and 4,920 test images (42.4%) sit in a group that also has
+    images in another split.
+- **New split** (`results/resplit_split.csv`, seed 0). For each source, groups are shuffled and handed to val and
+  test until each has as many of that source's images as the official split. Groups over 50 images stay in train.
+  - Sizes: train 94,488, val 10,495, test 11,615. Every source is within 5 images of its official count per split.
+  - No confirmed group crosses the new splits. Uncertain links still can, so sparse chips may still leak.
+- **The gap.** One YOLO11s run on the re-split (`cluster/job_c.sbatch`, the same recipe as `job_a`) against the
+  official split's 46.17 val mAP. Running; scored by `score_resplit.py` into `results/scores_resplit.json`.
+
 ## Still to do
 
-- **Leak-free re-split.**
-  - `mapping.json` gives the original files, but the leaks run *between* originals. So groups still have to be
-    rebuilt by linking files that share ground (train against train too), then following the links.
-  - Then split whole groups and measure the gap.
-  - Train against train is done for whole images (`nn_train_vs_train.csv`, `verify_train_vs_train.csv`). Still
-    needed: the shift search and the background check for train, using confirmed links only, so that chance matches
-    between sparse chips do not chain into giant groups.
+- **The re-split's val mAP** (job above), per source against the official split.
+- **Val against test with the shift search.** Only whole-image matches were checked between val and test, so wrapped
+  copies and overlapping tiles across them are not linked yet.
 - **Sparse chips.** A better test for the uncertain ShipDataset/MSAR/HRSID matches, for example by comparing the
   ship's own pixels at full resolution.
 
@@ -146,13 +168,17 @@ python3 -m venv ~/.venvs/sar-audit && ~/.venvs/sar-audit/bin/pip install kaggle 
 P=~/.venvs/sar-audit/bin/python
 $P sardet100k/candidates.py thumbs
 for q in val test; do $P sardet100k/candidates.py search $q train; $P sardet100k/candidates.py search $q $q; done
+$P sardet100k/candidates.py search train train; $P sardet100k/candidates.py search val test
 for q in val test; do $P sardet100k/verify.py $q; $P sardet100k/verify.py $q $q; $P sardet100k/shifts.py $q; done
-for f in shifts_val shifts_test verify_val verify_test verify_val_vs_val verify_test_vs_test; do $P sardet100k/background.py $f.csv; done
+$P sardet100k/verify.py train train; $P sardet100k/verify.py val test; $P sardet100k/shifts.py train
+for f in shifts_val shifts_test shifts_train verify_val verify_test verify_val_vs_val verify_test_vs_test \
+         verify_train_vs_train verify_val_vs_test; do $P sardet100k/background.py $f.csv; done
 $P sardet100k/shift_null.py val; $P sardet100k/background.py shifts_val_null.csv --null
 $P sardet100k/controls.py; $P sardet100k/shift_controls.py
 for q in val test; do ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py copy $q; done   # needs pycocotools (sar-yolo env)
 $P sardet100k/provenance.py; $P sardet100k/label_controls.py
 $P sardet100k/summary.py
+$P sardet100k/resplit.py; $P sardet100k/yolo_resplit.py   # then cluster/job_c.sbatch, then score_resplit.py
 ```
 
 The Kaggle download needs a Kaggle API token in `~/.kaggle/`.

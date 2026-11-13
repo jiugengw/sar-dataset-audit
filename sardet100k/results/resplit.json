@@ -1,0 +1,215 @@
+{
+ "links": {
+  "verify_val_bg.csv": {
+   "confirmed": 2175,
+   "uncertain": 3078
+  },
+  "shifts_val_bg.csv": {
+   "uncertain": 1856,
+   "confirmed": 3093
+  },
+  "verify_test_bg.csv": {
+   "confirmed": 1983,
+   "uncertain": 3004
+  },
+  "shifts_test_bg.csv": {
+   "confirmed": 2907,
+   "uncertain": 1917
+  },
+  "verify_train_vs_train_bg.csv": {
+   "confirmed": 27703,
+   "uncertain": 28093
+  },
+  "shifts_train_bg.csv": {
+   "confirmed": 34112,
+   "uncertain": 14800
+  },
+  "verify_val_vs_val_bg.csv": {
+   "confirmed": 1906,
+   "uncertain": 1522
+  },
+  "verify_test_vs_test_bg.csv": {
+   "confirmed": 2976,
+   "uncertain": 133
+  },
+  "verify_val_vs_test_bg.csv": {
+   "confirmed": 755,
+   "uncertain": 1555
+  }
+ },
+ "images": 116598,
+ "groups": 62989,
+ "largest_groups": [
+  64,
+  49,
+  47,
+  47,
+  40,
+  38,
+  38,
+  36,
+  35,
+  34
+ ],
+ "group_sizes": {
+  "1-1": {
+   "groups": 40004,
+   "images": 40004
+  },
+  "2-2": {
+   "groups": 11403,
+   "images": 22806
+  },
+  "3-5": {
+   "groups": 9301,
+   "images": 34692
+  },
+  "6-10": {
+   "groups": 1963,
+   "images": 14005
+  },
+  "11-50": {
+   "groups": 317,
+   "images": 5027
+  },
+  "51-500": {
+   "groups": 1,
+   "images": 64
+  },
+  ">500": {
+   "groups": 0,
+   "images": 0
+  }
+ },
+ "with_uncertain_links": {
+  "groups": 36613,
+  "largest": [
+   31202,
+   65,
+   64,
+   51,
+   49
+  ]
+ },
+ "official_split_images_in_cross_split_groups": {
+  "test own": 6693,
+  "test crosses": 4920,
+  "train own": 76057,
+  "train crosses": 18436,
+  "val own": 5278,
+  "val crosses": 5214
+ },
+ "new_split_sizes": {
+  "val": 10495,
+  "test": 11615,
+  "train": 94488
+ },
+ "official_to_new": {
+  "test -> test": 1299,
+  "test -> train": 9175,
+  "test -> val": 1139,
+  "train -> test": 9099,
+  "train -> train": 77072,
+  "train -> val": 8322,
+  "val -> test": 1217,
+  "val -> train": 8241,
+  "val -> val": 1034
+ },
+ "per_source_official": {
+  "AIR-SARShip": {
+   "train": 708,
+   "val": 38,
+   "test": 55
+  },
+  "HRSID": {
+   "train": 3642,
+   "val": 981,
+   "test": 981
+  },
+  "MSAR": {
+   "train": 27159,
+   "val": 1479,
+   "test": 1520
+  },
+  "SADD": {
+   "train": 795,
+   "val": 44,
+   "test": 44
+  },
+  "SAR-AIRcraft": {
+   "train": 13976,
+   "val": 1923,
+   "test": 2989
+  },
+  "Shipdataset": {
+   "train": 31784,
+   "val": 3973,
+   "test": 3972
+  },
+  "SSDD": {
+   "train": 928,
+   "val": 116,
+   "test": 116
+  },
+  "OGSOD": {
+   "train": 14664,
+   "val": 1834,
+   "test": 1833
+  },
+  "SIVED": {
+   "train": 837,
+   "val": 104,
+   "test": 103
+  }
+ },
+ "per_source_new": {
+  "AIR-SARShip": {
+   "val": 38,
+   "test": 55,
+   "train": 708
+  },
+  "HRSID": {
+   "val": 981,
+   "test": 981,
+   "train": 3642
+  },
+  "MSAR": {
+   "val": 1476,
+   "test": 1518,
+   "train": 27164
+  },
+  "Shipdataset": {
+   "val": 3978,
+   "test": 3975,
+   "train": 31776
+  },
+  "OGSOD": {
+   "val": 1834,
+   "test": 1834,
+   "train": 14663
+  },
+  "SADD": {
+   "val": 44,
+   "test": 44,
+   "train": 795
+  },
+  "SAR-AIRcraft": {
+   "val": 1923,
+   "test": 2989,
+   "train": 13976
+  },
+  "SIVED": {
+   "val": 104,
+   "test": 103,
+   "train": 837
+  },
+  "SSDD": {
+   "val": 117,
+   "test": 116,
+   "train": 927
+  }
+ },
+ "images_in_groups_split_across_new_splits": 0,
+ "max_group": 50,
+ "seed": 0
+}
