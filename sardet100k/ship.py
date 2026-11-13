@@ -20,6 +20,8 @@ Three sets of pairs (val):
     ~/.venvs/sar-audit/bin/python sardet100k/ship.py null    # -> results/ship_val_null.csv (separate process: the
                                                              #    null patches verify.grey for the whole process)
     ~/.venvs/sar-audit/bin/python sardet100k/ship.py summary # -> results/ship.json
+    ~/.venvs/sar-audit/bin/python sardet100k/ship.py all all_val_vs_train.csv  # fg_r for every unconfirmed row of an
+                                                             #    allpairs.py file -> all_val_vs_train_ship.csv
 """
 import csv, json, sys
 from multiprocessing import Pool
@@ -130,5 +132,39 @@ def summary():
     (D / 'ship.json').write_text(json.dumps(out, indent=1)); print(json.dumps(out, indent=1))
 
 
+def _all_job(args):
+    qs, rs, row = args
+    r = {k: row[k] for k in ('query', 'ref', 'transform')}
+    if row['kind'] == 'shift':
+        r.update({k: row[k] for k in ('shift_y', 'shift_x', 'wrap_low', 'ovl_low', 'wrap_full', 'ovl_full', 'ovl_frac')})
+        r['box_recall'] = ''
+    try:
+        r['_mode'] = mode_of(r)
+        a, b = B.aligned(qs, r, False, rs)
+        v, n = fg_r(a, b) if min(a.shape) >= 16 else (float('nan'), 0)
+        return row, f'{v:.4f}', n
+    except Exception as e:  # noqa: BLE001
+        return row, f'error {e}', 0
+
+
+def run_all(name):
+    parts = Path(name).stem.split('_'); qs, rs = parts[1], parts[3]
+    rows = list(csv.DictReader((D / name).open()))
+    conf = lambda r: G.confirmed_first(r) if r['kind'] == 'whole' else G.confirmed_shift(r)
+    todo = [r for r in rows if not conf(r)]
+    with Pool() as p:
+        res = list(p.imap_unordered(_all_job, [(qs, rs, r) for r in todo], chunksize=64))
+    out = D / (Path(name).stem + '_ship.csv')
+    with out.open('w', newline='') as fh:
+        w = csv.writer(fh); w.writerow(['kind', 'query', 'ref', 'fg_r', 'fg_n'])
+        for row, v, n in res:
+            w.writerow([row['kind'], row['query'], row['ref'], v, n])
+    errs = sum(v.startswith('error') for _, v, _ in res)
+    print(name, len(todo), 'unconfirmed rows,', errs, 'errors,', sum(not v.startswith(('error', 'nan')) and float(v) >= G.SHIP
+                                                               for _, v, _ in res), f'with fg_r >= {G.SHIP} ->', out)
+
+
 if __name__ == '__main__':
+    if sys.argv[1] == 'all':
+        run_all(sys.argv[2]); sys.exit()
     summary() if sys.argv[1] == 'summary' else run(*sys.argv[1:3])

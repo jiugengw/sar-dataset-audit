@@ -1,12 +1,14 @@
 """Leak-free re-split of SARDet-100K: group images that share a scene, then split whole groups.
 
-Links come from every pairwise check (best match per image):
-  verify_{val,test}_bg.csv, shifts_{val,test}_bg.csv      val / test -> train
-  verify_train_vs_train_bg.csv, shifts_train_bg.csv       train -> train
-  verify_{val,test}_vs_{val,test}_bg.csv                  within val, within test
-  verify_val_vs_test_bg.csv                               val -> test
-Only confirmed links join images (exact / re-processed / wrapped / overlapping, with the masked background also
-matching: groups.confirmed_first / confirmed_shift). Uncertain links (sparse ship chips that may be a different
+Links come from every pairwise check:
+  all_{q}_vs_{r}.csv (allpairs.py)     every match, whole image and shifted, for train-train, val-train,
+                                       test-train, val-val, test-test, val-test
+  all_{q}_vs_{r}_ship.csv (ship.py)    target-pixel r of the unconfirmed rows of those files
+  contained*.csv (contained.py)        chips inside larger images (any splits); the null file is skipped
+  verify_*_bg.csv, shifts_*_bg.csv     the best-match files (subsumed by all_*, kept for safety)
+Only confirmed links join images: exact / re-processed / wrapped / overlapping with the masked background also
+matching (groups.confirmed_first / confirmed_shift, contained: full_r or low_r >= 0.95 and bg_r >= 0.5), or the
+target's own pixels repeating (fg_r >= groups.SHIP). Uncertain links (sparse ship chips that may be a different
 ship lined up) are counted but do not join: they would chain unrelated chips into giant groups.
 
 Groups are union-find components. Each group gets the source of its images (true source from mapping.json). For
@@ -66,8 +68,33 @@ LINKS = [  # file, query split, ref split, kind
 ]
 
 
+PAIRS = [('train', 'train'), ('val', 'train'), ('test', 'train'), ('val', 'val'), ('test', 'test'), ('val', 'test')]
+
+
 def links():
     """(file, a, b, confirmed?) for every link that passes a rule; files not made yet are skipped."""
+    for qs, rs in PAIRS:
+        name = f'all_{qs}_vs_{rs}.csv'
+        if not (D / name).exists():
+            print('missing', name); continue
+        ship = {}
+        if (D / f'all_{qs}_vs_{rs}_ship.csv').exists():
+            for r in csv.DictReader((D / f'all_{qs}_vs_{rs}_ship.csv').open()):
+                if r['fg_r'] not in ('', 'nan') and not r['fg_r'].startswith('error'):
+                    ship[(r['kind'], r['query'], r['ref'])] = float(r['fg_r'])
+        else:
+            print('missing', f'all_{qs}_vs_{rs}_ship.csv')
+        for r in csv.DictReader((D / name).open()):
+            c = G.confirmed_first(r) if r['kind'] == 'whole' else G.confirmed_shift(r)
+            c = c or ship.get((r['kind'], r['query'], r['ref']), 0) >= G.SHIP
+            yield name, (qs, r['query']), (rs, r['ref']), bool(c)
+    for path in sorted(D.glob('contained*.csv')):
+        if 'null' in path.name: continue
+        for r in csv.DictReader(path.open()):
+            hit = float(r['full_r']) >= 0.95 or float(r['low_r']) >= 0.95
+            if not hit: continue
+            bg = float(r['bg_r']) if r['bg_r'] not in ('', 'nan') else 0.0
+            yield path.name, (r['chip_split'], r['chip']), (r['host_split'], r['host']), bg >= G.BG
     for name, qs, rs, kind in LINKS:
         if not (D / name).exists():
             print('missing', name); continue

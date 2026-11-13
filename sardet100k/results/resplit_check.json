@@ -1,24 +1,42 @@
 {
  "links": {
+  "all_test_vs_test.csv | test-train": 1373,
+  "all_test_vs_test.csv | test-val": 161,
+  "all_test_vs_test.csv | train-val": 812,
+  "all_test_vs_train.csv | test-train": 364,
+  "all_test_vs_train.csv | test-val": 37,
+  "all_test_vs_train.csv | train-val": 326,
+  "all_train_vs_train.csv | test-train": 4984,
+  "all_train_vs_train.csv | test-val": 622,
+  "all_train_vs_train.csv | train-val": 4065,
+  "all_val_vs_test.csv | test-train": 747,
+  "all_val_vs_test.csv | test-val": 102,
+  "all_val_vs_test.csv | train-val": 537,
+  "all_val_vs_train.csv | test-train": 440,
+  "all_val_vs_train.csv | test-val": 69,
+  "all_val_vs_train.csv | train-val": 399,
+  "all_val_vs_val.csv | test-train": 570,
+  "all_val_vs_val.csv | test-val": 119,
+  "all_val_vs_val.csv | train-val": 441,
   "shifts_val_vs_test_bg.csv | test-train": 247,
   "shifts_val_vs_test_bg.csv | test-val": 38,
   "shifts_val_vs_test_bg.csv | train-val": 174
  },
  "images": {
   "test-train": {
-   "train": 203,
+   "train": 3346,
    "val": 0,
-   "test": 200
+   "test": 2633
   },
   "train-val": {
-   "train": 148,
-   "val": 159,
+   "train": 2701,
+   "val": 2101,
    "test": 0
   },
   "test-val": {
    "train": 0,
-   "val": 36,
-   "test": 31
+   "val": 413,
+   "test": 469
   }
  }
 }

@@ -1,5 +1,29 @@
 {
  "links": {
+  "all_train_vs_train.csv": {
+   "confirmed": 154424,
+   "uncertain": 57243
+  },
+  "all_val_vs_train.csv": {
+   "confirmed": 14050,
+   "uncertain": 7151
+  },
+  "all_test_vs_train.csv": {
+   "confirmed": 13083,
+   "uncertain": 7070
+  },
+  "all_val_vs_val.csv": {
+   "uncertain": 5801,
+   "confirmed": 7044
+  },
+  "all_test_vs_test.csv": {
+   "confirmed": 11956,
+   "uncertain": 5691
+  },
+  "all_val_vs_test.csv": {
+   "uncertain": 5595,
+   "confirmed": 5740
+  },
   "verify_val_bg.csv": {
    "confirmed": 2175,
    "uncertain": 3078
@@ -35,85 +59,89 @@
   "verify_val_vs_test_bg.csv": {
    "confirmed": 755,
    "uncertain": 1555
+  },
+  "shifts_val_vs_test_bg.csv": {
+   "uncertain": 2334,
+   "confirmed": 1686
   }
  },
  "images": 116598,
- "groups": 62989,
+ "groups": 49437,
  "largest_groups": [
-  64,
-  49,
-  47,
-  47,
-  40,
-  38,
-  38,
-  36,
-  35,
-  34
+  524,
+  229,
+  229,
+  228,
+  223,
+  212,
+  206,
+  199,
+  151,
+  148
  ],
  "group_sizes": {
   "1-1": {
-   "groups": 40004,
-   "images": 40004
+   "groups": 30272,
+   "images": 30272
   },
   "2-2": {
-   "groups": 11403,
-   "images": 22806
+   "groups": 7201,
+   "images": 14402
   },
   "3-5": {
-   "groups": 9301,
-   "images": 34692
+   "groups": 8433,
+   "images": 32665
   },
   "6-10": {
-   "groups": 1963,
-   "images": 14005
+   "groups": 2768,
+   "images": 20229
   },
   "11-50": {
-   "groups": 317,
-   "images": 5027
+   "groups": 707,
+   "images": 12697
   },
   "51-500": {
-   "groups": 1,
-   "images": 64
+   "groups": 55,
+   "images": 5809
   },
   ">500": {
-   "groups": 0,
-   "images": 0
+   "groups": 1,
+   "images": 524
   }
  },
  "with_uncertain_links": {
-  "groups": 36613,
+  "groups": 29816,
   "largest": [
-   31202,
-   65,
-   64,
-   51,
-   49
+   33597,
+   672,
+   229,
+   229,
+   228
   ]
  },
  "official_split_images_in_cross_split_groups": {
-  "test own": 6693,
-  "test crosses": 4920,
-  "train own": 76057,
-  "train crosses": 18436,
-  "val own": 5278,
-  "val crosses": 5214
+  "test own": 4579,
+  "test crosses": 7034,
+  "train own": 68098,
+  "train crosses": 26395,
+  "val own": 3698,
+  "val crosses": 6794
  },
  "new_split_sizes": {
-  "val": 10495,
-  "test": 11615,
+  "val": 10493,
+  "test": 11617,
   "train": 94488
  },
  "official_to_new": {
-  "test -> test": 1299,
-  "test -> train": 9175,
-  "test -> val": 1139,
-  "train -> test": 9099,
-  "train -> train": 77072,
-  "train -> val": 8322,
-  "val -> test": 1217,
-  "val -> train": 8241,
-  "val -> val": 1034
+  "test -> test": 1112,
+  "test -> train": 9457,
+  "test -> val": 1044,
+  "train -> test": 9461,
+  "train -> train": 76487,
+  "train -> val": 8545,
+  "val -> test": 1044,
+  "val -> train": 8544,
+  "val -> val": 904
  },
  "per_source_official": {
   "AIR-SARShip": {
@@ -175,18 +203,18 @@
   },
   "MSAR": {
    "val": 1476,
-   "test": 1518,
-   "train": 27164
+   "test": 1513,
+   "train": 27169
   },
   "Shipdataset": {
-   "val": 3978,
-   "test": 3975,
-   "train": 31776
+   "val": 3977,
+   "test": 3981,
+   "train": 31771
   },
   "OGSOD": {
    "val": 1834,
-   "test": 1834,
-   "train": 14663
+   "test": 1833,
+   "train": 14664
   },
   "SADD": {
    "val": 44,
@@ -195,8 +223,8 @@
   },
   "SAR-AIRcraft": {
    "val": 1923,
-   "test": 2989,
-   "train": 13976
+   "train": 13974,
+   "test": 2991
   },
   "SIVED": {
    "val": 104,
@@ -204,9 +232,9 @@
    "train": 837
   },
   "SSDD": {
-   "val": 117,
+   "val": 116,
    "test": 116,
-   "train": 927
+   "train": 928
   }
  },
  "images_in_groups_split_across_new_splits": 0,
