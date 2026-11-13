@@ -325,6 +325,97 @@
   },
   "val_images": 10492
  },
+ "provenance": {
+  "images_in_mapping": 116598,
+  "images_in_splits": 116598,
+  "missing_from_mapping": [],
+  "per_source": {
+   "AIR": {
+    "images": 801,
+    "originals": 331,
+    "originals_split_across_splits": 0
+   },
+   "HRSID": {
+    "images": 5604,
+    "originals": 5604,
+    "originals_split_across_splits": 0
+   },
+   "MSAR": {
+    "images": 30158,
+    "originals": 28447,
+    "originals_split_across_splits": 0
+   },
+   "OGSOD": {
+    "images": 18331,
+    "originals": 18331,
+    "originals_split_across_splits": 0
+   },
+   "SADD": {
+    "images": 883,
+    "originals": 883,
+    "originals_split_across_splits": 0
+   },
+   "SAR-AIRcraft": {
+    "images": 18888,
+    "originals": 4368,
+    "originals_split_across_splits": 0
+   },
+   "SIVED": {
+    "images": 1044,
+    "originals": 1044,
+    "originals_split_across_splits": 0
+   },
+   "SSDD": {
+    "images": 1160,
+    "originals": 1160,
+    "originals_split_across_splits": 0
+   },
+   "Shipdataset": {
+    "images": 39729,
+    "originals": 39729,
+    "originals_split_across_splits": 0
+   }
+  },
+  "inferred_vs_true_source_val": {
+   "256 ship (ShipDataset/MSAR) -> Shipdataset": 3973,
+   "SAR-AIRcraft -> SAR-AIRcraft": 1923,
+   "OGSOD -> OGSOD": 1834,
+   "256 ship (ShipDataset/MSAR) -> MSAR": 1286,
+   "HRSID -> HRSID": 981,
+   "MSAR -> MSAR": 123,
+   "SSDD -> SSDD": 116,
+   "SIVED -> SIVED": 104,
+   "512 other (AIR_SARShip-1/MSAR) -> MSAR": 70,
+   "SADD -> SADD": 44,
+   "512 other (AIR_SARShip-1/MSAR) -> AIR": 23,
+   "AIR_SARShip-2 -> AIR": 15
+  },
+  "leaked_val_match_relation": {
+   "exact copy": {
+    "same source, other original": 1531
+   },
+   "ALL leaked": {
+    "same source, other original": 7300,
+    "other source": 235
+   },
+   "re-processed copy": {
+    "same source, other original": 1901,
+    "other source": 20
+   },
+   "same target (labels)": {
+    "same source, other original": 753,
+    "other source": 87
+   },
+   "overlapping tile": {
+    "same source, other original": 1868,
+    "other source": 82
+   },
+   "wrapped copy": {
+    "other source": 46,
+    "same source, other original": 1247
+   }
+  }
+ },
  "scores_copy": {
   "all": {
    "images": 10492,

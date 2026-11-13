@@ -1,8 +1,9 @@
 # SARDet-100K leakage audit
 
 **SARDet-100K** (NeurIPS 2024) merges 10 SAR detection datasets into 116,598 images. This audit uses the official
-split: train 94,493 and val 10,492 with labels, and test 11,613 images (the Kaggle copy has no test labels). Nothing
-was re-split.
+split: train 94,493, val 10,492 and test 11,613 images. Nothing was re-split. The Kaggle copy also contains
+`SARDet_100K/test.json` (test labels, 24,203 boxes) and `SARDet_100K/mapping.json` (each image's original source
+file name and tile position). These sit at the top level of the dataset folder, not under `Annotations/`.
 
 ## Main findings (13 Nov 2026)
 
@@ -27,9 +28,15 @@ was re-split.
   - 4,572 byte-identical SAR-AIRcraft tile pairs carry two hand-drawn sets of boxes. Box centres agree to within
     2 px, but one box is about 6% larger at the median. Boxes far from the image edge disagree as much as boxes cut
     by an edge.
-- **Overlaps come from the sources.** SAR-AIRcraft val tiles overlap train tiles at small, repeating offsets (12,
-  24, 112 px ...) and never at SARDet's own tile step (312 px). So the overlapping tiles come from different
-  SAR-AIRcraft-1.0 originals covering the same ground, which the 8:1:1 split did not keep together.
+- **The leaks come from the source datasets, not from SARDet-100K's tiling** (`provenance.py`, using
+  `mapping.json`).
+  - No original image has tiles in more than one split: SARDet-100K split per original file.
+  - But every leaked val image matches a *different* original file: 7,300 (97%) another original of the same
+    source, 235 another source dataset.
+  - So OGSOD, MSAR, ShipDataset, SAR-AIRcraft and SADD each contain copies, flipped copies, wrapped copies or
+    overlapping crops under different file names, and a per-file split cannot keep them apart.
+  - SAR-AIRcraft example: its 4,368 originals (all of SAR-AIRcraft-1.0) overlap each other. Val tiles overlap train
+    tiles at small offsets (12, 24, 112 px ...), never at SARDet's own tile step (312 px).
 - **By source:**
   - Nearly all of OGSOD and SADD val repeats train.
   - The 256 px ship chips (ShipDataset/MSAR) and SAR-AIRcraft are heavily affected through wrapped copies and
@@ -46,10 +53,12 @@ was re-split.
 | 3 | `shifts.py` | Shift-proof search (\|FFT\| of thumbnails), exact shift by FFT cross-correlation, wrap-round and overlap scores, label transfer after the shift |
 | 4 | `groups.py` | One group per image, strongest first: exact, re-processed, wrapped, overlapping tile, same target (labels), clean |
 | 5 | `score_groups.py` | COCO mAP per group and source: the copy-the-labels baseline, and a trained detector's val predictions |
-| 6 | `summary.py` | Writes `results/summary.json` |
+| 6 | `provenance.py` | Original file and tile position of each image (from `mapping.json`); checks whether any original spans splits, and where each leak's match comes from |
+| 7 | `summary.py` | Writes `results/summary.json` |
 
-The source of each image is inferred from its size, format and classes, because the annotations have no source
-field. The counts match the official per-source table.
+The source of each image was first inferred from its size, format and classes, because the annotations have no
+source field. `mapping.json` confirmed every assignment. The two ambiguous groups resolve as follows: the 256 px ship
+chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and AIR-SARShip.
 
 ## Controls (is a match just luck?)
 
@@ -71,10 +80,12 @@ field. The counts match the official per-source table.
 - **Score a trained detector on leaked vs clean val.** YOLO11s is training on the SMU cluster (`cluster/job_a.sbatch`;
   the data goes in as one tar unpacked on the node's local disk, because of the 100k-file scratch quota). Then run
   `score_groups.py model results/val_predictions.json`.
-- **Rebuild source groups** (tiles linked by overlap, then grouped by following the links), then use them to make a
-  leak-free re-split and measure the gap.
-  - The maintainer's `mapping.json` (GitHub issue #35) would give these groups directly, but it is not public.
-- **Test labels.** `test.json` exists only on the Baidu share and needs a Baidu account to download.
+- **Leak-free re-split.**
+  - `mapping.json` gives the original files, but the leaks run *between* originals. So groups still have to be
+    rebuilt by linking files that share ground (train against train too), then following the links.
+  - Then split whole groups and measure the gap.
+- **Test labels.** `test.json` is in the Kaggle copy, so the label-based checks (same target, copy-the-labels mAP)
+  can now run on test too.
 
 ## Reproduce
 
@@ -87,6 +98,7 @@ for q in val test; do $P sardet100k/candidates.py search $q train; $P sardet100k
 for q in val test; do $P sardet100k/verify.py $q; $P sardet100k/verify.py $q $q; $P sardet100k/shifts.py $q; done
 $P sardet100k/controls.py; $P sardet100k/shift_controls.py
 ~/.venvs/sar-yolo/bin/python sardet100k/score_groups.py copy   # needs pycocotools (the sar-yolo env)
+$P sardet100k/provenance.py
 $P sardet100k/summary.py
 ```
 

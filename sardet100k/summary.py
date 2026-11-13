@@ -47,7 +47,7 @@ def main():
                   'groups': {k: c[k] for k in G.ORDER},
                   'per_source': {k: {**dict(v), 'images': sum(v.values())} for k, v in sorted(per.items())},
                   'duplicates_inside_split': within_split(s)}
-    for name in ('controls.json', 'shift_controls.json', 'scores_copy.json', 'scores_model.json'):
+    for name in ('controls.json', 'shift_controls.json', 'provenance.json', 'scores_copy.json', 'scores_model.json'):
         p = D / name
         if p.exists():
             out[name.removesuffix('.json')] = json.loads(p.read_text())
