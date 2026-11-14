@@ -22,8 +22,9 @@ mkdir -p $L/img $OUT; trap 'rm -rf $L' EXIT
 echo "start $(date '+%m-%d %H:%M') on $(hostname) $(nvidia-smi --query-gpu=name,memory.total --format=csv,noheader)"
 tar -xf ~/scratchDirectory/datasets/sardet100k-yolo.tar -C $L images 2>&1 | grep -v "unknown extended header" || true
 mv $L/images/train $L/images/val $L/img/
-tar -xf ~/scratchDirectory/datasets/sardet100k-resplit.tar -C $L test_images && mv $L/test_images $L/img/test
-tar -xf ~/scratchDirectory/datasets/sardet100k-planted.tar -C $L/img
+tar -xf ~/scratchDirectory/datasets/sardet100k-resplit.tar -C $L test_images 2>&1 | grep -v "unknown extended header" || true; mv $L/test_images $L/img/test
+tar -xf ~/scratchDirectory/datasets/sardet100k-planted.tar -C $L/img 2>&1 | grep -v "unknown extended header" || true
+find $L/img -name "._*" -delete  # macOS tar metadata files
 echo "unpacked $(date '+%H:%M'): $(ls $L/img/train | wc -l) train, $(ls $L/img/val | wc -l) val, $(ls $L/img/test | wc -l) test, $(ls $L/img/planted | wc -l) planted"
 run() { echo "== $* $(date '+%H:%M')"; python -u ~/sbatch-staging/job_f.py $L/img "$@"; }
 run planted train $OUT/gp_planted_vs_train.csv

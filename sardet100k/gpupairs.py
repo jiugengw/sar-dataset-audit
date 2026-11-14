@@ -88,7 +88,8 @@ def _init(folder):
 
 
 def load(split, null=False):
-    names = sorted(p.name for p in (Path(FOLDER) / split).iterdir() if p.suffix.lower() in ('.jpg', '.png', '.bmp', '.tif'))
+    names = sorted(p.name for p in (Path(FOLDER) / split).iterdir()
+                   if p.suffix.lower() in ('.jpg', '.png', '.bmp', '.tif') and not p.name.startswith('._'))  # macOS tar metadata
     with Pool(None, _init, (FOLDER,)) as p:
         res = p.map(_load, [(split, n, null) for n in names], chunksize=128)
     return [r[0] for r in res], [r[1] for r in res], torch.from_numpy(np.stack([r[2] for r in res])).float()
