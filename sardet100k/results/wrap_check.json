@@ -1,0 +1,32 @@
+{
+ "confirmed wrap rows": 29449,
+ "verdict": {
+  "plain shift (one part matches)": 28532,
+  "unclear": 556,
+  "one part flat": 266,
+  "real roll (both parts match)": 71,
+  "size differs": 24
+ },
+ "by source": {
+  "AIR-SARShip | plain shift (one part matches)": 8,
+  "HRSID | plain shift (one part matches)": 42,
+  "MSAR | one part flat": 126,
+  "MSAR | plain shift (one part matches)": 991,
+  "MSAR | real roll (both parts match)": 31,
+  "MSAR | unclear": 44,
+  "OGSOD | plain shift (one part matches)": 8659,
+  "OGSOD | real roll (both parts match)": 16,
+  "OGSOD | unclear": 237,
+  "SADD | plain shift (one part matches)": 24,
+  "SADD | unclear": 2,
+  "SAR-AIRcraft | plain shift (one part matches)": 15298,
+  "SAR-AIRcraft | real roll (both parts match)": 20,
+  "SAR-AIRcraft | unclear": 256,
+  "SSDD | plain shift (one part matches)": 4,
+  "SSDD | size differs": 24,
+  "Shipdataset | one part flat": 140,
+  "Shipdataset | plain shift (one part matches)": 3506,
+  "Shipdataset | real roll (both parts match)": 4,
+  "Shipdataset | unclear": 17
+ }
+}

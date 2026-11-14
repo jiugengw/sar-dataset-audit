@@ -71,7 +71,7 @@ def main():
     for q, v in g.items():
         if v['group'] == 'clean': continue
         f, sh = v['first'], v['shift']
-        ref = sh['ref'] if v['group'] in ('wrapped copy', 'overlapping tile') and sh else f['ref']
+        ref = sh['ref'] if v['group'] in ('shifted copy', 'overlapping tile') and sh else f['ref']
         if v['group'] == 'same target (labels)' and sh and not G.first_pass(f):
             ref = sh['ref']
         a, b = prov[q], prov[ref]

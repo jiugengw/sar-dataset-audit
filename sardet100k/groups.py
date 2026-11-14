@@ -3,7 +3,9 @@
 Groups, strongest first (an image gets the first that applies):
   exact copy             full-resolution r >= 0.95 (same position, possibly flipped / turned)
   re-processed copy      speckle-reduced r >= 0.95
-  wrapped copy           shifted with wrap-round, r >= 0.95 (full or speckle-reduced)
+  shifted copy           shifted, scored with wrap-round (np.roll), r >= 0.95 (full or speckle-reduced). Called
+                         'wrapped copy' in older result files; wrapcheck.py found no real rolls, only plain shifts
+                         (neighbouring tiles) whose shared part carries the targets
   overlapping tile       shifted without wrap, shared region >= 25% of the image, r >= 0.95 there
   same target (labels)   val only: speckle-reduced r >= 0.8 and >= 50% of the val boxes recovered by the
                          moved train boxes (same position, or after the shift)
@@ -23,7 +25,8 @@ import csv
 from pathlib import Path
 
 D = Path(__file__).resolve().parent / 'results'
-ORDER = ['exact copy', 're-processed copy', 'wrapped copy', 'overlapping tile', 'same target (labels)', 'clean']
+WRAP = 'shifted copy'
+ORDER = ['exact copy', 're-processed copy', WRAP, 'overlapping tile', 'same target (labels)', 'clean']
 BG = 0.5
 SHIP = 0.95
 OVL_FULL = 0.9  # a confirmed overlapping tile also needs full-resolution r >= 0.9 over the shared region: searching
@@ -47,7 +50,7 @@ def first_pass(r):
 def shifted(r):
     if abs(int(r['shift_y'])) + abs(int(r['shift_x'])) <= 2: return None
     wf, wl, of, ol, frac, rec = (_f(r, k) for k in ('wrap_full', 'wrap_low', 'ovl_full', 'ovl_low', 'ovl_frac', 'box_recall'))
-    if wf >= 0.95 or wl >= 0.95: return 'wrapped copy'
+    if wf >= 0.95 or wl >= 0.95: return WRAP
     if frac >= 0.25 and max(of, ol) >= 0.95: return 'overlapping tile'
     if max(wl, ol) >= 0.8 and rec is not None and rec >= 0.5: return 'same target (labels)'
     return None
@@ -60,7 +63,7 @@ def confirmed_first(r):
 
 def confirmed_shift(r):
     g = shifted(r)
-    if g == 'wrapped copy' and (_f(r, 'bg_wrap') or 0) >= BG: return g
+    if g == WRAP and (_f(r, 'bg_wrap') or 0) >= BG: return g
     if g == 'overlapping tile' and (_f(r, 'bg_ovl') or 0) >= BG and (_f(r, 'ovl_full') or 0) >= OVL_FULL: return g
     return None
 

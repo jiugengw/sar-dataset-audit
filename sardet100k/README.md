@@ -13,7 +13,7 @@ file name and tile position). These sit at the top level of the dataset folder, 
 | **Confirmed leaks** (the background repeats too) | **5,101 of 10,492 (48.6%)** | **4,816 of 11,613 (41.5%)** |
 | ... exact copies (often flipped or turned) | 1,531 | 1,321 |
 | ... re-processed copies (same image, small pixel changes) | 644 | 662 |
-| ... wrapped copies (train chip slid round, edges wrapping) | 1,082 | 1,163 |
+| ... shifted copies (a neighbouring crop; first read as wrapped round, see Controls) | 1,082 | 1,163 |
 | ... overlapping tiles (share at least 25% of the image) | 1,844 | 1,670 |
 | Uncertain (a rule matched, but chance matches are common here) | 2,434 (23.2%) | 2,461 (21.2%) |
 | All rules (upper bound) | 71.8% | 62.7% |
@@ -73,7 +73,7 @@ file name and tile position). These sit at the top level of the dataset folder, 
     - Only 16 cross sources, all between ShipDataset and MSAR.
     - The 235 other cross-source matches (mostly HRSID with ShipDataset) fail the background check.
       `results/sheets/val_cross_source.png` shows them: different ships lined up.
-  - So OGSOD, MSAR, ShipDataset, SAR-AIRcraft and SADD each contain copies, flipped copies, wrapped copies or
+  - So OGSOD, MSAR, ShipDataset, SAR-AIRcraft and SADD each contain copies, flipped copies, shifted copies or
     overlapping crops under different file names, and a per-file split cannot keep them apart.
   - SAR-AIRcraft example: its 4,368 originals (all of SAR-AIRcraft-1.0) overlap each other. Val tiles overlap train
     tiles at small offsets (12, 24, 112 px ...), never at SARDet's own tile step (312 px).
@@ -91,7 +91,8 @@ file name and tile position). These sit at the top level of the dataset folder, 
 | 3 | `shifts.py` | Shift-proof search (\|FFT\| of thumbnails), exact shift by FFT cross-correlation, wrap-round and overlap scores, label transfer after the shift |
 | 3b | `shift_null.py` | Control: the whole shift search against a block-shuffled train pool (no real scene can match) |
 | 3c | `background.py` | Full-resolution r with the bright targets masked, for every matched pair; >= 0.5 confirms a leak |
-| 4 | `groups.py` | One group per image, strongest first: exact, re-processed, wrapped, overlapping tile, same target (labels), clean |
+| 3d | `wrapcheck.py` | Do 'wrapped' matches really wrap round? Scores the wrapped-round part and the rest separately (`results/wrap_check.json`) |
+| 4 | `groups.py` | One group per image, strongest first: exact, re-processed, shifted, overlapping tile, same target (labels), clean |
 | 5 | `score_groups.py` | COCO mAP per group and source: the copy-the-labels baseline, and a trained detector's val predictions |
 | 6 | `label_controls.py` | Chance level of the label rule: boxes from random same-source train images |
 | 7 | `provenance.py` | Original file and tile position of each image (from `mapping.json`); checks whether any original spans splits, and where each leak's match comes from |
@@ -113,12 +114,18 @@ chips are 3,973 ShipDataset and 1,286 MSAR images, and "512 other" is MSAR and A
   and shuffled: 79 / 225 pairs reach the exact / re-processed rules, against 1,531 / 1,921 real ones.
   - A first version used half-rolled images instead. It "matched" 860 val images pixel for pixel, which is how the
     wrapped copies were found (kept as `negative_roll_half` in `results/controls.json`).
+  - **Correction: they are not wrapped.** `wrapcheck.py` scores the part that wrapped round and the rest separately.
+    Of 29,449 confirmed 'wrapped' matches (val and test pairs), 28,532 match in one part only: plain shifts, i.e.
+    neighbouring crops. A half-rolled 256 px chip lines up with its half-tile neighbour, which is why the rolled
+    control matched. None is clearly rolled; the 71 where both parts correlate are 1-2 px or 24 px shifts and
+    streaky MSAR frames that look alike at any shift. ShipDataset half-tile neighbours mostly have file names one
+    grid step apart. The rule is now called 'shifted copy' (older result files say 'wrapped copy').
 - **Shift rules against random pairs** (`shift_controls.py`). 0 of 400 random same-source pairs pass, even with the
   best shift chosen. This turned out too weak: the real search keeps the best of 94k train images, not a random one.
 - **Shift rules against a shuffled pool** (`shift_null.py`, `results/shift_null.json`). This is the full search,
   with every train image (and its boxes) cut into 4 x 4 blocks and shuffled. Ships survive inside a block; scenes do
   not.
-  - Val images that still pass: 1,694 wrapped, 252 overlapping and 640 same target, against 2,420 / 2,126 / 403 on
+  - Val images that still pass: 1,694 shifted, 252 overlapping and 640 same target, against 2,420 / 2,126 / 403 on
     the real pool.
   - Nearly all of them are 256 px ship chips, HRSID and SSDD.
   - With the background check, 13 pass. So the background check is what confirms a leak.
@@ -155,7 +162,7 @@ them. `resplit.py` links every image to its confirmed copies and splits whole gr
 ## Still to do
 
 - **The re-split's val mAP** (job above), per source against the official split.
-- **Val against test with the shift search.** Only whole-image matches were checked between val and test, so wrapped
+- **Val against test with the shift search.** Only whole-image matches were checked between val and test, so shifted
   copies and overlapping tiles across them are not linked yet.
 - **Sparse chips.** A better test for the uncertain ShipDataset/MSAR/HRSID matches, for example by comparing the
   ship's own pixels at full resolution.

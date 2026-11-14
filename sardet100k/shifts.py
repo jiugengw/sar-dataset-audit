@@ -1,8 +1,8 @@
 """SARDet-100K leakage audit, stage 3: shifted copies (wrapped round, or overlapping tiles), which stage 1 misses.
 
-The negative control in controls.py found val chips that are train chips wrapped round (np.roll): the ship moves,
-the pixels that leave one edge come back on the other. Overlapping tiles of one large scene are the same thing
-without the wrap. Both keep the strength of each spatial frequency (|FFT|), so the search runs on that.
+The negative control in controls.py found val chips that match train chips rolled by half (np.roll). wrapcheck.py
+later showed these are plain shifts (neighbouring crops), not wrapped images: the roll score is just a cheap way to
+find them. Overlapping tiles are the same thing with less shared area. Both keep the strength of each spatial frequency (|FFT|), so the search runs on that.
 
 1. Candidates: |FFT| of each zero-mean 64 px thumbnail (log, low-frequency half plane, no DC), under all 8 flips /
    turns, FAISS inner product against train; the top 5 train images per query are kept.

@@ -5,7 +5,7 @@ Negative control (chance matches): every train image is cut into a 4 x 4 grid an
 searched against this fake pool exactly as against the real one (8 flips / turns, best of 94k), then checked at
 full resolution. Whatever reaches the leak bands here is chance, so the counts give a false-positive rate per band.
 (A first version rolled each train image by half its size instead; 860 val images then matched pixel for pixel,
-because SARDet-100K holds wrapped-round copies of train chips; see shifts.py. That result is kept under
+because a half-rolled chip lines up with its half-tile neighbour (wrapcheck.py: plain shifts, not wrapped copies). That result is kept under
 'negative_roll_half' as a finding, not as a control.)
 
 Positive control (noise injection): 1,000 random train images are corrupted and searched for against the real

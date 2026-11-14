@@ -48,7 +48,7 @@ def fg_r(a, b):
 def mode_of(r):
     if 'shift_y' not in r: return 'same'
     g = G.shifted(r)
-    if g == 'wrapped copy': return 'wrap'
+    if g == 'shifted copy': return 'wrap'
     if g == 'overlapping tile': return 'overlap'
     return 'wrap' if float(r['wrap_low']) >= float(r['ovl_low']) else 'overlap'
 

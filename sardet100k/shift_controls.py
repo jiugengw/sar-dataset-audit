@@ -24,7 +24,7 @@ D = HERE / 'results'
 def rule(sy, sx, wf, wl, of, ol, frac):
     """The shifted-copy rules used for the results (labels left out: chance label transfer is checked elsewhere)."""
     if abs(sy) + abs(sx) <= 2: return None
-    if wf >= 0.95 or wl >= 0.95: return 'wrapped copy'
+    if wf >= 0.95 or wl >= 0.95: return 'shifted copy'
     if frac >= 0.25 and max(of, ol) >= 0.95: return 'overlapping tile'
     return None
 
@@ -55,7 +55,7 @@ def main():
 
     def g(r):
         return rule(int(r['shift_y']), int(r['shift_x']), *(float(r[k]) for k in ('wrap_full', 'wrap_low', 'ovl_full', 'ovl_low', 'ovl_frac')))
-    picks = random.sample([r for r in sh if g(r) == 'overlapping tile'], 6) + random.sample([r for r in sh if g(r) == 'wrapped copy'], 4)
+    picks = random.sample([r for r in sh if g(r) == 'overlapping tile'], 6) + random.sample([r for r in sh if g(r) == 'shifted copy'], 4)
     s = 170; sheet = Image.new('L', (2 * s + 10, len(picks) * (s + 16)), 255); d = ImageDraw.Draw(sheet)
     for k, r in enumerate(picks):
         a = np.ascontiguousarray(V.F[r['transform']](V.grey('val', r['query']))); b = V.grey('train', r['ref'])

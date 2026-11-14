@@ -1,7 +1,7 @@
 # SAR dataset audit: leakage in public SAR detection benchmarks
 
 This repository checks whether published SAR object detection benchmarks repeat training content in their
-evaluation splits. That includes exact copies, flipped copies, wrapped-round copies, overlapping tiles and new
+evaluation splits. That includes exact copies, flipped copies, shifted copies, overlapping tiles and new
 looks at the same place. It also measures how much that inflates reported scores.
 
 It started from a course project on SAR detection, where 26% of the test images turned out to be flipped copies of
@@ -21,7 +21,7 @@ labelled images.
 |---|---|---|
 | Exact or re-saved copy | The same chip in train and val, maybe flipped | Full-resolution correlation under 8 flips / turns |
 | Re-processed copy | The same chip with small pixel changes | Correlation after averaging out speckle |
-| Wrapped copy | A train chip slid round, edges wrapping | Shift-proof search (\|FFT\|), then the exact shift |
+| Shifted copy | A neighbouring crop, a few pixels up to half a tile away | Shift-proof search (\|FFT\|), then the exact shift |
 | Overlapping tile | Neighbouring crops of one scene | The same, scored on the shared region only |
 | Same target, other look | The same ship and place, new speckle or brightness | Speckle-reduced correlation plus label transfer |
 
