@@ -25,7 +25,20 @@ rows in allpairs.py's format: 'whole' (full_r, low_r, bg_r at zero shift), and t
 overlap: shift, r, 8x averaged r, shared share, background r). Every row also has fg_r, the target-pixel r of ship.py.
 A row is written when it passes groups.first_pass or groups.shifted (labels are not used).
 
+Version 2 (after recall_diag.py: 56% of planted misses were never candidates, mostly 30% overlaps; most of the rest
+were copies with new speckle, which fail the full-resolution background check by design):
+  - patch votes: K_PATCH 64 (was 32); the top K_VOTE_POOL vote candidates (>= 1 vote) are reranked by the overlap-
+    normalised alignment of the 64 px thumbnails down to THIN_SHARE shared area, and the best K_VOTE go to the check;
+  - a fourth row per pair, 'thin': the best overlap with THIN_SHARE <= shared area < MIN_SHARE (thin overlaps);
+  - bg_low_*: the background r on 4x averaged images (targets masked), which survives new speckle; with low_r it can
+    confirm a copy with new speckle (threshold set from the shuffled control afterwards);
+  - rows are written when any speckle-reduced r >= WRITE_LOW (0.85), not only when a rule passes, so the rules can be
+    tuned afterwards on the same files;
+  - --pairs FILE: check given pairs (csv: query_split, query, ref_split, ref) instead of searching, e.g. MSAR files
+    with neighbouring numbers. Output as above.
+
     python gpupairs.py IMAGES_DIR QUERY_SPLIT REF_SPLIT OUT.csv [--null]
+    python gpupairs.py IMAGES_DIR - - OUT.csv --pairs PAIRS.csv
 IMAGES_DIR/<split>/<file>. --null block-shuffles every reference image (4 x 4, fixed per-image order), as
 shift_null.py: no query can truly match, so confirmed rows count false positives (some references are still real
 copies, e.g. a wrap by whole blocks survives the shuffle; recheck those on the originals).
@@ -40,15 +53,18 @@ from PIL import Image
 
 T, DD = 64, 32
 K_WHOLE, K_FFT, K_SHIFT, MIN_THUMB_R, MIN_STD = 10, 50, 10, 0.7, 1.0
-PS, Q_STRIDE, R_STRIDE, PATCH_STD, K_PATCH, PATCH_R, K_VOTE = 16, 8, 2, 2.0, 32, 0.8, 10
+PS, Q_STRIDE, R_STRIDE, PATCH_STD, K_PATCH, PATCH_R, K_VOTE = 16, 8, 2, 2.0, 64, 0.8, 20
 F = 16  # |FFT| frequencies kept, as shifts.fdesc
 MIN_SHARE = 0.25
+THIN_SHARE = 0.1
+WRITE_LOW = 0.85
+K_VOTE_POOL = 60
 TOP, GROW, MIN_FG = 0.98, 9, 30
 TRANSFORMS = ['id', 'rot90', 'rot180', 'rot270', 'lr', 'ud', 'transpose', 'antitranspose']
 TWIN = {'id': 'rot180', 'rot180': 'id', 'rot90': 'rot270', 'rot270': 'rot90', 'lr': 'ud', 'ud': 'lr',
         'transpose': 'antitranspose', 'antitranspose': 'transpose'}  # same |FFT|: the rerank tries both
 COLS = ['kind', 'query', 'ref', 'transform', 'score', 'full_r', 'low_r', 'bg_r', 'shift_y', 'shift_x', 'wrap_full',
-        'wrap_low', 'ovl_full', 'ovl_low', 'ovl_frac', 'bg_wrap', 'bg_ovl', 'fg_r']
+        'wrap_low', 'ovl_full', 'ovl_low', 'ovl_frac', 'bg_wrap', 'bg_ovl', 'fg_r', 'bg_low_r', 'bg_low_wrap', 'bg_low_ovl']
 dev = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 FOLDER = None
 
@@ -133,7 +149,7 @@ def ncc_thumbs(a, b):
     return torch.maximum(circ.flatten(1).max(1).values, masked_ncc(a, b, MIN_SHARE)[0])
 
 
-def masked_ncc(a, b, min_share, exclude=0):
+def masked_ncc(a, b, min_share, exclude=0, max_share=None):
     """Pearson over the shared region for every shift s (roll a by s, no wrap, onto b). a, b: (B, H, W).
     Returns best r, its shift (sy, sx) and shared share; shifts with share < min_share (or |sy|+|sx| <= exclude) are
     left out."""
@@ -151,6 +167,7 @@ def masked_ncc(a, b, min_share, exclude=0):
     sy = torch.arange(P[0], device=a.device); sy = torch.where(sy >= H, sy - P[0], sy)
     sx = torch.arange(P[1], device=a.device); sx = torch.where(sx >= W, sx - P[1], sx)
     bad = (N < min_share * H * W) | ((sy[:, None].abs() + sx[None].abs()) <= exclude)
+    if max_share is not None: bad = bad | (N >= max_share * H * W)
     r = r.masked_fill(bad, -2)
     v, j = r.flatten(1).max(1)
     jy, jx = j // P[1], j % P[1]
@@ -226,13 +243,22 @@ def candidates(qth, rth, same):
     for (q, j, t), s in zip(pairs, score.tolist()):
         if s > best[q].get(j, (-2,))[0]: best[q][j] = (s, t)
     pv = patch_candidates(qth, rth, same)
+    vpairs = [(q, j) for q in range(len(qth)) for j, n in sorted(pv[q].items(), key=lambda kv: -kv[1])[:K_VOTE_POOL]]
+    vscore = torch.empty(len(vpairs))
+    for c0 in range(0, len(vpairs), 4096):
+        chunk = vpairs[c0:c0 + 4096]
+        a = qth[[q for q, _ in chunk]].to(dev); b = rth[[j for _, j in chunk]].to(dev)
+        a = a - a.mean((1, 2), keepdim=True); b = b - b.mean((1, 2), keepdim=True)
+        vscore[c0:c0 + len(chunk)] = masked_ncc(a, b, THIN_SHARE, exclude=0)[0].cpu()
+    vbest = [dict() for _ in range(len(qth))]
+    for (q, j), s in zip(vpairs, vscore.tolist()): vbest[q][j] = s
     out = []
     for q in range(len(qth)):
         c = {(j, t): s for j, (s, t) in whole[q].items()}
         for j, (s, t) in sorted(best[q].items(), key=lambda kv: -kv[1][0])[:K_SHIFT]:
             c.setdefault((j, t), s)
-        for j, n in sorted(pv[q].items(), key=lambda kv: -kv[1])[:K_VOTE]:
-            if n >= 2: c.setdefault((j, 'id'), float(n))
+        for j, s in sorted(vbest[q].items(), key=lambda kv: -kv[1])[:K_VOTE]:
+            c.setdefault((j, 'id'), s)
         out.append(c)
     print(f'  candidates: {sum(map(len, out))} pairs for {len(out)} queries', time.strftime('%H:%M:%S'), flush=True)
     return out
@@ -266,7 +292,11 @@ def stats(x, y, m):
     bg = mpearson(x, y, keep); fg = mpearson(x, y, grown)
     bg = torch.where(keep.sum((1, 2)) >= 0.2 * m.sum((1, 2)), bg, torch.full_like(bg, float('nan')))
     fg = torch.where(grown.sum((1, 2)) >= MIN_FG, fg, torch.full_like(fg, float('nan')))
-    return full, low, bg, fg
+    qx, qy, qk = (Fn.avg_pool2d(v[:, None], 4)[:, 0] for v in (x * keep, y * keep, keep))
+    qk1 = (qk > 0.999).float()
+    bgl = mpearson(qx / qk.clamp_min(1e-6), qy / qk.clamp_min(1e-6), qk1)
+    bgl = torch.where(qk1.sum((1, 2)) * 16 >= 0.2 * m.sum((1, 2)), bgl, torch.full_like(bgl, float('nan')))
+    return full, low, bg, fg, bgl
 
 
 def roll_rows(a, sy, sx, wrap):
@@ -298,7 +328,10 @@ def check_batch(a, b):
     # overlap shift: overlap-normalised cross-correlation
     _, oy, ox, frac = masked_ncc(a, b, MIN_SHARE, exclude=2)
     ao, mo = roll_rows(a, oy, ox, False); o = stats(ao, b, mo)
-    return {'z': z, 'w': (wy, wx) + w, 'o': (oy, ox, frac) + o}
+    # thin overlap: the best shift whose shared area is at least THIN_SHARE but under MIN_SHARE
+    _, ty, tx, tfrac = masked_ncc(a, b, THIN_SHARE, exclude=2, max_share=MIN_SHARE)
+    at, mt = roll_rows(a, ty, tx, False); th = stats(at, b, mt)
+    return {'z': z, 'w': (wy, wx) + w, 'o': (oy, ox, frac) + o, 't': (ty, tx, tfrac) + th}
 
 
 def full_check(pairs, qimgs, rimgs, qnames, rnames, writer, rules):
@@ -319,16 +352,21 @@ def full_check(pairs, qimgs, rimgs, qnames, rnames, writer, rules):
             a = torch.stack(a); b = torch.stack([torch.from_numpy(rimgs[j]).to(dev).float() for _, j, _, _ in chunk])
             res = check_batch(a, b)
             z = [v.tolist() for v in res['z']]; w = [v.tolist() for v in res['w']]; o = [v.tolist() for v in res['o']]
+            tt = [v.tolist() for v in res['t']]
             for k, (q, j, s, t) in enumerate(chunk):
                 base = {'query': qnames[q], 'ref': rnames[j], 'transform': t, 'score': f'{s:.4f}'}
                 f4 = lambda v: 'nan' if v != v else f'{v:.4f}'
-                rows = [dict(base, kind='whole', full_r=f4(z[0][k]), low_r=f4(z[1][k]), bg_r=f4(z[2][k]), fg_r=f4(z[3][k])),
+                rows = [dict(base, kind='whole', full_r=f4(z[0][k]), low_r=f4(z[1][k]), bg_r=f4(z[2][k]), fg_r=f4(z[3][k]),
+                             bg_low_r=f4(z[4][k])),
                         dict(base, kind='shift', shift_y=w[0][k], shift_x=w[1][k], wrap_full=f4(w[2][k]),
                              wrap_low=f4(w[3][k]), ovl_full='-1', ovl_low='-1', ovl_frac='0', bg_wrap=f4(w[4][k]),
-                             bg_ovl='', fg_r=f4(w[5][k])),
+                             bg_ovl='', fg_r=f4(w[5][k]), bg_low_wrap=f4(w[6][k])),
                         dict(base, kind='shift', shift_y=o[0][k], shift_x=o[1][k], wrap_full='-1', wrap_low='-1',
                              ovl_full=f4(o[3][k]), ovl_low=f4(o[4][k]), ovl_frac=f'{o[2][k]:.3f}', bg_wrap='',
-                             bg_ovl=f4(o[5][k]), fg_r=f4(o[6][k]))]
+                             bg_ovl=f4(o[5][k]), fg_r=f4(o[6][k]), bg_low_ovl=f4(o[7][k])),
+                        dict(base, kind='thin', shift_y=tt[0][k], shift_x=tt[1][k], wrap_full='-1', wrap_low='-1',
+                             ovl_full=f4(tt[3][k]), ovl_low=f4(tt[4][k]), ovl_frac=f'{tt[2][k]:.3f}', bg_wrap='',
+                             bg_ovl=f4(tt[5][k]), fg_r=f4(tt[6][k]), bg_low_ovl=f4(tt[7][k]))]
                 for r in rows:
                     r = {c: r.get(c, '') for c in COLS}
                     if rules(r): writer.writerow(r)
@@ -336,12 +374,34 @@ def full_check(pairs, qimgs, rimgs, qnames, rnames, writer, rules):
         print(f'  checked {done} / {len(pairs)} pairs (shape {shape})', time.strftime('%H:%M:%S'), flush=True)
 
 
-def main(folder, qsplit, rsplit, out, null=False):
+def check_given(pairs_file, out, rules):
+    """Check given pairs (no search), under the identity transform."""
+    want = list(csv.DictReader(open(pairs_file)))
+    names = sorted({(r['query_split'], r['query']) for r in want} | {(r['ref_split'], r['ref']) for r in want})
+    with Pool(None, _init, (FOLDER,)) as p:
+        res = p.map(_load, [(s, n, False) for s, n in names], chunksize=128)
+    idx = {sn: k for k, sn in enumerate(names)}
+    imgs = [r[1] for r in res]; nm = [r[0] for r in res]
+    pairs = [(idx[(r['query_split'], r['query'])], idx[(r['ref_split'], r['ref'])], 0.0, 'id') for r in want]
+    print(len(pairs), 'given pairs,', len(names), 'images', flush=True)
+    with open(out, 'w', newline='') as fh:
+        w = csv.DictWriter(fh, COLS); w.writeheader()
+        full_check(pairs, imgs, imgs, nm, nm, w, rules)
+    print('->', out, flush=True)
+
+
+def main(folder, qsplit, rsplit, out, null=False, pairs_file=None):
     _init(folder)
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     import groups as G
-    rules = lambda r: (G.first_pass(r) if r['kind'] == 'whole' else G.shifted({**r, 'box_recall': ''})) is not None
+    def lowest(r):
+        v = [float(r[k]) for k in ('low_r', 'wrap_low', 'ovl_low') if r.get(k) not in (None, '', 'nan', '-1')]
+        return max(v) if v else -1
+    rule = lambda r: (G.first_pass(r) if r['kind'] == 'whole' else G.shifted({**r, 'box_recall': ''})) is not None
+    rules = lambda r: rule(r) or lowest(r) >= WRITE_LOW
     t0 = time.time()
+    if pairs_file:
+        return check_given(pairs_file, out, rules)
     qn, qi, qth = load(qsplit)
     rn, ri, rth = (qn, qi, qth) if (qsplit == rsplit and not null) else load(rsplit, null)
     print(f'{qsplit} {len(qn)} vs {rsplit} {len(rn)}{" (null)" if null else ""}: loaded {time.time() - t0:.0f}s', flush=True)
@@ -355,4 +415,4 @@ def main(folder, qsplit, rsplit, out, null=False):
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    main(a[0], a[1], a[2], a[3], '--null' in a)
+    main(a[0], a[1], a[2], a[3], '--null' in a, a[a.index('--pairs') + 1] if '--pairs' in a else None)

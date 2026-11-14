@@ -1,0 +1,17 @@
+{
+ "pairs": 19872,
+ "no box on one side": 0,
+ "real": {
+  "pairs with boxes on both": 19872,
+  "all boxes matched": 0.986,
+  "at least half matched": 0.986,
+  "none matched": 0.014
+ },
+ "control (random other tile)": {
+  "pairs with boxes on both": 19872,
+  "all boxes matched": 0.001,
+  "at least half matched": 0.001,
+  "none matched": 0.998
+ },
+ "real, all boxes matched, across official splits": 6901
+}

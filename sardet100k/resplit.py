@@ -1,25 +1,29 @@
-"""Leak-free re-split of SARDet-100K: group images that share a scene, then split whole groups.
+"""Leak-free re-split of SARDet-100K: group images that share pixels, then split whole groups.
 
-Links come from every pairwise check:
-  all_{q}_vs_{r}.csv (allpairs.py)     every match, whole image and shifted, for train-train, val-train,
-                                       test-train, val-val, test-test, val-test
-  all_{q}_vs_{r}_ship.csv (ship.py)    target-pixel r of the unconfirmed rows of those files
-  contained*.csv (contained.py)        chips inside larger images (any splits); the null file is skipped
-  verify_*_bg.csv, shifts_*_bg.csv     the best-match files (subsumed by all_*, kept for safety)
-Only confirmed links join images: exact / re-processed / wrapped / overlapping with the masked background also
-matching (groups.confirmed_first / confirmed_shift, contained: full_r or low_r >= 0.95 and bg_r >= 0.5), or the
-target's own pixels repeating (fg_r >= groups.SHIP). Uncertain links (sparse ship chips that may be a different
-ship lined up) are counted but do not join: they would chain unrelated chips into giant groups.
+Links (only proven ones join images):
+  gp_{q}_vs_{r}.csv(.gz) (gpupairs.py)  every match for all split pairs; confirmed by the background rule
+                                         (groups.confirmed_first / confirmed_shift; the ship-pixel rule is not used:
+                                         the shuffled control showed it confirms almost as many false pairs as real)
+  gp_msar_numbers.csv                    MSAR files with nearby numbers (gpupairs.py --pairs), same rule
+  name_links.csv.gz (namelinks.py)       tiles the file names place next to each other, with matching pixels where
+                                         they overlap ('confirmed'), or a blank shared part ('flat': kept together,
+                                         not counted as a leak); SARDet's own tiles of one original; ShipDataset tiles
+                                         in another polarization with every box matching (polcheck.py)
+  contained.csv.gz (contained.py)        chips inside larger images, full_r or low_r >= 0.95 and bg_r >= 0.5
+  all_*.csv, verify_*/shifts_*_bg.csv    the earlier CPU searches, same background rule
+Matches that pass a pixel rule but not the background check are counted as uncertain and do not join.
 
-Groups are union-find components. Each group gets the source of its images (true source from mapping.json). For
-every source, groups are shuffled (fixed seed) and handed to val and test until each holds the same number of that
-source's images as the official split; groups larger than MAX_GROUP stay in train. The rest is train.
+Groups are union-find components, with the source of most of their images. Per source, val and test get the
+official number of that source's images, filled with whole groups:
+  - a group goes to val (test) only if it holds at most CAP_SHARE of that split's target; bigger groups (the two
+    largest SAR-AIRcraft airports) stay in train;
+  - the remaining groups are binned by size (BANDS) and each band gives val and test the same share of its images,
+    so val and test get small, medium and large groups in the same mix as train (no size bias).
 
     ~/.venvs/sar-audit/bin/python sardet100k/resplit.py      # -> results/resplit.json, results/resplit_split.csv
     ~/.venvs/sar-audit/bin/python sardet100k/resplit.py check    # confirmed links that cross the saved split
-                                                                 # (e.g. after a new check) -> resplit_check.json
 """
-import csv, json, sys
+import csv, gzip, json, sys
 from collections import Counter, defaultdict
 from pathlib import Path
 import numpy as np
@@ -28,7 +32,8 @@ HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 import groups as G
 
 D = HERE / 'results'; ROOT = HERE / 'data' / 'SARDet_100K'
-MAX_GROUP = 50
+CAP_SHARE = 0.5
+BANDS = [(1, 1), (2, 5), (6, 20), (21, 100), (101, 500), (501, 10 ** 9)]
 SEED = 0
 
 
@@ -71,34 +76,53 @@ LINKS = [  # file, query split, ref split, kind
 PAIRS = [('train', 'train'), ('val', 'train'), ('test', 'train'), ('val', 'val'), ('test', 'test'), ('val', 'test')]
 
 
+def _open(name):
+    p = D / name
+    if p.exists(): return p.open()
+    if Path(str(p) + '.gz').exists(): return gzip.open(str(p) + '.gz', 'rt')
+    return None
+
+
 def links():
     """(file, a, b, confirmed?) for every link that passes a rule; files not made yet are skipped."""
     for qs, rs in PAIRS:
-        name = f'all_{qs}_vs_{rs}.csv'
-        if not (D / name).exists():
-            print('missing', name); continue
-        ship = {}
-        if (D / f'all_{qs}_vs_{rs}_ship.csv').exists():
-            for r in csv.DictReader((D / f'all_{qs}_vs_{rs}_ship.csv').open()):
-                if r['fg_r'] not in ('', 'nan') and not r['fg_r'].startswith('error'):
-                    ship[(r['kind'], r['query'], r['ref'])] = float(r['fg_r'])
-        else:
-            print('missing', f'all_{qs}_vs_{rs}_ship.csv')
-        for r in csv.DictReader((D / name).open()):
+        for name in (f'gp_{qs}_vs_{rs}.csv', f'all_{qs}_vs_{rs}.csv'):
+            fh = _open(name)
+            if fh is None:
+                print('missing', name); continue
+            for r in csv.DictReader(fh):
+                if r['query'] == r['ref']: continue
+                g = G.first_pass(r) if r['kind'] == 'whole' else G.shifted(r)
+                c = G.confirmed_first(r) if r['kind'] == 'whole' else G.confirmed_shift(r)
+                if g or c: yield name, (qs, r['query']), (rs, r['ref']), bool(c)
+    fh = _open('gp_msar_numbers.csv')
+    if fh is not None:
+        sp = {r['file_name']: r['official_split'] for r in csv.DictReader((D / 'resplit_split.csv').open())}
+        for r in csv.DictReader(fh):
+            g = G.first_pass(r) if r['kind'] == 'whole' else G.shifted(r)
             c = G.confirmed_first(r) if r['kind'] == 'whole' else G.confirmed_shift(r)
-            c = c or ship.get((r['kind'], r['query'], r['ref']), 0) >= G.SHIP
-            yield name, (qs, r['query']), (rs, r['ref']), bool(c)
-    for path in sorted(D.glob('contained*.csv')):
-        if 'null' in path.name: continue
-        for r in csv.DictReader(path.open()):
-            hit = float(r['full_r']) >= 0.95 or float(r['low_r']) >= 0.95
-            if not hit: continue
-            bg = float(r['bg_r']) if r['bg_r'] not in ('', 'nan') else 0.0
-            yield path.name, (r['chip_split'], r['chip']), (r['host_split'], r['host']), bg >= G.BG
+            if g or c: yield 'gp_msar_numbers.csv', (sp[r['query']], r['query']), (sp[r['ref']], r['ref']), bool(c)
+    fh = _open('name_links.csv')
+    if fh is not None:
+        import polcheck, verify as V
+        boxes = {}
+        for s_ in ('train', 'val', 'test'): boxes.update(V.coco(s_)[1])
+        for r in csv.DictReader(fh):
+            if r['kind'] == 'other polarization':
+                c = (polcheck.matched(boxes.get(r['a'], []), boxes.get(r['b'], [])) or 0) >= 0.999
+            elif r['verdict'] == 'not matching' or r['verdict'].startswith('error'): continue
+            else: c = True  # confirmed, flat (kept together), or SARDet's own tiles (by name)
+            yield f"name_links: {r['kind']}", (r['split_a'], r['a']), (r['split_b'], r['b']), c
+    fh = _open('contained.csv')
+    if fh is not None:
+        for r in csv.DictReader(fh):
+            f = lambda k: float(r[k]) if r[k] not in ('', 'nan') else -9.0
+            if max(f('full_r'), f('low_r')) < 0.95: continue
+            yield 'contained.csv', (r['chip_split'], r['chip']), (r['host_split'], r['host']), f('bg_r') >= G.BG
     for name, qs, rs, kind in LINKS:
-        if not (D / name).exists():
-            print('missing', name); continue
-        for r in csv.DictReader((D / name).open()):
+        fh = _open(name)
+        if fh is None: continue
+        for r in csv.DictReader(fh):
             if not r['ref']: continue
             g = G.first_pass(r) if kind == 'first' else G.shifted(r)
             c = G.confirmed_first(r) if kind == 'first' else G.confirmed_shift(r)
@@ -146,22 +170,36 @@ def main():
         for s, _ in members:
             cross[(s, len(splits) > 1)] += 1
 
-    # new split, per source
+    # new split, per source: big groups stay in train, the rest is dealt band by band
     rng = np.random.default_rng(SEED)
     target = Counter((s, src[(s, f)]) for s, f in ims if s != 'train')
     gsrc = {r: Counter(src[k] for k in m).most_common(1)[0][0] for r, m in comp.items()}
-    new = {}
+    new, band_report = {}, {}
     for source in sorted(set(gsrc.values())):
+        tv, tt = target[('val', source)], target[('test', source)]
         roots = [r for r in comp if gsrc[r] == source]
-        rng.shuffle(roots)
-        fill = {'val': 0, 'test': 0}
+        cap = {'val': CAP_SHARE * tv, 'test': CAP_SHARE * tt}
+        elig = [r for r in roots if len(comp[r]) <= max(cap.values())]
+        E = sum(len(comp[r]) for r in elig) or 1
+        share = {'val': min(1.0, tv / E), 'test': min(1.0, tt / E)}
+        fill = Counter()
         for r in roots:
-            n = len(comp[r]); dest = 'train'
-            if n <= MAX_GROUP:
-                for s in ('val', 'test'):
-                    if fill[s] + n <= target[(s, source)] + max(0, n // 2):
-                        dest = s; fill[s] += n; break
-            for k in comp[r]: new[k] = dest
+            for k in comp[r]: new[k] = 'train'
+        for lo, hi in BANDS:
+            band = [r for r in elig if lo <= len(comp[r]) <= hi]
+            rng.shuffle(band)
+            n_band = sum(len(comp[r]) for r in band)
+            got = Counter()
+            for r in band:
+                n = len(comp[r])
+                need = {s_: share[s_] * n_band - got[s_] for s_ in ('val', 'test')
+                        if n <= cap[s_] and fill[s_] + n <= (tv if s_ == 'val' else tt) + n // 2}
+                if not need: continue
+                s_ = max(need, key=need.get)
+                if need[s_] >= n / 2:
+                    got[s_] += n; fill[s_] += n
+                    for k in comp[r]: new[k] = s_
+            band_report[f'{source} | {lo}-{hi}'] = {'images': n_band, 'val': got['val'], 'test': got['test']}
     moved = Counter((s, new[(s, f)]) for s, f in ims)
     per_source = defaultdict(dict)
     for (s, f), d in new.items():
@@ -181,14 +219,16 @@ def main():
            'new_split_sizes': dict(Counter(new.values())),
            'official_to_new': {f'{a} -> {b}': n for (a, b), n in sorted(moved.items())},
            'per_source_official': dict(off), 'per_source_new': dict(per_source),
-           'images_in_groups_split_across_new_splits': leaks, 'max_group': MAX_GROUP, 'seed': SEED}
+           'images_in_groups_split_across_new_splits': leaks, 'bands (images per size band)': band_report,
+           'cap_share': CAP_SHARE, 'seed': SEED}
     (D / 'resplit.json').write_text(json.dumps(out, indent=1))
     with (D / 'resplit_split.csv').open('w', newline='') as fh:
         w = csv.writer(fh); w.writerow(['official_split', 'file_name', 'source', 'group', 'group_size', 'new_split'])
         for k in sorted(ims):
             r = conf.find(k)
             w.writerow([k[0], k[1], src[k], f'{r[0]}/{r[1]}', len(comp[r]), new[k]])
-    print(json.dumps({k: out[k] for k in out if k not in ('per_source_official', 'per_source_new')}, indent=1))
+    print(json.dumps({k: out[k] for k in out if k not in ('per_source_official', 'per_source_new',
+                                                          'bands (images per size band)')}, indent=1))
     print('->', D / 'resplit.json')
 
 

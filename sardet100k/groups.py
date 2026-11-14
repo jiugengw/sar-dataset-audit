@@ -7,6 +7,7 @@ Groups, strongest first (an image gets the first that applies):
                          'wrapped copy' in older result files; wrapcheck.py found no real rolls, only plain shifts
                          (neighbouring tiles) whose shared part carries the targets
   overlapping tile       shifted without wrap, shared region >= 25% of the image, r >= 0.95 there
+  thin overlap           shared region 10-25% (gpupairs.py 'thin' rows), full-resolution r >= 0.95 there
   same target (labels)   val only: speckle-reduced r >= 0.8 and >= 50% of the val boxes recovered by the
                          moved train boxes (same position, or after the shift)
   clean                  none of the above
@@ -26,7 +27,8 @@ from pathlib import Path
 
 D = Path(__file__).resolve().parent / 'results'
 WRAP = 'shifted copy'
-ORDER = ['exact copy', 're-processed copy', WRAP, 'overlapping tile', 'same target (labels)', 'clean']
+ORDER = ['exact copy', 're-processed copy', WRAP, 'overlapping tile', 'thin overlap', 'same target (labels)', 'clean']
+THIN = 0.1
 BG = 0.5
 SHIP = 0.95
 OVL_FULL = 0.9  # a confirmed overlapping tile also needs full-resolution r >= 0.9 over the shared region: searching
@@ -52,6 +54,7 @@ def shifted(r):
     wf, wl, of, ol, frac, rec = (_f(r, k) for k in ('wrap_full', 'wrap_low', 'ovl_full', 'ovl_low', 'ovl_frac', 'box_recall'))
     if wf >= 0.95 or wl >= 0.95: return WRAP
     if frac >= 0.25 and max(of, ol) >= 0.95: return 'overlapping tile'
+    if THIN <= frac < 0.25 and of >= 0.95: return 'thin overlap'
     if max(wl, ol) >= 0.8 and rec is not None and rec >= 0.5: return 'same target (labels)'
     return None
 
@@ -65,6 +68,7 @@ def confirmed_shift(r):
     g = shifted(r)
     if g == WRAP and (_f(r, 'bg_wrap') or 0) >= BG: return g
     if g == 'overlapping tile' and (_f(r, 'bg_ovl') or 0) >= BG and (_f(r, 'ovl_full') or 0) >= OVL_FULL: return g
+    if g == 'thin overlap' and (_f(r, 'bg_ovl') or 0) >= BG: return g
     return None
 
 
