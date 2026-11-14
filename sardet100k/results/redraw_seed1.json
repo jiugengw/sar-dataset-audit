@@ -1,0 +1,61 @@
+{
+ "seed": 1,
+ "images": 116598,
+ "same new split as the saved one": 80082,
+ "sizes": {
+  "train": 94181,
+  "val": 10820,
+  "test": 11597
+ },
+ "SAR-AIRcraft groups in val / test": {
+  "val": 5,
+  "test": 6
+ },
+ "per source": {
+  "AIR-SARShip": {
+   "train": 723,
+   "val": 30,
+   "test": 48
+  },
+  "HRSID": {
+   "test": 987,
+   "train": 3643,
+   "val": 974
+  },
+  "MSAR": {
+   "train": 27159,
+   "test": 1498,
+   "val": 1501
+  },
+  "OGSOD": {
+   "train": 14573,
+   "val": 1858,
+   "test": 1900
+  },
+  "SADD": {
+   "train": 811,
+   "test": 34,
+   "val": 38
+  },
+  "SAR-AIRcraft": {
+   "train": 13926,
+   "val": 2149,
+   "test": 2813
+  },
+  "SIVED": {
+   "train": 841,
+   "test": 101,
+   "val": 102
+  },
+  "SSDD": {
+   "train": 925,
+   "test": 118,
+   "val": 117
+  },
+  "Shipdataset": {
+   "train": 31580,
+   "val": 4051,
+   "test": 4098
+  }
+ }
+}
