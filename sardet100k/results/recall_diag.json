@@ -1,0 +1,88 @@
+{
+ "planted": 8291,
+ "missed": 1744,
+ "all": {
+  "background check fails": 470,
+  "lost before the check": 975,
+  "pixel check fails": 299
+ },
+ "flip + jpeg90": {
+  "background check fails": 14
+ },
+ "gain + jpeg60": {
+  "background check fails": 83,
+  "pixel check fails": 4
+ },
+ "overlap 30": {
+  "background check fails": 4,
+  "lost before the check": 734,
+  "pixel check fails": 18
+ },
+ "overlap 50": {
+  "background check fails": 7,
+  "lost before the check": 103,
+  "pixel check fails": 14
+ },
+ "overlap 75": {
+  "background check fails": 4,
+  "lost before the check": 42,
+  "pixel check fails": 7
+ },
+ "source AIR-SARShip": {
+  "background check fails": 21,
+  "lost before the check": 100,
+  "pixel check fails": 56
+ },
+ "source HRSID": {
+  "background check fails": 117,
+  "lost before the check": 230,
+  "pixel check fails": 22
+ },
+ "source MSAR": {
+  "background check fails": 17,
+  "lost before the check": 114,
+  "pixel check fails": 97
+ },
+ "source OGSOD": {
+  "background check fails": 10,
+  "lost before the check": 59,
+  "pixel check fails": 29
+ },
+ "source SADD": {
+  "background check fails": 154,
+  "lost before the check": 101,
+  "pixel check fails": 42
+ },
+ "source SAR-AIRcraft": {
+  "background check fails": 22,
+  "lost before the check": 137,
+  "pixel check fails": 7
+ },
+ "source SIVED": {
+  "lost before the check": 53,
+  "pixel check fails": 2
+ },
+ "source SSDD": {
+  "background check fails": 26,
+  "lost before the check": 14,
+  "pixel check fails": 30
+ },
+ "source Shipdataset": {
+  "background check fails": 103,
+  "lost before the check": 167,
+  "pixel check fails": 14
+ },
+ "speckle + flip": {
+  "background check fails": 157,
+  "pixel check fails": 143
+ },
+ "wrap": {
+  "background check fails": 9,
+  "lost before the check": 60
+ },
+ "wrap + speckle": {
+  "background check fails": 192,
+  "lost before the check": 36,
+  "pixel check fails": 113
+ }
+}

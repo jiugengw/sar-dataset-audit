@@ -1,0 +1,39 @@
+{
+ "ShipDataset grid neighbour": {
+  "pairs": 67072,
+  "confirmed": 64097,
+  "confirmed: crosses official splits": 21887,
+  "confirmed: new (not a GPU-search link)": 8526,
+  "confirmed: new and crosses splits": 3199,
+  "flat": 990,
+  "flat: crosses official splits": 305,
+  "flat: new (not a GPU-search link)": 990,
+  "flat: new and crosses splits": 305,
+  "not matching": 1985
+ },
+ "other polarization": {
+  "pairs": 19872,
+  "compared": 19872,
+  "r_low quantiles 10/50/90": [
+   0.616,
+   0.925,
+   0.974
+  ],
+  "crosses official splits": 6985
+ },
+ "HRSID window overlap": {
+  "pairs": 12727,
+  "confirmed": 11903,
+  "confirmed: crosses official splits": 6261,
+  "confirmed: new (not a GPU-search link)": 8602,
+  "confirmed: new and crosses splits": 4609,
+  "not matching": 824
+ },
+ "same original (SARDet tiles)": {
+  "pairs": 16701,
+  "by name": 16701,
+  "by name: crosses official splits": 0,
+  "by name: new (not a GPU-search link)": 13196,
+  "by name: new and crosses splits": 0
+ }
+}

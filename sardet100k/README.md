@@ -92,6 +92,8 @@ file name and tile position). These sit at the top level of the dataset folder, 
 | 3b | `shift_null.py` | Control: the whole shift search against a block-shuffled train pool (no real scene can match) |
 | 3c | `background.py` | Full-resolution r with the bright targets masked, for every matched pair; >= 0.5 confirms a leak |
 | 3d | `wrapcheck.py` | Do 'wrapped' matches really wrap round? Scores the wrapped-round part and the rest separately (`results/wrap_check.json`) |
+| 3e | `recall_diag.py` | For each planted copy the GPU search missed: lost before the check, pixel check fails, or background check fails (`results/recall_diag.json`) |
+| 3f | `namelinks.py` | Links tiles by original file name (ShipDataset grid, HRSID windows, SARDet's own tiles, other polarizations) and checks the pixels where the names say they overlap (`results/name_links.json`) |
 | 4 | `groups.py` | One group per image, strongest first: exact, re-processed, shifted, overlapping tile, same target (labels), clean |
 | 5 | `score_groups.py` | COCO mAP per group and source: the copy-the-labels baseline, and a trained detector's val predictions |
 | 6 | `label_controls.py` | Chance level of the label rule: boxes from random same-source train images |
