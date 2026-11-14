@@ -7,7 +7,7 @@
 #SBATCH --job-name=job-g
 #SBATCH --partition=student
 #SBATCH --gres=gpu:1
-#SBATCH --constraint=l40s|a40|rtx_pro_6000_blackwell_max
+#SBATCH --constraint=l40s|a40  # the patch search needs ~40 GB; Blackwell nodes hand out 24 GB slices
 #SBATCH --prefer=l40s
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
