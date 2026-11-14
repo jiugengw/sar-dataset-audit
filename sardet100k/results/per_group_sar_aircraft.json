@@ -1,0 +1,233 @@
+{
+ "draw1": {
+  "val": {
+   "all": {
+    "images": 2219,
+    "boxes": 4620,
+    "boxes per image": 2.1,
+    "median box side": 70.2,
+    "mAP": 26.18,
+    "AP50": 64.72
+   },
+   "test/0000034.jpg": {
+    "images": 955,
+    "boxes": 2692,
+    "boxes per image": 2.8,
+    "median box side": 62.0,
+    "mAP": 30.17,
+    "AP50": 70.97
+   },
+   "test/0000113.jpg": {
+    "images": 729,
+    "boxes": 1016,
+    "boxes per image": 1.4,
+    "median box side": 81.0,
+    "mAP": 32.8,
+    "AP50": 65.18
+   },
+   "test/0001570.jpg": {
+    "images": 298,
+    "boxes": 625,
+    "boxes per image": 2.1,
+    "median box side": 84.8,
+    "mAP": 19.78,
+    "AP50": 62.38
+   },
+   "test/0005477.jpg": {
+    "images": 149,
+    "boxes": 199,
+    "boxes per image": 1.3,
+    "median box side": 99.5,
+    "mAP": 23.16,
+    "AP50": 54.54
+   },
+   "train/0002548.jpg": {
+    "images": 88,
+    "boxes": 88,
+    "boxes per image": 1.0,
+    "median box side": 93.8,
+    "mAP": 10.39,
+    "AP50": 24.54
+   }
+  },
+  "test": {
+   "all": {
+    "images": 3307,
+    "boxes": 8425,
+    "boxes per image": 2.5,
+    "median box side": 75.3,
+    "mAP": 20.46,
+    "AP50": 47.49
+   },
+   "test/0000468.jpg": {
+    "images": 1158,
+    "boxes": 4036,
+    "boxes per image": 3.5,
+    "median box side": 76.2,
+    "mAP": 16.87,
+    "AP50": 41.69
+   },
+   "test/0000672.jpg": {
+    "images": 767,
+    "boxes": 2127,
+    "boxes per image": 2.8,
+    "median box side": 63.6,
+    "mAP": 21.41,
+    "AP50": 53.58
+   },
+   "test/0002036.jpg": {
+    "images": 739,
+    "boxes": 1083,
+    "boxes per image": 1.5,
+    "median box side": 83.4,
+    "mAP": 25.17,
+    "AP50": 47.64
+   },
+   "test/0000357.jpg": {
+    "images": 287,
+    "boxes": 600,
+    "boxes per image": 2.1,
+    "median box side": 93.8,
+    "mAP": 16.17,
+    "AP50": 41.6
+   },
+   "train/0000005.jpg": {
+    "images": 272,
+    "boxes": 495,
+    "boxes per image": 1.8,
+    "median box side": 86.0,
+    "mAP": 46.87,
+    "AP50": 83.27
+   },
+   "train/0001414.jpg": {
+    "images": 84,
+    "boxes": 84,
+    "boxes per image": 1.0,
+    "median box side": 92.8,
+    "mAP": 28.07,
+    "AP50": 62.69
+   }
+  }
+ },
+ "draw2": {
+  "val": {
+   "all": {
+    "images": 2149,
+    "boxes": 4979,
+    "boxes per image": 2.3,
+    "median box side": 73.0,
+    "mAP": 27.54,
+    "AP50": 64.23
+   },
+   "test/0000034.jpg": {
+    "images": 955,
+    "boxes": 2692,
+    "boxes per image": 2.8,
+    "median box side": 62.0,
+    "mAP": 37.14,
+    "AP50": 81.92
+   },
+   "train/0000188.jpg": {
+    "images": 741,
+    "boxes": 1563,
+    "boxes per image": 2.1,
+    "median box side": 80.0,
+    "mAP": 10.61,
+    "AP50": 31.07
+   },
+   "train/0000023.jpg": {
+    "images": 250,
+    "boxes": 391,
+    "boxes per image": 1.6,
+    "median box side": 116.4,
+    "mAP": 45.49,
+    "AP50": 85.08
+   },
+   "train/0002112.jpg": {
+    "images": 119,
+    "boxes": 249,
+    "boxes per image": 2.1,
+    "median box side": 47.4,
+    "mAP": 24.44,
+    "AP50": 54.35
+   },
+   "train/0001414.jpg": {
+    "images": 84,
+    "boxes": 84,
+    "boxes per image": 1.0,
+    "median box side": 92.8,
+    "mAP": 46.77,
+    "AP50": 72.55
+   }
+  },
+  "test": {
+   "all": {
+    "images": 2813,
+    "boxes": 4587,
+    "boxes per image": 1.6,
+    "median box side": 81.6,
+    "mAP": 26.45,
+    "AP50": 59.89
+   },
+   "train/0000309.jpg": {
+    "images": 1388,
+    "boxes": 2635,
+    "boxes per image": 1.9,
+    "median box side": 80.4,
+    "mAP": 15.95,
+    "AP50": 47.97
+   },
+   "test/0000113.jpg": {
+    "images": 729,
+    "boxes": 1016,
+    "boxes per image": 1.4,
+    "median box side": 81.0,
+    "mAP": 40.49,
+    "AP50": 71.9
+   },
+   "test/0003248.jpg": {
+    "images": 410,
+    "boxes": 499,
+    "boxes per image": 1.2,
+    "median box side": 81.9,
+    "mAP": 46.18,
+    "AP50": 75.78
+   },
+   "test/0001067.jpg": {
+    "images": 173,
+    "boxes": 324,
+    "boxes per image": 1.9,
+    "median box side": 114.9,
+    "mAP": 32.53,
+    "AP50": 81.98
+   },
+   "train/0000301.jpg": {
+    "images": 88,
+    "boxes": 88,
+    "boxes per image": 1.0,
+    "median box side": 55.4,
+    "mAP": 34.41,
+    "AP50": 91.03
+   },
+   "train/0005231.jpg": {
+    "images": 25,
+    "boxes": 25,
+    "boxes per image": 1.0,
+    "median box side": 55.7,
+    "mAP": 22.56,
+    "AP50": 73.76
+   }
+  }
+ },
+ "groups in both draws": {
+  "draw1 val & draw2 val": [
+   "test/0000034.jpg"
+  ],
+  "draw1 val & draw2 test": [
+   "test/0000113.jpg"
+  ],
+  "draw1 test & draw2 val": [
+   "train/0001414.jpg"
+  ]
+ }
+}
