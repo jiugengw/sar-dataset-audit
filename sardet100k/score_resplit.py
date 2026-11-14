@@ -2,8 +2,8 @@
 
     ~/.venvs/sar-yolo/bin/python sardet100k/score_resplit.py RESPLIT_VAL_PRED [RESPLIT_TEST_PRED]
 Ground truth for the new val / test is gathered from the official train / val / test annotation files
-(resplit_split.csv says which image went where). The official-split model's predictions (results/val_predictions.json,
-job_a) are scored on the official val the same way. mAP (0.5:0.95) and AP50 overall and per source (true source,
+(resplit_split.csv says which image went where). The official-split model's predictions (results/val_predictions.json and
+test_predictions.json, job_a / job_b) are scored on the official val and test the same way. mAP (0.5:0.95) and AP50 overall and per source (true source,
 mapping.json) -> results/scores_resplit.json.
 """
 import contextlib, csv, io, json, sys
@@ -57,8 +57,9 @@ def main(val_pred, test_pred=None):
     rows = list(csv.DictReader((R.D / 'resplit_split.csv').open()))
     src = {r['file_name']: r['source'] for r in rows}
     out = {}
-    off_val = {r['file_name'] for r in rows if r['official_split'] == 'val'}
-    out['official split, official val (job_a)'] = score(gt_for(off_val), R.D / 'val_predictions.json', src)
+    for split in ('val', 'test'):
+        names = {r['file_name'] for r in rows if r['official_split'] == split}
+        out[f'official split, official {split}'] = score(gt_for(names), R.D / f'{split}_predictions.json', src)
     for split, pred in (('val', val_pred), ('test', test_pred)):
         if pred:
             names = {r['file_name'] for r in rows if r['new_split'] == split}
