@@ -29,6 +29,7 @@ from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
+import assign as A
 import groups as G
 
 D = HERE / 'results'; ROOT = HERE / 'data' / 'SARDet_100K'
@@ -171,35 +172,7 @@ def main():
             cross[(s, len(splits) > 1)] += 1
 
     # new split, per source: big groups stay in train, the rest is dealt band by band
-    rng = np.random.default_rng(SEED)
-    target = Counter((s, src[(s, f)]) for s, f in ims if s != 'train')
-    gsrc = {r: Counter(src[k] for k in m).most_common(1)[0][0] for r, m in comp.items()}
-    new, band_report = {}, {}
-    for source in sorted(set(gsrc.values())):
-        tv, tt = target[('val', source)], target[('test', source)]
-        roots = [r for r in comp if gsrc[r] == source]
-        cap = {'val': CAP_SHARE * tv, 'test': CAP_SHARE * tt}
-        elig = [r for r in roots if len(comp[r]) <= max(cap.values())]
-        E = sum(len(comp[r]) for r in elig) or 1
-        share = {'val': min(1.0, tv / E), 'test': min(1.0, tt / E)}
-        fill = Counter()
-        for r in roots:
-            for k in comp[r]: new[k] = 'train'
-        for lo, hi in BANDS:
-            band = [r for r in elig if lo <= len(comp[r]) <= hi]
-            rng.shuffle(band)
-            n_band = sum(len(comp[r]) for r in band)
-            got = Counter()
-            for r in band:
-                n = len(comp[r])
-                need = {s_: share[s_] * n_band - got[s_] for s_ in ('val', 'test')
-                        if n <= cap[s_] and fill[s_] + n <= (tv if s_ == 'val' else tt) + n // 2}
-                if not need: continue
-                s_ = max(need, key=need.get)
-                if need[s_] >= n / 2:
-                    got[s_] += n; fill[s_] += n
-                    for k in comp[r]: new[k] = s_
-            band_report[f'{source} | {lo}-{hi}'] = {'images': n_band, 'val': got['val'], 'test': got['test']}
+    new, band_report = A.assign(comp, src, ims, SEED, CAP_SHARE, BANDS)
     moved = Counter((s, new[(s, f)]) for s, f in ims)
     per_source = defaultdict(dict)
     for (s, f), d in new.items():
