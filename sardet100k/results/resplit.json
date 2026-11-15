@@ -1,52 +1,56 @@
 {
  "links": {
   "gp_train_vs_train.csv": {
-   "uncertain": 546850,
-   "confirmed": 608892
+   "uncertain": 705209,
+   "confirmed": 796283
   },
   "all_train_vs_train.csv": {
    "confirmed": 140783,
    "uncertain": 70884
   },
   "gp_val_vs_train.csv": {
-   "uncertain": 65252,
-   "confirmed": 54845
+   "uncertain": 85158,
+   "confirmed": 67906
   },
   "all_val_vs_train.csv": {
    "confirmed": 12612,
    "uncertain": 8589
   },
   "gp_test_vs_train.csv": {
-   "confirmed": 51712,
-   "uncertain": 64453
+   "confirmed": 63109,
+   "uncertain": 84099
   },
   "all_test_vs_train.csv": {
    "confirmed": 11657,
    "uncertain": 8496
   },
   "gp_val_vs_val.csv": {
-   "uncertain": 37684,
-   "confirmed": 30638
+   "uncertain": 49866,
+   "confirmed": 43016
   },
   "all_val_vs_val.csv": {
    "uncertain": 5901,
    "confirmed": 6944
   },
   "gp_test_vs_test.csv": {
-   "confirmed": 54122,
-   "uncertain": 39003
+   "confirmed": 77893,
+   "uncertain": 50545
   },
   "all_test_vs_test.csv": {
    "confirmed": 11854,
    "uncertain": 5793
   },
   "gp_val_vs_test.csv": {
-   "uncertain": 34529,
-   "confirmed": 27870
+   "uncertain": 46419,
+   "confirmed": 36401
   },
   "all_val_vs_test.csv": {
    "uncertain": 5932,
    "confirmed": 5403
+  },
+  "gp_msar_numbers.csv": {
+   "confirmed": 113763,
+   "uncertain": 9059
   },
   "name_links: ShipDataset grid neighbour": {
    "confirmed": 65087
@@ -107,9 +111,9 @@
   }
  },
  "images": 116598,
- "groups": 10627,
+ "groups": 10318,
  "largest_groups": [
-  2563,
+  2560,
   2056,
   1824,
   1544,
@@ -122,38 +126,38 @@
  ],
  "group_sizes": {
   "1-1": {
-   "groups": 3064,
-   "images": 3064
+   "groups": 2887,
+   "images": 2887
   },
   "2-2": {
-   "groups": 736,
-   "images": 1472
+   "groups": 727,
+   "images": 1454
   },
   "3-5": {
-   "groups": 1488,
-   "images": 5813
+   "groups": 1447,
+   "images": 5663
   },
   "6-10": {
-   "groups": 3370,
-   "images": 25793
+   "groups": 3263,
+   "images": 25023
   },
   "11-50": {
-   "groups": 1712,
-   "images": 35746
+   "groups": 1732,
+   "images": 36142
   },
   "51-500": {
-   "groups": 242,
-   "images": 26510
+   "groups": 246,
+   "images": 26690
   },
   ">500": {
-   "groups": 15,
-   "images": 18200
+   "groups": 16,
+   "images": 18739
   }
  },
  "with_uncertain_links": {
-  "groups": 4144,
+  "groups": 3874,
   "largest": [
-   79275,
+   80858,
    477,
    423,
    412,
@@ -161,28 +165,28 @@
   ]
  },
  "official_split_images_in_cross_split_groups": {
-  "test own": 304,
-  "test crosses": 11309,
-  "train own": 23351,
-  "train crosses": 71142,
-  "val own": 315,
-  "val crosses": 10177
+  "test own": 290,
+  "test crosses": 11323,
+  "train own": 22871,
+  "train crosses": 71622,
+  "val own": 304,
+  "val crosses": 10188
  },
  "new_split_sizes": {
-  "train": 93788,
-  "val": 10819,
-  "test": 11991
+  "train": 94417,
+  "test": 11601,
+  "val": 10580
  },
  "official_to_new": {
-  "test -> test": 1979,
-  "test -> train": 7934,
-  "test -> val": 1700,
-  "train -> test": 8394,
-  "train -> train": 78365,
-  "train -> val": 7734,
-  "val -> test": 1618,
-  "val -> train": 7489,
-  "val -> val": 1385
+  "test -> test": 883,
+  "test -> train": 9375,
+  "test -> val": 1355,
+  "train -> test": 9779,
+  "train -> train": 76652,
+  "train -> val": 8062,
+  "val -> test": 939,
+  "val -> train": 8390,
+  "val -> val": 1163
  },
  "per_source_official": {
   "AIR-SARShip": {
@@ -233,70 +237,70 @@
  },
  "per_source_new": {
   "AIR-SARShip": {
-   "train": 719,
-   "val": 37,
-   "test": 45
+   "train": 726,
+   "test": 45,
+   "val": 30
   },
   "HRSID": {
-   "train": 3650,
-   "val": 984,
-   "test": 970
+   "val": 980,
+   "test": 969,
+   "train": 3655
   },
   "MSAR": {
-   "train": 27198,
-   "val": 1416,
-   "test": 1544
+   "train": 27154,
+   "test": 1501,
+   "val": 1503
   },
   "Shipdataset": {
-   "train": 31683,
-   "val": 4103,
-   "test": 3943
+   "train": 31809,
+   "test": 3930,
+   "val": 3990
   },
   "OGSOD": {
-   "train": 14617,
-   "test": 1928,
-   "val": 1786
+   "train": 14508,
+   "val": 1814,
+   "test": 2009
   },
   "SADD": {
-   "train": 803,
-   "val": 44,
-   "test": 36
+   "train": 811,
+   "test": 34,
+   "val": 38
   },
   "SAR-AIRcraft": {
-   "train": 13362,
-   "val": 2219,
-   "test": 3307
+   "train": 13999,
+   "test": 2888,
+   "val": 2001
   },
   "SIVED": {
-   "train": 832,
-   "val": 112,
-   "test": 100
+   "train": 833,
+   "val": 105,
+   "test": 106
   },
   "SSDD": {
-   "val": 118,
-   "train": 924,
-   "test": 118
+   "train": 922,
+   "test": 119,
+   "val": 119
   }
  },
  "images_in_groups_split_across_new_splits": 0,
  "bands (images per size band)": {
   "AIR-SARShip | 1-1": {
-   "images": 272,
-   "val": 18,
-   "test": 26
+   "images": 203,
+   "val": 14,
+   "test": 20
   },
   "AIR-SARShip | 2-5": {
-   "images": 31,
-   "val": 3,
-   "test": 3
+   "images": 64,
+   "val": 4,
+   "test": 7
   },
   "AIR-SARShip | 6-20": {
-   "images": 194,
-   "val": 16,
-   "test": 16
+   "images": 205,
+   "val": 11,
+   "test": 18
   },
   "AIR-SARShip | 21-100": {
-   "images": 74,
+   "images": 99,
    "val": 0,
    "test": 0
   },
@@ -311,24 +315,24 @@
    "test": 0
   },
   "HRSID | 1-1": {
-   "images": 212,
+   "images": 209,
    "val": 37,
    "test": 37
   },
   "HRSID | 2-5": {
-   "images": 531,
-   "val": 93,
+   "images": 523,
+   "val": 92,
    "test": 93
   },
   "HRSID | 6-20": {
-   "images": 1055,
-   "val": 187,
-   "test": 182
+   "images": 1066,
+   "val": 189,
+   "test": 187
   },
   "HRSID | 21-100": {
    "images": 3696,
-   "val": 667,
-   "test": 658
+   "val": 662,
+   "test": 652
   },
   "HRSID | 101-500": {
    "images": 110,
@@ -341,32 +345,32 @@
    "test": 0
   },
   "MSAR | 1-1": {
-   "images": 359,
-   "val": 18,
-   "test": 19
+   "images": 334,
+   "val": 17,
+   "test": 17
   },
   "MSAR | 2-5": {
-   "images": 1430,
-   "val": 73,
-   "test": 76
+   "images": 1309,
+   "val": 67,
+   "test": 70
   },
   "MSAR | 6-20": {
-   "images": 12275,
-   "val": 625,
-   "test": 647
+   "images": 11527,
+   "val": 586,
+   "test": 601
   },
   "MSAR | 21-100": {
-   "images": 8424,
-   "val": 435,
-   "test": 456
+   "images": 8976,
+   "val": 478,
+   "test": 468
   },
   "MSAR | 101-500": {
-   "images": 6730,
-   "val": 320,
-   "test": 348
+   "images": 6530,
+   "val": 356,
+   "test": 358
   },
   "MSAR | 501-1000000000": {
-   "images": 0,
+   "images": 522,
    "val": 0,
    "test": 0
   },
@@ -376,24 +380,24 @@
    "test": 12
   },
   "OGSOD | 2-5": {
-   "images": 559,
-   "val": 57,
-   "test": 55
+   "images": 507,
+   "val": 52,
+   "test": 51
   },
   "OGSOD | 6-20": {
-   "images": 7870,
-   "val": 791,
-   "test": 790
+   "images": 7873,
+   "val": 794,
+   "test": 787
   },
   "OGSOD | 21-100": {
-   "images": 7267,
-   "val": 763,
-   "test": 731
+   "images": 7316,
+   "val": 744,
+   "test": 747
   },
   "OGSOD | 101-500": {
    "images": 2515,
-   "val": 163,
-   "test": 340
+   "val": 212,
+   "test": 412
   },
   "OGSOD | 501-1000000000": {
    "images": 0,
@@ -412,8 +416,8 @@
   },
   "SADD | 6-20": {
    "images": 112,
-   "val": 44,
-   "test": 36
+   "val": 38,
+   "test": 34
   },
   "SADD | 21-100": {
    "images": 22,
@@ -436,7 +440,7 @@
    "test": 0
   },
   "SAR-AIRcraft | 2-5": {
-   "images": 0,
+   "images": 3,
    "val": 0,
    "test": 0
   },
@@ -448,32 +452,32 @@
   "SAR-AIRcraft | 21-100": {
    "images": 285,
    "val": 88,
-   "test": 84
+   "test": 88
   },
   "SAR-AIRcraft | 101-500": {
    "images": 2230,
-   "val": 447,
-   "test": 559
+   "val": 445,
+   "test": 671
   },
   "SAR-AIRcraft | 501-1000000000": {
    "images": 8386,
-   "val": 1684,
-   "test": 2664
+   "val": 1468,
+   "test": 2129
   },
   "SIVED | 1-1": {
-   "images": 567,
-   "val": 56,
-   "test": 56
+   "images": 524,
+   "val": 52,
+   "test": 52
   },
   "SIVED | 2-5": {
-   "images": 388,
+   "images": 398,
    "val": 39,
-   "test": 38
+   "test": 40
   },
   "SIVED | 6-20": {
-   "images": 89,
-   "val": 17,
-   "test": 6
+   "images": 122,
+   "val": 14,
+   "test": 14
   },
   "SIVED | 21-100": {
    "images": 0,
@@ -491,18 +495,18 @@
    "test": 0
   },
   "SSDD | 1-1": {
-   "images": 930,
+   "images": 926,
    "val": 93,
    "test": 93
   },
   "SSDD | 2-5": {
-   "images": 188,
-   "val": 18,
-   "test": 19
+   "images": 192,
+   "val": 20,
+   "test": 20
   },
   "SSDD | 6-20": {
    "images": 42,
-   "val": 7,
+   "val": 6,
    "test": 6
   },
   "SSDD | 21-100": {
@@ -521,29 +525,29 @@
    "test": 0
   },
   "Shipdataset | 1-1": {
-   "images": 604,
-   "val": 62,
-   "test": 62
+   "images": 571,
+   "val": 58,
+   "test": 58
   },
   "Shipdataset | 2-5": {
-   "images": 4158,
-   "val": 426,
-   "test": 426
+   "images": 4121,
+   "val": 423,
+   "test": 423
   },
   "Shipdataset | 6-20": {
-   "images": 20539,
-   "val": 2101,
-   "test": 2104
+   "images": 20609,
+   "val": 2106,
+   "test": 2106
   },
   "Shipdataset | 21-100": {
    "images": 10392,
-   "val": 1088,
-   "test": 1073
+   "val": 1077,
+   "test": 1056
   },
   "Shipdataset | 101-500": {
    "images": 3150,
-   "val": 371,
-   "test": 276
+   "val": 326,
+   "test": 274
   },
   "Shipdataset | 501-1000000000": {
    "images": 0,

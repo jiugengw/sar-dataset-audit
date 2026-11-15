@@ -1,0 +1,44 @@
+{
+ "largest group": 2560,
+ "its sources": {
+  "SAR-AIRcraft": 2560
+ },
+ "cross-source links inside it, by file": {},
+ "cross-source links inside it, by source pair": {},
+ "examples": [],
+ "largest groups, all links": [
+  2560,
+  2056,
+  1824,
+  1544,
+  1388
+ ],
+ "largest groups, without gp_msar_numbers.csv": [
+  2560,
+  2056,
+  1824,
+  1544,
+  1388
+ ],
+ "largest groups, without contained.csv": [
+  2560,
+  2056,
+  1824,
+  1544,
+  1388
+ ],
+ "largest groups, without cross-source links": [
+  2560,
+  2056,
+  1824,
+  1544,
+  1388
+ ],
+ "largest groups, without the thin rule": [
+  2560,
+  2056,
+  1824,
+  1544,
+  1388
+ ]
+}

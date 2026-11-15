@@ -32,9 +32,11 @@ ORDER = ['exact copy', 're-processed copy', WRAP, 'overlapping tile', 'thin over
 THIN = 0.1
 BG = 0.5
 SHIP = 0.95
-BG_LOW = 0.9    # copies with fresh speckle (gpupairs.py v2): speckle-reduced r >= 0.9 and the 4x averaged background
-                # repeats (bg_low >= BG_LOW). job23: +41 val images linked, 4 of them also found against the shuffled
-                # control (gp2_eval.py, gp2_null.py); 0.8 adds 53 more but 23 of those are false
+BG_LOW = None   # copies with fresh speckle (gpupairs.py v2): speckle-reduced r >= 0.9 and the 4x averaged background
+                # repeats (bg_low >= BG_LOW). Tried at 0.9 (15 Nov) and switched off: it adds +0.2 points of planted
+                # recall, but at 4x averaging smooth sea matches smooth sea, and these links chained MSAR, ShipDataset,
+                # OGSOD and a SAR-AIRcraft airport into one 6,541-image group (bridges.py). The shuffled control could
+                # not show it: sea blocks still look alike after shuffling, so the false pair also turns up in the real run
 THIN_BG, THIN_R = 0.9, 0.99  # thin overlaps: groups.py's first rule (bg 0.5, r 0.95) made 40 false pairs in the job23
                              # control, this one 8 (+52 val images)
 OVL_FULL = 0.9  # a confirmed overlapping tile also needs full-resolution r >= 0.9 over the shared region: searching
@@ -68,7 +70,7 @@ def shifted(r):
 def confirmed_first(r):
     g = first_pass(r)
     if g in ('exact copy', 're-processed copy') and (_f(r, 'bg_r') or 0) >= BG: return g
-    if (_f(r, 'low_r') or 0) >= 0.9 and (_f(r, 'bg_low_r') or 0) >= BG_LOW: return 're-processed copy'
+    if BG_LOW is not None and (_f(r, 'low_r') or 0) >= 0.9 and (_f(r, 'bg_low_r') or 0) >= BG_LOW: return 're-processed copy'
     return None
 
 
@@ -77,7 +79,7 @@ def confirmed_shift(r):
     if g == WRAP and (_f(r, 'bg_wrap') or 0) >= BG: return g
     if g == 'overlapping tile' and (_f(r, 'bg_ovl') or 0) >= BG and (_f(r, 'ovl_full') or 0) >= OVL_FULL: return g
     if g == 'thin overlap' and (_f(r, 'bg_ovl') or 0) >= THIN_BG and (_f(r, 'ovl_full') or 0) >= THIN_R: return g
-    if abs(int(r['shift_y'])) + abs(int(r['shift_x'])) <= 2: return None
+    if BG_LOW is None or abs(int(r['shift_y'])) + abs(int(r['shift_x'])) <= 2: return None
     if (_f(r, 'wrap_low') or 0) >= 0.9 and (_f(r, 'bg_low_wrap') or 0) >= BG_LOW: return WRAP
     if ((_f(r, 'ovl_low') or 0) >= 0.9 and (_f(r, 'ovl_frac') or 0) >= 0.25
             and (_f(r, 'bg_low_ovl') or 0) >= BG_LOW): return 'overlapping tile'
