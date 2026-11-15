@@ -16,12 +16,21 @@ from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 
 
+_ANN = {}
+
+
+def _ann(split):
+    if split not in _ANN:
+        p = R.ROOT / 'Annotations' / f'{split}.json'; p = p if p.exists() else R.ROOT / f'{split}.json'
+        _ANN[split] = json.loads(p.read_text())
+    return _ANN[split]
+
+
 def gt_for(names):
     """One COCO object holding the images in `names` (any official split), ids renumbered."""
     ims, anns, cats = [], [], None
     for split in ('train', 'val', 'test'):
-        p = R.ROOT / 'Annotations' / f'{split}.json'; p = p if p.exists() else R.ROOT / f'{split}.json'
-        d = json.loads(p.read_text()); cats = cats or d['categories']
+        d = _ann(split); cats = cats or d['categories']
         keep = {im['id']: im for im in d['images'] if im['file_name'] in names}
         new_id = {}
         for i, im in keep.items():
