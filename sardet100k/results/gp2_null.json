@@ -1,0 +1,291 @@
+{
+ "v2": {
+  "null: confirmed rows": 397,
+  "null: val images": 350,
+  "null rows whose pair is also confirmed in the real run": 369,
+  "null: val images with a pair NOT in the real run": 24,
+  "... of which the image has some real link": 18,
+  "null images by source": {
+   "Shipdataset": 320,
+   "MSAR": 21,
+   "SAR-AIRcraft": 7,
+   "OGSOD": 1,
+   "SSDD": 1
+  },
+  "null images with a pair not in the real run, by source": {
+   "Shipdataset": 14,
+   "MSAR": 7,
+   "SAR-AIRcraft": 2,
+   "SSDD": 1
+  },
+  "null rows by rule": {
+   "overlapping tile": 375,
+   "shifted copy": 21,
+   "exact copy": 1
+  },
+  "null overlap rows: ovl_frac / ovl_full / bg_ovl (10/50/90%)": [
+   [
+    0.25,
+    0.25,
+    0.375
+   ],
+   [
+    0.953,
+    0.998,
+    1.0
+   ],
+   [
+    0.531,
+    0.698,
+    0.92
+   ]
+  ],
+  "real overlap rows: ovl_frac / ovl_full / bg_ovl (10/50/90%)": [
+   [
+    0.25,
+    0.5,
+    0.781
+   ],
+   [
+    0.969,
+    1.0,
+    1.0
+   ],
+   [
+    0.87,
+    1.0,
+    1.0
+   ]
+  ],
+  "real: val images with a link": 8888
+ },
+ "v2 per rule": {
+  "thin off | no bg_low": {
+   "null images": 350,
+   "null images with a pair not in the real run": 24,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 24,
+    "exact copy": 1
+   }
+  },
+  "thin off | bg_low >= 0.9": {
+   "null images": 357,
+   "null images with a pair not in the real run": 28,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 24,
+    "speckle (bg_low)": 4,
+    "exact copy": 1
+   }
+  },
+  "thin off | bg_low >= 0.8": {
+   "null images": 381,
+   "null images with a pair not in the real run": 45,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 24,
+    "speckle (bg_low)": 27,
+    "exact copy": 1
+   }
+  },
+  "thin off | bg_low >= 0.7": {
+   "null images": 407,
+   "null images with a pair not in the real run": 61,
+   "such pairs by rule": {
+    "speckle (bg_low)": 43,
+    "shifted copy": 3,
+    "overlapping tile": 24,
+    "exact copy": 1
+   }
+  },
+  "thin as groups.py | no bg_low": {
+   "null images": 1099,
+   "null images with a pair not in the real run": 56,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "thin overlap": 40,
+    "overlapping tile": 22,
+    "exact copy": 1
+   }
+  },
+  "thin as groups.py | bg_low >= 0.9": {
+   "null images": 1106,
+   "null images with a pair not in the real run": 60,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "thin overlap": 40,
+    "overlapping tile": 22,
+    "speckle (bg_low)": 4,
+    "exact copy": 1
+   }
+  },
+  "thin as groups.py | bg_low >= 0.8": {
+   "null images": 1129,
+   "null images with a pair not in the real run": 77,
+   "such pairs by rule": {
+    "thin overlap": 40,
+    "speckle (bg_low)": 27,
+    "overlapping tile": 22,
+    "shifted copy": 3,
+    "exact copy": 1
+   }
+  },
+  "thin as groups.py | bg_low >= 0.7": {
+   "null images": 1150,
+   "null images with a pair not in the real run": 93,
+   "such pairs by rule": {
+    "thin overlap": 40,
+    "speckle (bg_low)": 43,
+    "overlapping tile": 22,
+    "shifted copy": 3,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.8 r 0.98 | no bg_low": {
+   "null images": 778,
+   "null images with a pair not in the real run": 35,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 22,
+    "thin overlap": 13,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.8 r 0.98 | bg_low >= 0.9": {
+   "null images": 785,
+   "null images with a pair not in the real run": 39,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 22,
+    "speckle (bg_low)": 4,
+    "thin overlap": 13,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.8 r 0.98 | bg_low >= 0.8": {
+   "null images": 808,
+   "null images with a pair not in the real run": 56,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 22,
+    "speckle (bg_low)": 27,
+    "thin overlap": 13,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.8 r 0.98 | bg_low >= 0.7": {
+   "null images": 832,
+   "null images with a pair not in the real run": 72,
+   "such pairs by rule": {
+    "speckle (bg_low)": 43,
+    "overlapping tile": 22,
+    "thin overlap": 13,
+    "shifted copy": 3,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.9 r 0.99 | no bg_low": {
+   "null images": 695,
+   "null images with a pair not in the real run": 30,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 22,
+    "thin overlap": 8,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.9 r 0.99 | bg_low >= 0.9": {
+   "null images": 702,
+   "null images with a pair not in the real run": 34,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 22,
+    "speckle (bg_low)": 4,
+    "thin overlap": 8,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.9 r 0.99 | bg_low >= 0.8": {
+   "null images": 726,
+   "null images with a pair not in the real run": 51,
+   "such pairs by rule": {
+    "shifted copy": 3,
+    "overlapping tile": 22,
+    "speckle (bg_low)": 27,
+    "thin overlap": 8,
+    "exact copy": 1
+   }
+  },
+  "thin bg 0.9 r 0.99 | bg_low >= 0.7": {
+   "null images": 750,
+   "null images with a pair not in the real run": 67,
+   "such pairs by rule": {
+    "speckle (bg_low)": 43,
+    "overlapping tile": 22,
+    "thin overlap": 8,
+    "shifted copy": 3,
+    "exact copy": 1
+   }
+  }
+ },
+ "v1": {
+  "null: confirmed rows": 387,
+  "null: val images": 343,
+  "null rows whose pair is also confirmed in the real run": 362,
+  "null: val images with a pair NOT in the real run": 22,
+  "... of which the image has some real link": 16,
+  "null images by source": {
+   "Shipdataset": 314,
+   "MSAR": 20,
+   "SAR-AIRcraft": 7,
+   "OGSOD": 1,
+   "SSDD": 1
+  },
+  "null images with a pair not in the real run, by source": {
+   "Shipdataset": 17,
+   "MSAR": 4,
+   "SSDD": 1
+  },
+  "null rows by rule": {
+   "overlapping tile": 364,
+   "shifted copy": 22,
+   "exact copy": 1
+  },
+  "null overlap rows: ovl_frac / ovl_full / bg_ovl (10/50/90%)": [
+   [
+    0.25,
+    0.25,
+    0.375
+   ],
+   [
+    0.953,
+    0.998,
+    1.0
+   ],
+   [
+    0.531,
+    0.704,
+    0.92
+   ]
+  ],
+  "real overlap rows: ovl_frac / ovl_full / bg_ovl (10/50/90%)": [
+   [
+    0.25,
+    0.5,
+    0.805
+   ],
+   [
+    0.971,
+    1.0,
+    1.0
+   ],
+   [
+    0.884,
+    1.0,
+    1.0
+   ]
+  ],
+  "real: val images with a link": 8732
+ }
+}

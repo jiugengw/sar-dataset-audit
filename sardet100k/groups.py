@@ -7,7 +7,8 @@ Groups, strongest first (an image gets the first that applies):
                          'wrapped copy' in older result files; wrapcheck.py found no real rolls, only plain shifts
                          (neighbouring tiles) whose shared part carries the targets
   overlapping tile       shifted without wrap, shared region >= 25% of the image, r >= 0.95 there
-  thin overlap           shared region 10-25% (gpupairs.py 'thin' rows), full-resolution r >= 0.95 there
+  thin overlap           shared region 10-25% (gpupairs.py 'thin' rows), full-resolution r >= 0.95 there; confirmed
+                         only with r >= THIN_R and background bg >= THIN_BG (the job23 control, gp2_null.py)
   same target (labels)   val only: speckle-reduced r >= 0.8 and >= 50% of the val boxes recovered by the
                          moved train boxes (same position, or after the shift)
   clean                  none of the above
@@ -31,6 +32,11 @@ ORDER = ['exact copy', 're-processed copy', WRAP, 'overlapping tile', 'thin over
 THIN = 0.1
 BG = 0.5
 SHIP = 0.95
+BG_LOW = 0.9    # copies with fresh speckle (gpupairs.py v2): speckle-reduced r >= 0.9 and the 4x averaged background
+                # repeats (bg_low >= BG_LOW). job23: +41 val images linked, 4 of them also found against the shuffled
+                # control (gp2_eval.py, gp2_null.py); 0.8 adds 53 more but 23 of those are false
+THIN_BG, THIN_R = 0.9, 0.99  # thin overlaps: groups.py's first rule (bg 0.5, r 0.95) made 40 false pairs in the job23
+                             # control, this one 8 (+52 val images)
 OVL_FULL = 0.9  # a confirmed overlapping tile also needs full-resolution r >= 0.9 over the shared region: searching
                 # every offset (gpupairs.py) finds ~30% overlaps of smooth sea at r 0.7-0.8 with the background
                 # passing; 98% of the overlaps confirmed by the old search reach 0.9, planted ones 1.0
@@ -61,14 +67,20 @@ def shifted(r):
 
 def confirmed_first(r):
     g = first_pass(r)
-    return g if g in ('exact copy', 're-processed copy') and (_f(r, 'bg_r') or 0) >= BG else None
+    if g in ('exact copy', 're-processed copy') and (_f(r, 'bg_r') or 0) >= BG: return g
+    if (_f(r, 'low_r') or 0) >= 0.9 and (_f(r, 'bg_low_r') or 0) >= BG_LOW: return 're-processed copy'
+    return None
 
 
 def confirmed_shift(r):
     g = shifted(r)
     if g == WRAP and (_f(r, 'bg_wrap') or 0) >= BG: return g
     if g == 'overlapping tile' and (_f(r, 'bg_ovl') or 0) >= BG and (_f(r, 'ovl_full') or 0) >= OVL_FULL: return g
-    if g == 'thin overlap' and (_f(r, 'bg_ovl') or 0) >= BG: return g
+    if g == 'thin overlap' and (_f(r, 'bg_ovl') or 0) >= THIN_BG and (_f(r, 'ovl_full') or 0) >= THIN_R: return g
+    if abs(int(r['shift_y'])) + abs(int(r['shift_x'])) <= 2: return None
+    if (_f(r, 'wrap_low') or 0) >= 0.9 and (_f(r, 'bg_low_wrap') or 0) >= BG_LOW: return WRAP
+    if ((_f(r, 'ovl_low') or 0) >= 0.9 and (_f(r, 'ovl_frac') or 0) >= 0.25
+            and (_f(r, 'bg_low_ovl') or 0) >= BG_LOW): return 'overlapping tile'
     return None
 
 

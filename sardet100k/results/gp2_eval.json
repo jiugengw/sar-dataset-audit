@@ -1,0 +1,366 @@
+{
+ "queries searched": {
+  "val": 10310,
+  "test": 11135
+ },
+ "thin off | no bg_low": {
+  "planted found": 0.7985,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.719,
+   "wrap": 0.926,
+   "wrap + speckle": 0.671
+  },
+  "null: val images with a false link": 350,
+  "null: false links by rule": {
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8888,
+  "test -> train: images with a link": 8900
+ },
+ "thin off | bg_low >= 0.9": {
+  "planted found": 0.7998,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.721,
+   "wrap": 0.926,
+   "wrap + speckle": 0.679
+  },
+  "null: val images with a false link": 357,
+  "null: false links by rule": {
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 9,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8929,
+  "test -> train: images with a link": 8954
+ },
+ "thin off | bg_low >= 0.8": {
+  "planted found": 0.8098,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.759,
+   "wrap": 0.926,
+   "wrap + speckle": 0.718
+  },
+  "null: val images with a false link": 381,
+  "null: false links by rule": {
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 36,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8982,
+  "test -> train: images with a link": 9010
+ },
+ "thin off | bg_low >= 0.7": {
+  "planted found": 0.8192,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.924,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.789,
+   "wrap": 0.926,
+   "wrap + speckle": 0.749
+  },
+  "null: val images with a false link": 407,
+  "null: false links by rule": {
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 67,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9025,
+  "test -> train: images with a link": 9067
+ },
+ "thin as groups.py | no bg_low": {
+  "planted found": 0.7987,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.719,
+   "wrap": 0.926,
+   "wrap + speckle": 0.673
+  },
+  "null: val images with a false link": 1099,
+  "null: false links by rule": {
+   "thin overlap": 837,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8985,
+  "test -> train: images with a link": 9014
+ },
+ "thin as groups.py | bg_low >= 0.9": {
+  "planted found": 0.8,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.721,
+   "wrap": 0.926,
+   "wrap + speckle": 0.681
+  },
+  "null: val images with a false link": 1106,
+  "null: false links by rule": {
+   "thin overlap": 837,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 9,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9017,
+  "test -> train: images with a link": 9044
+ },
+ "thin as groups.py | bg_low >= 0.8": {
+  "planted found": 0.81,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.759,
+   "wrap": 0.926,
+   "wrap + speckle": 0.719
+  },
+  "null: val images with a false link": 1129,
+  "null: false links by rule": {
+   "thin overlap": 837,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 36,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9046,
+  "test -> train: images with a link": 9091
+ },
+ "thin as groups.py | bg_low >= 0.7": {
+  "planted found": 0.8194,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.924,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.789,
+   "wrap": 0.926,
+   "wrap + speckle": 0.751
+  },
+  "null: val images with a false link": 1150,
+  "null: false links by rule": {
+   "thin overlap": 837,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 67,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9077,
+  "test -> train: images with a link": 9134
+ },
+ "thin bg 0.8 r 0.98 | no bg_low": {
+  "planted found": 0.7985,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.719,
+   "wrap": 0.926,
+   "wrap + speckle": 0.671
+  },
+  "null: val images with a false link": 778,
+  "null: false links by rule": {
+   "thin overlap": 487,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8959,
+  "test -> train: images with a link": 9002
+ },
+ "thin bg 0.8 r 0.98 | bg_low >= 0.9": {
+  "planted found": 0.7998,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.721,
+   "wrap": 0.926,
+   "wrap + speckle": 0.679
+  },
+  "null: val images with a false link": 785,
+  "null: false links by rule": {
+   "thin overlap": 487,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 9,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8991,
+  "test -> train: images with a link": 9032
+ },
+ "thin bg 0.8 r 0.98 | bg_low >= 0.8": {
+  "planted found": 0.8098,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.759,
+   "wrap": 0.926,
+   "wrap + speckle": 0.718
+  },
+  "null: val images with a false link": 808,
+  "null: false links by rule": {
+   "thin overlap": 487,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 36,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9023,
+  "test -> train: images with a link": 9080
+ },
+ "thin bg 0.8 r 0.98 | bg_low >= 0.7": {
+  "planted found": 0.8192,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.924,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.789,
+   "wrap": 0.926,
+   "wrap + speckle": 0.749
+  },
+  "null: val images with a false link": 832,
+  "null: false links by rule": {
+   "thin overlap": 487,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 67,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9054,
+  "test -> train: images with a link": 9123
+ },
+ "thin bg 0.9 r 0.99 | no bg_low": {
+  "planted found": 0.7985,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.719,
+   "wrap": 0.926,
+   "wrap + speckle": 0.671
+  },
+  "null: val images with a false link": 695,
+  "null: false links by rule": {
+   "thin overlap": 396,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8940,
+  "test -> train: images with a link": 8988
+ },
+ "thin bg 0.9 r 0.99 | bg_low >= 0.9": {
+  "planted found": 0.7998,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.721,
+   "wrap": 0.926,
+   "wrap + speckle": 0.679
+  },
+  "null: val images with a false link": 702,
+  "null: false links by rule": {
+   "thin overlap": 396,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 9,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 8972,
+  "test -> train: images with a link": 9019
+ },
+ "thin bg 0.9 r 0.99 | bg_low >= 0.8": {
+  "planted found": 0.8098,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.913,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.759,
+   "wrap": 0.926,
+   "wrap + speckle": 0.718
+  },
+  "null: val images with a false link": 726,
+  "null: false links by rule": {
+   "thin overlap": 396,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 36,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9006,
+  "test -> train: images with a link": 9067
+ },
+ "thin bg 0.9 r 0.99 | bg_low >= 0.7": {
+  "planted found": 0.8192,
+  "planted found by kind": {
+   "flip + jpeg90": 0.985,
+   "gain + jpeg60": 0.924,
+   "overlap 30": 0.317,
+   "overlap 50": 0.883,
+   "overlap 75": 0.948,
+   "speckle + flip": 0.789,
+   "wrap": 0.926,
+   "wrap + speckle": 0.749
+  },
+  "null: val images with a false link": 750,
+  "null: false links by rule": {
+   "thin overlap": 396,
+   "overlapping tile": 335,
+   "shifted copy": 17,
+   "speckle (bg_low)": 67,
+   "exact copy": 1
+  },
+  "val -> train: images with a link": 9044,
+  "test -> train: images with a link": 9111
+ }
+}
