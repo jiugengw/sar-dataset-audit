@@ -33,7 +33,7 @@ def main(csv_path, root, out, k=5, seed=0):
         for g in gs:
             f = min(range(k), key=lambda i: (fill[i], i)); fold[g] = f; fill[f] += len(groups[g])
     with open(out, 'w', newline='') as fh:
-        w = csv.writer(fh); w.writerow(['official_split', 'file_name', 'source', 'group', 'fold'])
+        w = csv.writer(fh, lineterminator='\n'); w.writerow(['official_split', 'file_name', 'source', 'group', 'fold'])
         for r in rows: w.writerow([r['official_split'], r['file_name'], r['source'], r['group'], fold[r['group']]])
     per = defaultdict(Counter); big = defaultdict(list)
     for r in rows: per[r['source']][fold[r['group']]] += 1

@@ -30,12 +30,14 @@ mv $L/off/test_images $L/off/images/test
 # labels sit in the tar under the provisional split (split.txt); move images and labels by fold
 declare -A OLD; while read -r off f new; do OLD[$f]=$new; done < $L/off/split.txt
 tail -n +2 $OUT/folds.csv | while IFS=, read -r off f src grp fd; do
+  fd=${fd%$'\r'}
   [ "$fd" = "$FOLD" ] && to=test || to=train
   mv "$L/off/images/$off/$f" "$L/images/$to/$f"; s=${f%.*}; mv "$L/off/labels/${OLD[$f]}/$s.txt" "$L/labels/$to/$s.txt"
 done
 { printf 'path: %s\ntrain: images/train\nval: images/test\nnames:\n' $L; awk '{printf "  %d: %s\n", NR-1, $1}' $L/off/names.txt; } > $L/data.yaml
 echo "unpacked $(date '+%H:%M'): $(ls $L/images/train | wc -l) train, $(ls $L/images/test | wc -l) test;" \
      "labels $(ls $L/labels/train | wc -l) / $(ls $L/labels/test | wc -l); left over: $(find $L/off/images $L/off/labels -type f | wc -l)"
+[ "$(ls $L/images/test | wc -l)" -gt 10000 ] || { echo "test fold is (almost) empty: stop"; exit 4; }
 yolo detect train data=$L/data.yaml model=pretrained/yolo11s.pt imgsz=512 epochs=$EPOCHS batch=32 workers=4 \
     val=False plots=False device=0 project=$PWD/$OUT name=train exist_ok=True
 python -u ~/sbatch-staging/job_a.py $OUT/train/weights/last.pt $L/images/test $OUT/test_predictions.json
