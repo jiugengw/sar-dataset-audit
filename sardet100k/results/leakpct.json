@@ -1,0 +1,38 @@
+{
+ "val": {
+  "images": 10492,
+  "direct link to train": 9659,
+  "direct %": 92.1,
+  "in a group with train (chains too)": 10079,
+  "group %": 96.1,
+  "per source (direct %)": {
+   "Shipdataset": "3845/3973 = 96.8%",
+   "SAR-AIRcraft": "1530/1923 = 79.6%",
+   "OGSOD": "1820/1834 = 99.2%",
+   "MSAR": "1459/1479 = 98.6%",
+   "HRSID": "885/981 = 90.2%",
+   "SSDD": "19/116 = 16.4%",
+   "SIVED": "50/104 = 48.1%",
+   "SADD": "44/44 = 100.0%",
+   "AIR-SARShip": "7/38 = 18.4%"
+  }
+ },
+ "test": {
+  "images": 11613,
+  "direct link to train": 9672,
+  "direct %": 83.3,
+  "in a group with train (chains too)": 11188,
+  "group %": 96.3,
+  "per source (direct %)": {
+   "Shipdataset": "3859/3972 = 97.2%",
+   "SAR-AIRcraft": "1460/2989 = 48.8%",
+   "OGSOD": "1823/1833 = 99.5%",
+   "MSAR": "1503/1520 = 98.9%",
+   "HRSID": "885/981 = 90.2%",
+   "SSDD": "22/116 = 19.0%",
+   "SIVED": "52/103 = 50.5%",
+   "AIR-SARShip": "24/55 = 43.6%",
+   "SADD": "44/44 = 100.0%"
+  }
+ }
+}

@@ -2,8 +2,10 @@
 # job_a: train YOLO11s on SARDet-100K train (official split) and predict val, for the leaked-vs-clean scoring.
 # The dataset is one tar on scratch (~/scratchDirectory/datasets/sardet100k-yolo.tar, made by yolo_prepare.py)
 # and is unpacked on the node's local disk: 210k image + label files would not fit the 100k-file scratch quota.
-# Only the weights and the val predictions are kept, in runs/sd-<jobid>/.
+# Only the weights, the val and test predictions and their scores are kept, in runs/sd-<jobid>/. TRAIN_SEED (default 0)
+# sets the training seed: a second seed measures how much the official score moves from training noise alone.
 #   sbatch --job-name=job15 ~/sbatch-staging/job_a.sbatch
+#   TRAIN_SEED=1 sbatch --job-name=job37 ~/sbatch-staging/job_a.sbatch
 #SBATCH --job-name=job-a
 #SBATCH --partition=student
 #SBATCH --gres=gpu:1
@@ -17,7 +19,7 @@ set -euo pipefail
 cd ~/scratchDirectory/sar-benchmark
 source /opt/apps/lmod/lmod/init/bash; module load Python/3.12.8-GCCcore-13.3.0; source .venv/bin/activate
 export MPLCONFIGDIR=/tmp/job-a-$SLURM_JOB_ID PYTHONUNBUFFERED=1 OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 YOLO_OFFLINE=1
-EPOCHS=${EPOCHS:-24}
+EPOCHS=${EPOCHS:-24}; TRAIN_SEED=${TRAIN_SEED:-0}; A=~/sbatch-staging/audit
 L=${SLURM_TMPDIR:-/tmp}/sd-$SLURM_JOB_ID; OUT=runs/sd-$SLURM_JOB_ID
 mkdir -p $L $OUT; trap 'rm -rf $L $MPLCONFIGDIR' EXIT
 echo "start $(date '+%m-%d %H:%M') on $(hostname) $(nvidia-smi --query-gpu=name --format=csv,noheader); local disk:"
@@ -25,10 +27,14 @@ df -h $L | tail -1
 FREE=$(df -Pk $L | tail -1 | awk '{print $4}'); [ "$FREE" -gt 20000000 ] || { echo "need 20 GB free on $L"; exit 3; }
 tar -xf ~/scratchDirectory/datasets/sardet100k-yolo.tar -C $L
 rm -f $L/labels/*.cache
+tar -xf ~/scratchDirectory/datasets/sardet100k-resplit.tar -C $L test_images; mv $L/test_images $L/images/test
 printf 'path: %s\ntrain: images/train\nval: images/val\nnames:\n  0: ship\n  1: aircraft\n  2: car\n  3: tank\n  4: bridge\n  5: harbor\n' $L > $L/data.yaml
 echo "unpacked $(date '+%H:%M'): $(ls $L/images/train | wc -l) train, $(ls $L/images/val | wc -l) val"
 yolo detect train data=$L/data.yaml model=pretrained/yolo11s.pt imgsz=512 epochs=$EPOCHS batch=32 workers=4 \
-    val=False plots=False device=0 project=$PWD/$OUT name=train exist_ok=True  # absolute: a relative project lands under runs/detect/
+    val=False plots=False device=0 seed=$TRAIN_SEED project=$PWD/$OUT name=train exist_ok=True  # absolute: a relative project lands under runs/detect/
 python -u ~/sbatch-staging/job_a.py $OUT/train/weights/last.pt $L/images/val $OUT/val_predictions.json
-ls -la $OUT/train/weights $OUT/val_predictions.json
+python -u ~/sbatch-staging/job_a.py $OUT/train/weights/last.pt $L/images/test $OUT/test_predictions.json
+awk -F, 'NR > 1 {print $1, $2, $1}' $A/results/resplit_split.csv > $OUT/official_split.txt  # score_draw.py format
+python -u $A/score_draw.py $OUT/official_split.txt $OUT/val_predictions.json $OUT/test_predictions.json $OUT/scores_official.json
+ls -la $OUT/train/weights $OUT/*_predictions.json
 echo "done $(date '+%m-%d %H:%M')"
