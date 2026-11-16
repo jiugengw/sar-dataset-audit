@@ -53,14 +53,14 @@
  },
  "val: leaked": {
   "all": {
-   "images": 9588,
-   "mAP": 46.45,
-   "AP50": 76.88
+   "images": 9659,
+   "mAP": 46.38,
+   "AP50": 76.76
   },
   "source: AIR-SARShip": {
-   "images": 4,
-   "mAP": 46.02,
-   "AP50": 100.0
+   "images": 7,
+   "mAP": 52.28,
+   "AP50": 94.41
   },
   "source: HRSID": {
    "images": 885,
@@ -68,9 +68,9 @@
    "AP50": 86.25
   },
   "source: MSAR": {
-   "images": 1454,
-   "mAP": 53.88,
-   "AP50": 88.55
+   "images": 1459,
+   "mAP": 53.9,
+   "AP50": 88.56
   },
   "source: OGSOD": {
    "images": 1820,
@@ -83,14 +83,14 @@
    "AP50": 95.35
   },
   "source: SAR-AIRcraft": {
-   "images": 1478,
-   "mAP": 63.63,
-   "AP50": 95.96
+   "images": 1530,
+   "mAP": 63.09,
+   "AP50": 95.73
   },
   "source: SIVED": {
-   "images": 46,
-   "mAP": 59.87,
-   "AP50": 90.84
+   "images": 50,
+   "mAP": 59.89,
+   "AP50": 90.59
   },
   "source: SSDD": {
    "images": 19,
@@ -98,21 +98,21 @@
    "AP50": 99.92
   },
   "source: Shipdataset": {
-   "images": 3838,
-   "mAP": 61.23,
+   "images": 3845,
+   "mAP": 61.24,
    "AP50": 95.37
   }
  },
  "val: clean (none found)": {
   "all": {
-   "images": 904,
-   "mAP": 34.08,
-   "AP50": 63.81
+   "images": 833,
+   "mAP": 33.65,
+   "AP50": 63.17
   },
   "source: AIR-SARShip": {
-   "images": 34,
-   "mAP": 24.91,
-   "AP50": 52.67
+   "images": 31,
+   "mAP": 19.7,
+   "AP50": 44.89
   },
   "source: HRSID": {
    "images": 96,
@@ -120,9 +120,9 @@
    "AP50": 80.1
   },
   "source: MSAR": {
-   "images": 25,
-   "mAP": 70.52,
-   "AP50": 99.74
+   "images": 20,
+   "mAP": 68.62,
+   "AP50": 99.57
   },
   "source: OGSOD": {
    "images": 14,
@@ -130,14 +130,14 @@
    "AP50": 47.12
   },
   "source: SAR-AIRcraft": {
-   "images": 445,
-   "mAP": 29.15,
-   "AP50": 59.31
+   "images": 393,
+   "mAP": 26.7,
+   "AP50": 55.84
   },
   "source: SIVED": {
-   "images": 58,
-   "mAP": 66.24,
-   "AP50": 98.61
+   "images": 54,
+   "mAP": 66.46,
+   "AP50": 98.74
   },
   "source: SSDD": {
    "images": 97,
@@ -145,9 +145,9 @@
    "AP50": 96.27
   },
   "source: Shipdataset": {
-   "images": 135,
-   "mAP": 52.31,
-   "AP50": 92.34
+   "images": 128,
+   "mAP": 51.79,
+   "AP50": 92.12
   }
  },
  "test: all": {
@@ -204,23 +204,23 @@
  },
  "test: leaked": {
   "all": {
-   "images": 9542,
-   "mAP": 44.84,
-   "AP50": 75.12
+   "images": 9672,
+   "mAP": 44.66,
+   "AP50": 74.97
   },
   "source: AIR-SARShip": {
-   "images": 20,
-   "mAP": 35.4,
-   "AP50": 74.05
+   "images": 24,
+   "mAP": 33.56,
+   "AP50": 70.85
   },
   "source: HRSID": {
-   "images": 884,
-   "mAP": 58.61,
+   "images": 885,
+   "mAP": 58.62,
    "AP50": 85.18
   },
   "source: MSAR": {
-   "images": 1496,
-   "mAP": 50.73,
+   "images": 1503,
+   "mAP": 50.74,
    "AP50": 81.15
   },
   "source: OGSOD": {
@@ -234,46 +234,46 @@
    "AP50": 93.87
   },
   "source: SAR-AIRcraft": {
-   "images": 1355,
-   "mAP": 57.79,
-   "AP50": 90.61
+   "images": 1460,
+   "mAP": 56.45,
+   "AP50": 89.76
   },
   "source: SIVED": {
-   "images": 47,
-   "mAP": 62.74,
-   "AP50": 94.24
+   "images": 52,
+   "mAP": 62.59,
+   "AP50": 94.28
   },
   "source: SSDD": {
-   "images": 21,
-   "mAP": 68.04,
-   "AP50": 99.68
+   "images": 22,
+   "mAP": 68.35,
+   "AP50": 99.69
   },
   "source: Shipdataset": {
-   "images": 3852,
-   "mAP": 60.3,
+   "images": 3859,
+   "mAP": 60.27,
    "AP50": 95.2
   }
  },
  "test: clean (none found)": {
   "all": {
-   "images": 2071,
-   "mAP": 38.55,
-   "AP50": 77.73
+   "images": 1941,
+   "mAP": 38.4,
+   "AP50": 77.33
   },
   "source: AIR-SARShip": {
-   "images": 35,
-   "mAP": 21.99,
-   "AP50": 49.12
+   "images": 31,
+   "mAP": 22.68,
+   "AP50": 49.81
   },
   "source: HRSID": {
-   "images": 97,
-   "mAP": 64.47,
-   "AP50": 87.07
+   "images": 96,
+   "mAP": 64.26,
+   "AP50": 86.96
   },
   "source: MSAR": {
-   "images": 24,
-   "mAP": 70.47,
-   "AP50": 98.9
+   "images": 17,
+   "mAP": 71.04,
+   "AP50": 100.0
   },
   "source: OGSOD": {
    "images": 10,
@@ -281,24 +281,24 @@
    "AP50": 74.35
   },
   "source: SAR-AIRcraft": {
-   "images": 1634,
-   "mAP": 32.55,
-   "AP50": 60.23
+   "images": 1529,
+   "mAP": 31.17,
+   "AP50": 57.94
   },
   "source: SIVED": {
-   "images": 56,
-   "mAP": 65.24,
-   "AP50": 98.17
+   "images": 51,
+   "mAP": 65.43,
+   "AP50": 98.28
   },
   "source: SSDD": {
-   "images": 95,
-   "mAP": 69.61,
-   "AP50": 96.62
+   "images": 94,
+   "mAP": 69.46,
+   "AP50": 96.58
   },
   "source: Shipdataset": {
-   "images": 120,
-   "mAP": 50.44,
-   "AP50": 88.44
+   "images": 113,
+   "mAP": 49.33,
+   "AP50": 86.37
   }
  }
 }

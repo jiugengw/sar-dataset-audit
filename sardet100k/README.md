@@ -51,6 +51,24 @@ These sit at the top level of the dataset folder, not under `Annotations/`.
 
   Whether an easy or a hard airport lands in test moves the headline by several points. This is most of the spread
   between draws and folds. All groups of 100+ images: `results/cv_summary.json` (`groups`).
+- **Inside the official split, leaked airport tiles score twice as high as clean ones.** The official model on
+  official val / test, with images split by whether they have a direct confirmed link to train
+  (`score_leak.py`, `cluster/job_aa`, `results/scores_leak.json`):
+
+  | mAP (images) | val leaked | val clean | test leaked | test clean |
+  |---|---|---|---|---|
+  | SAR-AIRcraft | **63.1** (1,530) | **26.7** (393) | **56.5** (1,460) | **31.2** (1,529) |
+  | ShipDataset | 61.2 (3,845) | 51.8 (128) | 60.3 (3,859) | 49.3 (113) |
+  | HRSID | 59.7 (885) | 55.9 (96) | 58.6 (885) | 64.3 (96) |
+  | SSDD | 76.5 (19) | 66.4 (97) | 68.4 (22) | 69.5 (94) |
+  | All | 46.4 (9,659) | 33.7 (833) | 44.7 (9,672) | 38.4 (1,941) |
+
+  - Clean airport tiles score 27-31, the same as the leak-free cross-validation (27.4). So the leak-free number is
+    what the model really does on an airport it has not seen.
+  - ShipDataset's clean images also score about 10 lower, but removing the leaks barely changes ShipDataset
+    (cross-validation 57.6). Images with no copy are probably unusual ones, so this gap is about which images
+    have copies, not memorisation. The cross-validation, not this split, measures the inflation.
+  - OGSOD, MSAR and SADD have 10-31 clean images each: too few to compare. 'All' mixes sources and means little.
 
 Leak rates per source: `results/leakpct.json`. Scores: `results/scores_resplit.json` (official),
 `results/scores_official_trainseed1.json`, `results/scores_final_seed{0,1,2}.json` (re-split draws; their keys say
@@ -63,7 +81,8 @@ in [Method](#method) (every match, low-contrast images, chips inside larger imag
 92.1% / 83.3%. Findings from the first pass that still hold:
 
 - **A detector scores higher on leaked images than on clean images of the same source**: SAR-AIRcraft 64.8 vs 49.1,
-  ShipDataset/MSAR chips 62.3 vs 53.9 val mAP (`score_groups.py model`, `results/scores_model.json`).
+  ShipDataset/MSAR chips 62.3 vs 53.9 val mAP (`score_groups.py model`, `results/scores_model.json`). Redone with
+  the final links above.
 - **Copying labels, with no model, scores 36.2 mAP on val and 34.0 on test** (AP50 58.5 / 55.1). Each image gets the
   boxes of its best train match, moved the matched way. Clean images score 4.1 / 2.9 this way (luck level).
   Per group and source: `results/scores_copy.json`, `results/scores_copy_test.json`.
