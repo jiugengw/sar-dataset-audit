@@ -50,8 +50,19 @@ Because every RSAR image is a SARDet-100K image, no new search was needed: the S
 every pair of its images. The leak rate is a lower bound for the same reason as there (the search finds about 80% of
 planted copies).
 
-## Still to do
+## Score inflation (queued, 16 Nov)
 
-- **Score inflation on RSAR** needs a rotated-box detector trained on the official split and on leak-free folds,
-  as for SARDet-100K. Without SAR-AIRcraft, the sources that remain are the ones whose scores barely moved there,
-  apart from OGSOD and SADD.
+The same test as for SARDet-100K, with a rotated-box detector: YOLO11s-OBB (COCO-pretrained YOLO11s backbone, the
+SARDet-100K recipe: 24 epochs, 512 px, batch 32), trained once on RSAR's official split and once per fold of the
+SARDet-100K 5-fold group cross-validation. Each RSAR image takes the fold of its SARDet-100K image, so the folds are
+leak-free for RSAR too. Scores are ultralytics' OBB mAP50-95 and mAP50 (rotated IoU), overall and per source; they
+are comparable with each other, not with the mmrotate numbers in the RSAR paper.
+
+| Step | Script | What it does |
+|---|---|---|
+| 3 | `prepare.py` | Lays out RSAR for one run (official split or fold k) and converts its DOTA labels to the OBB format |
+| 4 | `cluster/job_ad.sbatch` | Trains and scores one run (`score_obb.py`): `runs/rsar-obb-<fold>-<jobid>/scores.json` |
+| 5 | `summary.py` | Official val / test against the CV mean, sd, min and max, overall and per source |
+
+`cluster/queue_after.sh` submits the six runs and writes the summary when they finish. Without SAR-AIRcraft, the sources left are mostly those whose scores barely moved on
+SARDet-100K, apart from OGSOD and SADD, so the gap is expected to be smaller than SARDet-100K's 9 points.
