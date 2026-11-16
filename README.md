@@ -12,7 +12,7 @@ labelled images.
 | Dataset | Folder | Status |
 |---|---|---|
 | SARDet-100K (NeurIPS 2024) | [sardet100k/](sardet100k/) | **92.1% of val and 83.3% of test have a confirmed copy in train** (a lower bound: the search finds ~80% of planted copies). YOLO11s drops from **43.5 mAP on official test to 34.7 ± 3.4 leak-free** (5-fold group cross-validation). Airports and OGSOD lose about half their score; ship datasets barely move |
-| RSAR (rotated boxes on SARDet-100K images) | `rsar/` (to do) | Not started. The authors say they deduplicated (GitHub issue zhasion/RSAR#28), which this audit can test |
+| RSAR (rotated boxes on SARDet-100K images) | [rsar/](rsar/) | **94.6% of val and 95.0% of test have a confirmed copy in train.** RSAR keeps SARDet-100K's own split (same images, same names) without SAR-AIRcraft; its deduplication removed exact copies across splits only. Score inflation not measured yet (needs a rotated-box detector) |
 | M4-SAR (CVPR 2025, optical and SAR pairs) | `m4sar/` (to do) | Not started. Plan: match on the optical images (no speckle) |
 
 ## What counts as leakage

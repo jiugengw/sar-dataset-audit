@@ -1,0 +1,22 @@
+{
+ "sardet images": 116598,
+ "rsar images": 95842,
+ "counts": {
+  "test: matched": 8538,
+  "test: matched, SARDet test": 8506,
+  "test: matched, SARDet test+train": 29,
+  "test: matched, SARDet test+val": 3,
+  "train: matched": 78837,
+  "train: matched, SARDet train": 78836,
+  "train: matched, SARDet train+val": 1,
+  "val: matched": 8467,
+  "val: matched, SARDet train+val": 32,
+  "val: matched, SARDet val": 8435
+ },
+ "rsar name equals a matched SARDet name": {
+  "test: True": 8538,
+  "train: True": 78837,
+  "val: True": 8467
+ },
+ "pixel groups in more than one RSAR split": 0
+}

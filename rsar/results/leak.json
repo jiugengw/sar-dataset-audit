@@ -1,0 +1,67 @@
+{
+ "confirmed SARDet links used": {
+  "gp_train_vs_train.csv": 796283,
+  "all_train_vs_train.csv": 140783,
+  "gp_val_vs_train.csv": 67906,
+  "all_val_vs_train.csv": 12612,
+  "gp_test_vs_train.csv": 63109,
+  "all_test_vs_train.csv": 11657,
+  "gp_val_vs_val.csv": 43016,
+  "all_val_vs_val.csv": 6944,
+  "gp_test_vs_test.csv": 77893,
+  "all_test_vs_test.csv": 11854,
+  "gp_val_vs_test.csv": 36401,
+  "all_val_vs_test.csv": 5403,
+  "gp_msar_numbers.csv": 113763,
+  "name_links": 113283,
+  "contained.csv": 5125,
+  "verify_val_bg.csv": 2175,
+  "shifts_val_bg.csv": 3056,
+  "verify_test_bg.csv": 1983,
+  "shifts_test_bg.csv": 2865,
+  "verify_train_vs_train_bg.csv": 27703,
+  "shifts_train_bg.csv": 33724,
+  "verify_val_vs_val_bg.csv": 1906,
+  "verify_test_vs_test_bg.csv": 2976,
+  "verify_val_vs_test_bg.csv": 755,
+  "shifts_val_vs_test_bg.csv": 1673
+ },
+ "splits": {
+  "val": {
+   "images": 8467,
+   "matched to SARDet": 8467,
+   "same pixels as an RSAR train image": 0,
+   "direct link to RSAR train (incl. same pixels)": 8014,
+   "direct %": 94.6,
+   "in a group with RSAR train (chains too) %": 95.9,
+   "per source (direct %)": {
+    "Shipdataset": "3837/3970 = 96.6%",
+    "OGSOD": "1786/1799 = 99.3%",
+    "MSAR": "1397/1417 = 98.6%",
+    "HRSID": "880/979 = 89.9%",
+    "SSDD": "13/116 = 11.2%",
+    "SIVED": "50/104 = 48.1%",
+    "SADD": "44/44 = 100.0%",
+    "AIR-SARShip": "7/38 = 18.4%"
+   }
+  },
+  "test": {
+   "images": 8538,
+   "matched to SARDet": 8538,
+   "same pixels as an RSAR train image": 0,
+   "direct link to RSAR train (incl. same pixels)": 8114,
+   "direct %": 95.0,
+   "in a group with RSAR train (chains too) %": 96.1,
+   "per source (direct %)": {
+    "Shipdataset": "3850/3971 = 97.0%",
+    "OGSOD": "1796/1805 = 99.5%",
+    "MSAR": "1447/1464 = 98.8%",
+    "HRSID": "883/980 = 90.1%",
+    "SSDD": "18/116 = 15.5%",
+    "SIVED": "52/103 = 50.5%",
+    "AIR-SARShip": "24/55 = 43.6%",
+    "SADD": "44/44 = 100.0%"
+   }
+  }
+ }
+}
