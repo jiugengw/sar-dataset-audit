@@ -11,7 +11,7 @@ labelled images.
 
 | Dataset | Folder | Status |
 |---|---|---|
-| SARDet-100K (NeurIPS 2024) | [sardet100k/](sardet100k/) | **48.6% of val and 41.5% of test confirmed as repeats of train content** (up to 71.8% / 62.7% counting uncertain matches); within a source, a trained detector scores 8-16 mAP higher on leaked images. A leak-free re-split is built; its detector run is pending |
+| SARDet-100K (NeurIPS 2024) | [sardet100k/](sardet100k/) | **92.1% of val and 83.3% of test have a confirmed copy in train** (a lower bound: the search finds ~80% of planted copies). YOLO11s drops from **43.5 mAP on official test to 34.7 ± 3.4 leak-free** (5-fold group cross-validation). Airports and OGSOD lose about half their score; ship datasets barely move |
 | RSAR (rotated boxes on SARDet-100K images) | `rsar/` (to do) | Not started. The authors say they deduplicated (GitHub issue zhasion/RSAR#28), which this audit can test |
 | M4-SAR (CVPR 2025, optical and SAR pairs) | `m4sar/` (to do) | Not started. Plan: match on the optical images (no speckle) |
 
@@ -23,7 +23,9 @@ labelled images.
 | Re-processed copy | The same chip with small pixel changes | Correlation after averaging out speckle |
 | Shifted copy | A neighbouring crop, a few pixels up to half a tile away | Shift-proof search (\|FFT\|), then the exact shift |
 | Overlapping tile | Neighbouring crops of one scene | The same, scored on the shared region only |
-| Same target, other look | The same ship and place, new speckle or brightness | Speckle-reduced correlation plus label transfer |
+| Chip inside a larger image | A 256 px chip cut from a 512-1000 px image, maybe resized | Every chip-sized window searched at several scales |
+| Same tile, other polarization | The same scene and moment, another channel | File-name links, checked on the pixels and boxes |
+| Same target, other look | The same ship and place, new speckle or brightness | Tried (speckle-reduced background); not counted, it joins unrelated images |
 
 Every rule is checked against luck: fake train pools that cannot contain copies, random same-source pairs, and
 images corrupted on purpose. See each dataset's README.
@@ -39,7 +41,7 @@ Each dataset folder has:
 
 ## Environment
 
-The audits run on a laptop CPU: `python3 -m venv ~/.venvs/sar-audit`, then install `kaggle six faiss-cpu numpy
-pillow`. Detector scoring uses a second environment with `ultralytics pycocotools` (`~/.venvs/sar-yolo`). Training
-runs on the cluster. The datasets have more files than the cluster's 100k-file quota, so jobs unpack a single tar on
+The first searches ran on a laptop CPU: `python3 -m venv ~/.venvs/sar-audit`, then install `kaggle six faiss-cpu
+numpy pillow`. Detector scoring uses a second environment with `ultralytics pycocotools` (`~/.venvs/sar-yolo`). The
+GPU searches, checks, training and scoring run on the cluster (`cluster/` in each dataset folder). The datasets have more files than the cluster's 100k-file quota, so jobs unpack a single tar on
 the node's local disk.
