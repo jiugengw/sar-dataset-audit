@@ -1,0 +1,34 @@
+{
+ "fold": "4",
+ "images per part": {
+  "train": 76656,
+  "test": 19186
+ },
+ "per part and source": {
+  "train": {
+   "AIR-SARShip": 640,
+   "HRSID": 4478,
+   "MSAR": 22932,
+   "OGSOD": 14445,
+   "SADD": 723,
+   "SIVED": 836,
+   "SSDD": 912,
+   "Shipdataset": 31690
+  },
+  "test": {
+   "AIR-SARShip": 161,
+   "HRSID": 1120,
+   "MSAR": 5875,
+   "OGSOD": 3556,
+   "SADD": 160,
+   "SIVED": 208,
+   "SSDD": 223,
+   "Shipdataset": 7883
+  }
+ },
+ "notes": {
+  "coords clipped": 30710,
+  "boxes train": 150284,
+  "boxes test": 33250
+ }
+}

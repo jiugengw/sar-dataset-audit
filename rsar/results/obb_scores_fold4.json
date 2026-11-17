@@ -1,0 +1,114 @@
+{
+ "test__AIR-SARShip": {
+  "mAP50-95": 40.68,
+  "mAP50": 71.3,
+  "per class mAP50-95": {
+   "ship": 40.68
+  },
+  "per class mAP50": {
+   "ship": 71.3
+  }
+ },
+ "test__HRSID": {
+  "mAP50-95": 63.29,
+  "mAP50": 92.36,
+  "per class mAP50-95": {
+   "ship": 63.29
+  },
+  "per class mAP50": {
+   "ship": 92.36
+  }
+ },
+ "test__MSAR": {
+  "mAP50-95": 50.78,
+  "mAP50": 74.8,
+  "per class mAP50-95": {
+   "ship": 65.06,
+   "tank": 53.37,
+   "bridge": 33.9
+  },
+  "per class mAP50": {
+   "ship": 93.51,
+   "tank": 64.84,
+   "bridge": 66.03
+  }
+ },
+ "test__OGSOD": {
+  "mAP50-95": 16.65,
+  "mAP50": 28.31,
+  "per class mAP50-95": {
+   "ship": 0.02,
+   "tank": 0.0,
+   "bridge": 35.07,
+   "harbor": 31.52
+  },
+  "per class mAP50": {
+   "ship": 0.02,
+   "tank": 0.0,
+   "bridge": 61.81,
+   "harbor": 51.41
+  }
+ },
+ "test__SADD": {
+  "mAP50-95": 30.92,
+  "mAP50": 58.13,
+  "per class mAP50-95": {
+   "aircraft": 30.92
+  },
+  "per class mAP50": {
+   "aircraft": 58.13
+  }
+ },
+ "test__SIVED": {
+  "mAP50-95": 35.4,
+  "mAP50": 48.01,
+  "per class mAP50-95": {
+   "ship": 0.0,
+   "car": 70.81
+  },
+  "per class mAP50": {
+   "ship": 0.0,
+   "car": 96.02
+  }
+ },
+ "test__SSDD": {
+  "mAP50-95": 75.24,
+  "mAP50": 98.76,
+  "per class mAP50-95": {
+   "ship": 75.24
+  },
+  "per class mAP50": {
+   "ship": 98.76
+  }
+ },
+ "test__Shipdataset": {
+  "mAP50-95": 67.78,
+  "mAP50": 96.23,
+  "per class mAP50-95": {
+   "ship": 67.78
+  },
+  "per class mAP50": {
+   "ship": 96.23
+  }
+ },
+ "test__all": {
+  "mAP50-95": 43.12,
+  "mAP50": 65.28,
+  "per class mAP50-95": {
+   "ship": 65.83,
+   "aircraft": 30.87,
+   "car": 70.79,
+   "tank": 24.8,
+   "bridge": 35.03,
+   "harbor": 31.39
+  },
+  "per class mAP50": {
+   "ship": 94.52,
+   "aircraft": 58.0,
+   "car": 96.0,
+   "tank": 30.14,
+   "bridge": 61.91,
+   "harbor": 51.14
+  }
+ }
+}
