@@ -1,0 +1,87 @@
+{
+ "images": 112174,
+ "per split": {
+  "test": 33946,
+  "train": 56116,
+  "val": 22112
+ },
+ "optical label files differing from SAR label files": 0,
+ "k and k+56087 identical labels": 56087,
+ "k and k+56087 in the same split": 56087,
+ "group sizes": {
+  "2": 35095,
+  "4": 7136,
+  "8": 1662,
+  "16": 9
+ },
+ "splits": {
+  "val": {
+   "images": 22112,
+   "identical labels with a train image": 5122,
+   "%": 23.2,
+   "of those, boxes per image": {
+    "1": 610,
+    "2": 446,
+    "3": 334,
+    "4": 338,
+    "5": 356,
+    "6": 288,
+    "7": 290,
+    "8": 286,
+    "9": 218,
+    "10": 1956
+   }
+  },
+  "test": {
+   "images": 33946,
+   "identical labels with a train image": 7886,
+   "%": 23.2,
+   "of those, boxes per image": {
+    "1": 978,
+    "2": 690,
+    "3": 526,
+    "4": 490,
+    "5": 528,
+    "6": 350,
+    "7": 404,
+    "8": 432,
+    "9": 356,
+    "10": 3132
+   }
+  }
+ },
+ "pixel check (sample)": {
+  "optical twin corr percentiles": {
+   "5": 0.989,
+   "25": 0.998,
+   "50": 0.999,
+   "75": 0.999,
+   "95": 1.0
+  },
+  "optical control corr percentiles": {
+   "5": -0.139,
+   "25": -0.052,
+   "50": -0.001,
+   "75": 0.051,
+   "95": 0.174
+  },
+  "sar twin corr percentiles": {
+   "5": 0.984,
+   "25": 0.997,
+   "50": 0.998,
+   "75": 0.999,
+   "95": 1.0
+  },
+  "sar control corr percentiles": {
+   "5": -0.136,
+   "25": -0.04,
+   "50": 0.003,
+   "75": 0.05,
+   "95": 0.178
+  },
+  "pairs": 3000,
+  "optical corr > 0.5: twin / control": "3000 / 59",
+  "optical corr > 0.8: twin / control": "2997 / 53",
+  "optical corr > 0.95: twin / control": "2973 / 25"
+ }
+}
