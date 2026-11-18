@@ -1,0 +1,206 @@
+{
+ "rule": {
+  "shared >= 0.25": "r >= 0.97",
+  "0.10 <= shared < 0.25": "r >= 0.99"
+ },
+ "null control": {
+  "r_opt": {
+   "null pairs passing": 10,
+   "null queries with a false link": 10,
+   "false link rate (% of val / test queries)": 0.036,
+   "by shared": {
+    "0.12": 10
+   }
+  },
+  "r_sar": {
+   "null pairs passing": 7,
+   "null queries with a false link": 7,
+   "false link rate (% of val / test queries)": 0.025,
+   "by shared": {
+    "0.1": 1,
+    "0.12": 6
+   }
+  },
+  "either": {
+   "null queries with a false link": 11,
+   "rate %": 0.039
+  }
+ },
+ "planted recall": {
+  "r_opt": {
+   "0.15": 29,
+   "0.3": 96,
+   "0.5": 100,
+   "0.75": 99,
+   "1.0": 100
+  },
+  "r_sar": {
+   "0.15": 29,
+   "0.3": 96,
+   "0.5": 100,
+   "0.75": 99,
+   "1.0": 100
+  },
+  "planted per share": {
+   "0.15": 100,
+   "0.3": 100,
+   "0.5": 100,
+   "0.75": 100,
+   "1.0": 100
+  },
+  "reached stage B with the right shift": {
+   "0.15": 29,
+   "0.3": 96,
+   "0.5": 100,
+   "0.75": 99,
+   "1.0": 100
+  }
+ },
+ "links": {
+  "pairs checked": 269889,
+  "links": 150280,
+  "by kind": {
+   "both": 128532,
+   "optical only": 13163,
+   "radar only": 8585
+  },
+  "by kind, pairs touching train and val/test": {
+   "both": 64307,
+   "optical only": 6508,
+   "radar only": 4245
+  },
+  "by shared (links)": {
+   "0.1": 450,
+   "0.2": 11072,
+   "0.3": 12415,
+   "0.4": 48040,
+   "0.6": 132,
+   "0.7": 737,
+   "0.8": 5732,
+   "0.9": 14306,
+   "1.0": 57396
+  }
+ },
+ "leak rate": {
+  "val": {
+   "images per version": 11056,
+   "radar-only use (radar link)": {
+    "images (per version)": 8995,
+    "%": 81.4
+   },
+   "optical or fusion use (either link)": {
+    "images (per version)": 9204,
+    "%": 83.2
+   },
+   "optical link": {
+    "images (per version)": 9100,
+    "%": 82.3
+   },
+   "label twins (identical boxes)": {
+    "images (per version)": 2561,
+    "%": 23.2
+   },
+   "radar link or label twin": {
+    "images (per version)": 9399,
+    "%": 85.0
+   },
+   "either link or label twin": {
+    "images (per version)": 9538,
+    "%": 86.3
+   }
+  },
+  "test": {
+   "images per version": 16973,
+   "radar-only use (radar link)": {
+    "images (per version)": 13839,
+    "%": 81.5
+   },
+   "optical or fusion use (either link)": {
+    "images (per version)": 14172,
+    "%": 83.5
+   },
+   "optical link": {
+    "images (per version)": 14029,
+    "%": 82.7
+   },
+   "label twins (identical boxes)": {
+    "images (per version)": 3943,
+    "%": 23.2
+   },
+   "radar link or label twin": {
+    "images (per version)": 14432,
+    "%": 85.0
+   },
+   "either link or label twin": {
+    "images (per version)": 14663,
+    "%": 86.4
+   }
+  }
+ },
+ "one-sided, val/test to train": {
+  "radar only: r_opt quantiles (5/25/50%)": [
+   0.843,
+   0.91,
+   0.944
+  ],
+  "optical only: r_sar quantiles (5/25/50%)": [
+   0.699,
+   0.852,
+   0.963
+  ]
+ },
+ "groups": {
+  "images": 112174,
+  "groups": 10497,
+  "largest": [
+   168,
+   158,
+   146,
+   144,
+   130,
+   130,
+   120,
+   110,
+   108,
+   106
+  ],
+  "images in groups of >= 100": 1522
+ },
+ "folds": {
+  "images per fold": [
+   22436,
+   22436,
+   22434,
+   22434,
+   22434
+  ],
+  "links crossing folds (must be 0)": 0,
+  "official split per fold": {
+   "0": {
+    "train": 11238,
+    "val": 4496,
+    "test": 6702
+   },
+   "1": {
+    "train": 11258,
+    "val": 4402,
+    "test": 6776
+   },
+   "2": {
+    "train": 11002,
+    "val": 4378,
+    "test": 7054
+   },
+   "3": {
+    "train": 11348,
+    "val": 4390,
+    "test": 6696
+   },
+   "4": {
+    "train": 11270,
+    "val": 4446,
+    "test": 6718
+   }
+  }
+ }
+}
