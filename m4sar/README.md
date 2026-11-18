@@ -40,21 +40,34 @@ removed. Data: `M4-SAR.zip` (20.5 GB, sha256 7ca1ae75…) from the authors' Hugg
   coordinates.
 - The optical and SAR label files are identical for every image.
 
-## Score inflation (running)
+## Score inflation (18 Nov 2026)
 
 Rotated-box YOLO11s on the SAR images (both versions), the SARDet-100K / RSAR recipe: 24 epochs, 512 px, batch 32,
-COCO-pretrained YOLO11s backbone. mAP50-95 / mAP50 (rotated IoU):
+COCO-pretrained YOLO11s backbone. Leak-free CV: train on 4 folds, test on the 5th (`results/folds.csv`), mean ± sd
+over the 5 folds. mAP50-95 / mAP50 (rotated IoU), `results/obb_summary.json`:
 
-| | official val | official test | leak-free CV |
+| | official val | official test | leak-free CV (min-max) | drop |
+|---|---|---|---|---|
+| **All (6 classes)** | 25.0 / 51.6 | **25.6 / 52.0** | **17.4 ± 1.4 / 39.7 ± 2.7** (15.9-19.6) | **-8.3 / -12.3** (-32% / -24%) |
+| VH version | 25.4 / 52.2 | 26.2 / 52.6 | 17.8 ± 1.1 / 40.4 ± 2.1 | -8.4 / -12.1 |
+| VV version | 24.7 / 51.1 | 25.2 / 51.4 | 17.1 ± 1.7 / 39.1 ± 3.2 | -8.2 / -12.4 |
+
+**A third of the official mAP50-95 comes from test images the model has already seen** (flipped, shifted or exact
+copies in train). Every fold scores well below the official test. Per class (mAP50-95, official test vs CV):
+
+| class | official test | leak-free CV | drop |
 |---|---|---|---|
-| All (6 classes) | 25.0 / 51.6 | 25.6 / 52.0 | running (folds 0-4) |
-| VH version | 25.4 / 52.2 | 26.2 / 52.6 | |
-| VV version | 24.7 / 51.1 | 25.2 / 51.4 | |
+| harbor | 44.1 | 23.6 ± 1.2 | -20.5 (-47%) |
+| airport | 40.4 | 26.2 ± 6.2 | -14.2 (-35%) |
+| oil tank | 8.0 | 2.1 ± 0.6 | -5.9 (-74%) |
+| playground | 16.5 | 11.7 ± 1.2 | -4.9 (-29%) |
+| wind turbine | 33.2 | 30.7 ± 6.4 | -2.5 (-8%) |
+| bridge | 11.5 | 9.9 ± 0.3 | -1.6 (-14%) |
 
-Per class on official test (mAP50-95): harbor 44.1, airport 40.4, wind turbine 33.2, playground 16.5, bridge 11.5,
-oil tank 8.0. The scores are low against RSAR (55.1) because Sentinel-1 pixels are 10 m: an oil tank is a few
-pixels across. These scores are comparable with each other, not with the fusion models in the M4-SAR paper; we
-train on SAR only, which is how the audit measures every benchmark.
+Harbors and airports (large, fixed scenes that repeat across tiles) lose the most; wind turbines and bridges barely
+move. The absolute scores are low against RSAR (55.1) because Sentinel-1 pixels are 10 m: an oil tank is a few
+pixels across. They are comparable with each other, not with the fusion models in the M4-SAR paper; we train on SAR
+only, which is how the audit measures every benchmark.
 
 ## Method
 
@@ -63,7 +76,7 @@ train on SAR only, which is how the audit measures every benchmark.
 | 1 | `labeltwins.py` (`cluster/job_ae`) | Groups images by their label file (rotated boxes rounded to 3 decimals); checks the k / k + 56,087 pattern; finds val / test images whose box list is also a train image's; checks a sample of 1,500 per split on the pixels against a control pair (a random train image with the same number of boxes). `results/labeltwins.json`, `label_groups.csv`, `twin_pixels.csv` |
 | 2 | `pixsearch.py` (`cluster/job_af`) | Copy search over every pair of the 56,087 version-1 images, with its null and planted controls (below). About 2.2 h on an L40S |
 | 3 | `summarise.py` | Link rules from the controls, leak rates, one-sided examples, groups and 5 leak-free folds. `results/search_summary.json`, `links.csv.gz`, `folds.csv`, `examples_*.png` |
-| 4 | `prepare.py`, `cluster/job_ag.sbatch` | Lays out the SAR images for one run (official split or fold k) and trains / scores YOLO11s-OBB (`../rsar/score_obb.py`). `results/obb_scores_*.json` |
+| 4 | `prepare.py`, `cluster/job_ag.sbatch`, `cv_summary.py` | Lays out the SAR images for one run (official split or fold k), trains / scores YOLO11s-OBB (`../rsar/score_obb.py`), and collects the runs. `results/obb_scores_*.json`, `obb_summary.json` |
 
 **The search** (`pixsearch.py`), on the optical image, which has no speckle:
 1. *Shortlist:* whole-image 32 px descriptors under the 8 flips / turns, and votes of slightly blurred 16 px patches of

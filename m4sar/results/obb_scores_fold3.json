@@ -1,0 +1,62 @@
+{
+ "test__all": {
+  "mAP50-95": 15.89,
+  "mAP50": 36.35,
+  "per class mAP50-95": {
+   "bridge": 9.4,
+   "harbor": 22.28,
+   "oil_tank": 1.42,
+   "playground": 10.77,
+   "airport": 27.89,
+   "wind_turbine": 23.59
+  },
+  "per class mAP50": {
+   "bridge": 22.78,
+   "harbor": 45.1,
+   "oil_tank": 4.41,
+   "playground": 22.54,
+   "airport": 59.16,
+   "wind_turbine": 64.09
+  }
+ },
+ "test__vh": {
+  "mAP50-95": 16.69,
+  "mAP50": 38.05,
+  "per class mAP50-95": {
+   "bridge": 10.45,
+   "harbor": 23.01,
+   "oil_tank": 1.3,
+   "playground": 11.08,
+   "airport": 30.59,
+   "wind_turbine": 23.74
+  },
+  "per class mAP50": {
+   "bridge": 24.97,
+   "harbor": 46.47,
+   "oil_tank": 4.35,
+   "playground": 22.99,
+   "airport": 62.82,
+   "wind_turbine": 66.71
+  }
+ },
+ "test__vv": {
+  "mAP50-95": 15.19,
+  "mAP50": 34.83,
+  "per class mAP50-95": {
+   "bridge": 8.4,
+   "harbor": 21.67,
+   "oil_tank": 1.46,
+   "playground": 10.51,
+   "airport": 25.39,
+   "wind_turbine": 23.7
+  },
+  "per class mAP50": {
+   "bridge": 20.61,
+   "harbor": 43.94,
+   "oil_tank": 4.5,
+   "playground": 22.09,
+   "airport": 55.83,
+   "wind_turbine": 62.04
+  }
+ }
+}
