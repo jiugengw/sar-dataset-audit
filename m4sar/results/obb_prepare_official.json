@@ -1,0 +1,28 @@
+{
+ "fold": "official",
+ "images per part": {
+  "train": 56116,
+  "val": 22112,
+  "test": 33946
+ },
+ "per part and version": {
+  "train": {
+   "vh": 28058,
+   "vv": 28058
+  },
+  "val": {
+   "vh": 11056,
+   "vv": 11056
+  },
+  "test": {
+   "vh": 16973,
+   "vv": 16973
+  }
+ },
+ "notes": {
+  "coords clipped": 14482,
+  "boxes train": 490878,
+  "boxes val": 190154,
+  "boxes test": 300830
+ }
+}

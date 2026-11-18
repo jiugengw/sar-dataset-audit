@@ -189,8 +189,10 @@ def candidates(q128, qid, R, D, rid, nref):
     Rv, Dv = R[:nref * g * g], D[:nref]
     rid_t = torch.as_tensor(rid[:nref], device=DEV)
     qpos = torch.arange(gq * gq, device=DEV)
-    out = {}
+    out = {}; t1 = time.time()
     for s in range(0, len(q128), 8):
+        if s and s % 8000 == 0:
+            el = time.time() - t1; log(f'candidates: {s} / {len(q128)} queries, ~{el / s * (len(q128) - s) / 60:.0f} min left')
         x = q128[s:s + 8].to(DEV); b = len(x)
         qids = torch.as_tensor(qid[s:s + b], device=DEV)
         # whole image, 8 turns
