@@ -55,6 +55,7 @@ N_PLANT = 500
 PLANT_BASE = 10 ** 6
 DEV = 'cuda'
 WORKERS = int(os.environ.get('WORKERS', 3))   # + the main process = 4 CPUs (the QOS limit)
+REF_CHUNK = int(os.environ.get('REF_CHUNK', 250_000))   # reference patch rows per matrix product (GPU memory)
 CHUNK = 4096         # stage B pairs read per step (bounded memory)
 T0 = time.time()
 ZIP, MEMBERS, PLANTED, NULL_PERM = None, None, {}, False
@@ -203,8 +204,8 @@ def candidates(q128, qid, R, D, rid, nref):
         # patch votes, no turn
         Q = patches(F.avg_pool2d(x[:, None].float(), 2)[:, 0], QSTRIDE).reshape(-1, 256).half()
         bv = torch.full((len(Q), K_PATCH), -2.0, device=DEV); bi = torch.zeros((len(Q), K_PATCH), dtype=torch.long, device=DEV)
-        for c in range(0, len(Rv), 1_000_000):
-            sim = Q @ Rv[c:c + 1_000_000].T
+        for c in range(0, len(Rv), REF_CHUNK):
+            sim = Q @ Rv[c:c + REF_CHUNK].T
             v, ix = sim.topk(K_PATCH, dim=1)
             v = torch.cat([bv, v.float()], 1); ix = torch.cat([bi, ix + c], 1)
             bv, o = v.topk(K_PATCH, dim=1); bi = ix.gather(1, o)
@@ -398,6 +399,8 @@ def main(zpath, out):
     qs = [int(truth[p][0]) for p in sorted(truth)]
     uq = sorted(set(qs)); QT = torch.stack([T[pos[i]] for i in uq])
     cands = candidates(QT, np.array(uq), R, D, rid, len(rid))
+    log(f'GPU peak so far {torch.cuda.max_memory_allocated() / 2**30:.1f} GB')
+    del R, D; torch.cuda.empty_cache()     # stage A / B do not need the reference (fits a 24 GB GPU)
     rows, n_c, _ = verify(cands, QT, allT, np.array(uq), rid, 'planted')
     rows = [x for x in rows if x['r'] >= PLANT_BASE and truth[x['r']][0] == x['q']]
     for x in rows:
@@ -406,7 +409,6 @@ def main(zpath, out):
     res['planted'] = {'planted copies': len(truth), 'per shared share': dict(Counter(str(v[1]) for v in truth.values())),
                       'found at stage B (any shift)': len({x['r'] for x in rows})}
     (out / 'planted_truth.json').write_text(json.dumps({str(k): v for k, v in truth.items()}))
-    del R, D; torch.cuda.empty_cache()
 
     # null: val + test queries against the block-shuffled train images
     NULL_PERM = True
