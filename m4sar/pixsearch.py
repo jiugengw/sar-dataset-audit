@@ -25,10 +25,15 @@ Controls, in the same job:
            copies found with the right shift (+-2 px) that pass the rule.
 
     python pixsearch.py M4-SAR.zip OUT_DIR
+Resume after a stop: CANDS=<earlier OUT_DIR>/cands_main.npz skips step 1 for main (~1.5 h), and
+MAIN_DONE=<earlier OUT_DIR>/pairs_main.csv keeps the main pairs already checked and skips them.
+Order: main candidates (saved to cands_main.npz), then the planted and null controls, then main stage A / B; stage B
+pairs are appended to the CSVs as they are checked, with progress lines.
 Output: OUT_DIR/pairs_main.csv, pairs_null.csv, pairs_planted.csv (every pair that reached stage B), search.json.
 The rule (r_opt, r_sar, shared share) is chosen from the controls by summarise.py.
 """
 import csv, io, json, os, sys, time, zipfile
+from functools import lru_cache
 from collections import Counter
 from multiprocessing import Pool
 from pathlib import Path
@@ -49,6 +54,9 @@ STAGE_B_R = 0.8
 N_PLANT = 500
 PLANT_BASE = 10 ** 6
 DEV = 'cuda'
+WORKERS = int(os.environ.get('WORKERS', 3))   # + the main process = 4 CPUs (the QOS limit)
+CHUNK = 4096         # stage B pairs read per step (bounded memory)
+T0 = time.time()
 ZIP, MEMBERS, PLANTED, NULL_PERM = None, None, {}, False
 
 # ---------------------------------------------------------------- data
@@ -66,6 +74,11 @@ def index(zpath):
 _z, _zpid = None, None
 
 
+def log(*a):
+    print(f'[{time.time() - T0:7.0f} s]', *a, flush=True)
+
+
+@lru_cache(maxsize=256)  # stage B is sorted by query, so a worker reads each query image about once
 def _read(member):          # one open zip per process (forked workers must not share the parent's file position)
     global _z, _zpid
     if _z is None or _zpid != os.getpid(): _z, _zpid = zipfile.ZipFile(ZIP), os.getpid()
@@ -247,9 +260,11 @@ def pearson_at(a, b, dy, dx):
     return float((x * y).sum() / torch.sqrt((x * x).sum() * (y * y).sum()).clamp_min(1e-6))
 
 
-def verify(cands, q128, r128, qid, rid, workers=4):
-    """Stage A on all candidates, stage B on those with r >= STAGE_B_R. Returns rows."""
-    keys = list(cands); rows = []
+def verify(cands, q128, r128, qid, rid, name, sink=None, dedupe=False, skip=frozenset(), workers=WORKERS):
+    """Stage A on all candidates, stage B on those with r >= STAGE_B_R. dedupe: keep one of (a, b) and (b, a) (the
+    higher stage-A r). skip: (q id, r id) pairs already checked by an earlier run. sink(rows) gets every checked chunk.
+    Returns rows, candidates, stage B pairs."""
+    keys = list(cands)
     stage_b = []
     qg, rg = q128.to(DEV), r128.to(DEV)
     for s in range(0, len(keys), 256):
@@ -262,37 +277,67 @@ def verify(cands, q128, r128, qid, rid, workers=4):
         v, dy, dx, ov = ncc(blur(a[:, None])[:, 0], blur(b[:, None])[:, 0], MIN_OVL)
         for k, vv, y, x, o in zip(ks, v.tolist(), dy.tolist(), dx.tolist(), ov.tolist()):
             if vv >= STAGE_B_R: stage_b.append((k, vv, y, x, o))
+    del qg, rg; torch.cuda.empty_cache()
+    n_a = len(stage_b)
+    if dedupe:
+        best = {}
+        for p in stage_b:
+            (q, r, t) = p[0]; u = (min(int(qid[q]), int(rid[r])), max(int(qid[q]), int(rid[r])))
+            if u not in best or p[1] > best[u][1]: best[u] = p
+        stage_b = list(best.values())
+    if skip: stage_b = [p for p in stage_b if (int(qid[p[0][0]]), int(rid[p[0][1]])) not in skip]
+    stage_b.sort(key=lambda p: (p[0][0], p[0][1]))
+    log(f'{name}: stage A done, {n_a} of {len(keys)} pass r >= {STAGE_B_R}; {len(stage_b)} to stage B')
     jobs = [(int(qid[q]), int(rid[r]), t) for (q, r, t), *_ in stage_b]
+    rows, t1, last = [], time.time(), 0
     with Pool(workers) as pool:
-        it = pool.imap(_pair, jobs, chunksize=8)
-        for s in range(0, len(stage_b), 16):
-            part = stage_b[s:s + 16]
-            got = [next(it) for _ in part]
-            oa = torch.stack([torch.from_numpy(g[0]) for g in got]).to(DEV).float()
-            ob = torch.stack([torch.from_numpy(g[1]) for g in got]).to(DEV).float()
-            cy = torch.tensor([4 * p[2] for p in part], device=DEV); cx = torch.tensor([4 * p[3] for p in part], device=DEV)
-            v, dy, dx, ov = ncc(oa, ob, MIN_OVL, centre=(cy, cx))
-            for p, g, vv, y, x, o in zip(part, got, v.tolist(), dy.tolist(), dx.tolist(), ov.tolist()):
-                (q, r, t), rA = p[0], p[1]
-                r_sar = pearson_at(torch.from_numpy(g[2]).to(DEV), torch.from_numpy(g[3]).to(DEV), y, x) if vv > -2 else -2.0
-                rows.append({'q': int(qid[q]), 'r': int(rid[r]), 'source': cands[p[0]], 't': t, 'dy': y, 'dx': x,
-                             'shared': round(o, 3), 'r128': round(rA, 4), 'r_opt': round(vv, 4), 'r_sar': round(r_sar, 4)})
-    return rows, len(keys)
+        nxt = pool.map_async(_pair, jobs[:CHUNK], chunksize=16)
+        for c in range(0, len(jobs), CHUNK):
+            got_all = nxt.get()
+            if c + CHUNK < len(jobs): nxt = pool.map_async(_pair, jobs[c + CHUNK:c + 2 * CHUNK], chunksize=16)
+            new = []
+            for s in range(0, len(got_all), 16):
+                part, got = stage_b[c + s:c + s + 16], got_all[s:s + 16]
+                oa = torch.stack([torch.from_numpy(g[0]) for g in got]).to(DEV).float()
+                ob = torch.stack([torch.from_numpy(g[1]) for g in got]).to(DEV).float()
+                cy = torch.tensor([4 * p[2] for p in part], device=DEV); cx = torch.tensor([4 * p[3] for p in part], device=DEV)
+                v, dy, dx, ov = ncc(oa, ob, MIN_OVL, centre=(cy, cx))
+                for p, g, vv, y, x, o in zip(part, got, v.tolist(), dy.tolist(), dx.tolist(), ov.tolist()):
+                    (q, r, t), rA = p[0], p[1]
+                    r_sar = pearson_at(torch.from_numpy(g[2]).to(DEV), torch.from_numpy(g[3]).to(DEV), y, x) if vv > -2 else -2.0
+                    new.append({'q': int(qid[q]), 'r': int(rid[r]), 'source': cands[p[0]], 't': t, 'dy': y, 'dx': x,
+                                'shared': round(o, 3), 'r128': round(rA, 4), 'r_opt': round(vv, 4), 'r_sar': round(r_sar, 4)})
+            del got_all
+            rows += new
+            if sink: sink(new)
+            done = c + CHUNK
+            if done - last >= 50_000 or done >= len(jobs):
+                last = done; rate = min(done, len(jobs)) / max(time.time() - t1, 1e-6)
+                log(f'{name}: stage B {min(done, len(jobs))} / {len(jobs)} ({rate:.0f} pairs/s, '
+                    f'~{(len(jobs) - min(done, len(jobs))) / max(rate, 1e-6) / 60:.0f} min left)')
+    return rows, len(keys), len(stage_b)
 
 
-def write(rows, path, split):
-    cols = ['q', 'r', 'q_split', 'r_split', 'source', 't', 'dy', 'dx', 'shared', 'r128', 'r_opt', 'r_sar', 'planted']
-    with open(path, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=cols, lineterminator='\n', extrasaction='ignore'); w.writeheader()
+COLS = ['q', 'r', 'q_split', 'r_split', 'source', 't', 'dy', 'dx', 'shared', 'r128', 'r_opt', 'r_sar', 'planted']
+
+
+def write(rows, path, split, mode='w'):
+    with open(path, mode, newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=COLS, lineterminator='\n', extrasaction='ignore')
+        if mode == 'w': w.writeheader()
         for x in rows:
             x.setdefault('planted', ''); x['q_split'] = split.get(x['q'], '?'); x['r_split'] = split.get(x['r'], 'planted' if x['r'] >= PLANT_BASE else '?')
             w.writerow(x)
 
 
+def appender(path, split):   # header now, rows as they come
+    write([], path, split)
+    return lambda rows: write(rows, path, split, mode='a')
+
+
 def main(zpath, out):
     global ZIP, MEMBERS, NULL_PERM
-    out = Path(out); out.mkdir(parents=True, exist_ok=True); t0 = time.time()
-    log = lambda *a: print(f'[{time.time() - t0:7.0f} s]', *a, flush=True)
+    out = Path(out); out.mkdir(parents=True, exist_ok=True); torch.set_num_threads(2)
     ZIP = zpath; MEMBERS = index(zpath)
     ids = sorted(i for i in MEMBERS if i <= HALF)
     if os.environ.get('LIMIT'): ids = ids[::max(1, len(ids) // int(os.environ['LIMIT']))]   # a quick trial run
@@ -336,17 +381,24 @@ def main(zpath, out):
     rid = np.array(ids + sorted(truth))
     allT = torch.cat([T, PT])
     log('reference built', tuple(R.shape))
-    cands = candidates(T, np.array(ids), R, D, rid, len(T))
+    if os.environ.get('CANDS'):
+        z = np.load(os.environ['CANDS']); assert z['n_ids'] == len(ids) and z['n_rid'] == len(rid)
+        src_names = [str(x) for x in z['names']]
+        cands = {(int(a), int(b), int(c)): src_names[d] for a, b, c, d in zip(z['q'], z['r'], z['t'], z['src'])}
+        log('main candidates loaded from', os.environ['CANDS'], len(cands))
+    else:
+        cands = candidates(T, np.array(ids), R, D, rid, len(T))
+        k = np.array(list(cands), dtype=np.int64).reshape(-1, 3); names = ['whole', 'patch']
+        np.savez(out / 'cands_main.npz', q=k[:, 0], r=k[:, 1], t=k[:, 2], src=np.array([names.index(v) for v in cands.values()]),
+                 names=np.array(names), n_ids=len(ids), n_rid=len(rid))
     log('main candidates', len(cands), dict(Counter(cands.values())))
-    rows, n_c = verify(cands, T, allT, np.array(ids), rid)
-    write(rows, out / 'pairs_main.csv', split); log('main stage B pairs', len(rows))
-    res['main'] = {'candidates': n_c, 'by source': dict(Counter(cands.values())), 'stage B pairs': len(rows)}
+    main_cands = cands
 
     # planted: the planted copies' queries against the whole pool including the planted copies
     qs = [int(truth[p][0]) for p in sorted(truth)]
     uq = sorted(set(qs)); QT = torch.stack([T[pos[i]] for i in uq])
     cands = candidates(QT, np.array(uq), R, D, rid, len(rid))
-    rows, n_c = verify(cands, QT, allT, np.array(uq), rid)
+    rows, n_c, _ = verify(cands, QT, allT, np.array(uq), rid, 'planted')
     rows = [x for x in rows if x['r'] >= PLANT_BASE and truth[x['r']][0] == x['q']]
     for x in rows:
         _, f, dy, dx = truth[x['r']]; x['planted'] = f'{f}:{dy}:{dx}:{int(abs(x["dy"] - dy) <= 2 and abs(x["dx"] - dx) <= 2 and x["t"] == 0)}'
@@ -363,11 +415,24 @@ def main(zpath, out):
     R, D = build_ref(NT)
     q = [i for i in ids if split[i] != 'train']; QT = torch.stack([T[pos[i]] for i in q])
     cands = candidates(QT, np.array(q), R, D, np.array(tr), len(tr))
-    rows, n_c = verify(cands, QT, NT, np.array(q), np.array(tr))
-    write(rows, out / 'pairs_null.csv', split); log('null stage B pairs', len(rows))
+    del R, D; torch.cuda.empty_cache()
+    rows, n_c, n_b = verify(cands, QT, NT, np.array(q), np.array(tr), 'null', sink=appender(out / 'pairs_null.csv', split))
+    log('null stage B pairs', len(rows))
     res['null'] = {'queries': len(q), 'shuffled train images': len(tr), 'candidates': n_c, 'stage B pairs': len(rows)}
+    NULL_PERM = False
     res['settings'] = {k: globals()[k] for k in ('K_WHOLE', 'WHOLE_R', 'K_PATCH', 'PATCH_R', 'MIN_VOTES', 'K_VOTE',
                                                  'QSTRIDE', 'RSTRIDE', 'BLUR', 'FLAT', 'MIN_OVL', 'STAGE_B_R', 'N_PLANT')}
+    (out / 'search.json').write_text(json.dumps(res, indent=1))
+
+    # main stage A / B last (the longest part; pairs written as they are checked)
+    sink, skip = appender(out / 'pairs_main.csv', split), set()
+    if os.environ.get('MAIN_DONE'):      # pairs_main.csv of an earlier run that stopped part-way: keep its rows, skip them
+        with open(os.environ['MAIN_DONE']) as fh: old = [dict(x, planted='') for x in csv.DictReader(fh)]
+        skip = {(int(x['q']), int(x['r'])) for x in old}; sink(old); log('main: kept', len(old), 'pairs from', os.environ['MAIN_DONE'])
+    rows, n_c, n_b = verify(main_cands, T, allT, np.array(ids), rid, 'main', sink=sink, dedupe=True, skip=skip)
+    log('main stage B pairs', len(rows))
+    res['main'] = {'candidates': n_c, 'by source': dict(Counter(main_cands.values())),
+                   'stage B pairs (one of each (a, b) / (b, a))': n_b}
     (out / 'search.json').write_text(json.dumps(res, indent=1)); log(json.dumps(res, indent=1))
 
 
