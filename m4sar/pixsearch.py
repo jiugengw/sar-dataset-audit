@@ -427,7 +427,7 @@ def main(zpath, out):
     # main stage A / B last (the longest part; pairs written as they are checked)
     sink, skip = appender(out / 'pairs_main.csv', split), set()
     if os.environ.get('MAIN_DONE'):      # pairs_main.csv of an earlier run that stopped part-way: keep its rows, skip them
-        with open(os.environ['MAIN_DONE']) as fh: old = [dict(x, planted='') for x in csv.DictReader(fh)]
+        with open(os.environ['MAIN_DONE']) as fh: old = [dict(x, q=int(x['q']), r=int(x['r']), planted='') for x in csv.DictReader(fh)]
         skip = {(int(x['q']), int(x['r'])) for x in old}; sink(old); log('main: kept', len(old), 'pairs from', os.environ['MAIN_DONE'])
     rows, n_c, n_b = verify(main_cands, T, allT, np.array(ids), rid, 'main', sink=sink, dedupe=True, skip=skip)
     log('main stage B pairs', len(rows))
