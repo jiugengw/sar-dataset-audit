@@ -39,6 +39,13 @@ removed. Data: `M4-SAR.zip` (20.5 GB, sha256 7ca1ae75…) from the authors' Hugg
   boxes. The pixel search finds most of them and many more, because flipped and shifted copies have different box
   coordinates.
 - The optical and SAR label files are identical for every image.
+- **No zoomed copies** (19 Nov). A separate search for tiles that are a magnified part of another (zoom 1.1-2, either
+  side in train; `scalesearch.py`, `cluster/job_ah`, `results/scale_search.json`) finds no val / test image whose radar
+  matches a train image at another zoom: the best radar correlation is 0.925, against 0.942 for the null and >= 0.97 for
+  the planted copies. 27 pairs match on the optical image only (r >= 0.97, at the minimum 30% overlap, radar r about
+  0.05), where the optical null reaches 0.954: coincidences. Planted zoomed copies are found 92 / 100 (shrunk copy
+  inside a train tile), 197 / 200 (enlarged crop) and 62 / 100 (shrunk copy half outside the tile) at r >= 0.97. The
+  leak rates above stand.
 
 ## Score inflation (18 Nov 2026)
 
@@ -77,6 +84,7 @@ only, which is how the audit measures every benchmark.
 | 2 | `pixsearch.py` (`cluster/job_af`) | Copy search over every pair of the 56,087 version-1 images, with its null and planted controls (below). About 2.2 h on an L40S |
 | 3 | `summarise.py` | Link rules from the controls, leak rates, one-sided examples, groups and 5 leak-free folds. `results/search_summary.json`, `links.csv.gz`, `folds.csv`, `examples_*.png` |
 | 4 | `prepare.py`, `cluster/job_ag.sbatch`, `cv_summary.py` | Lays out the SAR images for one run (official split or fold k), trains / scores YOLO11s-OBB (`../rsar/score_obb.py`), and collects the runs. `results/obb_scores_*.json`, `obb_summary.json` |
+| 5 | `scalesearch.py` (`cluster/job_ah`) | Zoomed copies (one tile a magnified part of another, zoom 1.1-2), val / test against train, with its own null and planted controls (about 7 h on an L40S). `results/scale_search.json` |
 
 **The search** (`pixsearch.py`), on the optical image, which has no speckle:
 1. *Shortlist:* whole-image 32 px descriptors under the 8 flips / turns, and votes of slightly blurred 16 px patches of
@@ -118,4 +126,5 @@ the 112,174 images into 10,497 groups (largest 168 images). Groups are dealt lar
   lower bound.
 - **Shortlist on the optical image:** a radar copy whose optical image changed completely (clouds, another season)
   may never be shortlisted. The radar-only rate may miss these.
-- **Scale:** copies at another scale are not searched (every tile is cut at one resolution).
+- **Zoom:** copies are searched at zoom 1.1-2 only, and a zoomed copy sticking half outside the other tile is found
+  63 times in 100.

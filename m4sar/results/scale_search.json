@@ -1,0 +1,96 @@
+{
+ "version-1 images": 56087,
+ "val/test": 28029,
+ "train": 28058,
+ "zooms": [
+  1.1,
+  1.2,
+  1.32,
+  1.45,
+  1.6,
+  1.78,
+  2.0
+ ],
+ "planted1 own copy kept": {
+  "candidates": 163,
+  "stage A": 163,
+  "planted": 200
+ },
+ "planted1": {
+  "fine tiles": 200,
+  "candidates": 4000,
+  "stage B pairs": 1038
+ },
+ "planted2 own copy kept": {
+  "candidates": 200,
+  "stage A": 200,
+  "planted": 200
+ },
+ "planted2": {
+  "fine tiles": 200,
+  "candidates": 4000,
+  "stage B pairs": 1094
+ },
+ "null1": {
+  "fine tiles": 6000,
+  "candidates": 119284,
+  "stage B pairs": 5384
+ },
+ "null2": {
+  "fine tiles": 6000,
+  "candidates": 119108,
+  "stage B pairs": 894
+ },
+ "main1": {
+  "fine tiles": 28029,
+  "candidates": 556975,
+  "stage B pairs": 124771
+ },
+ "main2": {
+  "fine tiles": 28058,
+  "candidates": 558003,
+  "stage B pairs": 123781
+ },
+ "settings": {
+  "ZOOMS": [
+   1.1,
+   1.2,
+   1.32,
+   1.45,
+   1.6,
+   1.78,
+   2.0
+  ],
+  "QSTRIDE": 8,
+  "K_PATCH": 48,
+  "PATCH_R": 0.8,
+  "MIN_VOTES": 2,
+  "K_VOTE": 20,
+  "A_STEPS": [
+   0.95,
+   0.975,
+   1.0,
+   1.025,
+   1.05
+  ],
+  "B_STEPS": [
+   0.97,
+   0.975,
+   0.98,
+   0.985,
+   0.99,
+   0.995,
+   1.0,
+   1.005,
+   1.01,
+   1.015,
+   1.02,
+   1.025,
+   1.03
+  ],
+  "MIN_SHARE": 0.3,
+  "STAGE_B_R": 0.8,
+  "N_NULL": 6000,
+  "N_PLANT": 400
+ }
+}
